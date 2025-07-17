@@ -15,6 +15,7 @@ st.set_page_config(layout="wide")
 
 # Place this in sidebar, keep discrete and unstyled
 with st.sidebar:
+    st.subheader("Select Customer Demo")
     selected_customer_name = st.selectbox(
         label=" ",  # Empty label to minimize visual presence
         options=list(CUSTOMER_CLASSES.keys()),
