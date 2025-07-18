@@ -31,7 +31,7 @@ if "configured" not in st.session_state:
 
 
 tabs = st.tabs([
-    "You",
+    "Space",
     "Stories",
     "People",
     "Drivers",
