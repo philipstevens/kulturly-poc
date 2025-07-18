@@ -134,7 +134,7 @@ class BaseCustomerRenderer:
                 help="Target age demographics"
             )
 
-        st.markdown('<div class="section-header">Content Sources</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-header">Alignment References</div>', unsafe_allow_html=True)
         
         # Resource Input Tabs
         resource_tabs = st.tabs(["Websites & URLs", "Social Handles", "Documents & Reports", "Keywords & Tags"])
@@ -148,20 +148,12 @@ class BaseCustomerRenderer:
             )
             
         with resource_tabs[1]:
-            col1, col2 = st.columns(2)
-            with col1:
-                st.text_area(
-                    "Social Media Handles",
-                    height=80,
-                    placeholder="@brand_handle\n@competitor\n@influencer",
-                    help="Social media accounts to monitor (one per line)"
-                )
-            with col2:
-                social_platforms = st.multiselect(
-                    "Platforms to Monitor",
-                    ["Instagram", "TikTok", "Twitter/X", "LinkedIn", "YouTube", "Facebook", "Reddit", "Discord"],
-                    default=["Instagram", "TikTok"]
-                )
+            st.text_area(
+                "Social Media Handles",
+                height=80,
+                placeholder="@brand_handle\n@competitor\n@influencer",
+                help="List social media accounts that reflect the tone or community of this space. One per line. These will be used for alignment only, not for tracking or monitoring."
+            )
         
         with resource_tabs[2]:
             uploaded_files = st.file_uploader(
@@ -194,119 +186,7 @@ class BaseCustomerRenderer:
                     placeholder="streetwear\nsustainable fashion\nK-beauty\nwellness trends",
                     help="Cultural terms and trends to monitor (one per line)"
                 )
-
-        st.markdown('<div class="section-header">Analysis Settings</div>', unsafe_allow_html=True)
-        
-        with st.expander("Advanced Settings", expanded=False):
-            # Analysis objectives
-            objectives = st.multiselect(
-                "Analysis Objectives",
-                [
-                    "Understand consumer behavior",
-                    "Identify emerging trends", 
-                    "Analyze cultural sentiment",
-                    "Benchmark competition",
-                    "Assess brand perception",
-                    "Find partnership opportunities",
-                    "Discover unaddressed needs",
-                    "Map influence networks",
-                    "Predict cultural shifts"
-                ],
-                default=["Identify emerging trends", "Understand consumer behavior"],
-                help="Select multiple objectives for comprehensive analysis"
-            )
-
-            # Industry context
-            industries = st.multiselect(
-                "Industry Context",
-                [
-                    "Apparel & Fashion", "Consumer Packaged Goods", "Technology", "Healthcare",
-                    "Financial Services", "Retail & E-commerce", "Automotive", "Entertainment & Media", 
-                    "Food & Beverage", "Beauty & Personal Care", "Sports & Fitness", "Travel & Hospitality",
-                    "Education", "Real Estate", "Energy & Environment"
-                ],
-                default=[self.config.get("default_industry", "Consumer Packaged Goods")],
-                help="Industry context helps refine cultural analysis"
-            )
-
-            # Time horizon
-            time_horizon = st.selectbox(
-                "Analysis Time Horizon",
-                ["Real-time (last 30 days)", "Recent trends (last 6 months)", "Emerging patterns (last 2 years)", "Historical context (5+ years)"],
-                index=1,
-                help="How far back to analyze cultural signals"
-            )
-
-            # Source configuration
-            st.markdown('<div class="section-header">Data Sources</div>', unsafe_allow_html=True)
-            
-            source_tabs = st.tabs(["Content Types", "Platform Sources", "Research Sources"])
-            
-            with source_tabs[0]:
-                modalities = st.multiselect(
-                    "Content Modalities",
-                    ["Text", "Images", "Videos", "Audio", "Live Streams", "Stories", "Memes", "Infographics"],
-                    default=["Text", "Images", "Videos"],
-                    help="Types of content to analyze"
-                )
-                
-            with source_tabs[1]:
-                platform_sources = st.multiselect(
-                    "Platform Sources", 
-                    [
-                        "Instagram", "TikTok", "Twitter/X", "LinkedIn", "YouTube", "Facebook",
-                        "Reddit", "Discord", "Telegram", "WhatsApp", "Clubhouse", "Twitch",
-                        "Pinterest", "Snapchat", "BeReal", "Threads"
-                    ],
-                    default=["Instagram", "TikTok", "Twitter/X"],
-                    help="Social platforms to monitor"
-                )
-                
-            with source_tabs[2]:
-                research_sources = st.multiselect(
-                    "Research & Media Sources",
-                    [
-                        "Academic Papers", "Market Research Reports", "Industry White Papers",
-                        "News Articles", "Press Releases", "Patent Filings", "Government Data",
-                        "Survey Data", "Review Platforms", "Forums & Communities", "Podcasts",
-                        "Cultural Artifacts", "Fashion Lookbooks", "Music Charts", "Trend Reports"
-                    ],
-                    default=["Market Research Reports", "News Articles", "Review Platforms"],
-                    help="Research and media sources to include"
-                )
-
-            # Analysis capabilities
-            st.markdown('<div class="section-header">Analysis Capabilities</div>', unsafe_allow_html=True)
-            
-            capabilities_col1, capabilities_col2 = st.columns(2)
-            
-            with capabilities_col1:
-                enable_network = st.checkbox(
-                    "Network Analysis & Influence Mapping",
-                    value=True,
-                    help="Map cultural influencers and information flow"
-                )
-                
-                enable_sentiment = st.checkbox(
-                    "Cultural Sentiment Analysis", 
-                    value=True,
-                    help="Analyze emotional tone and cultural reception"
-                )
-                
-            with capabilities_col2:
-                enable_prediction = st.checkbox(
-                    "Trend Prediction & Forecasting",
-                    value=True, 
-                    help="Predict future cultural movements"
-                )
-                
-                enable_gaps = st.checkbox(
-                    "Opportunity Gap Detection",
-                    value=True,
-                    help="Identify unaddressed cultural needs"
-                )
-
-            st.markdown("---")
+    
         
         if st.button("Build Cultural Observatory", type="primary", use_container_width=True):
             steps = [
