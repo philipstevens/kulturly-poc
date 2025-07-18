@@ -1,79 +1,49 @@
 import streamlit as st
 import datetime
 import time  
+import os
+from dotenv import load_dotenv
 from customers.puma import Puma
 from customers.morinaga import Morinaga
+
+load_dotenv()
+
+is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
 
 CUSTOMER_CLASSES = {
     "Puma": Puma,
     "Morinaga": Morinaga
 }
 
-
-# ― Page layout ―
 st.set_page_config(layout="wide")
 
-# Place this in sidebar, keep discrete and unstyled
 with st.sidebar:
     st.subheader("Select Customer Demo")
     selected_customer_name = st.selectbox(
-        label=" ",  # Empty label to minimize visual presence
+        label=" ",
         options=list(CUSTOMER_CLASSES.keys()),
-        index=0  # Default to Puma
+        index=0 
     )
 
 customer = CUSTOMER_CLASSES[selected_customer_name]()
 
-# ― State initialization ―
-st.session_state.configured = True # default to True for demo purposes, remove for deployment
 if "configured" not in st.session_state:
-    st.session_state.configured = False
+    st.session_state.configured = is_dev_mode  # True in dev, False in production
 
+tab_config = [
+    ("Space", "render_context"),      # Always accessible
+    ("Stories", "render_stories"),
+    ("People", "render_people"),
+    ("Drivers", "render_influencers"),
+    ("Trends", "render_trends"),
+    ("Ideas", "render_ideas")
+]
 
-tabs = st.tabs([
-    "Space",
-    "Stories",
-    "People",
-    "Drivers",
-    "Trends",
-    "Ideas"
-])
+tabs = st.tabs([name for name, _ in tab_config])
 
-# ― Tab 1: Search & Context Setup ―
-with tabs[0]:
-    customer.render_context()
-
-# ― Tab 2: Cultural Narratives ―
-with tabs[1]:
-    if not st.session_state.configured:
-        st.warning("🔒 Add context and generate insights to unlock this section.")
-    else:
-        customer.render_stories()
-
-# ― Tab 3: Personas & Cohorts ―
-with tabs[2]:
-    if not st.session_state.configured:
-        st.warning("🔒 Add context and generate insights to unlock this section.")
-    else:
-        customer.render_people()
-
-# ― Tab 4: Networks & Influencers ―
-with tabs[3]:
-    if not st.session_state.configured:
-        st.warning("🔒 Add context and generate insights to unlock this section.")
-    else:
-        customer.render_influencers()
-
-# ― Tab 5: Trends & Forecasts ―
-with tabs[4]:
-    if not st.session_state.configured:
-        st.warning("🔒 Add context and generate insights to unlock this section.")
-    else:
-        customer.render_trends()
-
-# ― Tab 6: Hypotheses & Recommendations ―
-with tabs[5]:
-    if not st.session_state.configured:
-        st.warning("🔒 Add context and generate insights to unlock this section.")
-    else:
-        customer.render_ideas()
+for i, (_, method_name) in enumerate(tab_config):
+    with tabs[i]:
+        if i == 0 or st.session_state.configured:
+            getattr(customer, method_name)()
+        else:
+            st.warning("🔒 Build cultural observatory to unlock this section.")

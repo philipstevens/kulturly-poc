@@ -29,19 +29,17 @@ class BaseCustomerRenderer:
             text-align: center;
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            color: #1f1f1f;
             }
             .space-subtitle {
             text-align: center;
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            color: #666;
+            opacity: 0.8;
             }
             .section-header {
             font-size: 1.1rem;
             font-weight: 600;
             margin: 1.5rem 0 0.5rem 0;
-            color: #333;
             padding-bottom: 0.3rem;
             }
             .stButton button {
@@ -239,104 +237,143 @@ class BaseCustomerRenderer:
                 help="How far back to analyze cultural signals"
             )
 
-        # Source configuration
-        st.markdown('<div class="section-header">Data Sources</div>', unsafe_allow_html=True)
-        
-        source_tabs = st.tabs(["Content Types", "Platform Sources", "Research Sources"])
-        
-        with source_tabs[0]:
-            modalities = st.multiselect(
-                "Content Modalities",
-                ["Text", "Images", "Videos", "Audio", "Live Streams", "Stories", "Memes", "Infographics"],
-                default=["Text", "Images", "Videos"],
-                help="Types of content to analyze"
-            )
+            # Source configuration
+            st.markdown('<div class="section-header">Data Sources</div>', unsafe_allow_html=True)
             
-        with source_tabs[1]:
-            platform_sources = st.multiselect(
-                "Platform Sources", 
-                [
-                    "Instagram", "TikTok", "Twitter/X", "LinkedIn", "YouTube", "Facebook",
-                    "Reddit", "Discord", "Telegram", "WhatsApp", "Clubhouse", "Twitch",
-                    "Pinterest", "Snapchat", "BeReal", "Threads"
-                ],
-                default=["Instagram", "TikTok", "Twitter/X"],
-                help="Social platforms to monitor"
-            )
+            source_tabs = st.tabs(["Content Types", "Platform Sources", "Research Sources"])
             
-        with source_tabs[2]:
-            research_sources = st.multiselect(
-                "Research & Media Sources",
-                [
-                    "Academic Papers", "Market Research Reports", "Industry White Papers",
-                    "News Articles", "Press Releases", "Patent Filings", "Government Data",
-                    "Survey Data", "Review Platforms", "Forums & Communities", "Podcasts",
-                    "Cultural Artifacts", "Fashion Lookbooks", "Music Charts", "Trend Reports"
-                ],
-                default=["Market Research Reports", "News Articles", "Review Platforms"],
-                help="Research and media sources to include"
-            )
+            with source_tabs[0]:
+                modalities = st.multiselect(
+                    "Content Modalities",
+                    ["Text", "Images", "Videos", "Audio", "Live Streams", "Stories", "Memes", "Infographics"],
+                    default=["Text", "Images", "Videos"],
+                    help="Types of content to analyze"
+                )
+                
+            with source_tabs[1]:
+                platform_sources = st.multiselect(
+                    "Platform Sources", 
+                    [
+                        "Instagram", "TikTok", "Twitter/X", "LinkedIn", "YouTube", "Facebook",
+                        "Reddit", "Discord", "Telegram", "WhatsApp", "Clubhouse", "Twitch",
+                        "Pinterest", "Snapchat", "BeReal", "Threads"
+                    ],
+                    default=["Instagram", "TikTok", "Twitter/X"],
+                    help="Social platforms to monitor"
+                )
+                
+            with source_tabs[2]:
+                research_sources = st.multiselect(
+                    "Research & Media Sources",
+                    [
+                        "Academic Papers", "Market Research Reports", "Industry White Papers",
+                        "News Articles", "Press Releases", "Patent Filings", "Government Data",
+                        "Survey Data", "Review Platforms", "Forums & Communities", "Podcasts",
+                        "Cultural Artifacts", "Fashion Lookbooks", "Music Charts", "Trend Reports"
+                    ],
+                    default=["Market Research Reports", "News Articles", "Review Platforms"],
+                    help="Research and media sources to include"
+                )
 
-        # Analysis capabilities
-        st.markdown('<div class="section-header">Analysis Capabilities</div>', unsafe_allow_html=True)
-        
-        capabilities_col1, capabilities_col2 = st.columns(2)
-        
-        with capabilities_col1:
-            enable_network = st.checkbox(
-                "Network Analysis & Influence Mapping",
-                value=True,
-                help="Map cultural influencers and information flow"
-            )
+            # Analysis capabilities
+            st.markdown('<div class="section-header">Analysis Capabilities</div>', unsafe_allow_html=True)
             
-            enable_sentiment = st.checkbox(
-                "Cultural Sentiment Analysis", 
-                value=True,
-                help="Analyze emotional tone and cultural reception"
-            )
+            capabilities_col1, capabilities_col2 = st.columns(2)
             
-        with capabilities_col2:
-            enable_prediction = st.checkbox(
-                "Trend Prediction & Forecasting",
-                value=True, 
-                help="Predict future cultural movements"
-            )
-            
-            enable_gaps = st.checkbox(
-                "Opportunity Gap Detection",
-                value=True,
-                help="Identify unaddressed cultural needs"
-            )
+            with capabilities_col1:
+                enable_network = st.checkbox(
+                    "Network Analysis & Influence Mapping",
+                    value=True,
+                    help="Map cultural influencers and information flow"
+                )
+                
+                enable_sentiment = st.checkbox(
+                    "Cultural Sentiment Analysis", 
+                    value=True,
+                    help="Analyze emotional tone and cultural reception"
+                )
+                
+            with capabilities_col2:
+                enable_prediction = st.checkbox(
+                    "Trend Prediction & Forecasting",
+                    value=True, 
+                    help="Predict future cultural movements"
+                )
+                
+                enable_gaps = st.checkbox(
+                    "Opportunity Gap Detection",
+                    value=True,
+                    help="Identify unaddressed cultural needs"
+                )
 
-        st.markdown("---")
+            st.markdown("---")
         
-        if st.button("Build Cultural Space", type="primary", use_container_width=True):
+        if st.button("Build Cultural Observatory", type="primary", use_container_width=True):
             steps = [
-                "Initializing...",
-                "Retrieving relevant sources…",
-                "Applying cultural lens...",
-                "Finding hidden patterns...",
-                "Generating insights...",
-                "Finalizing...",
+                ("🔧", "Initializing observatory environment..."),
+                ("🔗", "Linking relevant data and signal sources..."),
+                ("🧠", "Applying cultural and contextual frameworks..."),
+                ("🔍", "Structuring pattern detection models..."),
+                ("⚡", "Preparing systems for insight extraction..."),
+                ("🏁", "Finalizing observatory setup..."),
             ]
-            progress = st.progress(0)
-            status = st.empty()
-
-            for i, msg in enumerate(steps):
-                status.text(msg)
-                # advance progress bar incrementally
-                progress.progress((i + 1) / len(steps))
-                if i in [0, 2, 5]:
-                    time.sleep(1) 
-                else: 
-                    time.sleep(3)
-
-            # clean up
-            progress.empty()
-            status.empty()
-
+            
+            # Container for the build log
+            build_container = st.container()
+            
+            with build_container:
+                build_log = st.empty()
+                
+                completed_steps = []
+                
+                for i, (emoji, msg) in enumerate(steps):
+                    # Add current step as "in progress"
+                    current_steps = completed_steps + [f"🔄 {msg}"]
+                    
+                    # Display all steps
+                    log_html = "<div style='font-family: monospace; font-size: 14px; line-height: 1.8;'>"
+                    for step in current_steps[:-1]:  # completed steps
+                        log_html += f"<div style='margin: 5px 0;'>{step}</div>"
+                    # current step with spinner
+                    log_html += f"<div style='margin: 5px 0; animation: pulse 1.5s infinite;'>{current_steps[-1]}</div>"
+                    log_html += "</div>"
+                    
+                    # Add CSS for spinner animation
+                    st.markdown("""
+                    <style>
+                    @keyframes pulse {
+                        0% { opacity: 1; }
+                        50% { opacity: 0.5; }
+                        100% { opacity: 1; }
+                    }
+                    </style>
+                    """, unsafe_allow_html=True)
+                    
+                    build_log.markdown(log_html, unsafe_allow_html=True)
+                    
+                    # Simulate work time
+                    if i in [0, 5]:
+                        time.sleep(1.5)
+                    else:
+                        time.sleep(2.5)
+                    
+                    # Mark step as completed
+                    completed_steps.append(f"✅ {emoji} {msg.replace('...', ' - Complete')}")
+                
+                # Final display with all completed steps
+                final_log_html = "<div style='font-family: monospace; font-size: 14px; line-height: 1.8;'>"
+                for step in completed_steps:
+                    final_log_html += f"<div style='margin: 5px 0;'>{step}</div>"
+                final_log_html += "</div>"
+                
+                build_log.markdown(final_log_html, unsafe_allow_html=True)
+                
+                # Add a brief pause before success message
+                time.sleep(1)
+                
+                st.success("🎉 Observatory Built Successfully! Other tabs are now unlocked.")
+                
             st.session_state.configured = True
-            st.success("✅ Insights Generated! Other tabs are now unlocked.")
 
     def render_stories(self):
         pass

@@ -5,3 +5,4 @@ wordcloud
 numpy
 altair
 scikit-learn
+python-dotenv
