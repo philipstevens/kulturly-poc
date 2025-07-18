@@ -134,7 +134,7 @@ class BaseCustomerRenderer:
                 help="Target age demographics"
             )
 
-        st.markdown('<div class="section-header">Source Materials & Resources</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-header">Content Sources</div>', unsafe_allow_html=True)
         
         # Resource Input Tabs
         resource_tabs = st.tabs(["Websites & URLs", "Social Handles", "Documents & Reports", "Keywords & Tags"])
@@ -388,4 +388,10 @@ class BaseCustomerRenderer:
         pass
 
     def render_ideas(self):
+        pass
+
+    def render_ask(self):
+        pass
+
+    def render_deep_dive(self):
         pass
