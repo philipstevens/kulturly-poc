@@ -42,7 +42,6 @@ class BaseCustomerRenderer:
             font-weight: 600;
             margin: 1.5rem 0 0.5rem 0;
             color: #333;
-            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 0.3rem;
             }
             .stButton button {
