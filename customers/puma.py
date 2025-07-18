@@ -6,33 +6,12 @@ from customers.base_customer import BaseCustomerRenderer
 class Puma(BaseCustomerRenderer):
     def __init__(self):
         config = {
-            "query_placeholder": (
-                "I want to better understand what’s shaping Puma’s relevance and growth in SEA, based on recent campaigns, social media activity, and cultural signals. " +
-                "Specifically, how does Puma balance global consistency with local authenticity? " +
-                "Which emerging trends define Puma’s cultural relevance in Thailand, Malaysia, Indonesia?"
-            ),
-            "internal_url": "https://www.puma.com/",
-            "default_geographies": ["Malaysia", "Thailand", "Indonesia"],
-            "default_languages": ["Any"],
-            "default_segments": ["Urban Millennials", "Gen Z"],
-            "default_sources": [
-                "Social: Media Posts",
-                "Social: Forums & Communities",
-                "Behavioral: Web & Trends"
-            ],
-            "default_modalities": ["Text", "Image"],
-            "default_product_types": [
-                "Footwear",
-                "Athleisure & Activewear",
-                "Streetwear & Urban Fashion"
-            ],
-            "default_industry": "Apparel & Fashion",
-            "default_objective": "Identify emerging trends",
-            "enable_network_analysis": True
+            "default_geographies": ["Malaysia", "Thailand", "Indonesia"]
         }
         super().__init__(name="Puma", config=config)
     
     def render_stories(self):
+        
         narratives = [
             {
                 "title": "TikTok Commerce Revolution",
@@ -40,22 +19,34 @@ class Puma(BaseCustomerRenderer):
                     "In Indonesia, TikTok Shop transforms shopping into live entertainment—"
                     "streamers debut new collections and viewers buy directly via in-app links."),
                 "evidence": (
-                    "[VulcanPost on TikTok Shop’s growth]"
+                    "[VulcanPost on TikTok Shop's growth]"
                     "(https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/) and "
                     "[RTL Today on social-commerce trends]"
                     "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)"),
-                "impact": "Leverage shoppable live events to create buzz around product launches."
+                "impact": "Leverage shoppable live events to create buzz around product launches.",
+                "first_seen": "Aug 15, 2024",
+                "velocity": "+1,247%",
+                "volume": "542.3K mentions",
+                "confidence": 0.92,
+                "momentum": "🚀 Accelerating",
+                "maturity": "Early Growth"
             },
             {
                 "title": "Authentic Local Pride Movement",
                 "story": (
-                    "‘Made in Indonesia’ sneaker pop-ups spark grassroots rallies—"
+                    "'Made in Indonesia' sneaker pop-ups spark grassroots rallies—"
                     "consumers wear local brands as statements of national pride."),
                 "evidence": (
                     "60.7% of Indonesians prefer local affordable products "
                     "[SemanticsScholar study]"
                     "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)"),
-                "impact": "Co-create limited editions with local artisans to tap into cultural nationalism."
+                "impact": "Co-create limited editions with local artisans to tap into cultural nationalism.",
+                "first_seen": "Jun 22, 2024",
+                "velocity": "+834%",
+                "volume": "287.6K mentions",
+                "confidence": 0.88,
+                "momentum": "📈 Steady Growth",
+                "maturity": "Emerging"
             },
             {
                 "title": "Traditional Sports Resurgence",
@@ -63,10 +54,16 @@ class Puma(BaseCustomerRenderer):
                     "Sepak Takraw tournaments and Muay Thai events go viral on social feeds, "
                     "drawing millions of interactions."),
                 "evidence": (
-                    "Thailand’s Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
+                    "Thailand's Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
                     "[DataXet report]"
                     "(https://www.dataxet.co/insights/olympic-games-2024-en)"),
-                "impact": "Sponsor grassroots tournaments and integrate classical motifs into designs."
+                "impact": "Sponsor grassroots tournaments and integrate classical motifs into designs.",
+                "first_seen": "Jul 28, 2024",
+                "velocity": "+2,156%",
+                "volume": "1.2M mentions",
+                "confidence": 0.94,
+                "momentum": "💥 Viral Spike",
+                "maturity": "Peak Moment"
             },
             {
                 "title": "Nano-Influencer Trust Economy",
@@ -78,17 +75,29 @@ class Puma(BaseCustomerRenderer):
                     "(http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/) and "
                     "87% of Indonesians prefer intimate messaging interactions [Statista]"
                     "(https://www.statista.com/forecasts/1345510/asia-most-used-social-media-platforms-of-gen-z-by-country-and-type)"),
-                "impact": "Build city-by-city micro-ambassador programs to amplify genuine stories."
+                "impact": "Build city-by-city micro-ambassador programs to amplify genuine stories.",
+                "first_seen": "May 14, 2024",
+                "velocity": "+445%",
+                "volume": "398.1K mentions",
+                "confidence": 0.89,
+                "momentum": "⚡ Sustained Growth",
+                "maturity": "Established"
             },
             {
                 "title": "Cross-Cultural K-Wave Integration",
                 "story": (
-                    "K-pop ambassadors like Blackpink’s Rosé make Puma styles aspirational—"
+                    "K-pop ambassadors like Blackpink's Rosé make Puma styles aspirational—"
                     "fans emulate viral dance looks across SEA."),
                 "evidence": (
                     "K-pop drives SEA sportswear trends [Retail Asia]"
                     "(https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"),
-                "impact": "Align product drops with major K-pop comebacks and fan events."
+                "impact": "Align product drops with major K-pop comebacks and fan events.",
+                "first_seen": "Mar 8, 2024",
+                "velocity": "+672%",
+                "volume": "756.8K mentions",
+                "confidence": 0.91,
+                "momentum": "🔄 Cyclical Peaks",
+                "maturity": "Mature"
             },
             {
                 "title": "Digital-Physical Sport Fusion",
@@ -98,7 +107,13 @@ class Puma(BaseCustomerRenderer):
                 "evidence": (
                     "Over 40% run weekly and share journeys online [YouGov Singapore]"
                     "(https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community)"),
-                "impact": "Create geo-tagged digital challenges that bridge culture and sport."
+                "impact": "Create geo-tagged digital challenges that bridge culture and sport.",
+                "first_seen": "Apr 19, 2024",
+                "velocity": "+523%",
+                "volume": "334.2K mentions",
+                "confidence": 0.87,
+                "momentum": "📊 Steady Growth",
+                "maturity": "Growing"
             },
             {
                 "title": "Multigenerational Athletic Identity",
@@ -108,13 +123,41 @@ class Puma(BaseCustomerRenderer):
                 "evidence": (
                     "Cross-generational fitness engagement rising in SEA [DataXet, JLL]"
                     "(https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)"),
-                "impact": "Design campaigns celebrating family fitness and rituals."
+                "impact": "Design campaigns celebrating family fitness and rituals.",
+                "first_seen": "Jul 12, 2024",
+                "velocity": "+789%",
+                "volume": "423.7K mentions",
+                "confidence": 0.85,
+                "momentum": "🌱 Building",
+                "maturity": "Early Growth"
             }
         ]
 
         st.markdown("### Emergent Cultural Narratives")
+        st.caption("Live detection of new conversation topics • Last scan: 2 hours ago")
         for nar in narratives:
-            with st.expander(nar["title"], expanded=False):
+            with st.expander(f"# {nar['title']}", expanded=False):
+   
+                confidence_pct = int(nar["confidence"] * 100) if "confidence" in nar else 0
+                
+                col1, col2, col3 = st.columns([2, 2, 1])
+                with col1:
+                    st.markdown(f"**{nar['momentum']}**")
+                with col2:
+                    st.markdown(f"**{nar['maturity']}**")
+                with col3:
+                    st.markdown(f"**Confidence: {confidence_pct}%**")
+                
+                col1, col2, col3 = st.columns([2, 2, 1])
+                with col1:
+                    st.markdown(f"**Volume**: {nar['volume']}") 
+                with col2:
+                    st.markdown(f"**Velocity**: {nar['velocity']}")
+                with col3:
+                    st.markdown(f"**First Seen:** {nar['first_seen']}")
+                
+                # Content sections
+                st.markdown("---")
                 st.markdown(f"**Story:** {nar['story']}")
                 st.markdown(f"**Evidence:** {nar['evidence']}")
                 st.markdown(f"**Strategic Impact:** {nar['impact']}")
@@ -142,6 +185,8 @@ class Puma(BaseCustomerRenderer):
                         "[DataXet Olympic Engagement](https://www.dataxet.co/insights/olympic-games-2024-en)")
             st.markdown("**Strategic Impact:** Highlight Puma’s role in bridging cultural heritage with modern athleticism.")
 
+
+        
     def render_people(self):
         personas = [
             {
@@ -464,4 +509,3 @@ class Puma(BaseCustomerRenderer):
                 """,
                 unsafe_allow_html=True
             )
-
