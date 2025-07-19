@@ -10,16 +10,24 @@ class Puma(BaseCustomerRenderer):
         }
         super().__init__(name="Puma", config=config)
     
+    def _parse_markdown_links(self, text):
+        """Convert markdown-style links [text](url) to HTML <a> tags"""
+        import re
+        pattern = r'\[([^\]]+)\]\(([^)]+)\)'
+        return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
+    
     def render_stories(self):
         #region Emergent Cultural Narratives
         st.markdown("### Emergent Cultural Narratives")
         st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
+        
         narratives = [
             {
                 "title": "TikTok Commerce Revolution",
                 "story": (
                     "In Indonesia, TikTok Shop transforms shopping into live entertainment—"
                     "streamers debut new collections and viewers buy directly via in-app links."),
+                "story_preview": "TikTok Shop transforms shopping into live entertainment in Indonesia...",
                 "evidence": (
                     "[VulcanPost on TikTok Shop's growth]"
                     "(https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/) and "
@@ -31,13 +39,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "542.3K mentions",
                 "confidence": 0.92,
                 "momentum": "🚀 Accelerating",
-                "maturity": "Early Growth"
+                "maturity": "Early Growth",
+                "trend_color": "#FF6B6B"
             },
             {
                 "title": "Authentic Local Pride Movement",
                 "story": (
                     "'Made in Indonesia' sneaker pop-ups spark grassroots rallies—"
                     "consumers wear local brands as statements of national pride."),
+                "story_preview": "'Made in Indonesia' sneaker pop-ups spark grassroots rallies...",
                 "evidence": (
                     "60.7% of Indonesians prefer local affordable products "
                     "[SemanticsScholar study]"
@@ -48,13 +58,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "287.6K mentions",
                 "confidence": 0.88,
                 "momentum": "📈 Steady Growth",
-                "maturity": "Emerging"
+                "maturity": "Emerging",
+                "trend_color": "#4ECDC4"
             },
             {
                 "title": "Traditional Sports Resurgence",
                 "story": (
                     "Sepak Takraw tournaments and Muay Thai events go viral on social feeds, "
                     "drawing millions of interactions."),
+                "story_preview": "Sepak Takraw tournaments and Muay Thai events go viral on social feeds...",
                 "evidence": (
                     "Thailand's Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
                     "[DataXet report]"
@@ -65,13 +77,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "1.2M mentions",
                 "confidence": 0.94,
                 "momentum": "💥 Viral Spike",
-                "maturity": "Peak Moment"
+                "maturity": "Peak Moment",
+                "trend_color": "#FFE66D"
             },
             {
                 "title": "Nano-Influencer Trust Economy",
                 "story": (
                     "Micro-influencers (1k–10k followers) spark authentic conversations—"
                     "their daily posts on Puma gear drive deeper trust than celebrity endorsements."),
+                "story_preview": "Micro-influencers spark authentic conversations with deeper trust...",
                 "evidence": (
                     "Nano-influencers command 46% greater trust [Pongoshare report]"
                     "(http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/) and "
@@ -83,13 +97,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "398.1K mentions",
                 "confidence": 0.89,
                 "momentum": "⚡ Sustained Growth",
-                "maturity": "Established"
+                "maturity": "Established",
+                "trend_color": "#A8E6CF"
             },
             {
                 "title": "Cross-Cultural K-Wave Integration",
                 "story": (
                     "K-pop ambassadors like Blackpink's Rosé make Puma styles aspirational—"
                     "fans emulate viral dance looks across SEA."),
+                "story_preview": "K-pop ambassadors make Puma styles aspirational across SEA...",
                 "evidence": (
                     "K-pop drives SEA sportswear trends [Retail Asia]"
                     "(https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"),
@@ -99,13 +115,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "756.8K mentions",
                 "confidence": 0.91,
                 "momentum": "🔄 Cyclical Peaks",
-                "maturity": "Mature"
+                "maturity": "Mature",
+                "trend_color": "#DDA0DD"
             },
             {
                 "title": "Digital-Physical Sport Fusion",
                 "story": (
                     "Runners and athletes document temple runs and treks in Puma gear—"
                     "turning workouts into social challenges."),
+                "story_preview": "Runners document temple runs, turning workouts into social challenges...",
                 "evidence": (
                     "Over 40% run weekly and share journeys online [YouGov Singapore]"
                     "(https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community)"),
@@ -115,13 +133,15 @@ class Puma(BaseCustomerRenderer):
                 "volume": "334.2K mentions",
                 "confidence": 0.87,
                 "momentum": "📊 Steady Growth",
-                "maturity": "Growing"
+                "maturity": "Growing",
+                "trend_color": "#87CEEB"
             },
             {
                 "title": "Multigenerational Athletic Identity",
                 "story": (
                     "Olympic heroes and wellness seekers unite—grandparents and grandchildren "
                     "share Puma fitness moments across generations."),
+                "story_preview": "Olympic heroes and wellness seekers unite across generations...",
                 "evidence": (
                     "Cross-generational fitness engagement rising in SEA [DataXet, JLL]"
                     "(https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)"),
@@ -131,27 +151,57 @@ class Puma(BaseCustomerRenderer):
                 "volume": "423.7K mentions",
                 "confidence": 0.85,
                 "momentum": "🌱 Building",
-                "maturity": "Early Growth"
+                "maturity": "Early Growth",
+                "trend_color": "#F0A500"
             }
         ]
-        for nar in narratives:
-            with st.expander(f"# {nar['title']}", expanded=False):
-                confidence_pct = int(nar["confidence"] * 100)
-                m1, m2, m3 = st.columns([2, 2, 1])
-                m1.markdown(f"**Momentum:** {nar['momentum']}") 
-                m2.markdown(f"**Maturity:** {nar['maturity']}") 
-                m3.markdown(f"**Confidence:** {confidence_pct}%")
-
-                # Volume/velocity/first seen
-                v1, v2, v3 = st.columns([2, 2, 1])
-                v1.markdown(f"**Volume:** {nar['volume']}")
-                v2.markdown(f"**Velocity:** {nar['velocity']}")
-                v3.markdown(f"**First Seen:** {nar['first_seen']}")
-
-                st.markdown("---")
-                st.markdown(f"**Story:** {nar['story']}")
-                st.markdown(f"**Evidence:** {nar['evidence']}")
-                st.markdown(f"**Strategic Impact:** {nar['impact']}")
+        
+        # Display narratives in a 2-column grid
+        cols = st.columns(2)
+        for idx, nar in enumerate(narratives):
+            col = cols[idx % 2]
+            confidence_pct = int(nar["confidence"] * 100)
+            evidence_html = self._parse_markdown_links(nar["evidence"])
+            
+            # Create an engaging card with key info upfront
+            with col:
+                # Create card using simple HTML structure like in render_people
+                card_html = (
+                    f'<div style="border: 2px solid {nar["trend_color"]}; border-radius: 8px; padding: 16px; margin-bottom: 16px;">'
+                    f'  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">'
+                    f'    <strong style="font-size: 16px;">{nar["title"]}</strong>'
+                    f'    <b><small style="background-color: {nar["trend_color"]}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;">{nar["maturity"]}</small></b>'
+                    f'  </div>'
+                    f'  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">'
+                    f'    <div><strong>{nar["momentum"]}</strong></div>'
+                    f'    <div><strong>{confidence_pct}% confidence</strong></div>'
+                    f'    <div><strong>Volume:</strong> {nar["volume"]}</div>'
+                    f'    <div><strong>Velocity:</strong> {nar["velocity"]}</div>'
+                    f'  </div>'
+                    f'  <details style="margin-top: 16px; border-radius: 8px; overflow: hidden;">'
+                    f'    <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>'
+                    f'    <div style="padding: 0 16px 16px; border-top: 1px solid; line-height: 1.6;">'
+                    f'      <section style="margin: 12px 0;">'
+                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>'
+                    f'        <p style="margin: 0;">{nar["story"]}</p>'
+                    f'      </section>'
+                    f'      <section style="margin: 12px 0;">'
+                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Evidence</h4>'
+                    f'        <p style="margin: 0;">{evidence_html}</p>'
+                    f'      </section>'
+                    f'      <section style="margin: 12px 0;">'
+                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Strategic Impact</h4>'
+                    f'        <p style="margin: 0;">{nar["impact"]}</p>'
+                    f'      </section>'
+                    f'      <section style="margin: 12px 0;">'
+                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>'
+                    f'        <p style="margin: 0;">First seen: {nar["first_seen"]}</p>'
+                    f'      </section>'
+                    f'    </div>'
+                    f'  </details>'
+                    '</div>'
+                )
+                st.markdown(card_html, unsafe_allow_html=True)
         #endregion
 
         #region Regional Framings
@@ -231,7 +281,7 @@ class Puma(BaseCustomerRenderer):
 
         #region Semantic Evolution
         st.markdown("### Semantic Evolution")
-        st.caption("Tracking how meanings shift across cultural contexts and time")
+        st.caption("How key terms shift meaning across contexts and time")
         evolution_data = {
             "Athletic": {
                 "evolution": {
@@ -321,16 +371,14 @@ class Puma(BaseCustomerRenderer):
                 timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
                 for year, meaning in data["evolution"].items():
                     timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
-                timeline_html += '</div>'
-                
-                st.markdown(timeline_html, unsafe_allow_html=True)
-                
+                timeline_html += '</div>'               
+                st.markdown(timeline_html, unsafe_allow_html=True)              
                 st.info(f"**Shift driver:** {data['shift_driver']}")
         #endregion
 
         #region Hidden Cultural Dimensions
         st.markdown("### Hidden Cultural Dimensions")
-        st.caption("Underlying conceptual tensions organizing meaning across domains and behaviors")
+        st.caption("Underlying conceptual tensions organizing meaning across domains.")
         dimensions = [
             {
                 "axis": "Traditional Heritage ↔ Global Modernity",
@@ -373,8 +421,8 @@ class Puma(BaseCustomerRenderer):
         #endregion
 
         #region Cross-Domain Analogies
-        st.markdown("### Cross-Domain Analogies")
-        st.caption("Surprising connections between disparate concepts")
+        st.markdown("### Cross-Domain Connections")
+        st.caption("Illustrative parallels showing shared structure across domains")
         metaphor_sets = [
             {
                 "title": "Rituals and Drops",
@@ -462,20 +510,14 @@ class Puma(BaseCustomerRenderer):
                 ]
             }
         ]
-        for metaphor in metaphor_sets:
-            with st.expander(f"{metaphor['title']}"):
-                st.markdown(f"**Metaphor:** *{metaphor['metaphor']}*")
-                st.caption(metaphor["narrative"])
-
-                col1, col2, col3 = st.columns([1, 1, 1])
-                col1.markdown(f"**{metaphor['columns'][0]}**")
-                col2.markdown(f"**{metaphor['columns'][1]}**")
-                col3.markdown(f"**{metaphor['columns'][2]}**")
-
-                for row in metaphor["rows"]:
-                    col1.markdown(f"- {row[0]}")
-                    col2.markdown(f"- {row[1]}")
-                    col3.markdown(f"- {row[2]}")
+        for m in metaphor_sets:
+            with st.expander(f"{m['title']}"):
+                st.markdown(f"*{m['metaphor']}*")
+                st.caption(m["narrative"])
+                c1, c2, c3 = st.columns(3)
+                c1.markdown(f"**{m['columns'][0]}**"); c2.markdown(f"**{m['columns'][1]}**"); c3.markdown(f"**{m['columns'][2]}**")
+                for row in m["rows"]:
+                    c1.markdown(f"- {row[0]}"); c2.markdown(f"- {row[1]}"); c3.markdown(f"- {row[2]}")
         #endregion
 
     def render_people(self):
