@@ -185,6 +185,110 @@ class Puma(BaseCustomerRenderer):
                         "[DataXet Olympic Engagement](https://www.dataxet.co/insights/olympic-games-2024-en)")
             st.markdown("**Strategic Impact:** Highlight Puma’s role in bridging cultural heritage with modern athleticism.")
 
+        evolution_data = {
+            "Athletic": {
+                "evolution": {
+                    "2020": "Performance-driven, elite training and competition",
+                    "2022": "Holistic wellness, part of daily lifestyle",
+                    "2024": "Cultural ritual and intergenerational identity expression"
+                },
+                "shift_driver": "Rise of family fitness rituals + digital temple run culture"
+            },
+            "Local": {
+                "evolution": {
+                    "2020": "Lower-cost, less prestigious alternative to global",
+                    "2022": "Conscious consumer choice rooted in ethics and community",
+                    "2024": "Badge of national pride and creative defiance ('Bangga Buatan Lokal')"
+                },
+                "shift_driver": "Authentic Local Pride Movement + youth-led brand activism"
+            },
+            "Influencer": {
+                "evolution": {
+                    "2020": "Celebrity-endorsed voice with mass appeal",
+                    "2022": "Niche content creator with targeted trust",
+                    "2024": "Micro-trusted insider shaping local peer norms"
+                },
+                "shift_driver": "Nano-Influencer Trust Economy + community-driven storytelling"
+            },
+            "Shopping": {
+                "evolution": {
+                    "2020": "Utility-based transaction, often price-driven",
+                    "2022": "Blended experience—store + screen",
+                    "2024": "Live, immersive entertainment-commerce (e.g., TikTok Shop)"
+                },
+                "shift_driver": "TikTok Commerce Revolution + rise of shoppable livestreams"
+            },
+            "Sport": {
+                "evolution": {
+                    "2020": "Competitive, rule-bound, institutional",
+                    "2022": "Wellness-focused, self-paced and expressive",
+                    "2024": "Hybrid ritual—physical + social + digital (e.g., temple runs, viral Muay Thai clips)"
+                },
+                "shift_driver": "Traditional Sports Resurgence + digital-physical fusion"
+            },
+            "Run": {
+                "evolution": {
+                    "2020": "Solo fitness activity for endurance or health",
+                    "2022": "Group challenge, social activity",
+                    "2024": "Narrative moment—shared journey through culture and landscape"
+                },
+                "shift_driver": "Geo-tagged storytelling + Digital-Physical Sport Fusion"
+            },
+            "Family": {
+                "evolution": {
+                    "2020": "Private unit of care and tradition",
+                    "2022": "Support system for active aging and youth fitness",
+                    "2024": "Visible multi-generational wellness tribe (e.g., shared gymwear, joint challenges)"
+                },
+                "shift_driver": "Multigenerational Athletic Identity + SEA aging dynamics"
+            },
+            "K-Pop": {
+                "evolution": {
+                    "2020": "Youth entertainment from Korea",
+                    "2022": "Style and beauty benchmark across Asia",
+                    "2024": "Global commercial driver shaping fashion, sport, and fan identity"
+                },
+                "shift_driver": "Cross-Cultural K-Wave Integration + fandom-based fashion cycles"
+            },
+            "Pride": {
+                "evolution": {
+                    "2020": "Personal achievement or social status",
+                    "2022": "Cultural heritage and collective memory",
+                    "2024": "Activist signal and community badge (e.g., wearing local = resistance + celebration)"
+                },
+                "shift_driver": "Local brand loyalty + youth-led identity politics"
+            },
+            "Event": {
+                "evolution": {
+                    "2020": "Fixed-time, in-person occasion (concert, launch)",
+                    "2022": "Hybrid, planned-in-advance live/digital blend",
+                    "2024": "Fluid, participatory content moment (e.g., live drops, shoppable streams)"
+                },
+                "shift_driver": "Livestream culture + collapse of boundary between media & retail"
+            }
+        }
+
+        st.markdown("### Semantic Evolution")
+        st.caption("Tracking how meanings shift across cultural contexts and time")
+
+        # Create tabs for each term
+        tab_names = list(evolution_data.keys())
+        tabs = st.tabs([f"'{term}'" for term in tab_names])
+        
+        for i, (term, data) in enumerate(evolution_data.items()):
+            with tabs[i]:               
+                # Create a styled container for the evolution timeline
+                timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
+                for year, meaning in data["evolution"].items():
+                    timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
+                timeline_html += '</div>'
+                
+                st.markdown(timeline_html, unsafe_allow_html=True)
+                
+                # Display shift driver in a highlighted box
+                st.info(f"**Shift driver:** {data['shift_driver']}")
+
+
 
         
     def render_people(self):

@@ -17,13 +17,16 @@ CUSTOMER_CLASSES = {
 
 st.set_page_config(layout="wide")
 
-with st.sidebar:
-    st.subheader("Select Customer Demo")
-    selected_customer_name = st.selectbox(
-        label=" ",
-        options=list(CUSTOMER_CLASSES.keys()),
-        index=0 
-    )
+selected_customer_name = "Puma"  # Default selection
+
+if not is_dev_mode:
+    with st.sidebar:
+        st.subheader("Select Customer Demo")
+        selected_customer_name = st.selectbox(
+            label=" ",
+            options=list(CUSTOMER_CLASSES.keys()),
+            index=0 
+        )
 
 customer = CUSTOMER_CLASSES[selected_customer_name]()
 
