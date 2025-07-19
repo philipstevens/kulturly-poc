@@ -134,7 +134,7 @@ class Puma(BaseCustomerRenderer):
         ]
 
         st.markdown("### Emergent Cultural Narratives")
-        st.caption("Live detection of new conversation topics • Last scan: 2 hours ago")
+        st.caption("Current themes and stories taking shape • Last scan: 2 hours ago")
         for nar in narratives:
             with st.expander(f"# {nar['title']}", expanded=False):
    
@@ -162,7 +162,8 @@ class Puma(BaseCustomerRenderer):
                 st.markdown(f"**Evidence:** {nar['evidence']}")
                 st.markdown(f"**Strategic Impact:** {nar['impact']}")
 
-        st.markdown("### Cross-Cultural Differences in Framing")
+        st.markdown("### Local Cultural Perspectives")
+        st.caption("How core ideas are locally interpreted and emphasized across cultures")
         with st.expander("Performance vs. Lifestyle", expanded=False):
             st.markdown("**Indonesia:** frames fitness as community building and faith-compatible wellness")
             st.markdown("**Malaysia:** balances multicultural sporting traditions with modern athleisure")
@@ -273,7 +274,7 @@ class Puma(BaseCustomerRenderer):
 
         # Create tabs for each term
         tab_names = list(evolution_data.keys())
-        tabs = st.tabs([f"'{term}'" for term in tab_names])
+        tabs = st.tabs([f"{term}" for term in tab_names])
         
         for i, (term, data) in enumerate(evolution_data.items()):
             with tabs[i]:               
@@ -287,6 +288,159 @@ class Puma(BaseCustomerRenderer):
                 
                 # Display shift driver in a highlighted box
                 st.info(f"**Shift driver:** {data['shift_driver']}")
+
+        st.markdown("### Hidden Cultural Dimensions")
+        st.caption("Underlying conceptual tensions organizing meaning across domains and behaviors")
+
+        dimensions = [
+            {
+                "axis": "Traditional Heritage ↔ Global Modernity",
+                "intuitive_label": "From Temple Runs to TikTok Trends",
+                "relative_strength": "Strong signal across clusters",
+                "key_markers": ["sepak takraw", "temple runs", "K-pop fashion", "TikTok Shop"],
+                "narrative": (
+                    "This dimension reflects how audiences move between celebrating traditional rituals "
+                    "and embracing hyper-globalized, digital-first experiences. Cultural authenticity and modern aspiration "
+                    "aren't opposites—they’re being blended in new ways."
+                )
+            },
+            {
+                "axis": "Collective Identity ↔ Individual Aspiration",
+                "intuitive_label": "From Community Rituals to Personal Style",
+                "relative_strength": "Moderate signal, especially in sport/fashion narratives",
+                "key_markers": ["local brand pride", "family fitness", "nano-influencers", "Puma self-expression"],
+                "narrative": (
+                    "People express themselves both as proud members of a cultural group and as individuals with distinct taste. "
+                    "Whether through family workouts or curated fashion looks, this tension defines how identity is shaped today."
+                )
+            },
+            {
+                "axis": "Functional Use ↔ Experiential Performance",
+                "intuitive_label": "From Gear to Theater",
+                "relative_strength": "Emerging signal in commerce and sport",
+                "key_markers": ["product drop events", "live shopping", "temple runs", "performance gear"],
+                "narrative": (
+                    "What used to be practical is now performative—shoes are worn to be seen in, shopping is entertainment, "
+                    "and sport is a shareable spectacle. Audiences expect experiences, not just utility."
+                )
+            }
+        ]
+
+        for i, dim in enumerate(dimensions, 1):
+            with st.expander(f"Dimension {i}: {dim['axis']}"):
+                st.caption(dim['intuitive_label'])
+                st.markdown(f"**Cultural Signals:** {', '.join(dim['key_markers'])}")
+                st.markdown(f"**Strength:** {dim['relative_strength']}")
+                st.caption(dim['narrative'])
+
+        st.markdown("### Cross-Domain Analogies")
+        st.caption("Surprising connections between disparate concepts")
+
+
+        metaphor_sets = [
+            {
+                "title": "Rituals and Drops",
+                "metaphor": "Structured anticipation across sacred and commercial moments.",
+                "narrative": (
+                    "Religious and seasonal rituals, like festivals or temple ceremonies, and commercial launches both use "
+                    "timing, buildup, and shared participation to create meaning. These structures activate emotional engagement "
+                    "across very different domains."
+                ),
+                "columns": ["Ritual Moment", "Shared Structure", "Product Drop"],
+                "rows": [
+                    ("Lunar festival launch", "Communal anticipation", "K-pop comeback + merch drop"),
+                    ("Parade drum rhythms", "Rhythmic public gathering", "Push notifications + launch timers"),
+                    ("Temple ceremonies", "Ritualized social moment", "TikTok Shop live reveals")
+                ]
+            },
+            {
+                "title": "Local Identity and Brand Expression",
+                "metaphor": "Cultural markers and branded products both function as signals of pride and belonging.",
+                "narrative": (
+                    "Folk symbols and crafted traditions carry identity within a community. Similarly, limited edition collabs "
+                    "and local brand stories help consumers express place-based affiliation and cultural loyalty through fashion."
+                ),
+                "columns": ["Cultural Marker", "Shared Function", "Brand Expression"],
+                "rows": [
+                    ("“Made in Indonesia” badge", "Symbol of national craftsmanship", "Local brand collabs on Puma gear"),
+                    ("Traditional batik", "Textile as identity marker", "Streetwear with heritage motifs"),
+                    ("Folk tattoos", "Embodied local story", "Nano-influencer storytelling")
+                ]
+            },
+            {
+                "title": "Sport and Spectacle",
+                "metaphor": "Both athletic performance and product marketing serve as choreographed public displays.",
+                "narrative": (
+                    "Sporting events and commercial showcases often share performative structures—ritual, spectacle, "
+                    "and audience interaction. They function as stages for identity, coordination, and admiration."
+                ),
+                "columns": ["Sport Performance", "Shared Function", "Commercial Display"],
+                "rows": [
+                    ("Sepak takraw match", "Collective skill performance", "K-pop-style fashion choreography"),
+                    ("Muay Thai bout", "Cultural spectacle with ritual", "Livestream product demo with styling"),
+                    ("Temple run", "Challenge + cultural backdrop", "Geo-tagged fitness content for brand rituals")
+                ]
+            },
+            {
+                "title": "Space and Interface",
+                "metaphor": "Physical environments and digital platforms both serve as interactive stages for cultural engagement.",
+                "narrative": (
+                    "Markets, routes, and temples are physical sites of interaction and expression. Similarly, livestreams, "
+                    "geo-tags, and digital campaigns turn digital space into meaningful social environments."
+                ),
+                "columns": ["Physical Space", "Shared Function", "Digital Interface"],
+                "rows": [
+                    ("Marketplace gathering", "Social orientation point", "TikTok liveroom hangouts"),
+                    ("Running route", "Cultural geography", "Geo-tagged fitness journey on social"),
+                    ("Temple steps", "Ritual entry experience", "Brand activation zones")
+                ]
+            },
+            {
+                "title": "Individual and Collective Expression",
+                "metaphor": "Personal styling and group rituals both communicate shared identity through visible acts.",
+                "narrative": (
+                    "From sneaker customization to solo fitness posts, individual actions often take on shared cultural meaning. "
+                    "When repeated and broadcasted, they form a social rhythm that blends self-expression with group belonging."
+                ),
+                "columns": ["Personal Expression", "Shared Function", "Group Expression"],
+                "rows": [
+                    ("Custom sneaker styling", "Visual identity marker", "Matching drops worn at fan events"),
+                    ("Solo fitness posts", "Motivational self-performance", "Hashtag-driven run challenges"),
+                    ("Nano-influencer content", "Authentic self-narrative", "Micro-tribe formation through comments & DMs")
+                ]
+            },
+            {
+                "title": "Performance and Lifestyle",
+                "metaphor": "Peak discipline and daily rituals both structure identity through repeated action.",
+                "narrative": (
+                    "Athletic mastery and everyday fitness practices rely on similar rhythms—effort, repetition, and visibility. "
+                    "Whether for elite competition or casual self-care, these routines shape how identity is performed."
+                ),
+                "columns": ["Peak Performance", "Shared Function", "Lifestyle Practice"],
+                "rows": [
+                    ("Olympic training", "Mastery through repetition", "Daily run as social ritual"),
+                    ("Arena competition", "Test of skill and status", "Family fitness as bonding"),
+                    ("Professional athlete gear", "Performance optimization", "Stylized sportwear for everyday movement")
+                ]
+            }
+        ]
+
+
+        for metaphor in metaphor_sets:
+            with st.expander(f"{metaphor['title']}"):
+                st.markdown(f"**Metaphor:** *{metaphor['metaphor']}*")
+                st.caption(metaphor["narrative"])
+
+                col1, col2, col3 = st.columns([1, 1, 1])
+                col1.markdown(f"**{metaphor['columns'][0]}**")
+                col2.markdown(f"**{metaphor['columns'][1]}**")
+                col3.markdown(f"**{metaphor['columns'][2]}**")
+
+                for row in metaphor["rows"]:
+                    col1.markdown(f"- {row[0]}")
+                    col2.markdown(f"- {row[1]}")
+                    col3.markdown(f"- {row[2]}")
+
 
 
 
