@@ -11,7 +11,9 @@ class Puma(BaseCustomerRenderer):
         super().__init__(name="Puma", config=config)
     
     def render_stories(self):
-        
+        #region Emergent Cultural Narratives
+        st.markdown("### Emergent Cultural Narratives")
+        st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
         narratives = [
             {
                 "title": "TikTok Commerce Revolution",
@@ -132,60 +134,104 @@ class Puma(BaseCustomerRenderer):
                 "maturity": "Early Growth"
             }
         ]
-
-        st.markdown("### Emergent Cultural Narratives")
-        st.caption("Current themes and stories taking shape • Last scan: 2 hours ago")
         for nar in narratives:
             with st.expander(f"# {nar['title']}", expanded=False):
-   
-                confidence_pct = int(nar["confidence"] * 100) if "confidence" in nar else 0
-                
-                col1, col2, col3 = st.columns([2, 2, 1])
-                with col1:
-                    st.markdown(f"**{nar['momentum']}**")
-                with col2:
-                    st.markdown(f"**{nar['maturity']}**")
-                with col3:
-                    st.markdown(f"**Confidence: {confidence_pct}%**")
-                
-                col1, col2, col3 = st.columns([2, 2, 1])
-                with col1:
-                    st.markdown(f"**Volume**: {nar['volume']}") 
-                with col2:
-                    st.markdown(f"**Velocity**: {nar['velocity']}")
-                with col3:
-                    st.markdown(f"**First Seen:** {nar['first_seen']}")
-                
-                # Content sections
+                confidence_pct = int(nar["confidence"] * 100)
+                m1, m2, m3 = st.columns([2, 2, 1])
+                m1.markdown(f"**Momentum:** {nar['momentum']}") 
+                m2.markdown(f"**Maturity:** {nar['maturity']}") 
+                m3.markdown(f"**Confidence:** {confidence_pct}%")
+
+                # Volume/velocity/first seen
+                v1, v2, v3 = st.columns([2, 2, 1])
+                v1.markdown(f"**Volume:** {nar['volume']}")
+                v2.markdown(f"**Velocity:** {nar['velocity']}")
+                v3.markdown(f"**First Seen:** {nar['first_seen']}")
+
                 st.markdown("---")
                 st.markdown(f"**Story:** {nar['story']}")
                 st.markdown(f"**Evidence:** {nar['evidence']}")
                 st.markdown(f"**Strategic Impact:** {nar['impact']}")
+        #endregion
 
-        st.markdown("### Local Cultural Perspectives")
+        #region Regional Framings
+        st.markdown("### Regional Framings")
         st.caption("How core ideas are locally interpreted and emphasized across cultures")
-        with st.expander("Performance vs. Lifestyle", expanded=False):
-            st.markdown("**Indonesia:** frames fitness as community building and faith-compatible wellness")
-            st.markdown("**Malaysia:** balances multicultural sporting traditions with modern athleisure")
-            st.markdown("**Thailand:** emphasizes individual achievement and national pride.")
-            st.markdown("**Evidence:** [Sport in Thailand – Wikipedia](https://en.wikipedia.org/wiki/Sport_in_Thailand), "
-                        "[JLL Thailand Sports Boom](https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)")
-            st.markdown("**Strategic Impact:** Tailor messaging to resonate with local cultural values and sporting traditions.")
-        with st.expander("Community vs. Individualism", expanded=False):
-            st.markdown("**Indonesia:** emphasizes collective fitness journeys and community events")
-            st.markdown("**Malaysia:** blends individual aspirations with multicultural community spirit")
-            st.markdown("**Thailand:** focuses on personal achievement and national pride in sports.")
-            st.markdown("**Evidence:** [YouGov Singapore Running Community](https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community), "
-                        "[Retail Asia K-Wave Trends](https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)")
-            st.markdown("**Strategic Impact:** Leverage local cultural narratives to build community-driven campaigns.")
-        with st.expander("Tradition vs. Modernity", expanded=False):
-            st.markdown("**Indonesia:** integrates traditional sports with modern athleticism")
-            st.markdown("**Malaysia:** balances heritage sports with contemporary fitness trends")
-            st.markdown("**Thailand:** celebrates traditional martial arts alongside modern fitness.")
-            st.markdown("**Evidence:** [SemanticsScholar Local Product Preference](https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf), "
-                        "[DataXet Olympic Engagement](https://www.dataxet.co/insights/olympic-games-2024-en)")
-            st.markdown("**Strategic Impact:** Highlight Puma’s role in bridging cultural heritage with modern athleticism.")
+        
+        # Create tabs for each cultural dimension
+        framing_tabs = st.tabs(["Performance vs. Lifestyle", "Community vs. Individualism", "Tradition vs. Modernity"])
+        
+        regional_framing_data = [
+            {
+                "title": "Performance vs. Lifestyle",
+                "data": [
+                    {"Country": "Indonesia", "Cultural Framing": "Frames fitness as community building and faith-compatible wellness", "Key Indicators": "Community gyms, halal fitness programs"},
+                    {"Country": "Malaysia", "Cultural Framing": "Balances multicultural sporting traditions with modern athleisure", "Key Indicators": "Multi-ethnic sports, fusion wear trends"},
+                    {"Country": "Thailand", "Cultural Framing": "Emphasizes individual achievement and national pride", "Key Indicators": "Olympic focus, Muay Thai heritage"}
+                ],
+                "evidence": [
+                    ("Sport in Thailand – Wikipedia", "https://en.wikipedia.org/wiki/Sport_in_Thailand"),
+                    ("JLL Thailand Sports Boom", "https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market")
+                ],
+                "strategic_impact": "Tailor messaging to resonate with local cultural values and sporting traditions"
+            },
+            {
+                "title": "Community vs. Individualism", 
+                "data": [
+                    {"Country": "Indonesia", "Cultural Framing": "Emphasizes collective fitness journeys and community events", "Key Indicators": "Group challenges, family fitness rituals"},
+                    {"Country": "Malaysia", "Cultural Framing": "Blends individual aspirations with multicultural community spirit", "Key Indicators": "Personal goals within diverse communities"},
+                    {"Country": "Thailand", "Cultural Framing": "Focuses on personal achievement and national pride in sports", "Key Indicators": "Individual excellence, national identity"}
+                ],
+                "evidence": [
+                    ("YouGov Singapore Running Community", "https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community"),
+                    ("Retail Asia K-Wave Trends", "https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends")
+                ],
+                "strategic_impact": "Leverage local cultural narratives to build community-driven campaigns"
+            },
+            {
+                "title": "Tradition vs. Modernity",
+                "data": [
+                    {"Country": "Indonesia", "Cultural Framing": "Integrates traditional sports with modern athleticism", "Key Indicators": "Sepak takraw evolution, modern training methods"},
+                    {"Country": "Malaysia", "Cultural Framing": "Balances heritage sports with contemporary fitness trends", "Key Indicators": "Traditional games, tech-enabled fitness"},
+                    {"Country": "Thailand", "Cultural Framing": "Celebrates traditional martial arts alongside modern fitness", "Key Indicators": "Muay Thai culture, contemporary workouts"}
+                ],
+                "evidence": [
+                    ("SemanticsScholar Local Product Preference", "https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf"),
+                    ("DataXet Olympic Engagement", "https://www.dataxet.co/insights/olympic-games-2024-en")
+                ],
+                "strategic_impact": "Highlight Puma's role in bridging cultural heritage with modern athleticism"
+            }
+        ]
+        
+        for i, content in enumerate(regional_framing_data):
+            with framing_tabs[i]:
+                # Create an interactive table
+                import pandas as pd
+                df = pd.DataFrame(content["data"])
+                
+                # Display the table with proper formatting
+                st.dataframe(
+                    df,
+                    use_container_width=True,
+                    hide_index=True,
+                    column_config={
+                        "Country": st.column_config.TextColumn("Country", width="small"),
+                        "Cultural Framing": st.column_config.TextColumn("Cultural Framing", width="large"),
+                        "Key Indicators": st.column_config.TextColumn("Key Indicators", width="medium")
+                    }
+                )
+                
+                # Add evidence with preserved links
+                evidence_links = [f"[{text}]({url})" for text, url in content["evidence"]]
+                st.markdown(f"**Evidence Sources:** {', '.join(evidence_links)}")
+                
+                # Add strategic impact
+                st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
+        #endregion
 
+        #region Semantic Evolution
+        st.markdown("### Semantic Evolution")
+        st.caption("Tracking how meanings shift across cultural contexts and time")
         evolution_data = {
             "Athletic": {
                 "evolution": {
@@ -268,17 +314,10 @@ class Puma(BaseCustomerRenderer):
                 "shift_driver": "Livestream culture + collapse of boundary between media & retail"
             }
         }
-
-        st.markdown("### Semantic Evolution")
-        st.caption("Tracking how meanings shift across cultural contexts and time")
-
-        # Create tabs for each term
         tab_names = list(evolution_data.keys())
         tabs = st.tabs([f"{term}" for term in tab_names])
-        
         for i, (term, data) in enumerate(evolution_data.items()):
             with tabs[i]:               
-                # Create a styled container for the evolution timeline
                 timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
                 for year, meaning in data["evolution"].items():
                     timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
@@ -286,12 +325,12 @@ class Puma(BaseCustomerRenderer):
                 
                 st.markdown(timeline_html, unsafe_allow_html=True)
                 
-                # Display shift driver in a highlighted box
                 st.info(f"**Shift driver:** {data['shift_driver']}")
+        #endregion
 
+        #region Hidden Cultural Dimensions
         st.markdown("### Hidden Cultural Dimensions")
         st.caption("Underlying conceptual tensions organizing meaning across domains and behaviors")
-
         dimensions = [
             {
                 "axis": "Traditional Heritage ↔ Global Modernity",
@@ -325,18 +364,17 @@ class Puma(BaseCustomerRenderer):
                 )
             }
         ]
-
         for i, dim in enumerate(dimensions, 1):
             with st.expander(f"Dimension {i}: {dim['axis']}"):
                 st.caption(dim['intuitive_label'])
                 st.markdown(f"**Cultural Signals:** {', '.join(dim['key_markers'])}")
                 st.markdown(f"**Strength:** {dim['relative_strength']}")
                 st.caption(dim['narrative'])
+        #endregion
 
+        #region Cross-Domain Analogies
         st.markdown("### Cross-Domain Analogies")
         st.caption("Surprising connections between disparate concepts")
-
-
         metaphor_sets = [
             {
                 "title": "Rituals and Drops",
@@ -424,8 +462,6 @@ class Puma(BaseCustomerRenderer):
                 ]
             }
         ]
-
-
         for metaphor in metaphor_sets:
             with st.expander(f"{metaphor['title']}"):
                 st.markdown(f"**Metaphor:** *{metaphor['metaphor']}*")
@@ -440,11 +476,8 @@ class Puma(BaseCustomerRenderer):
                     col1.markdown(f"- {row[0]}")
                     col2.markdown(f"- {row[1]}")
                     col3.markdown(f"- {row[2]}")
+        #endregion
 
-
-
-
-        
     def render_people(self):
         personas = [
             {
