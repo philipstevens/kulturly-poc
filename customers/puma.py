@@ -17,413 +17,420 @@ class Puma(BaseCustomerRenderer):
         return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
     
     def render_stories(self):
-        #region Emergent Cultural Narratives
-        st.markdown("### Emergent Cultural Narratives")
-        st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
+        main_tabs = st.tabs([
+            "📖 Themes", 
+            "🌍 Local Lenses", 
+            "🧠 Word Shifts", 
+            "🔎 Deep Patterns", 
+            "🔗 Shared Signals"
+        ])
         
-        narratives = [
-            {
-                "title": "TikTok Commerce Revolution",
-                "story": (
-                    "In Indonesia, TikTok Shop transforms shopping into live entertainment—"
-                    "streamers debut new collections and viewers buy directly via in-app links."),
-                "story_preview": "TikTok Shop transforms shopping into live entertainment in Indonesia...",
-                "evidence": (
-                    "[VulcanPost on TikTok Shop's growth]"
-                    "(https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/) and "
-                    "[RTL Today on social-commerce trends]"
-                    "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)"),
-                "impact": "Leverage shoppable live events to create buzz around product launches.",
-                "first_seen": "Aug 15, 2024",
-                "velocity": "+1,247%",
-                "volume": "542.3K mentions",
-                "confidence": 0.92,
-                "momentum": "🚀 Accelerating",
-                "maturity": "Early Growth",
-                "trend_color": "#FF6B6B"
-            },
-            {
-                "title": "Authentic Local Pride Movement",
-                "story": (
-                    "'Made in Indonesia' sneaker pop-ups spark grassroots rallies—"
-                    "consumers wear local brands as statements of national pride."),
-                "story_preview": "'Made in Indonesia' sneaker pop-ups spark grassroots rallies...",
-                "evidence": (
-                    "60.7% of Indonesians prefer local affordable products "
-                    "[SemanticsScholar study]"
-                    "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)"),
-                "impact": "Co-create limited editions with local artisans to tap into cultural nationalism.",
-                "first_seen": "Jun 22, 2024",
-                "velocity": "+834%",
-                "volume": "287.6K mentions",
-                "confidence": 0.88,
-                "momentum": "📈 Steady Growth",
-                "maturity": "Emerging",
-                "trend_color": "#4ECDC4"
-            },
-            {
-                "title": "Traditional Sports Resurgence",
-                "story": (
-                    "Sepak Takraw tournaments and Muay Thai events go viral on social feeds, "
-                    "drawing millions of interactions."),
-                "story_preview": "Sepak Takraw tournaments and Muay Thai events go viral on social feeds...",
-                "evidence": (
-                    "Thailand's Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
-                    "[DataXet report]"
-                    "(https://www.dataxet.co/insights/olympic-games-2024-en)"),
-                "impact": "Sponsor grassroots tournaments and integrate classical motifs into designs.",
-                "first_seen": "Jul 28, 2024",
-                "velocity": "+2,156%",
-                "volume": "1.2M mentions",
-                "confidence": 0.94,
-                "momentum": "💥 Viral Spike",
-                "maturity": "Peak Moment",
-                "trend_color": "#FFE66D"
-            },
-            {
-                "title": "Nano-Influencer Trust Economy",
-                "story": (
-                    "Micro-influencers (1k–10k followers) spark authentic conversations—"
-                    "their daily posts on Puma gear drive deeper trust than celebrity endorsements."),
-                "story_preview": "Micro-influencers spark authentic conversations with deeper trust...",
-                "evidence": (
-                    "Nano-influencers command 46% greater trust [Pongoshare report]"
-                    "(http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/) and "
-                    "87% of Indonesians prefer intimate messaging interactions [Statista]"
-                    "(https://www.statista.com/forecasts/1345510/asia-most-used-social-media-platforms-of-gen-z-by-country-and-type)"),
-                "impact": "Build city-by-city micro-ambassador programs to amplify genuine stories.",
-                "first_seen": "May 14, 2024",
-                "velocity": "+445%",
-                "volume": "398.1K mentions",
-                "confidence": 0.89,
-                "momentum": "⚡ Sustained Growth",
-                "maturity": "Established",
-                "trend_color": "#A8E6CF"
-            },
-            {
-                "title": "Cross-Cultural K-Wave Integration",
-                "story": (
-                    "K-pop ambassadors like Blackpink's Rosé make Puma styles aspirational—"
-                    "fans emulate viral dance looks across SEA."),
-                "story_preview": "K-pop ambassadors make Puma styles aspirational across SEA...",
-                "evidence": (
-                    "K-pop drives SEA sportswear trends [Retail Asia]"
-                    "(https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"),
-                "impact": "Align product drops with major K-pop comebacks and fan events.",
-                "first_seen": "Mar 8, 2024",
-                "velocity": "+672%",
-                "volume": "756.8K mentions",
-                "confidence": 0.91,
-                "momentum": "🔄 Cyclical Peaks",
-                "maturity": "Mature",
-                "trend_color": "#DDA0DD"
-            },
-            {
-                "title": "Digital-Physical Sport Fusion",
-                "story": (
-                    "Runners and athletes document temple runs and treks in Puma gear—"
-                    "turning workouts into social challenges."),
-                "story_preview": "Runners document temple runs, turning workouts into social challenges...",
-                "evidence": (
-                    "Over 40% run weekly and share journeys online [YouGov Singapore]"
-                    "(https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community)"),
-                "impact": "Create geo-tagged digital challenges that bridge culture and sport.",
-                "first_seen": "Apr 19, 2024",
-                "velocity": "+523%",
-                "volume": "334.2K mentions",
-                "confidence": 0.87,
-                "momentum": "📊 Steady Growth",
-                "maturity": "Growing",
-                "trend_color": "#87CEEB"
-            },
-            {
-                "title": "Multigenerational Athletic Identity",
-                "story": (
-                    "Olympic heroes and wellness seekers unite—grandparents and grandchildren "
-                    "share Puma fitness moments across generations."),
-                "story_preview": "Olympic heroes and wellness seekers unite across generations...",
-                "evidence": (
-                    "Cross-generational fitness engagement rising in SEA [DataXet, JLL]"
-                    "(https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)"),
-                "impact": "Design campaigns celebrating family fitness and rituals.",
-                "first_seen": "Jul 12, 2024",
-                "velocity": "+789%",
-                "volume": "423.7K mentions",
-                "confidence": 0.85,
-                "momentum": "🌱 Building",
-                "maturity": "Early Growth",
-                "trend_color": "#F0A500"
-            }
-        ]
+        # Tab 1: Cultural Narratives
+        with main_tabs[0]:
+            st.markdown("### Cultural Narratives")
+            st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
         
-        # Display narratives in a 2-column grid
-        cols = st.columns(2)
-        for idx, nar in enumerate(narratives):
-            col = cols[idx % 2]
-            confidence_pct = int(nar["confidence"] * 100)
-            evidence_html = self._parse_markdown_links(nar["evidence"])
+            narratives = [
+                {
+                    "title": "TikTok Commerce Revolution",
+                    "story": (
+                        "In Indonesia, TikTok Shop transforms shopping into live entertainment—"
+                        "streamers debut new collections and viewers buy directly via in-app links."),
+                    "story_preview": "TikTok Shop transforms shopping into live entertainment in Indonesia...",
+                    "evidence": (
+                        "[VulcanPost on TikTok Shop's growth]"
+                        "(https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/) and "
+                        "[RTL Today on social-commerce trends]"
+                        "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)"),
+                    "impact": "Leverage shoppable live events to create buzz around product launches.",
+                    "first_seen": "Aug 15, 2024",
+                    "velocity": "+1,247%",
+                    "volume": "542.3K mentions",
+                    "confidence": 0.92,
+                    "momentum": "🚀 Accelerating",
+                    "maturity": "Early Growth",
+                    "trend_color": "#FF6B6B"
+                },
+                {
+                    "title": "Authentic Local Pride Movement",
+                    "story": (
+                        "'Made in Indonesia' sneaker pop-ups spark grassroots rallies—"
+                        "consumers wear local brands as statements of national pride."),
+                    "story_preview": "'Made in Indonesia' sneaker pop-ups spark grassroots rallies...",
+                    "evidence": (
+                        "60.7% of Indonesians prefer local affordable products "
+                        "[SemanticsScholar study]"
+                        "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)"),
+                    "impact": "Co-create limited editions with local artisans to tap into cultural nationalism.",
+                    "first_seen": "Jun 22, 2024",
+                    "velocity": "+834%",
+                    "volume": "287.6K mentions",
+                    "confidence": 0.88,
+                    "momentum": "📈 Steady Growth",
+                    "maturity": "Emerging",
+                    "trend_color": "#4ECDC4"
+                },
+                {
+                    "title": "Traditional Sports Resurgence",
+                    "story": (
+                        "Sepak Takraw tournaments and Muay Thai events go viral on social feeds, "
+                        "drawing millions of interactions."),
+                    "story_preview": "Sepak Takraw tournaments and Muay Thai events go viral on social feeds...",
+                    "evidence": (
+                        "Thailand's Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
+                        "[DataXet report]"
+                        "(https://www.dataxet.co/insights/olympic-games-2024-en)"),
+                    "impact": "Sponsor grassroots tournaments and integrate classical motifs into designs.",
+                    "first_seen": "Jul 28, 2024",
+                    "velocity": "+2,156%",
+                    "volume": "1.2M mentions",
+                    "confidence": 0.94,
+                    "momentum": "💥 Viral Spike",
+                    "maturity": "Peak Moment",
+                    "trend_color": "#FFE66D"
+                },
+                {
+                    "title": "Nano-Influencer Trust Economy",
+                    "story": (
+                        "Micro-influencers (1k–10k followers) spark authentic conversations—"
+                        "their daily posts on Puma gear drive deeper trust than celebrity endorsements."),
+                    "story_preview": "Micro-influencers spark authentic conversations with deeper trust...",
+                    "evidence": (
+                        "Nano-influencers command 46% greater trust [Pongoshare report]"
+                        "(http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/) and "
+                        "87% of Indonesians prefer intimate messaging interactions [Statista]"
+                        "(https://www.statista.com/forecasts/1345510/asia-most-used-social-media-platforms-of-gen-z-by-country-and-type)"),
+                    "impact": "Build city-by-city micro-ambassador programs to amplify genuine stories.",
+                    "first_seen": "May 14, 2024",
+                    "velocity": "+445%",
+                    "volume": "398.1K mentions",
+                    "confidence": 0.89,
+                    "momentum": "⚡ Sustained Growth",
+                    "maturity": "Established",
+                    "trend_color": "#A8E6CF"
+                },
+                {
+                    "title": "Cross-Cultural K-Wave Integration",
+                    "story": (
+                        "K-pop ambassadors like Blackpink's Rosé make Puma styles aspirational—"
+                        "fans emulate viral dance looks across SEA."),
+                    "story_preview": "K-pop ambassadors make Puma styles aspirational across SEA...",
+                    "evidence": (
+                        "K-pop drives SEA sportswear trends [Retail Asia]"
+                        "(https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"),
+                    "impact": "Align product drops with major K-pop comebacks and fan events.",
+                    "first_seen": "Mar 8, 2024",
+                    "velocity": "+672%",
+                    "volume": "756.8K mentions",
+                    "confidence": 0.91,
+                    "momentum": "🔄 Cyclical Peaks",
+                    "maturity": "Mature",
+                    "trend_color": "#DDA0DD"
+                },
+                {
+                    "title": "Digital-Physical Sport Fusion",
+                    "story": (
+                        "Runners and athletes document temple runs and treks in Puma gear—"
+                        "turning workouts into social challenges."),
+                    "story_preview": "Runners document temple runs, turning workouts into social challenges...",
+                    "evidence": (
+                        "Over 40% run weekly and share journeys online [YouGov Singapore]"
+                        "(https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community)"),
+                    "impact": "Create geo-tagged digital challenges that bridge culture and sport.",
+                    "first_seen": "Apr 19, 2024",
+                    "velocity": "+523%",
+                    "volume": "334.2K mentions",
+                    "confidence": 0.87,
+                    "momentum": "📊 Steady Growth",
+                    "maturity": "Growing",
+                    "trend_color": "#87CEEB"
+                },
+                {
+                    "title": "Multigenerational Athletic Identity",
+                    "story": (
+                        "Olympic heroes and wellness seekers unite—grandparents and grandchildren "
+                        "share Puma fitness moments across generations."),
+                    "story_preview": "Olympic heroes and wellness seekers unite across generations...",
+                    "evidence": (
+                        "Cross-generational fitness engagement rising in SEA [DataXet, JLL]"
+                        "(https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)"),
+                    "impact": "Design campaigns celebrating family fitness and rituals.",
+                    "first_seen": "Jul 12, 2024",
+                    "velocity": "+789%",
+                    "volume": "423.7K mentions",
+                    "confidence": 0.85,
+                    "momentum": "🌱 Building",
+                    "maturity": "Early Growth",
+                    "trend_color": "#F0A500"
+                }
+            ]
             
-            # Create an engaging card with key info upfront
-            with col:
-                # Create card using simple HTML structure like in render_people
-                card_html = (
-                    f'<div style="border: 2px solid {nar["trend_color"]}; border-radius: 8px; padding: 16px; margin-bottom: 16px;">'
-                    f'  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">'
-                    f'    <strong style="font-size: 16px;">{nar["title"]}</strong>'
-                    f'    <b><small style="background-color: {nar["trend_color"]}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;">{nar["maturity"]}</small></b>'
-                    f'  </div>'
-                    f'  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">'
-                    f'    <div><strong>{nar["momentum"]}</strong></div>'
-                    f'    <div><strong>{confidence_pct}% confidence</strong></div>'
-                    f'    <div><strong>Volume:</strong> {nar["volume"]}</div>'
-                    f'    <div><strong>Velocity:</strong> {nar["velocity"]}</div>'
-                    f'  </div>'
-                    f'  <details style="margin-top: 16px; border-radius: 8px; overflow: hidden;">'
-                    f'    <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>'
-                    f'    <div style="padding: 0 16px 16px; border-top: 1px solid; line-height: 1.6;">'
-                    f'      <section style="margin: 12px 0;">'
-                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>'
-                    f'        <p style="margin: 0;">{nar["story"]}</p>'
-                    f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
-                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Evidence</h4>'
-                    f'        <p style="margin: 0;">{evidence_html}</p>'
-                    f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
-                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Strategic Impact</h4>'
-                    f'        <p style="margin: 0;">{nar["impact"]}</p>'
-                    f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
-                    f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>'
-                    f'        <p style="margin: 0;">First seen: {nar["first_seen"]}</p>'
-                    f'      </section>'
-                    f'    </div>'
-                    f'  </details>'
-                    '</div>'
-                )
-                st.markdown(card_html, unsafe_allow_html=True)
-        #endregion
-
-        #region Regional Framings
-        st.markdown("### Regional Framings")
-        st.caption("How core ideas are locally interpreted and emphasized across cultures")
-        
-        # Create tabs for each cultural dimension
-        framing_tabs = st.tabs(["Performance vs. Lifestyle", "Community vs. Individualism", "Tradition vs. Modernity"])
-        
-        regional_framing_data = [
-            {
-                "title": "Performance vs. Lifestyle",
-                "data": [
-                    {"Country": "Indonesia", "Cultural Framing": "Frames fitness as community building and faith-compatible wellness", "Key Indicators": "Community gyms, halal fitness programs"},
-                    {"Country": "Malaysia", "Cultural Framing": "Balances multicultural sporting traditions with modern athleisure", "Key Indicators": "Multi-ethnic sports, fusion wear trends"},
-                    {"Country": "Thailand", "Cultural Framing": "Emphasizes individual achievement and national pride", "Key Indicators": "Olympic focus, Muay Thai heritage"}
-                ],
-                "evidence": [
-                    ("Sport in Thailand – Wikipedia", "https://en.wikipedia.org/wiki/Sport_in_Thailand"),
-                    ("JLL Thailand Sports Boom", "https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market")
-                ],
-                "strategic_impact": "Tailor messaging to resonate with local cultural values and sporting traditions"
-            },
-            {
-                "title": "Community vs. Individualism", 
-                "data": [
-                    {"Country": "Indonesia", "Cultural Framing": "Emphasizes collective fitness journeys and community events", "Key Indicators": "Group challenges, family fitness rituals"},
-                    {"Country": "Malaysia", "Cultural Framing": "Blends individual aspirations with multicultural community spirit", "Key Indicators": "Personal goals within diverse communities"},
-                    {"Country": "Thailand", "Cultural Framing": "Focuses on personal achievement and national pride in sports", "Key Indicators": "Individual excellence, national identity"}
-                ],
-                "evidence": [
-                    ("YouGov Singapore Running Community", "https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community"),
-                    ("Retail Asia K-Wave Trends", "https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends")
-                ],
-                "strategic_impact": "Leverage local cultural narratives to build community-driven campaigns"
-            },
-            {
-                "title": "Tradition vs. Modernity",
-                "data": [
-                    {"Country": "Indonesia", "Cultural Framing": "Integrates traditional sports with modern athleticism", "Key Indicators": "Sepak takraw evolution, modern training methods"},
-                    {"Country": "Malaysia", "Cultural Framing": "Balances heritage sports with contemporary fitness trends", "Key Indicators": "Traditional games, tech-enabled fitness"},
-                    {"Country": "Thailand", "Cultural Framing": "Celebrates traditional martial arts alongside modern fitness", "Key Indicators": "Muay Thai culture, contemporary workouts"}
-                ],
-                "evidence": [
-                    ("SemanticsScholar Local Product Preference", "https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf"),
-                    ("DataXet Olympic Engagement", "https://www.dataxet.co/insights/olympic-games-2024-en")
-                ],
-                "strategic_impact": "Highlight Puma's role in bridging cultural heritage with modern athleticism"
-            }
-        ]
-        
-        for i, content in enumerate(regional_framing_data):
-            with framing_tabs[i]:
-                # Create an interactive table
-                import pandas as pd
-                df = pd.DataFrame(content["data"])
+            cols = st.columns(2)
+            for idx, nar in enumerate(narratives):
+                col = cols[idx % 2]
+                confidence_pct = int(nar["confidence"] * 100)
+                evidence_html = self._parse_markdown_links(nar["evidence"])
                 
-                # Display the table with proper formatting
-                st.dataframe(
-                    df,
-                    use_container_width=True,
-                    hide_index=True,
-                    column_config={
-                        "Country": st.column_config.TextColumn("Country", width="small"),
-                        "Cultural Framing": st.column_config.TextColumn("Cultural Framing", width="large"),
-                        "Key Indicators": st.column_config.TextColumn("Key Indicators", width="medium")
-                    }
-                )
-                
-                # Add evidence with preserved links
-                evidence_links = [f"[{text}]({url})" for text, url in content["evidence"]]
-                st.markdown(f"**Evidence Sources:** {', '.join(evidence_links)}")
-                
-                # Add strategic impact
-                st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
-        #endregion
+                # Create an engaging card with key info upfront
+                with col:
+                    # Create card using simple HTML structure like in render_people
+                    card_html = (
+                        f'<div style="border: 2px solid {nar["trend_color"]}; border-radius: 8px; padding: 16px; margin-bottom: 16px;">'
+                        f'  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">'
+                        f'    <strong style="font-size: 16px;">{nar["title"]}</strong>'
+                        f'    <b><small style="background-color: {nar["trend_color"]}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;">{nar["maturity"]}</small></b>'
+                        f'  </div>'
+                        f'  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">'
+                        f'    <div><strong>{nar["momentum"]}</strong></div>'
+                        f'    <div><strong>{confidence_pct}% confidence</strong></div>'
+                        f'    <div><strong>Volume:</strong> {nar["volume"]}</div>'
+                        f'    <div><strong>Velocity:</strong> {nar["velocity"]}</div>'
+                        f'  </div>'
+                        f'  <details style="margin-top: 16px; border-radius: 8px; overflow: hidden;">'
+                        f'    <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>'
+                        f'    <div style="padding: 0 16px 16px; border-top: 1px solid; line-height: 1.6;">'
+                        f'      <section style="margin: 12px 0;">'
+                        f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>'
+                        f'        <p style="margin: 0;">{nar["story"]}</p>'
+                        f'      </section>'
+                        f'      <section style="margin: 12px 0;">'
+                        f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Evidence</h4>'
+                        f'        <p style="margin: 0;">{evidence_html}</p>'
+                        f'      </section>'
+                        f'      <section style="margin: 12px 0;">'
+                        f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Strategic Impact</h4>'
+                        f'        <p style="margin: 0;">{nar["impact"]}</p>'
+                        f'      </section>'
+                        f'      <section style="margin: 12px 0;">'
+                        f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>'
+                        f'        <p style="margin: 0;">First seen: {nar["first_seen"]}</p>'
+                        f'      </section>'
+                        f'    </div>'
+                        f'  </details>'
+                        '</div>'
+                    )
+                    st.markdown(card_html, unsafe_allow_html=True)
 
-        #region Semantic Evolution
-        st.markdown("### Semantic Evolution")
-        st.caption("How key terms shift meaning across contexts and time")
-        evolution_data = {
-            "Athletic": {
-                "evolution": {
-                    "2020": "Performance-driven, elite training and competition",
-                    "2022": "Holistic wellness, part of daily lifestyle",
-                    "2024": "Cultural ritual and intergenerational identity expression"
+        # Tab 2: Regional Framings
+        with main_tabs[1]:
+            st.markdown("### Regional Framings")
+            st.caption("How core ideas are locally interpreted and emphasized across cultures")
+            
+            framing_tabs = st.tabs(["Performance vs. Lifestyle", "Community vs. Individualism", "Tradition vs. Modernity"])
+            
+            regional_framing_data = [
+                {
+                    "title": "Performance vs. Lifestyle",
+                    "data": [
+                        {"Country": "Indonesia", "Cultural Framing": "Frames fitness as community building and faith-compatible wellness", "Key Indicators": "Community gyms, halal fitness programs"},
+                        {"Country": "Malaysia", "Cultural Framing": "Balances multicultural sporting traditions with modern athleisure", "Key Indicators": "Multi-ethnic sports, fusion wear trends"},
+                        {"Country": "Thailand", "Cultural Framing": "Emphasizes individual achievement and national pride", "Key Indicators": "Olympic focus, Muay Thai heritage"}
+                    ],
+                    "evidence": [
+                        ("Sport in Thailand – Wikipedia", "https://en.wikipedia.org/wiki/Sport_in_Thailand"),
+                        ("JLL Thailand Sports Boom", "https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market")
+                    ],
+                    "strategic_impact": "Tailor messaging to resonate with local cultural values and sporting traditions"
                 },
-                "shift_driver": "Rise of family fitness rituals + digital temple run culture"
-            },
-            "Local": {
-                "evolution": {
-                    "2020": "Lower-cost, less prestigious alternative to global",
-                    "2022": "Conscious consumer choice rooted in ethics and community",
-                    "2024": "Badge of national pride and creative defiance ('Bangga Buatan Lokal')"
+                {
+                    "title": "Community vs. Individualism", 
+                    "data": [
+                        {"Country": "Indonesia", "Cultural Framing": "Emphasizes collective fitness journeys and community events", "Key Indicators": "Group challenges, family fitness rituals"},
+                        {"Country": "Malaysia", "Cultural Framing": "Blends individual aspirations with multicultural community spirit", "Key Indicators": "Personal goals within diverse communities"},
+                        {"Country": "Thailand", "Cultural Framing": "Focuses on personal achievement and national pride in sports", "Key Indicators": "Individual excellence, national identity"}
+                    ],
+                    "evidence": [
+                        ("YouGov Singapore Running Community", "https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community"),
+                        ("Retail Asia K-Wave Trends", "https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends")
+                    ],
+                    "strategic_impact": "Leverage local cultural narratives to build community-driven campaigns"
                 },
-                "shift_driver": "Authentic Local Pride Movement + youth-led brand activism"
-            },
-            "Influencer": {
-                "evolution": {
-                    "2020": "Celebrity-endorsed voice with mass appeal",
-                    "2022": "Niche content creator with targeted trust",
-                    "2024": "Micro-trusted insider shaping local peer norms"
+                {
+                    "title": "Tradition vs. Modernity",
+                    "data": [
+                        {"Country": "Indonesia", "Cultural Framing": "Integrates traditional sports with modern athleticism", "Key Indicators": "Sepak takraw evolution, modern training methods"},
+                        {"Country": "Malaysia", "Cultural Framing": "Balances heritage sports with contemporary fitness trends", "Key Indicators": "Traditional games, tech-enabled fitness"},
+                        {"Country": "Thailand", "Cultural Framing": "Celebrates traditional martial arts alongside modern fitness", "Key Indicators": "Muay Thai culture, contemporary workouts"}
+                    ],
+                    "evidence": [
+                        ("SemanticsScholar Local Product Preference", "https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf"),
+                        ("DataXet Olympic Engagement", "https://www.dataxet.co/insights/olympic-games-2024-en")
+                    ],
+                    "strategic_impact": "Highlight Puma's role in bridging cultural heritage with modern athleticism"
+                }
+            ]
+            
+            for i, content in enumerate(regional_framing_data):
+                with framing_tabs[i]:
+                    # Create an interactive table
+                    import pandas as pd
+                    df = pd.DataFrame(content["data"])
+                    
+                    # Display the table with proper formatting
+                    st.dataframe(
+                        df,
+                        use_container_width=True,
+                        hide_index=True,
+                        column_config={
+                            "Country": st.column_config.TextColumn("Country", width="small"),
+                            "Cultural Framing": st.column_config.TextColumn("Cultural Framing", width="large"),
+                            "Key Indicators": st.column_config.TextColumn("Key Indicators", width="medium")
+                        }
+                    )
+                    
+                    # Add evidence with preserved links
+                    evidence_links = [f"[{text}]({url})" for text, url in content["evidence"]]
+                    st.markdown(f"**Evidence Sources:** {', '.join(evidence_links)}")
+                    
+                    # Add strategic impact
+                    st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
+
+        # Tab 3: Semantic Evolution
+        with main_tabs[2]:
+            st.markdown("### Semantic Evolution")
+            st.caption("How key terms shift meaning across contexts and time")
+            evolution_data = {
+                "Athletic": {
+                    "evolution": {
+                        "2020": "Performance-driven, elite training and competition",
+                        "2022": "Holistic wellness, part of daily lifestyle",
+                        "2024": "Cultural ritual and intergenerational identity expression"
+                    },
+                    "shift_driver": "Rise of family fitness rituals + digital temple run culture"
                 },
-                "shift_driver": "Nano-Influencer Trust Economy + community-driven storytelling"
-            },
-            "Shopping": {
-                "evolution": {
-                    "2020": "Utility-based transaction, often price-driven",
-                    "2022": "Blended experience—store + screen",
-                    "2024": "Live, immersive entertainment-commerce (e.g., TikTok Shop)"
+                "Local": {
+                    "evolution": {
+                        "2020": "Lower-cost, less prestigious alternative to global",
+                        "2022": "Conscious consumer choice rooted in ethics and community",
+                        "2024": "Badge of national pride and creative defiance ('Bangga Buatan Lokal')"
+                    },
+                    "shift_driver": "Authentic Local Pride Movement + youth-led brand activism"
                 },
-                "shift_driver": "TikTok Commerce Revolution + rise of shoppable livestreams"
-            },
-            "Sport": {
-                "evolution": {
-                    "2020": "Competitive, rule-bound, institutional",
-                    "2022": "Wellness-focused, self-paced and expressive",
-                    "2024": "Hybrid ritual—physical + social + digital (e.g., temple runs, viral Muay Thai clips)"
+                "Influencer": {
+                    "evolution": {
+                        "2020": "Celebrity-endorsed voice with mass appeal",
+                        "2022": "Niche content creator with targeted trust",
+                        "2024": "Micro-trusted insider shaping local peer norms"
+                    },
+                    "shift_driver": "Nano-Influencer Trust Economy + community-driven storytelling"
                 },
-                "shift_driver": "Traditional Sports Resurgence + digital-physical fusion"
-            },
-            "Run": {
-                "evolution": {
-                    "2020": "Solo fitness activity for endurance or health",
-                    "2022": "Group challenge, social activity",
-                    "2024": "Narrative moment—shared journey through culture and landscape"
+                "Shopping": {
+                    "evolution": {
+                        "2020": "Utility-based transaction, often price-driven",
+                        "2022": "Blended experience—store + screen",
+                        "2024": "Live, immersive entertainment-commerce (e.g., TikTok Shop)"
+                    },
+                    "shift_driver": "TikTok Commerce Revolution + rise of shoppable livestreams"
                 },
-                "shift_driver": "Geo-tagged storytelling + Digital-Physical Sport Fusion"
-            },
-            "Family": {
-                "evolution": {
-                    "2020": "Private unit of care and tradition",
-                    "2022": "Support system for active aging and youth fitness",
-                    "2024": "Visible multi-generational wellness tribe (e.g., shared gymwear, joint challenges)"
+                "Sport": {
+                    "evolution": {
+                        "2020": "Competitive, rule-bound, institutional",
+                        "2022": "Wellness-focused, self-paced and expressive",
+                        "2024": "Hybrid ritual—physical + social + digital (e.g., temple runs, viral Muay Thai clips)"
+                    },
+                    "shift_driver": "Traditional Sports Resurgence + digital-physical fusion"
                 },
-                "shift_driver": "Multigenerational Athletic Identity + SEA aging dynamics"
-            },
-            "K-Pop": {
-                "evolution": {
-                    "2020": "Youth entertainment from Korea",
-                    "2022": "Style and beauty benchmark across Asia",
-                    "2024": "Global commercial driver shaping fashion, sport, and fan identity"
+                "Run": {
+                    "evolution": {
+                        "2020": "Solo fitness activity for endurance or health",
+                        "2022": "Group challenge, social activity",
+                        "2024": "Narrative moment—shared journey through culture and landscape"
+                    },
+                    "shift_driver": "Geo-tagged storytelling + Digital-Physical Sport Fusion"
                 },
-                "shift_driver": "Cross-Cultural K-Wave Integration + fandom-based fashion cycles"
-            },
-            "Pride": {
-                "evolution": {
-                    "2020": "Personal achievement or social status",
-                    "2022": "Cultural heritage and collective memory",
-                    "2024": "Activist signal and community badge (e.g., wearing local = resistance + celebration)"
+                "Family": {
+                    "evolution": {
+                        "2020": "Private unit of care and tradition",
+                        "2022": "Support system for active aging and youth fitness",
+                        "2024": "Visible multi-generational wellness tribe (e.g., shared gymwear, joint challenges)"
+                    },
+                    "shift_driver": "Multigenerational Athletic Identity + SEA aging dynamics"
                 },
-                "shift_driver": "Local brand loyalty + youth-led identity politics"
-            },
-            "Event": {
-                "evolution": {
-                    "2020": "Fixed-time, in-person occasion (concert, launch)",
-                    "2022": "Hybrid, planned-in-advance live/digital blend",
-                    "2024": "Fluid, participatory content moment (e.g., live drops, shoppable streams)"
+                "K-Pop": {
+                    "evolution": {
+                        "2020": "Youth entertainment from Korea",
+                        "2022": "Style and beauty benchmark across Asia",
+                        "2024": "Global commercial driver shaping fashion, sport, and fan identity"
+                    },
+                    "shift_driver": "Cross-Cultural K-Wave Integration + fandom-based fashion cycles"
                 },
-                "shift_driver": "Livestream culture + collapse of boundary between media & retail"
+                "Pride": {
+                    "evolution": {
+                        "2020": "Personal achievement or social status",
+                        "2022": "Cultural heritage and collective memory",
+                        "2024": "Activist signal and community badge (e.g., wearing local = resistance + celebration)"
+                    },
+                    "shift_driver": "Local brand loyalty + youth-led identity politics"
+                },
+                "Event": {
+                    "evolution": {
+                        "2020": "Fixed-time, in-person occasion (concert, launch)",
+                        "2022": "Hybrid, planned-in-advance live/digital blend",
+                        "2024": "Fluid, participatory content moment (e.g., live drops, shoppable streams)"
+                    },
+                    "shift_driver": "Livestream culture + collapse of boundary between media & retail"
+                }
             }
-        }
-        tab_names = list(evolution_data.keys())
-        tabs = st.tabs([f"{term}" for term in tab_names])
-        for i, (term, data) in enumerate(evolution_data.items()):
-            with tabs[i]:               
-                timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
-                for year, meaning in data["evolution"].items():
-                    timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
-                timeline_html += '</div>'               
-                st.markdown(timeline_html, unsafe_allow_html=True)              
-                st.info(f"**Shift driver:** {data['shift_driver']}")
-        #endregion
+            tab_names = list(evolution_data.keys())
+            tabs = st.tabs([f"{term}" for term in tab_names])
+            for i, (term, data) in enumerate(evolution_data.items()):
+                with tabs[i]:               
+                    timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
+                    for year, meaning in data["evolution"].items():
+                        timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
+                    timeline_html += '</div>'               
+                    st.markdown(timeline_html, unsafe_allow_html=True)              
+                    st.info(f"**Shift driver:** {data['shift_driver']}")
 
-        #region Hidden Cultural Dimensions
-        st.markdown("### Hidden Cultural Dimensions")
-        st.caption("Underlying conceptual tensions organizing meaning across domains.")
-        dimensions = [
-            {
-                "axis": "Traditional Heritage ↔ Global Modernity",
-                "intuitive_label": "From Temple Runs to TikTok Trends",
-                "relative_strength": "Strong signal across clusters",
-                "key_markers": ["sepak takraw", "temple runs", "K-pop fashion", "TikTok Shop"],
-                "narrative": (
-                    "This dimension reflects how audiences move between celebrating traditional rituals "
-                    "and embracing hyper-globalized, digital-first experiences. Cultural authenticity and modern aspiration "
-                    "aren't opposites—they’re being blended in new ways."
-                )
-            },
-            {
-                "axis": "Collective Identity ↔ Individual Aspiration",
-                "intuitive_label": "From Community Rituals to Personal Style",
-                "relative_strength": "Moderate signal, especially in sport/fashion narratives",
-                "key_markers": ["local brand pride", "family fitness", "nano-influencers", "Puma self-expression"],
-                "narrative": (
-                    "People express themselves both as proud members of a cultural group and as individuals with distinct taste. "
-                    "Whether through family workouts or curated fashion looks, this tension defines how identity is shaped today."
-                )
-            },
-            {
-                "axis": "Functional Use ↔ Experiential Performance",
-                "intuitive_label": "From Gear to Theater",
-                "relative_strength": "Emerging signal in commerce and sport",
-                "key_markers": ["product drop events", "live shopping", "temple runs", "performance gear"],
-                "narrative": (
-                    "What used to be practical is now performative—shoes are worn to be seen in, shopping is entertainment, "
-                    "and sport is a shareable spectacle. Audiences expect experiences, not just utility."
-                )
-            }
-        ]
-        for i, dim in enumerate(dimensions, 1):
-            with st.expander(f"Dimension {i}: {dim['axis']}"):
-                st.caption(dim['intuitive_label'])
-                st.markdown(f"**Cultural Signals:** {', '.join(dim['key_markers'])}")
-                st.markdown(f"**Strength:** {dim['relative_strength']}")
-                st.caption(dim['narrative'])
-        #endregion
-
-        #region Cross-Domain Analogies
-        st.markdown("### Cross-Domain Connections")
-        st.caption("Illustrative parallels showing shared structure across domains")
-        metaphor_sets = [
+        # Tab 4: Hidden Dimensions
+        with main_tabs[3]:
+            st.markdown("### Hidden Dimensions")
+            st.caption("Underlying conceptual tensions organizing meaning across domains")
+            dimensions = [
+                {
+                    "axis": "Traditional Heritage ↔ Global Modernity",
+                    "intuitive_label": "From Temple Runs to TikTok Trends",
+                    "relative_strength": "Strong signal across clusters",
+                    "key_markers": ["sepak takraw", "temple runs", "K-pop fashion", "TikTok Shop"],
+                    "narrative": (
+                        "This dimension reflects how audiences move between celebrating traditional rituals "
+                        "and embracing hyper-globalized, digital-first experiences. Cultural authenticity and modern aspiration "
+                        "aren't opposites—they’re being blended in new ways."
+                    )
+                },
+                {
+                    "axis": "Collective Identity ↔ Individual Aspiration",
+                    "intuitive_label": "From Community Rituals to Personal Style",
+                    "relative_strength": "Moderate signal, especially in sport/fashion narratives",
+                    "key_markers": ["local brand pride", "family fitness", "nano-influencers", "Puma self-expression"],
+                    "narrative": (
+                        "People express themselves both as proud members of a cultural group and as individuals with distinct taste. "
+                        "Whether through family workouts or curated fashion looks, this tension defines how identity is shaped today."
+                    )
+                },
+                {
+                    "axis": "Functional Use ↔ Experiential Performance",
+                    "intuitive_label": "From Gear to Theater",
+                    "relative_strength": "Emerging signal in commerce and sport",
+                    "key_markers": ["product drop events", "live shopping", "temple runs", "performance gear"],
+                    "narrative": (
+                        "What used to be practical is now performative—shoes are worn to be seen in, shopping is entertainment, "
+                        "and sport is a shareable spectacle. Audiences expect experiences, not just utility."
+                    )
+                }
+            ]
+            for i, dim in enumerate(dimensions, 1):
+                with st.expander(f"Dimension {i}: {dim['axis']}"):
+                    st.caption(dim['intuitive_label'])
+                    st.markdown(f"**Cultural Signals:** {', '.join(dim['key_markers'])}")
+                    st.markdown(f"**Strength:** {dim['relative_strength']}")
+                    st.caption(dim['narrative'])
+    
+        # Tab 5: Cross-Domain Analogies
+        with main_tabs[4]:
+            st.markdown("### Cross-Domain Connections")
+            st.caption("Illustrative parallels showing shared structure across domains")
+            metaphor_sets = [
             {
                 "title": "Rituals and Drops",
                 "metaphor": "Structured anticipation across sacred and commercial moments.",
@@ -509,16 +516,15 @@ class Puma(BaseCustomerRenderer):
                     ("Professional athlete gear", "Performance optimization", "Stylized sportwear for everyday movement")
                 ]
             }
-        ]
-        for m in metaphor_sets:
-            with st.expander(f"{m['title']}"):
-                st.markdown(f"*{m['metaphor']}*")
-                st.caption(m["narrative"])
-                c1, c2, c3 = st.columns(3)
-                c1.markdown(f"**{m['columns'][0]}**"); c2.markdown(f"**{m['columns'][1]}**"); c3.markdown(f"**{m['columns'][2]}**")
-                for row in m["rows"]:
-                    c1.markdown(f"- {row[0]}"); c2.markdown(f"- {row[1]}"); c3.markdown(f"- {row[2]}")
-        #endregion
+            ]
+            for m in metaphor_sets:
+                with st.expander(f"{m['title']}"):
+                    st.markdown(f"*{m['metaphor']}*")
+                    st.caption(m["narrative"])
+                    c1, c2, c3 = st.columns(3)
+                    c1.markdown(f"**{m['columns'][0]}**"); c2.markdown(f"**{m['columns'][1]}**"); c3.markdown(f"**{m['columns'][2]}**")
+                    for row in m["rows"]:
+                        c1.markdown(f"- {row[0]}"); c2.markdown(f"- {row[1]}"); c3.markdown(f"- {row[2]}")
 
     def render_people(self):
         personas = [
