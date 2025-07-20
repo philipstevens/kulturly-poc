@@ -58,7 +58,7 @@ class BaseCustomerRenderer:
         # Space Name
         space_name = st.text_input(
             "Space Name",
-            placeholder="e.g., 'SEA Sports x Lifestyle x Fashion' or 'Malaysian Parenting x Health x Trust'",
+            placeholder="e.g., 'Puma Culture Watch: SEA'",
             help="Give your cultural observatory a memorable name"
         )
 
@@ -78,7 +78,7 @@ class BaseCustomerRenderer:
                     "Education & Learning", "Sustainability & Environment", "Finance & Wealth",
                     "Spirituality & Religion", "Politics & Social Issues", "Work & Career"
                 ],
-                default=self.config.get("default_cultural_domains", ["Sports & Athletics"]),
+                default=self.config.get("default_cultural_domains", ["Sports & Athletics", "Lifestyle & Wellness", "Fashion & Style"]),
                 help="Select 2-4 primary cultural areas that define your space"
             )
 
@@ -91,6 +91,7 @@ class BaseCustomerRenderer:
                     "Local", "Global", "Underground", "Mainstream", "Emerging", "Established",
                     "Youth", "Adult", "Senior", "Male", "Female", "Non-binary", "Urban", "Rural"
                 ],
+                default=self.config.get("default_modifiers", ["Youth", "Modern", "Urban"]),
                 help="Add modifiers to refine your cultural space"
             )
 

@@ -8,7 +8,8 @@ from customers.morinaga import Morinaga
 
 load_dotenv()
 
-is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+# is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+is_dev_mode = True
 
 CUSTOMER_CLASSES = {
     "Puma": Puma,
@@ -17,16 +18,16 @@ CUSTOMER_CLASSES = {
 
 st.set_page_config(layout="wide")
 
-selected_customer_name = "Puma"  # Default selection
+selected_customer_name = "Puma" 
 
-# if not is_dev_mode:
-#     with st.sidebar:
-#         st.subheader("Select Customer Demo")
-#         selected_customer_name = st.selectbox(
-#             label=" ",
-#             options=list(CUSTOMER_CLASSES.keys()),
-#             index=0 
-#         )
+if not is_dev_mode:
+    with st.sidebar:
+        st.subheader("Select Customer Demo")
+        selected_customer_name = st.selectbox(
+            label=" ",
+            options=list(CUSTOMER_CLASSES.keys()),
+            index=0 
+        )
 
 customer = CUSTOMER_CLASSES[selected_customer_name]()
 
@@ -37,9 +38,9 @@ tab_config = [
     ("Space", "render_context"),      # Always accessible
     ("Stories", "render_stories"),
     ("People", "render_people"),
-    ("Drivers", "render_influencers"),
+    ("Influence", "render_influencers"),
     ("Trends", "render_trends"),
-    ("Ideas", "render_ideas"),
+    ("Strategy", "render_ideas"),
     ("Ask", "render_ask"),
     ("Deep Dive", "render_deep_dive")
 ]

@@ -652,7 +652,7 @@ class Puma(BaseCustomerRenderer):
                 st.markdown(f"**Strategic Takeaway:** {n['takeaway']}")
 
         # 2) Diffusion Pathways
-        st.markdown("### 🔄 Diffusion Pathways")
+        st.markdown("### Diffusion Pathways")
         st.code(
             "Cultural Moment → TikTok Algorithm → Instagram Reels → Local Forums → Physical Adoption\n"
             "Olympic Victory → Viral Content → Community Discussion → Product Interest → Purchase\n"
