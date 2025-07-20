@@ -3,6 +3,7 @@ import datetime
 import time  
 import os
 from dotenv import load_dotenv
+import plotly.graph_objects as go
 from customers.puma import Puma
 from customers.morinaga import Morinaga
 

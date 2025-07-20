@@ -6,3 +6,4 @@ numpy
 altair
 scikit-learn
 python-dotenv
+plotly
