@@ -7,3 +7,4 @@ altair
 scikit-learn
 python-dotenv
 plotly
+openai

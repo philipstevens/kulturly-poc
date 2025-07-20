@@ -16,7 +16,7 @@ venv/
 Thumbs.db
 
 # Streamlit-specific
-.streamlit/
+.streamlit/secrets.toml
 
 # Python environment files
 *.env

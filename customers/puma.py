@@ -4,6 +4,9 @@ import streamlit as st
 from customers.base_customer import BaseCustomerRenderer
 import plotly.graph_objects as go
 import numpy as np
+import pandas as pd
+import openai
+import os
 
 class Puma(BaseCustomerRenderer):
     def __init__(self):
@@ -21,10 +24,10 @@ class Puma(BaseCustomerRenderer):
     def render_stories(self):
         main_tabs = st.tabs([
             "📖 Themes", 
-            "🌍 Local Lenses", 
-            "🧠 Word Shifts", 
             "🔎 Deep Patterns", 
-            "🔗 Shared Signals"
+            "🔗 Shared Signals",
+            "🌍 Local Lenses", 
+            "🧠 Word Shifts"  
         ])
         
         # Tab 1: Cultural Narratives
@@ -214,7 +217,7 @@ class Puma(BaseCustomerRenderer):
                     st.markdown(card_html, unsafe_allow_html=True)
 
         # Tab 2: Regional Framings
-        with main_tabs[1]:
+        with main_tabs[3]:
             st.markdown("### Regional Framings")
             st.caption("How core ideas are locally interpreted and emphasized across cultures")
             
@@ -288,7 +291,7 @@ class Puma(BaseCustomerRenderer):
                     st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
 
         # Tab 3: Semantic Evolution
-        with main_tabs[2]:
+        with main_tabs[4]:
             st.markdown("### Semantic Evolution")
             st.caption("How key terms shift meaning across contexts and time")
             evolution_data = {
@@ -385,7 +388,7 @@ class Puma(BaseCustomerRenderer):
                     st.info(f"**Shift driver:** {data['shift_driver']}")
 
         # Tab 4: Hidden Dimensions
-        with main_tabs[3]:
+        with main_tabs[1]:
             st.markdown("### Hidden Dimensions")
             st.caption("Underlying conceptual tensions organizing meaning across domains")
             dimensions = [
@@ -434,27 +437,27 @@ class Puma(BaseCustomerRenderer):
                 border_color = strength_colors.get(dim["strength"], "#DDD")
                 with col:
                     card_html = (
-                        f'<div style="border:2px solid {border_color};background-color:{border_color}20; border-radius:8px; padding:16px; margin-bottom:16px;">'
-                        f'  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">'
-                        f'    <strong style="font-size:16px;">{dim["axis"]}</strong>'
-                        f'  </div>'
-                        f'  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;">'
-                        f'    <div><strong>Signal Strength:</strong> {dim["strength"]}</div>'
-                        f'    <div><strong>Key Markers:</strong> {", ".join(dim["key_markers"])}</div>'
-                        f'  </div>'
-                        f'  <details style="margin-top:16px; border-radius:8px; overflow:hidden;">'
-                        f'    <summary style="font-weight:bold; cursor:pointer;">Full Details</summary>'
-                        f'    <div style="padding:0 16px 16px; border-top:1px solid #CCC; line-height:1.6;">'
-                        f'      <p>{dim["narrative"]}</p>'
-                        f'    </div>'
-                        f'  </details>'
-                        f'</div>'
+                            f'<div style="border:2px solid {border_color}; border-radius:8px; padding:16px; margin-bottom:16px;">'
+                            f'  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">'
+                            f'    <strong style="font-size:16px;">{dim["axis"]}</strong>'
+                            f'  </div>'
+                            f'  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;">'
+                            f'    <div><strong>Signal Strength:</strong> <span style="background-color: {border_color}; color: black; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;">{dim["strength"]}</span></div>'
+                            f'    <div><strong>Key Markers:</strong> {", ".join(dim["key_markers"])}</div>'
+                            f'  </div>'
+                            f'  <details style="margin-top:16px; border-radius:8px; overflow:hidden;">'
+                            f'    <summary style="font-weight:bold; cursor:pointer;">Full Details</summary>'
+                            f'    <div style="padding:0 16px 16px; border-top:1px solid #CCC; line-height:1.6;">'
+                            f'      <p>{dim["narrative"]}</p>'
+                            f'    </div>'
+                            f'  </details>'
+                            f'</div>'
 
                     )
                     st.markdown(card_html, unsafe_allow_html=True)
 
         # Tab 5: Cross-Domain Analogies
-        with main_tabs[4]:
+        with main_tabs[2]:
             st.markdown("### Cross-Domain Connections")
             st.caption("Illustrative parallels showing shared structure across domains")
             metaphor_sets = [
@@ -544,14 +547,37 @@ class Puma(BaseCustomerRenderer):
                     ]
                 }
             ]
-            for m in metaphor_sets:
-                with st.expander(f"{m['title']}"):
+            # Display as tabs for better organization
+            tab_names = [m['title'] for m in metaphor_sets]
+            connection_tabs = st.tabs(tab_names)
+            
+            for idx, m in enumerate(metaphor_sets):
+                with connection_tabs[idx]:
                     st.markdown(f"*{m['metaphor']}*")
                     st.caption(m["narrative"])
-                    c1, c2, c3 = st.columns(3)
-                    c1.markdown(f"**{m['columns'][0]}**"); c2.markdown(f"**{m['columns'][1]}**"); c3.markdown(f"**{m['columns'][2]}**")
+                    
+                    # Create DataFrame for table display
+                    table_data = []
                     for row in m["rows"]:
-                        c1.markdown(f"- {row[0]}"); c2.markdown(f"- {row[1]}"); c3.markdown(f"- {row[2]}")
+                        table_data.append({
+                            m['columns'][0]: row[0],
+                            m['columns'][1]: row[1], 
+                            m['columns'][2]: row[2]
+                        })
+                    
+                    df = pd.DataFrame(table_data)
+                    
+                    # Display as a clean table
+                    st.dataframe(
+                        df,
+                        use_container_width=True,
+                        hide_index=True,
+                        column_config={
+                            m['columns'][0]: st.column_config.TextColumn(m['columns'][0], width="medium"),
+                            m['columns'][1]: st.column_config.TextColumn(m['columns'][1], width="medium"),
+                            m['columns'][2]: st.column_config.TextColumn(m['columns'][2], width="medium")
+                        }
+                    )
 
     def render_people(self):
         personas = [
@@ -624,91 +650,106 @@ class Puma(BaseCustomerRenderer):
             )
             col.markdown(card_html, unsafe_allow_html=True)
 
-    def render_influencers(self):
-        st.subheader("Core Networks & Influencers")
-
-        # 1) Core Influence Narratives
-        narratives = [
-            {
-                "title": "TikTok Creator Economy",
-                "story": (
-                    "Algorithm‑driven discovery on TikTok spawns new influence pathways beyond simple follower counts. "
-                    "Nano‑influencers (1k–10k followers) achieve viral reach by blending entertainment and commerce—"
-                    "key brokers are live sellers who demo product and entertain in one stream."
-                ),
-                "evidence": (
-                    "[RTL Today on social commerce trends]"
-                    "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)  "
-                    "[Marketing Interactive on TikTok cultural play]"
-                    "(https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia)"
-                ),
-                "takeaway": "Partner with top live sellers and optimize for discovery‑first content formats."
-            },
-            {
-                "title": "Traditional Sports Communities",
-                "story": (
-                    "Olympic heroes (like Tennis Panipak), community gym leaders and indigenous sport masters "
-                    "create authentic cultural moments that bridge the digital and physical worlds."
-                ),
-                "evidence": (
-                    "[DataXet Olympic social engagement]"
-                    "(https://www.dataxet.co/insights/olympic-games-2024-en)"
-                ),
-                "takeaway": "Activate athlete ambassadors and local club sponsorships to spark organic buzz."
-            },
-            {
-                "title": "Sneakerhead Collectors",
-                "story": (
-                    "Local sneaker exhibitions and heritage‑brand founders fuel the #LocalPride movement. "
-                    "They blend IRL events with digital storytelling to anchor powerful cultural narratives."
-                ),
-                "evidence": (
-                    "[SemScholar on local product preference]"
-                    "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)  "
-                    "[SNKRDUNK on sneaker culture]"
-                    "(https://snkrdunk.com/en/magazine/2024/08/07/snkrdunk-streetsnaps-rise-of-the-sneakers-the-playground-2024/)"
-                ),
-                "takeaway": "Co‑produce limited‑edition drops and livestream event recaps to amplify collector networks."
-            }
-        ]
-
-        for n in narratives:
-            with st.expander(n["title"], expanded=False):
-                st.markdown(f"**Story:** {n['story']}")
-                st.markdown(f"**Evidence:** {n['evidence']}")
-                st.markdown(f"**Strategic Takeaway:** {n['takeaway']}")
-
-        # 2) Diffusion Pathways
-        st.markdown("### Diffusion Pathways")
-        st.code(
-            "Cultural Moment → TikTok Algorithm → Instagram Reels → Local Forums → Physical Adoption\n"
-            "Olympic Victory → Viral Content → Community Discussion → Product Interest → Purchase\n"
-            "Local Exhibition → Social Documentation → Hashtag Movement → Mainstream Adoption"
-        )
-
-        # 3) Key Cultural Brokers
-        st.markdown("### Key Cultural Brokers by Market")
-        brokers = {
-            "Indonesia": [
-                "Christine Febriyanti (TikTok live seller)",
-                "Local sneaker exhibition organizers",
-                "Paralympic athlete influencers"
-            ],
-            "Malaysia": [
-                "Multilingual content creators",
-                "Sepak Takraw community leaders",
-                "Tech‑lifestyle influencers"
-            ],
-            "Thailand": [
-                "Tennis Panipak (Olympic gold medalist)",
-                "Muay Thai fitness influencers",
-                "Royal‑aesthetic lifestyle creators"
+    def render_influencers(self):        
+        # Create main tabs for different aspects of influencer analysis
+        influencer_tabs = st.tabs([
+            "🕸️ Network Types", 
+            "🛤️ Diffusion Paths", 
+            "👑 Key Brokers"
+        ])
+        
+        # Tab 1: Core Influence Narratives
+        with influencer_tabs[0]:
+            st.markdown("### Core Influence Networks")
+            st.caption("Key influencer ecosystems shaping cultural conversations and commerce")
+            
+            narratives = [
+                {
+                    "title": "TikTok Creator Economy",
+                    "story": (
+                        "Algorithm‑driven discovery on TikTok spawns new influence pathways beyond simple follower counts. "
+                        "Nano‑influencers (1k–10k followers) achieve viral reach by blending entertainment and commerce—"
+                        "key brokers are live sellers who demo product and entertain in one stream."
+                    ),
+                    "evidence": (
+                        "[RTL Today on social commerce trends]"
+                        "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)  "
+                        "[Marketing Interactive on TikTok cultural play]"
+                        "(https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia)"
+                    ),
+                    "takeaway": "Partner with top live sellers and optimize for discovery‑first content formats."
+                },
+                {
+                    "title": "Traditional Sports Communities",
+                    "story": (
+                        "Olympic heroes (like Tennis Panipak), community gym leaders and indigenous sport masters "
+                        "create authentic cultural moments that bridge the digital and physical worlds."
+                    ),
+                    "evidence": (
+                        "[DataXet Olympic social engagement]"
+                        "(https://www.dataxet.co/insights/olympic-games-2024-en)"
+                    ),
+                    "takeaway": "Activate athlete ambassadors and local club sponsorships to spark organic buzz."
+                },
+                {
+                    "title": "Sneakerhead Collectors",
+                    "story": (
+                        "Local sneaker exhibitions and heritage‑brand founders fuel the #LocalPride movement. "
+                        "They blend IRL events with digital storytelling to anchor powerful cultural narratives."
+                    ),
+                    "evidence": (
+                        "[SemScholar on local product preference]"
+                        "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)  "
+                        "[SNKRDUNK on sneaker culture]"
+                        "(https://snkrdunk.com/en/magazine/2024/08/07/snkrdunk-streetsnaps-rise-of-the-sneakers-the-playground-2024/)"
+                    ),
+                    "takeaway": "Co‑produce limited‑edition drops and livestream event recaps to amplify collector networks."
+                }
             ]
-        }
-        for market, names in brokers.items():
-            st.markdown(f"**{market}:**")
-            for name in names:
-                st.markdown(f"- {name}")
+
+            for n in narratives:
+                with st.expander(n["title"], expanded=False):
+                    st.markdown(f"**Story:** {n['story']}")
+                    st.markdown(f"**Evidence:** {n['evidence']}")
+                    st.markdown(f"**Strategic Takeaway:** {n['takeaway']}")
+
+        # Tab 2: Diffusion Pathways
+        with influencer_tabs[1]:
+            st.markdown("### Diffusion Pathways")
+            st.caption("How cultural moments spread through influencer networks to drive adoption")
+            
+            st.code(
+                "Cultural Moment → TikTok Algorithm → Instagram Reels → Local Forums → Physical Adoption\n"
+                "Olympic Victory → Viral Content → Community Discussion → Product Interest → Purchase\n"
+                "Local Exhibition → Social Documentation → Hashtag Movement → Mainstream Adoption"
+            )
+
+        # Tab 3: Key Cultural Brokers
+        with influencer_tabs[2]:
+            st.markdown("### Key Cultural Brokers by Market")
+            st.caption("Most influential voices shaping brand perception and cultural trends")
+            
+            brokers = {
+                "Indonesia": [
+                    "Christine Febriyanti (TikTok live seller)",
+                    "Local sneaker exhibition organizers",
+                    "Paralympic athlete influencers"
+                ],
+                "Malaysia": [
+                    "Multilingual content creators",
+                    "Sepak Takraw community leaders",
+                    "Tech‑lifestyle influencers"
+                ],
+                "Thailand": [
+                    "Tennis Panipak (Olympic gold medalist)",
+                    "Muay Thai fitness influencers",
+                    "Royal‑aesthetic lifestyle creators"
+                ]
+            }
+            for market, names in brokers.items():
+                st.markdown(f"**{market}:**")
+                for name in names:
+                    st.markdown(f"- {name}")
 
     def render_trends(self):
         trends = [
@@ -808,70 +849,166 @@ class Puma(BaseCustomerRenderer):
                 st.markdown(f"**Strategic Impact:** {trend['impact']}")
 
     def render_ideas(self):
-        st.markdown("### Strategic Hypotheses")
+        strategy_tabs = st.tabs([
+            "🧪 Hypotheses", 
+            "🚀 Actions"
+        ])
 
-        hypotheses = [
-            {
-                "cluster": "Narratives",
-                "statement": "Collaborating with local traditional sports communities (Muay Thai gyms, Sepak Takraw clubs) will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
-                "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
-            },
-            {
-                "cluster": "Personas",
-                "statement": "Targeting Digital Native Athletes with Paralympic-inspired adaptive sports gear will capture the emerging inclusion trend and drive 25% engagement increase.",
-                "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
-            },
-            {
-                "cluster": "Networks",
-                "statement": "Partnering with nano-influencers (1k–10k followers) for hyper-localized content will achieve 40% higher conversion rates than macro-influencer campaigns.",
-                "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok Shop conversion data, 2025</a>'
-            },
-            {
-                "cluster": "Trends",
-                "statement": "Launching TikTok Live commerce sessions during major sporting events will capitalize on viral cultural moments and drive 50% higher purchase intent.",
-                "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
+        with strategy_tabs[0]:
+            st.markdown("### Strategic Hypotheses")
+
+            hypotheses = [
+                {
+                    "cluster": "Narratives",
+                    "statement": "Collaborating with local traditional sports communities (Muay Thai gyms, Sepak Takraw clubs) will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
+                    "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
+                },
+                {
+                    "cluster": "Personas",
+                    "statement": "Targeting Digital Native Athletes with Paralympic-inspired adaptive sports gear will capture the emerging inclusion trend and drive 25% engagement increase.",
+                    "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
+                },
+                {
+                    "cluster": "Networks",
+                    "statement": "Partnering with nano-influencers (1k–10k followers) for hyper-localized content will achieve 40% higher conversion rates than macro-influencer campaigns.",
+                    "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok Shop conversion data, 2025</a>'
+                },
+                {
+                    "cluster": "Trends",
+                    "statement": "Launching TikTok Live commerce sessions during major sporting events will capitalize on viral cultural moments and drive 50% higher purchase intent.",
+                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
+                }
+            ]
+
+            for h in hypotheses:
+                st.markdown(
+                    f"""
+                    <div style="border:1px solid #ccc; border-radius:6px; padding:12px; margin-bottom:12px;">
+                        <p style="margin:8px 0 4px 0;"> {h['statement']}</p>
+                        <p style="margin:0; font-size:0.85em; color:gray;"><em>Source: {h['source']}</em></p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+        with strategy_tabs[1]:
+            st.markdown("### Strategic Recommendations (by Cultural Impact Priority)")
+
+            recommendations = [
+                {
+                    "priority": 1,
+                    "title": "Authentic Local Sports Integration",
+                    "body": "Develop collaborations with traditional sports communities (Muay Thai, Sepak Takraw) to create culturally grounded product lines that respect heritage while meeting modern performance needs. Focus on storytelling that bridges traditional athletic culture with contemporary lifestyle aspirations."
+                },
+                {
+                    "priority": 2,
+                    "title": "Nano-Influencer Commerce Network",
+                    "body": "Build relationships with 1k–10k follower creators who embody authentic community leadership. Prioritize trust-building over reach metrics to match Southeast Asian preferences for intimate brand connections."
+                },
+                {
+                    "priority": 3,
+                    "title": "Cultural Moment Activation",
+                    "body": "Develop rapid-response capabilities to capitalize on viral sporting moments through real-time content creation and TikTok Live commerce activations that feel organic rather than opportunistic."
+                }
+            ]
+
+            for r in recommendations:
+                st.markdown(
+                    f"""
+                    <div style="border-left:5px solid #4CAF50; padding:12px; margin-bottom:16px;">
+                        <h4 style="margin-bottom:6px;">{r['priority']}. {r['title']}</h4>
+                        <p style="margin:0;">{r['body']}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+    def render_ask(self):
+        st.markdown("""
+            <style>
+            .space-title {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
             }
-        ]
-
-        for h in hypotheses:
-            st.markdown(
-                f"""
-                <div style="border:1px solid #ccc; border-radius:6px; padding:12px; margin-bottom:12px;">
-                    <p style="margin:8px 0 4px 0;"> {h['statement']}</p>
-                    <p style="margin:0; font-size:0.85em; color:gray;"><em>Source: {h['source']}</em></p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-
-        st.markdown("### Strategic Recommendations (by Cultural Impact Priority)")
-
-        recommendations = [
-            {
-                "priority": 1,
-                "title": "Authentic Local Sports Integration",
-                "body": "Develop collaborations with traditional sports communities (Muay Thai, Sepak Takraw) to create culturally grounded product lines that respect heritage while meeting modern performance needs. Focus on storytelling that bridges traditional athletic culture with contemporary lifestyle aspirations."
-            },
-            {
-                "priority": 2,
-                "title": "Nano-Influencer Commerce Network",
-                "body": "Build relationships with 1k–10k follower creators who embody authentic community leadership. Prioritize trust-building over reach metrics to match Southeast Asian preferences for intimate brand connections."
-            },
-            {
-                "priority": 3,
-                "title": "Cultural Moment Activation",
-                "body": "Develop rapid-response capabilities to capitalize on viral sporting moments through real-time content creation and TikTok Live commerce activations that feel organic rather than opportunistic."
+            .space-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
             }
-        ]
+            .section-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem 0;
+            padding-bottom: 0.3rem;
+            }
+            .stButton button {
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            </style>
+            """, 
+            unsafe_allow_html=True
+        )
 
-        for r in recommendations:
-            st.markdown(
-                f"""
-                <div style="border-left:5px solid #4CAF50; padding:12px; margin-bottom:16px;">
-                    <h4 style="margin-bottom:6px;">{r['priority']}. {r['title']}</h4>
-                    <p style="margin:0;">{r['body']}</p>
-                </div>
-                """,
-                unsafe_allow_html=True
+        st.markdown('<div class="space-title">Kultie ✨</div>', unsafe_allow_html=True)
+        st.markdown('<div class="space-subtitle">Your assistent for exploring insights</div>', unsafe_allow_html=True)
+        
+        # Initialize OpenAI client with API key from secrets
+        try:
+            api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+            if not api_key:
+                st.error("OpenAI API key not found. Please add OPENAI_API_KEY to your Streamlit secrets or environment variables.")
+                return
+            
+            client = openai.OpenAI(api_key=api_key)
+            
+            # User input
+            user_prompt = st.text_area(
+                "",
+                placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
+                height=100
             )
+            
+            if st.button("Get Insights", type="primary") and user_prompt.strip():
+                with st.spinner("Analyzing cultural context..."):
+                    try:
+                        # Context and role setup for Puma Southeast Asia cultural insights
+                        system_context = """You are a cultural strategy expert specializing in Southeast Asian markets, specifically Indonesia, Malaysia, and Thailand. You have deep knowledge of:
+                        - TikTok commerce and live shopping trends
+                        - Local pride movements and authentic brand positioning  
+                        - Traditional sports culture (Muay Thai, Sepak Takraw) integration
+                        - K-pop cultural influence on fashion and lifestyle
+                        - Nano-influencer trust economy
+                        - Multi-generational fitness and family wellness trends
+                        - Digital-physical sport fusion and temple running culture
+
+                        Your responses should be:
+                        1. Culturally nuanced and respectful
+                        2. Backed by specific Southeast Asian consumer insights
+                        3. Actionable for Puma's brand strategy
+                        4. Focused on authentic engagement rather than superficial trends
+
+                        Provide strategic recommendations that balance global brand consistency with local cultural authenticity."""
+
+                        response = client.chat.completions.create(
+                            model="gpt-4o-mini",  # Cheapest OpenAI model
+                            messages=[
+                                {"role": "system", "content": system_context},
+                                {"role": "user", "content": user_prompt}
+                            ],
+                            max_tokens=800,
+                            temperature=0.7
+                        )
+                        
+                        # Display the response
+                        st.markdown("#### 💡 Cultural Insights & Recommendations")
+                        st.markdown(response.choices[0].message.content)
+                        
+                    except Exception as e:
+                        st.error(f"Error generating insights: {str(e)}")
+                        
+        except Exception as e:
+            st.error(f"Error setting up OpenAI client: {str(e)}")
