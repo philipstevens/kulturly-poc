@@ -42,8 +42,7 @@ tab_config = [
     ("Influence", "render_influencers"),
     ("Trends", "render_trends"),
     ("Strategy", "render_ideas"),
-    ("Ask", "render_ask"),
-    ("Deep Dive", "render_deep_dive")
+    ("Kultie", "render_ask")
 ]
 
 tabs = st.tabs([name for name, _ in tab_config])

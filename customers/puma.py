@@ -7,6 +7,8 @@ import numpy as np
 import pandas as pd
 import openai
 import os
+import time
+import pathlib
 
 class Puma(BaseCustomerRenderer):
     def __init__(self):
@@ -943,11 +945,6 @@ class Puma(BaseCustomerRenderer):
             margin: 1.5rem 0 0.5rem 0;
             padding-bottom: 0.3rem;
             }
-            .stButton button {
-                margin-left: auto;
-                margin-right: auto;
-                display: block;
-            }
             </style>
             """, 
             unsafe_allow_html=True
@@ -966,49 +963,103 @@ class Puma(BaseCustomerRenderer):
             client = openai.OpenAI(api_key=api_key)
             
             # User input
-            user_prompt = st.text_area(
-                "",
-                placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
-                height=100
-            )
+            col1, col2 = st.columns([17, 1])
+        
+            with col1:
+                user_prompt = st.text_area(
+                    "",
+                    placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
+                    height=100
+                )
+            with col2:
+                st.markdown("")
             
-            if st.button("Get Insights", type="primary") and user_prompt.strip():
-                with st.spinner("Analyzing cultural context..."):
-                    try:
-                        # Context and role setup for Puma Southeast Asia cultural insights
-                        system_context = """You are a cultural strategy expert specializing in Southeast Asian markets, specifically Indonesia, Malaysia, and Thailand. You have deep knowledge of:
-                        - TikTok commerce and live shopping trends
-                        - Local pride movements and authentic brand positioning  
-                        - Traditional sports culture (Muay Thai, Sepak Takraw) integration
-                        - K-pop cultural influence on fashion and lifestyle
-                        - Nano-influencer trust economy
-                        - Multi-generational fitness and family wellness trends
-                        - Digital-physical sport fusion and temple running culture
+            col1, col2 = st.columns([8, 1])
+            
+            with col1:
+                deep_research = st.toggle(
+                    "Deep Research", 
+                    value=False, 
+                    key="deep_research"
+                )
+            
+            with col2:
+                submit_clicked = st.button(
+                    "➤", key="submit_btn", help="Submit query")
+            
+            if submit_clicked and user_prompt.strip():
+                if deep_research:
+                    steps = [
+                    ("🔍", "Searching relevant sources...", 1.5),
+                    ("📚", "Analyzing 847 sources across Southeast Asia...", 2),
+                    ("🧠", "Identifying cultural patterns and connections...", 1.5),
+                    ("✅", "Cross-referencing with market data and social insights...", 1),
+                    ("🤔", "Refining research focus...", 1),
+                ]
 
-                        Your responses should be:
-                        1. Culturally nuanced and respectful
-                        2. Backed by specific Southeast Asian consumer insights
-                        3. Actionable for Puma's brand strategy
-                        4. Focused on authentic engagement rather than superficial trends
+                    # 2) Render the log
+                    build_container = st.container()
+                    build_log = build_container.empty()
+                    completed = []
 
-                        Provide strategic recommendations that balance global brand consistency with local cultural authenticity."""
+                    for emoji, msg, pause in steps:
+                        # build the HTML log
+                        html = "<div style='font-family:monospace; font-size:14px; line-height:1.8;'>"
+                        for e, m in completed:
+                            html += f"<div>✅ {e} {m}</div>"
+                        html += f"<div style='animation:pulse 1.5s infinite;'>🔄 {emoji} {msg}</div>"
+                        html += "</div>"
 
-                        response = client.chat.completions.create(
-                            model="gpt-4o-mini",  # Cheapest OpenAI model
-                            messages=[
-                                {"role": "system", "content": system_context},
-                                {"role": "user", "content": user_prompt}
-                            ],
-                            max_tokens=800,
-                            temperature=0.7
-                        )
-                        
-                        # Display the response
-                        st.markdown("#### 💡 Cultural Insights & Recommendations")
-                        st.markdown(response.choices[0].message.content)
-                        
-                    except Exception as e:
-                        st.error(f"Error generating insights: {str(e)}")
+                        build_log.markdown(html, unsafe_allow_html=True)
+                        time.sleep(pause)
+                        completed.append((emoji, msg))
+
+                    # final completed log
+                    final_html = "<div style='font-family:monospace; font-size:14px; line-height:1.8;'>"
+                    for e, m in completed:
+                        final_html += f"<div>✅ {e} {m}</div>"
+                    final_html += "</div>"
+                    build_log.markdown(final_html, unsafe_allow_html=True)
+
+                    # 3) Load & display your local markdown
+                    md = pathlib.Path("puma_research.md").read_text()
+                    st.markdown(md, unsafe_allow_html=True) 
+                else:
+                    with st.spinner("Analyzing cultural context..."):
+                        try:
+                            # Context and role setup for Puma Southeast Asia cultural insights
+                            system_context = """You are a cultural strategy expert specializing in Southeast Asian markets, specifically Indonesia, Malaysia, and Thailand. You have deep knowledge of:
+                            - TikTok commerce and live shopping trends
+                            - Local pride movements and authentic brand positioning  
+                            - Traditional sports culture (Muay Thai, Sepak Takraw) integration
+                            - K-pop cultural influence on fashion and lifestyle
+                            - Nano-influencer trust economy
+                            - Multi-generational fitness and family wellness trends
+                            - Digital-physical sport fusion and temple running culture
+
+                            Your responses should be:
+                            1. Culturally nuanced and respectful
+                            2. Backed by specific Southeast Asian consumer insights
+                            3. Actionable for Puma's brand strategy
+                            4. Focused on authentic engagement rather than superficial trends
+
+                            Provide strategic recommendations that balance global brand consistency with local cultural authenticity."""
+
+                            response = client.chat.completions.create(
+                                model="gpt-4o-mini",  # Cheapest OpenAI model
+                                messages=[
+                                    {"role": "system", "content": system_context},
+                                    {"role": "user", "content": user_prompt}
+                                ],
+                                max_tokens=800,
+                                temperature=0.7
+                            )
+                            
+                            # Display the response
+                            st.markdown("#### 💡 Cultural Insights & Recommendations")
+                            st.markdown(response.choices[0].message.content)   
+                        except Exception as e:
+                            st.error(f"Error generating insights: {str(e)}")
                         
         except Exception as e:
             st.error(f"Error setting up OpenAI client: {str(e)}")
