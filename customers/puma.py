@@ -859,6 +859,8 @@ class Puma(BaseCustomerRenderer):
         strategy_tabs = st.tabs([
             "🧪 Hypotheses", 
             "🔍 Opportunity Gaps",
+            "🎨 Culture Creation",
+            "❓ What If",
             "🚀 Actions"
         ])
 
@@ -932,8 +934,90 @@ class Puma(BaseCustomerRenderer):
                     unsafe_allow_html=True
                 )
 
-
         with strategy_tabs[2]:
+            creations = [
+                {
+                    "title": "Authentic Local Culture Integration Playbook",
+                    "body": "Step-by-step guide for co-designing with regional sports communities (e.g., Muay Thai, Sepak Takraw), including partner selection, design workshops, storytelling angles, and success metrics such as cultural authenticity lift.",
+                    "source": '<a href="https://hbr.org/2024/05/marketing-playbooks-for-emerging-markets" target="_blank">HBR Playbook Frameworks, 2024</a>'
+                },
+                {
+                    "title": "Nano-Influencer Network Playbook",
+                    "body": "Framework for identifying, onboarding, and incentivizing nano- and micro-influencers across SEA cities, with guidelines on content co-creation, engagement tracking, and conversion measurement (+40% lift potential).",
+                    "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
+                },
+                {
+                    "title": "AR/VR Immersive Experience Playbook",
+                    "body": "Blueprint for developing AR filters and VR try-on campaigns, covering ideation, tech partner selection, incentivization mechanisms (e.g., in-store reward redemptions), and KPIs like UGC volume and footfall.",
+                    "source": '<a href="https://www.mckinsey.com/our-insights/experimental-marketing-labs" target="_blank">McKinsey Marketing Labs, 2025</a>'
+                },
+                {
+                    "title": "Pop-Up Experiential Lab Playbook",
+                    "body": "Guide to staging short-term pop-up labs that fuse retail with local culture, detailing site selection, interactive installations (e.g., foosball courts, customization workshops), and metrics (foot traffic, dwell time, social shares).",
+                    "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
+                },
+                {
+                    "title": "Co-Creation & Crowdsourced Design Playbook",
+                    "body": "Instructions for running co-creation workshops and design contests with consumers and local artists, from ideation to prototyping and launch, measuring outputs like concepts generated and UGC sentiment.",
+                    "source": '<a href="https://adage.com/article/cmo-strategy/brands-creative-workshops-engage-consumers/237042" target="_blank">AdAge, 2024</a>'
+                },
+                {
+                    "title": "Digital Collectibles & Metaverse Drops Playbook",
+                    "body": "Steps for launching phygital NFT drops and metaverse experiences, including drop structure, platform selection, redemption mechanics, and success metrics (NFT sell-out rates, virtual event attendance).",
+                    "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
+                }
+            ]
+            for c in creations:
+                st.markdown(
+                    f"""
+                    <div style="border:1px solid #007ACC; border-radius:6px; padding:12px; margin-bottom:12px;">
+                        <h4 style="margin-bottom:6px;">{c['title']}</h4>
+                        <p style="margin:0;">{c['body']}<br><em>Source: {c['source']}</em></p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+        with strategy_tabs[3]:
+            scenarios = [
+                {
+                    "title": "Nano-Influencer Partnerships",
+                    "body": "If Puma scales up its network of nano-influencers across key SEA cities, culture will shift toward grassroots authenticity, driving an estimated 15% increase in brand favorability and 40% conversion uplift.",
+                    "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
+                },
+                {
+                    "title": "Inclusive & Adaptive Gear Launch",
+                    "body": "If Puma launches a dedicated ‘Adapt & Modest’ line co-designed with local athletes, culture will shift toward inclusive sports participation, leading to a projected 25% engagement rise among underrepresented segments.",
+                    "source": '<a href="https://www.dataxet.co/insights/inclusive-sports-gear-sea" target="_blank">DataXet Inclusion Trends, Q1 2025</a>'
+                },
+                {
+                    "title": "Monthly Community Festivals",
+                    "body": "If Puma hosts recurring urban sports festivals, culture will shift toward communal brand experiences, boosting event-based sales spikes by up to 25% and generating increased local advocacy.",
+                    "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
+                },
+                {
+                    "title": "Real-Time Cultural Moment Activations",
+                    "body": "If Puma deploys rapid-response campaigns around viral sports moments (e.g., live-stream commerce tied to a local team’s victory), culture will shift toward viewing Puma as culturally agile, driving 50% higher purchase intent during the activation window.",
+                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">RTL Live Commerce Analytics, ongoing</a>'
+                },
+                {
+                    "title": "Phygital Metaverse Experience",
+                    "body": "If Puma integrates metaverse drops with exclusive digital collectibles redeemable for physical products, culture will shift toward a tech-forward brand perception, resulting in an anticipated surge in digital engagement and brand heat among Gen Z users.",
+                    "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
+                }
+            ]
+            for s in scenarios:
+                st.markdown(
+                    f"""
+                    <div style="border:1px dotted #FF5722; border-radius:6px; padding:12px; margin-bottom:12px;">
+                        <h4 style="margin-bottom:6px;">{s['title']}</h4>
+                        <p style="margin:0;">{s['body']}<br><em>Source: {s['source']}</em></p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+        with strategy_tabs[4]:
             recommendations = [
                 {
                     "priority": 1,
