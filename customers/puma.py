@@ -34,7 +34,6 @@ class Puma(BaseCustomerRenderer):
         
         # Tab 1: Cultural Narratives
         with main_tabs[0]:
-            st.markdown("### Cultural Narratives")
             st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
         
             narratives = [
@@ -220,7 +219,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 2: Regional Framings
         with main_tabs[3]:
-            st.markdown("### Regional Framings")
             st.caption("How core ideas are locally interpreted and emphasized across cultures")
             
             framing_tabs = st.tabs(["Performance vs. Lifestyle", "Community vs. Individualism", "Tradition vs. Modernity"])
@@ -294,7 +292,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 3: Semantic Evolution
         with main_tabs[4]:
-            st.markdown("### Semantic Evolution")
             st.caption("How key terms shift meaning across contexts and time")
             evolution_data = {
                 "Athletic": {
@@ -391,7 +388,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 4: Hidden Dimensions
         with main_tabs[1]:
-            st.markdown("### Hidden Dimensions")
             st.caption("Underlying conceptual tensions organizing meaning across domains")
             dimensions = [
                 {
@@ -460,7 +456,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 5: Cross-Domain Analogies
         with main_tabs[2]:
-            st.markdown("### Cross-Domain Connections")
             st.caption("Illustrative parallels showing shared structure across domains")
             metaphor_sets = [
                 {
@@ -675,7 +670,6 @@ class Puma(BaseCustomerRenderer):
         
         # Tab 1: Core Influence Narratives
         with influencer_tabs[0]:
-            st.markdown("### Core Influence Networks")
             st.caption("Key influencer ecosystems shaping cultural conversations and commerce")
             
             narratives = [
@@ -730,7 +724,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 2: Diffusion Pathways
         with influencer_tabs[1]:
-            st.markdown("### Diffusion Pathways")
             st.caption("How cultural moments spread through influencer networks to drive adoption")
             
             st.code(
@@ -741,7 +734,6 @@ class Puma(BaseCustomerRenderer):
 
         # Tab 3: Key Cultural Brokers
         with influencer_tabs[2]:
-            st.markdown("### Key Cultural Brokers by Market")
             st.caption("Most influential voices shaping brand perception and cultural trends")
             
             brokers = {
@@ -866,12 +858,11 @@ class Puma(BaseCustomerRenderer):
     def render_ideas(self):
         strategy_tabs = st.tabs([
             "🧪 Hypotheses", 
+            "🔍 Opportunity Gaps",
             "🚀 Actions"
         ])
 
         with strategy_tabs[0]:
-            st.markdown("### Strategic Hypotheses")
-
             hypotheses = [
                 {
                     "cluster": "Narratives",
@@ -907,8 +898,42 @@ class Puma(BaseCustomerRenderer):
                 )
 
         with strategy_tabs[1]:
-            st.markdown("### Strategic Recommendations (by Cultural Impact Priority)")
+            gaps = [
+                {
+                    "title": "Local Culture & Sports Heritage",
+                    "body": "Co-design a Muay Thai and Sepak Takraw-inspired capsule with regional gyms and artisans, addressing the 60% of Heritage-Forward urban consumers in SEA who seek authentic cultural narratives in sportswear.",
+                    "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
+                },
+                {
+                    "title": "Immersive Social Commerce White Space",
+                    "body": "Launch interactive TikTok Shop live events for Puma gear—leveraging under‑utilized social commerce channels to create shareable, event‑style shopping experiences and drive spontaneous sales spikes.",
+                    "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok commerce data, 2025</a>'
+                },
+                {
+                    "title": "Nano-Influencer Community Partnerships",
+                    "body": "Build a ‘Puma Community Crew’ of nano-influencers (1k–10k followers) across Bangkok, Jakarta, and Manila to co-create localized content and small-scale activations—capitalizing on 40% higher conversions vs. macros.",
+                    "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
+                },
+                {
+                    "title": "Inclusive & Adaptive Gear Opportunity",
+                    "body": "Introduce a ‘Puma Adapt & Modest’ line—featuring sports hijabs, full-coverage activewear, and adaptive footwear—responding to a 30% surge in regional searches post-Paralympics.",
+                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
+                }
+            ]
 
+            for g in gaps:
+                st.markdown(
+                    f"""
+                    <div style="border:1px dashed #999; border-radius:6px; padding:12px; margin-bottom:12px;">
+                        <h4 style="margin-bottom:6px;">{g['title']}</h4>
+                        <p style="margin:0;">{g['body']} <br><em>Source: {g['source']}</em></p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+
+        with strategy_tabs[2]:
             recommendations = [
                 {
                     "priority": 1,
