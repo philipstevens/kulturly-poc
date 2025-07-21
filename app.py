@@ -40,7 +40,7 @@ tab_config = [
     ("Stories", "render_stories"),
     ("People", "render_people"),
     ("Influence", "render_influencers"),
-    ("Trends", "render_trends"),
+    # ("Trends", "render_trends"),
     ("Strategy", "render_ideas"),
     ("Kultie ✨", "render_ask")
 ]
