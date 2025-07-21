@@ -945,6 +945,24 @@ class Puma(BaseCustomerRenderer):
             margin: 1.5rem 0 0.5rem 0;
             padding-bottom: 0.3rem;
             }
+            .stButton button {
+                margin-left: auto;
+                margin-right: 0;
+                display: block;
+            }
+            /* container to float the submit button on any screen */
+            .btn-right-container {
+                width: 100%;
+                overflow: hidden;
+                margin-top: 4px;
+            }
+            .btn-right-container .stButton {
+                float: right !important;
+                margin: 0 !important;
+            }
+            div.row-widget.stColumns {
+            flex-wrap: nowrap !important;
+            }
             </style>
             """, 
             unsafe_allow_html=True
@@ -962,31 +980,18 @@ class Puma(BaseCustomerRenderer):
             
             client = openai.OpenAI(api_key=api_key)
             
-            # User input
-            col1, col2 = st.columns([17, 1])
-        
+            user_prompt = st.text_area(
+                "",
+                placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
+                height=100
+            )
+            
+            col1, col2 = st.columns([19, 1])
             with col1:
-                user_prompt = st.text_area(
-                    "",
-                    placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
-                    height=100
-                )
+                deep_research = st.toggle("Deep Research", value=False, key="deep_research")
             with col2:
-                st.markdown("")
-            
-            col1, col2 = st.columns([8, 1])
-            
-            with col1:
-                deep_research = st.toggle(
-                    "Deep Research", 
-                    value=False, 
-                    key="deep_research"
-                )
-            
-            with col2:
-                submit_clicked = st.button(
-                    "➤", key="submit_btn", help="Submit query")
-            
+                submit_clicked = st.button("➤", key="submit_btn", help="Submit query")
+                    
             if submit_clicked and user_prompt.strip():
                 if deep_research:
                     steps = [
