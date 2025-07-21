@@ -9,6 +9,7 @@ import openai
 import os
 import time
 import pathlib
+import altair as alt
 
 class Puma(BaseCustomerRenderer):
     def __init__(self):
@@ -726,11 +727,53 @@ class Puma(BaseCustomerRenderer):
         with influencer_tabs[1]:
             st.caption("How cultural moments spread through influencer networks to drive adoption")
             
-            st.code(
-                "Cultural Moment → TikTok Algorithm → Instagram Reels → Local Forums → Physical Adoption\n"
-                "Olympic Victory → Viral Content → Community Discussion → Product Interest → Purchase\n"
-                "Local Exhibition → Social Documentation → Hashtag Movement → Mainstream Adoption"
-            )
+            
+            pathways_dot = """
+            digraph G {
+                rankdir=LR;
+                graph [bgcolor=transparent, nodesep=1.0, ranksep=1.0];
+
+                node [
+                    shape=circle
+                    fixedsize=true
+                    width=1.2
+                    height=1.2
+                    style=filled
+                    fontname="Helvetica-Bold"
+                    fontsize=10
+                    labelloc=c
+                ];
+
+                edge [penwidth=2];
+
+                // Scenario 1 (blue)
+                "Cultural Moment" -> "TikTok Algorithm" -> "Instagram Reels" -> "Local Forums" -> "Physical Adoption"
+                    [color="#1f77b4"];
+                "Cultural Moment"       [fillcolor="#1f77b4", label="Cultural\nMoment", tooltip="Origin of the cultural moment"];
+                "TikTok Algorithm"      [fillcolor="#1f77b4", label="TikTok\nAlgorithm", tooltip="Amplified by TikTok's algorithm"];
+                "Instagram Reels"       [fillcolor="#1f77b4", label="Instagram\nReels", tooltip="Spreads via Instagram Reels"];
+                "Local Forums"          [fillcolor="#1f77b4", label="Local\nForums", tooltip="Discussed on community forums"];
+                "Physical Adoption"     [fillcolor="#1f77b4", label="Physical\nAdoption", tooltip="Transferred to real-life adoption"];
+
+                // Scenario 2 (orange)
+                "Olympic Victory" -> "Viral Content" -> "Community Discussion" -> "Product Interest" -> "Purchase"
+                    [color="#ff7f0e"];
+                "Olympic Victory"       [fillcolor="#ff7f0e", label="Olympic\nVictory", tooltip="Sports achievement creates buzz"];
+                "Viral Content"         [fillcolor="#ff7f0e", label="Viral\nContent", tooltip="Content goes viral on social media"];
+                "Community Discussion" [fillcolor="#ff7f0e", label="Community\nDiscussion", tooltip="Discussed in local communities"];
+                "Product Interest"      [fillcolor="#ff7f0e", label="Product\nInterest", tooltip="Generates interest in related products"];
+                "Purchase"              [fillcolor="#ff7f0e", label="Purchase", tooltip="Leads to actual purchases"];
+
+                // Scenario 3 (green)
+                "Local Exhibition" -> "Social Documentation" -> "Hashtag Movement" -> "Mainstream Adoption"
+                    [color="#2ca02c"];
+                "Local Exhibition"      [fillcolor="#2ca02c", label="Local\nExhibition", tooltip="Local event creates initial buzz"];
+                "Social Documentation" [fillcolor="#2ca02c", label="Social\nDocumentation", tooltip="Documented and shared on social media"];
+                "Hashtag Movement"      [fillcolor="#2ca02c", label="Hashtag\nMovement", tooltip="Creates trending hashtag movement"];
+                "Mainstream Adoption"   [fillcolor="#2ca02c", label="Mainstream\nAdoption", tooltip="Adopted by mainstream audience"];
+            }
+            """
+            st.graphviz_chart(pathways_dot)
 
         # Tab 3: Key Cultural Brokers
         with influencer_tabs[2]:
