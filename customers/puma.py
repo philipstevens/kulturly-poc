@@ -727,7 +727,98 @@ class Puma(BaseCustomerRenderer):
         with influencer_tabs[1]:
             st.caption("How cultural moments spread through influencer networks to drive adoption")
             
-            
+            # Define pathways with node data
+            pathways = [
+                {
+                    "name": "Cultural Moment Path",
+                    "color": "#1f77b4",
+                    "nodes": [
+                        {
+                            "id": "Cultural Moment",
+                            "label": "Cultural\nMoment",
+                            "tooltip": "Origin of the moment—e.g. #RunDrop teaser on TikTok (5 M views): https://www.tiktok.com/@brandx/video/12345"
+                        },
+                        {
+                            "id": "TikTok Algorithm",
+                            "label": "TikTok\nAlgorithm",
+                            "tooltip": "Amplified by TikTok’s For You feed (ranked #2 trending with 1.2 M likes) per TikTok Analytics"
+                        },
+                        {
+                            "id": "Instagram Reels",
+                            "label": "Instagram\nReels",
+                            "tooltip": "Shared via official brand Reels account (300 k views): https://www.instagram.com/p/ABCde/"
+                        },
+                        {
+                            "id": "Local Forums",
+                            "label": "Local\nForums",
+                            "tooltip": "Discussed on Reddit r/StreetwearSEA (thread: https://reddit.com/r/StreetwearSEA/xyz) and regional Facebook groups"
+                        },
+                        {
+                            "id": "Physical Adoption",
+                            "label": "Physical\nAdoption",
+                            "tooltip": "Seen at community run meetups (reported by Marketing‑Interactive): https://marketing-interactive.com/run-event"
+                        }
+                    ]
+                },
+                {
+                    "name": "Olympic Victory Path",
+                    "color": "#ff7f0e",
+                    "nodes": [
+                        {
+                            "id": "Olympic Victory",
+                            "label": "Olympic\nVictory",
+                            "tooltip": "National swimmer’s gold medal, July 2024 – news coverage: https://news.example.com/olympic‑gold"
+                        },
+                        {
+                            "id": "Viral Content",
+                            "label": "Viral\nContent",
+                            "tooltip": "Highlight clip went viral on YouTube (2 M views): https://youtu.be/olympic_highlight"
+                        },
+                        {
+                            "id": "Community Discussion",
+                            "label": "Community\nDiscussion",
+                            "tooltip": "Debated on Twitter and LINE groups (see thread: https://twitter.com/SEAfans/status/67890)"
+                        },
+                        {
+                            "id": "Product Interest",
+                            "label": "Product\nInterest",
+                            "tooltip": "Search volume for performance swimwear spiked +75% on Google Trends: https://trends.google.com/trends/explore?q=performance%20swimwear"
+                        },
+                        {
+                            "id": "Purchase",
+                            "label": "Purchase",
+                            "tooltip": "E‑commerce sales jumped 30% on Shopee during campaign week (Shopee SEA report)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Local Exhibition Path",
+                    "color": "#2ca02c",
+                    "nodes": [
+                        {
+                            "id": "Local Exhibition",
+                            "label": "Local\nExhibition",
+                            "tooltip": "Pop‑up art jam in Jakarta, May 2025 – event page: https://events.example.com/local-expo"
+                        },
+                        {
+                            "id": "Social Documentation",
+                            "label": "Social\nDocumentation",
+                            "tooltip": "User posts on Instagram Stories (1 k+ tags using #LocalLab): https://instagram.com/explore/tags/LocalLab"
+                        },
+                        {
+                            "id": "Hashtag Movement",
+                            "label": "Hashtag\nMovement",
+                            "tooltip": "#YourBrandGoesLocal trended at #5 on Twitter Indonesia: https://twitter.com/hashtag/YourBrandGoesLocal"
+                        },
+                        {
+                            "id": "Mainstream Adoption",
+                            "label": "Mainstream\nAdoption",
+                            "tooltip": "Featured in The Jakarta Post lifestyle section: https://www.thejakartapost.com/life/2025/05/20"
+                        }
+                    ]
+                }
+            ]
+
             pathways_dot = """
             digraph G {
                 rankdir=LR;
@@ -746,33 +837,25 @@ class Puma(BaseCustomerRenderer):
 
                 edge [penwidth=2];
 
-                // Scenario 1 (blue)
-                "Cultural Moment" -> "TikTok Algorithm" -> "Instagram Reels" -> "Local Forums" -> "Physical Adoption"
-                    [color="#1f77b4"];
-                "Cultural Moment"       [fillcolor="#1f77b4", label="Cultural\nMoment", tooltip="Origin of the cultural moment"];
-                "TikTok Algorithm"      [fillcolor="#1f77b4", label="TikTok\nAlgorithm", tooltip="Amplified by TikTok's algorithm"];
-                "Instagram Reels"       [fillcolor="#1f77b4", label="Instagram\nReels", tooltip="Spreads via Instagram Reels"];
-                "Local Forums"          [fillcolor="#1f77b4", label="Local\nForums", tooltip="Discussed on community forums"];
-                "Physical Adoption"     [fillcolor="#1f77b4", label="Physical\nAdoption", tooltip="Transferred to real-life adoption"];
-
-                // Scenario 2 (orange)
-                "Olympic Victory" -> "Viral Content" -> "Community Discussion" -> "Product Interest" -> "Purchase"
-                    [color="#ff7f0e"];
-                "Olympic Victory"       [fillcolor="#ff7f0e", label="Olympic\nVictory", tooltip="Sports achievement creates buzz"];
-                "Viral Content"         [fillcolor="#ff7f0e", label="Viral\nContent", tooltip="Content goes viral on social media"];
-                "Community Discussion" [fillcolor="#ff7f0e", label="Community\nDiscussion", tooltip="Discussed in local communities"];
-                "Product Interest"      [fillcolor="#ff7f0e", label="Product\nInterest", tooltip="Generates interest in related products"];
-                "Purchase"              [fillcolor="#ff7f0e", label="Purchase", tooltip="Leads to actual purchases"];
-
-                // Scenario 3 (green)
-                "Local Exhibition" -> "Social Documentation" -> "Hashtag Movement" -> "Mainstream Adoption"
-                    [color="#2ca02c"];
-                "Local Exhibition"      [fillcolor="#2ca02c", label="Local\nExhibition", tooltip="Local event creates initial buzz"];
-                "Social Documentation" [fillcolor="#2ca02c", label="Social\nDocumentation", tooltip="Documented and shared on social media"];
-                "Hashtag Movement"      [fillcolor="#2ca02c", label="Hashtag\nMovement", tooltip="Creates trending hashtag movement"];
-                "Mainstream Adoption"   [fillcolor="#2ca02c", label="Mainstream\nAdoption", tooltip="Adopted by mainstream audience"];
-            }
             """
+            
+            # Add pathways and nodes
+            for pathway in pathways:
+                color = pathway["color"]
+                nodes = pathway["nodes"]
+                
+                # Add edge connections
+                node_ids = [f'"{node["id"]}"' for node in nodes]
+                pathways_dot += f"    {' -> '.join(node_ids)} [color=\"{color}\"];\n"
+                
+                # Add node definitions
+                for node in nodes:
+                    pathways_dot += f'    "{node["id"]}" [fillcolor="{color}", label="{node["label"]}", tooltip="{node["tooltip"]}"];\n'
+                
+                pathways_dot += "\n"
+            
+            pathways_dot += "}"
+            
             st.graphviz_chart(pathways_dot)
 
         # Tab 3: Key Cultural Brokers
