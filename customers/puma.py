@@ -1027,8 +1027,28 @@ class Puma(BaseCustomerRenderer):
                     build_log.markdown(final_html, unsafe_allow_html=True)
 
                     # 3) Load & display your local markdown
-                    md = pathlib.Path("puma_research.md").read_text()
-                    st.markdown(md, unsafe_allow_html=True) 
+                    # Load the raw Markdown
+                    raw_md = pathlib.Path("puma_research.md").read_text()
+
+                    # Split on the "## Sources" header
+                    if "## Sources" in raw_md:
+                        main_md, sources_md = raw_md.split("## Sources", 1)
+                        sources_md = "## Sources" + sources_md  # re‑attach the header
+                    else:
+                        main_md = raw_md
+                        sources_md = ""
+
+                    st.markdown(
+                        main_md,
+                        unsafe_allow_html=True
+                    )
+
+                    # 2) Collapsible Sources expander
+                    if sources_md:
+                        with st.expander("📑 Sources & Links", expanded=False):
+                            st.markdown(sources_md, unsafe_allow_html=True)
+
+
                 else:
                     with st.spinner("Analyzing cultural context..."):
                         try:

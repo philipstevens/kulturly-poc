@@ -1,4 +1,3 @@
-# Cultural Deep-Dive: Understanding Puma's Opportunity in Southeast Asia
 
 ## **1. Methodology**
 
@@ -94,6 +93,7 @@ Local Exhibition → Social Documentation → Hashtag Movement → Mainstream Ad
 
 **3. Cultural Moment Activation:** Develop rapid-response capabilities to capitalize on viral sporting moments (Olympic victories, traditional sport celebrations) through real-time content creation and TikTok Live commerce activations that feel organic rather than opportunistic.
 
+## Sources
 1. [https://vero-asean.com/whitepaper/empowering-southeast-asia-youth-through-policy-change/](https://vero-asean.com/whitepaper/empowering-southeast-asia-youth-through-policy-change/)
 2. [https://redfame.com/journal/index.php/smc/article/view/6925](https://redfame.com/journal/index.php/smc/article/view/6925)
 3. [https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/34545340/f368b1c9-feac-457d-8f9c-fb401b1d2078/CGG-Puma.pdf](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/34545340/f368b1c9-feac-457d-8f9c-fb401b1d2078/CGG-Puma.pdf)
