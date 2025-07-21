@@ -586,6 +586,7 @@ class Puma(BaseCustomerRenderer):
             {
                 "name": "Digital Native Athletes",
                 "share": "25%",
+                "border_color": "#FF6F61",
                 "traits": ["Gen Z (18–25)", "Urban & tech‑savvy", "60% spend 6+ hours on mobile daily", "Performance‑focused", "Fastest growing segment 🚀"],
                 "behaviors": "Document fitness journeys, value tech innovation; Paralympic inclusion sparked fresh momentum in Indonesia.",
                 "evidence": (
@@ -598,6 +599,7 @@ class Puma(BaseCustomerRenderer):
             {
                 "name": "Heritage‑Forward Trendsetters",
                 "share": "30%",
+                "border_color": "#6A5ACD",
                 "traits": ["Millennials (26–35)", "Middle‑income", "Cultural pride‑driven", "Multilingual content creators"],
                 "behaviors": "Blend traditional & modern aesthetics, support local brands, lead cultural storytelling.",
                 "evidence": ('<a href="https://seasia.co/infographic/how-many-gen-z-in-southeast-asia-2024" target="_blank">SEA Gen Z insights</a>'),
@@ -606,6 +608,7 @@ class Puma(BaseCustomerRenderer):
             {
                 "name": "Social Commerce Enthusiasts",
                 "share": "20%",
+                "border_color": "#FFB6C1",
                 "traits": ["Gen Z females (18–24)", "High social‑media engagement", "Live shopping participants"],
                 "behaviors": "Drive purchases through entertaining live‑shop events on TikTok & Instagram.",
                 "evidence": ('<a href="https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/" target="_blank">TikTok Shop growth</a> , '
@@ -615,6 +618,7 @@ class Puma(BaseCustomerRenderer):
             {
                 "name": "Authentic Community Builders",
                 "share": "25%",
+                "border_color": "#32CD32",
                 "traits": ["Mixed ages (20–35)", "Micro‑influencers", "Community‑focused", "Authenticity‑driven"],
                 "behaviors": "Trust nano‑influencers, champion transparent practices, create lasting advocacy.",
                 "evidence": ('<a href="http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/" target="_blank">Nano-influencer trust</a>'),
@@ -622,7 +626,8 @@ class Puma(BaseCustomerRenderer):
             },
             {
                 "name": "Glocal Cultural Curators",
-                "share": "Emergent segment",
+                "share": "Emergent",
+                "border_color": "#FFD700",
                 "traits": ["Hybrid global‑local identities", "Trend synthesizers", "Resist categorization", "High creativity"],
                 "behaviors": "Blend global trends with local expressions to craft unique cultural mashups.",
                 "evidence": "Identified via emergent content clustering in SEA channels.",
@@ -634,22 +639,30 @@ class Puma(BaseCustomerRenderer):
         cols = st.columns(3)
         for idx, p in enumerate(personas):
             col = cols[idx % 3]
-            traits_str = "<br> ".join(p['traits'])
-            card_html = (
-                '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
-                '  <h4 style="margin:0 0 8px 0;">{name} <span style="font-size:0.85em; color:#666;">({share})</span></h4>'
-                '  <p style="margin:4px 0;"><strong>Traits:</strong> <br> {traits}</p>'
-                '  <details style="margin-top:8px;">'
-                '    <summary style="font-weight:bold; cursor:pointer;">More details</summary>'
-                '    <p style="margin:4px 0;"><strong>Behaviors:</strong> {behaviors}</p>'
-                '    <p style="margin:4px 0;"><strong>Evidence:</strong> {evidence}</p>'
-                '    <p style="margin:4px 0;"><strong>Implications:</strong> {implications}</p>'
-                '  </details>'
-                '</div>'
-            ).format(
-                name=p['name'], share=p['share'], traits=traits_str,
-                behaviors=p['behaviors'], evidence=p['evidence'], implications=p['implications']
-            )
+            traits_list = "".join(f"<li>{t}</li>" for t in p["traits"])
+            border_color = p.get("border_color", "#DDD")
+            card_html = f"""
+            <div style="border:2px solid {border_color};border-radius:8px;padding:16px;margin:16px 0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <strong style="font-size:16px;">{p['name']}</strong>
+                <b><small style="background-color:{border_color};color:#000;padding:2px 6px;border-radius:4px;font-size:14px;">
+                Share: {p['share']}
+                </small></b>
+            </div>
+            <div style="margin:12px 0;">
+                <strong>Key Traits:</strong>
+                <ul style="margin:4px 0 0 1rem; padding-left:1rem;">
+                    {traits_list}
+                </ul>
+            </div>
+            <details style="margin-top:16px;border-radius:8px;overflow:hidden;border-top:1px solid #CCC;">
+                <summary style="font-weight:bold;cursor:pointer;">Full Details</summary>
+                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Behaviors</h4><p style="margin:0;">{p['behaviors']}</p></section>
+                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Evidence</h4><p style="margin:0;">{p['evidence']}</p></section>
+                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Implications</h4><p style="margin:0;">{p['implications']}</p></section>
+            </details>
+            </div>
+            """.strip()
             col.markdown(card_html, unsafe_allow_html=True)
 
     def render_influencers(self):        
