@@ -663,10 +663,10 @@ class Puma(BaseCustomerRenderer):
 
     def render_influencers(self):        
         # Create main tabs for different aspects of influencer analysis
-        influencer_tabs = st.tabs([
+        influencer_tabs = st.tabs([      
             "🕸️ Network Types", 
-            "🛤️ Diffusion Paths", 
-            "👑 Key Brokers"
+            "🛤️ Diffusion Paths",
+            "👑 Key Brokers",          
         ])
         
         # Tab 1: Core Influence Narratives
@@ -862,28 +862,152 @@ class Puma(BaseCustomerRenderer):
         with influencer_tabs[2]:
             st.caption("Most influential voices shaping brand perception and cultural trends")
             
-            brokers = {
-                "Indonesia": [
-                    "Christine Febriyanti (TikTok live seller)",
-                    "Local sneaker exhibition organizers",
-                    "Paralympic athlete influencers"
-                ],
-                "Malaysia": [
-                    "Multilingual content creators",
-                    "Sepak Takraw community leaders",
-                    "Tech‑lifestyle influencers"
-                ],
-                "Thailand": [
-                    "Tennis Panipak (Olympic gold medalist)",
-                    "Muay Thai fitness influencers",
-                    "Royal‑aesthetic lifestyle creators"
-                ]
-            }
-            for market, names in brokers.items():
-                st.markdown(f"**{market}:**")
-                for name in names:
-                    st.markdown(f"- {name}")
+            brokers = [
+                {
+                    "market": "Indonesia",
+                    "color": "#FF6B6B",
+                    "description": "World's largest TikTok market with strong local pride movements",
+                    "brokers": [
+                        {
+                            "name": "Christine Febriyanti", 
+                            "role": "TikTok live seller", 
+                            "impact": "Drives 30%+ conversion in live shopping streams",
+                            "followers": "2.1M TikTok followers",
+                            "engagement": "Average 45% engagement rate",
+                            "specialty": "Live fashion try-ons and product demonstrations",
+                            "brands": "Regular collaborations with Nike, Adidas, local Indonesian brands"
+                        },
+                        {
+                            "name": "Local sneaker exhibition organizers", 
+                            "role": "Cultural curators", 
+                            "impact": "Amplify #LocalPride movement across urban centers",
+                            "followers": "Network of 50+ organizers across Indonesia",
+                            "engagement": "Monthly events drawing 5,000+ attendees",
+                            "specialty": "Showcasing Indonesian sneaker designers and local collaborations",
+                            "brands": "Platform for emerging local brands and international partnerships"
+                        },
+                        {
+                            "name": "Paralympic athlete influencers", 
+                            "role": "Inclusive sports advocates", 
+                            "impact": "Champion adaptive gear and accessibility narratives",
+                            "followers": "Combined 800K across platforms",
+                            "engagement": "High trust scores among disability communities",
+                            "specialty": "Adaptive sports content and inclusive fitness messaging",
+                            "brands": "Partnerships with Nike, Under Armour for adaptive collections"
+                        }
+                    ]
+                },
+                {
+                    "market": "Malaysia", 
+                    "color": "#4ECDC4",
+                    "description": "Multicultural bridge between traditional and modern athletic culture",
+                    "brokers": [
+                        {
+                            "name": "Multilingual content creators", 
+                            "role": "Cultural translators", 
+                            "impact": "Bridge diverse communities through shared fitness content",
+                            "followers": "500K-1.5M across Malay, Chinese, Tamil audiences",
+                            "engagement": "Strong cross-cultural appeal and comment diversity",
+                            "specialty": "Multilingual fitness content and cultural fusion workouts",
+                            "brands": "Local Malaysian brands, Decathlon, international sportswear"
+                        },
+                        {
+                            "name": "Sepak Takraw community leaders", 
+                            "role": "Traditional sports ambassadors", 
+                            "impact": "Connect heritage sports with modern athletic lifestyle",
+                            "followers": "Grassroots network of 10,000+ players and fans",
+                            "engagement": "Strong community engagement at local tournaments",
+                            "specialty": "Traditional sport modernization and youth engagement",
+                            "brands": "Partnerships with traditional sports federations and modern brands"
+                        },
+                        {
+                            "name": "Tech‑lifestyle influencers", 
+                            "role": "Digital innovators", 
+                            "impact": "Merge fitness tech with authentic local experiences",
+                            "followers": "750K+ tech-savvy millennials and Gen Z",
+                            "engagement": "High engagement on fitness tech reviews and local experiences",
+                            "specialty": "Wearable tech, fitness apps, and digital wellness content",
+                            "brands": "Apple, Samsung, Garmin, plus local tech startups"
+                        }
+                    ]
+                },
+                {
+                    "market": "Thailand",
+                    "color": "#FFE66D", 
+                    "description": "Olympic excellence culture meets royal aesthetic traditions",
+                    "brokers": [
+                        {
+                            "name": "Tennis Panipak", 
+                            "role": "Olympic gold medalist", 
+                            "impact": "Generated 3M+ social interactions in single day post-victory",
+                            "followers": "1.8M Instagram, 900K TikTok",
+                            "engagement": "Extremely high during competitive seasons",
+                            "specialty": "Olympic-level performance content and national pride messaging",
+                            "brands": "Nike endorsement, Thai national team partnerships"
+                        },
+                        {
+                            "name": "Muay Thai fitness influencers", 
+                            "role": "Combat sports evangelists", 
+                            "impact": "Popularize traditional martial arts in modern fitness contexts",
+                            "followers": "Combined network of 2M+ across multiple creators",
+                            "engagement": "Strong international appeal, especially in fitness communities",
+                            "specialty": "Traditional martial arts training with modern fitness integration",
+                            "brands": "Reebok, local Thai martial arts equipment brands"
+                        },
+                        {
+                            "name": "Royal‑aesthetic lifestyle creators", 
+                            "role": "Cultural taste-makers", 
+                            "impact": "Set premium lifestyle standards and aspirational content trends",
+                            "followers": "500K-1.2M affluent Thai and regional followers",
+                            "engagement": "High-value audience with luxury brand affinity",
+                            "specialty": "Premium lifestyle content with Thai cultural elements",
+                            "brands": "Luxury sportswear, premium wellness brands, cultural collaborations"
+                        }
+                    ]
+                }
+            ]
 
+            for market_data in brokers:
+                # 1) build all broker-card HTML
+                broker_cards_html = ""
+                for broker in market_data["brokers"]:
+                    broker_cards_html += f"""
+                      <div style="
+                        border:1px solid {market_data['color']};
+                        border-radius:6px;
+                        padding:12px;
+                        flex:1;
+                        min-width:220px;
+                        margin:8px;
+                    ">
+                        <strong style="color:{market_data['color']};">{broker['name']}</strong><br>
+                        <em>{broker['role']}</em>
+                        <p>{broker['impact']}</p>
+                        <details>
+                        <summary style="color:{market_data['color']};">Full Details</summary>
+                        <p>Followers: {broker['followers']}</p>
+                        <p>Engagement: {broker['engagement']}</p>
+                        <!-- etc. -->
+                        </details>
+                    </div>
+                    """
+                
+                # 2) render the entire container + all brokers at once
+                st.markdown(
+                    f"""
+                    <div style="border:2px solid {market_data['color']}; border-radius:8px;
+                                padding:16px; margin-bottom:24px;">
+                    <strong style="font-size:18px;">{market_data['market']}</strong>
+                    <p style="font-style:italic; opacity:0.8;">
+                        {market_data['description']}
+                    </p>
+                    <div style="display:flex; flex-wrap:wrap; justify-content: space-between;">
+                        {broker_cards_html}
+                    </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
     def render_trends(self):
         trends = [
             {
