@@ -1145,7 +1145,7 @@ class Puma(BaseCustomerRenderer):
                 st.markdown(f"**Strategic Impact:** {trend['impact']}")
 
     def render_ideas(self):
-        strategy_tabs = st.tabs([
+        tabs = st.tabs([
             "🧪 Hypotheses", 
             "🔍 Opportunity Gaps",
             "🎨 Culture Creation",
@@ -1153,188 +1153,356 @@ class Puma(BaseCustomerRenderer):
             "🚀 Actions"
         ])
 
-        with strategy_tabs[0]:
-            hypotheses = [
-                {
-                    "cluster": "Narratives",
-                    "statement": "Collaborating with local traditional sports communities (Muay Thai gyms, Sepak Takraw clubs) will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
-                    "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
-                },
-                {
-                    "cluster": "Personas",
-                    "statement": "Targeting Digital Native Athletes with Paralympic-inspired adaptive sports gear will capture the emerging inclusion trend and drive 25% engagement increase.",
-                    "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
-                },
-                {
-                    "cluster": "Networks",
-                    "statement": "Partnering with nano-influencers (1k–10k followers) for hyper-localized content will achieve 40% higher conversion rates than macro-influencer campaigns.",
-                    "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok Shop conversion data, 2025</a>'
-                },
-                {
-                    "cluster": "Trends",
-                    "statement": "Launching TikTok Live commerce sessions during major sporting events will capitalize on viral cultural moments and drive 50% higher purchase intent.",
-                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
-                }
-            ]
-
-            for h in hypotheses:
-                st.markdown(
-                    f"""
-                    <div style="border:1px solid #ccc; border-radius:6px; padding:12px; margin-bottom:12px;">
-                        <p style="margin:8px 0 4px 0;"> {h['statement']}</p>
-                        <p style="margin:0; font-size:0.85em; color:gray;"><em>Source: {h['source']}</em></p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
+        def render_card(title, body_lines, *, border="1px solid #ccc", bg_color=None, details=None):
+            style = f"border:{border};"
+            if bg_color:
+                style += f"background-color:{bg_color};"
+            style += "border-radius:6px;padding:12px;margin-bottom:12px;"
+            # Body paragraphs
+            body_html = "".join(f"<p style='margin:4px 0;'>{line}</p>" for line in body_lines)
+            # Optional details section
+            details_html = ""
+            if details:
+                summary, detail_lines = details
+                detail_content = "".join(f"<p style='margin:4px 0;'>{dl}</p>" for dl in detail_lines)
+                details_html = (
+                    f"<details style='margin-top:8px;border-top:1px solid rgba(0,0,0,0.1);'>"
+                    f"<summary style='font-weight:bold;cursor:pointer;'>{summary}</summary>"
+                    f"{detail_content}</details>"
                 )
+            # Render the card
+            st.markdown(
+                f"<div style='{style}'>"
+                f"<strong style='display:block;margin-bottom:6px;'>{title}</strong>"
+                f"{body_html}{details_html}</div>",
+                unsafe_allow_html=True
+            )
 
-        with strategy_tabs[1]:
-            gaps = [
-                {
-                    "title": "Local Culture & Sports Heritage",
-                    "body": "Co-design a Muay Thai and Sepak Takraw-inspired capsule with regional gyms and artisans, addressing the 60% of Heritage-Forward urban consumers in SEA who seek authentic cultural narratives in sportswear.",
-                    "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
-                },
-                {
-                    "title": "Immersive Social Commerce White Space",
-                    "body": "Launch interactive TikTok Shop live events for Puma gear—leveraging under‑utilized social commerce channels to create shareable, event‑style shopping experiences and drive spontaneous sales spikes.",
-                    "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok commerce data, 2025</a>'
-                },
-                {
-                    "title": "Nano-Influencer Community Partnerships",
-                    "body": "Build a ‘Puma Community Crew’ of nano-influencers (1k–10k followers) across Bangkok, Jakarta, and Manila to co-create localized content and small-scale activations—capitalizing on 40% higher conversions vs. macros.",
-                    "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
-                },
-                {
-                    "title": "Inclusive & Adaptive Gear Opportunity",
-                    "body": "Introduce a ‘Puma Adapt & Modest’ line—featuring sports hijabs, full-coverage activewear, and adaptive footwear—responding to a 30% surge in regional searches post-Paralympics.",
-                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
-                }
-            ]
+        hypotheses = [
+            {"statement": "Collaborating with local traditional sports communities will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
+            "source": "SEA social listening, Q3 2025"},
+            {"statement": "Targeting Digital Native Athletes with adaptive sports gear will drive a 25% engagement increase.",
+            "source": "TikTok engagement metrics, Q2 2025"},
+            {"statement": "Partnering with nano-influencers for hyper-localized content achieves 40% higher conversion than macro campaigns.",
+            "source": "TikTok Shop conversion data, 2025"},
+            {"statement": "Launching TikTok Live commerce during major sporting events drives 50% higher purchase intent.",
+            "source": "Live commerce analytics, ongoing"}
+        ]
 
+        gaps = [
+            {"title": "Local Culture & Sports Heritage", "body": "Co-design capsule collection with regional gyms and artisans to capture 60% of urban consumers seeking authenticity.", "source": "SEA social listening, Q3 2025"},
+            {"title": "Immersive Social Commerce", "body": "Launch interactive TikTok Shop live events for Puma gear to create shareable shopping experiences.", "source": "TikTok commerce data, 2025"},
+            {"title": "Nano-Influencer Partnerships", "body": "Build a ‘Puma Community Crew’ of nano-influencers in SEA to drive 40% higher conversions.", "source": "TikTok engagement metrics, Q2 2025"},
+            {"title": "Adaptive Gear Line", "body": "Introduce ‘Adapt & Modest’ activewear responding to a 30% surge in post-Paralympics searches.", "source": "Live commerce analytics, ongoing"}
+        ]
+
+        creations = [
+            {"title": "Local Culture Playbook", "body": "Guide for co-designing with sports communities, including workshops and storytelling metrics.", "source": "HBR Playbook Frameworks, 2024", "bg": "#E8F4FD", "border": "1px solid #007ACC"},
+            {"title": "Nano-Influencer Network", "body": "Framework for onboarding and incentivizing nano-influencers with +40% lift potential.", "source": "SEAsia Nano-Influencer Study, 2025", "bg": "#F0F8E8", "border": "1px solid #4ECDC4"},
+            {"title": "AR/VR Immersion", "body": "Blueprint for AR filters and VR try-on, with UGC and footfall KPIs.", "source": "McKinsey Marketing Labs, 2025", "bg": "#FFF7E6", "border": "1px solid #FFE66D"}
+        ]
+
+        scenarios = [
+            {"title": "Nano-Influencer Scale-Up", "body": "If Puma scales nano-influencer networks, then brand favorability rises 15% and conversions +40%.", "source": "SEAsia Nano-Influencer Study, 2025"},
+            {"title": "Adaptive Line Launch", "body": "If Puma co-designs an adaptive line, then engagement among underrepresented segments jumps 25%.", "source": "DataXet Inclusion Trends, Q1 2025"},
+            {"title": "Real-Time Activations", "body": "If Puma executes rapid-response live commerce on viral sports moments, then purchase intent spikes 50%.", "source": "RTL Live Commerce Analytics, ongoing"}
+        ]
+
+        recommendations = [
+            {
+                "priority": 1,
+                "title": "Local Sports Integration",
+                "body": (
+                    "By Q4 2025, partner with 3 Muay Thai gyms in Bangkok and 2 Sepak Takraw clubs in Jakarta:\n"
+                    "- Host 2 co‑design workshops per city with local artisans\n"
+                    "- Finalize a capsule collection spec sheet by Nov 1\n"
+                    "- Pilot 200 units at pop‑up events, targeting 30% sell‑through rate"
+                )
+            },
+            {
+                "priority": 2,
+                "title": "Nano‑Influencer Commerce Network",
+                "body": (
+                    "Recruit and onboard 12 nano‑influencers (1–10 K followers) across Manila and Ho Chi Minh City by Sept 15:\n"
+                    "- Run bi‑weekly content sprints with templated briefs\n"
+                    "- Track conversion lift weekly; aim for ≥40% uplift vs. controls\n"
+                    "- Iterate compensation model based on $/engaged‑view"
+                )
+            },
+            {
+                "priority": 3,
+                "title": "Rapid‑Response Cultural Activations",
+                "body": (
+                    "Stand up a 24/7 “trend desk” by Aug 1 with these SLAs:\n"
+                    "- Monitor TikTok sports hashtag spikes in real‑time\n"
+                    "- Launch live‑commerce streams within 2 hrs of a local win\n"
+                    "- Measure purchase‑intent lift; target +50% during activations"
+                )
+            }
+        ]
+
+        with tabs[0]:
+            st.caption("Key if–then hypotheses to test.")
+            cols = st.columns(2)
+            for idx, h in enumerate(hypotheses):
+                with cols[idx % 2]:
+                    render_card(
+                        title=h["statement"],
+                        body_lines=[f"Source: {h['source']}"],
+                        border="1px solid #888",
+                        details=("Full Hypothesis", [h["statement"]])
+                    )
+
+        # Opportunity Gaps: dashed single-column with emojis
+        with tabs[1]:
+            st.caption("Unmet opportunities—each gap is a trigger for action.")
             for g in gaps:
-                st.markdown(
-                    f"""
-                    <div style="border:1px dashed #999; border-radius:6px; padding:12px; margin-bottom:12px;">
-                        <h4 style="margin-bottom:6px;">{g['title']}</h4>
-                        <p style="margin:0;">{g['body']} <br><em>Source: {g['source']}</em></p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
+                render_card(
+                    title=f"🎯 {g['title']}",
+                    body_lines=[g['body'], f"Source: {g['source']}"],
+                    border="1px dashed #999"
                 )
 
-        with strategy_tabs[2]:
-            creations = [
-                {
-                    "title": "Authentic Local Culture Integration Playbook",
-                    "body": "Step-by-step guide for co-designing with regional sports communities (e.g., Muay Thai, Sepak Takraw), including partner selection, design workshops, storytelling angles, and success metrics such as cultural authenticity lift.",
-                    "source": '<a href="https://hbr.org/2024/05/marketing-playbooks-for-emerging-markets" target="_blank">HBR Playbook Frameworks, 2024</a>'
-                },
-                {
-                    "title": "Nano-Influencer Network Playbook",
-                    "body": "Framework for identifying, onboarding, and incentivizing nano- and micro-influencers across SEA cities, with guidelines on content co-creation, engagement tracking, and conversion measurement (+40% lift potential).",
-                    "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
-                },
-                {
-                    "title": "AR/VR Immersive Experience Playbook",
-                    "body": "Blueprint for developing AR filters and VR try-on campaigns, covering ideation, tech partner selection, incentivization mechanisms (e.g., in-store reward redemptions), and KPIs like UGC volume and footfall.",
-                    "source": '<a href="https://www.mckinsey.com/our-insights/experimental-marketing-labs" target="_blank">McKinsey Marketing Labs, 2025</a>'
-                },
-                {
-                    "title": "Pop-Up Experiential Lab Playbook",
-                    "body": "Guide to staging short-term pop-up labs that fuse retail with local culture, detailing site selection, interactive installations (e.g., foosball courts, customization workshops), and metrics (foot traffic, dwell time, social shares).",
-                    "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
-                },
-                {
-                    "title": "Co-Creation & Crowdsourced Design Playbook",
-                    "body": "Instructions for running co-creation workshops and design contests with consumers and local artists, from ideation to prototyping and launch, measuring outputs like concepts generated and UGC sentiment.",
-                    "source": '<a href="https://adage.com/article/cmo-strategy/brands-creative-workshops-engage-consumers/237042" target="_blank">AdAge, 2024</a>'
-                },
-                {
-                    "title": "Digital Collectibles & Metaverse Drops Playbook",
-                    "body": "Steps for launching phygital NFT drops and metaverse experiences, including drop structure, platform selection, redemption mechanics, and success metrics (NFT sell-out rates, virtual event attendance).",
-                    "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
-                }
-            ]
+        # Culture Creation: full-width playbook cards
+        with tabs[2]:
+            st.caption("Guided playbooks for cultural activation.")
             for c in creations:
-                st.markdown(
-                    f"""
-                    <div style="border:1px solid #007ACC; border-radius:6px; padding:12px; margin-bottom:12px;">
-                        <h4 style="margin-bottom:6px;">{c['title']}</h4>
-                        <p style="margin:0;">{c['body']}<br><em>Source: {c['source']}</em></p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
+                render_card(
+                    title=c['title'],
+                    body_lines=[c['body'], f"Source: {c['source']}"],
+                    border=c['border']
                 )
 
-        with strategy_tabs[3]:
-            scenarios = [
-                {
-                    "title": "Nano-Influencer Partnerships",
-                    "body": "If Puma scales up its network of nano-influencers across key SEA cities, culture will shift toward grassroots authenticity, driving an estimated 15% increase in brand favorability and 40% conversion uplift.",
-                    "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
-                },
-                {
-                    "title": "Inclusive & Adaptive Gear Launch",
-                    "body": "If Puma launches a dedicated ‘Adapt & Modest’ line co-designed with local athletes, culture will shift toward inclusive sports participation, leading to a projected 25% engagement rise among underrepresented segments.",
-                    "source": '<a href="https://www.dataxet.co/insights/inclusive-sports-gear-sea" target="_blank">DataXet Inclusion Trends, Q1 2025</a>'
-                },
-                {
-                    "title": "Monthly Community Festivals",
-                    "body": "If Puma hosts recurring urban sports festivals, culture will shift toward communal brand experiences, boosting event-based sales spikes by up to 25% and generating increased local advocacy.",
-                    "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
-                },
-                {
-                    "title": "Real-Time Cultural Moment Activations",
-                    "body": "If Puma deploys rapid-response campaigns around viral sports moments (e.g., live-stream commerce tied to a local team’s victory), culture will shift toward viewing Puma as culturally agile, driving 50% higher purchase intent during the activation window.",
-                    "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">RTL Live Commerce Analytics, ongoing</a>'
-                },
-                {
-                    "title": "Phygital Metaverse Experience",
-                    "body": "If Puma integrates metaverse drops with exclusive digital collectibles redeemable for physical products, culture will shift toward a tech-forward brand perception, resulting in an anticipated surge in digital engagement and brand heat among Gen Z users.",
-                    "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
-                }
-            ]
+        # What If: compact accordions
+        with tabs[3]:
+            st.caption("Scenario tests—each if… then…")
+            scenario_cards = ""
             for s in scenarios:
-                st.markdown(
-                    f"""
-                    <div style="border:1px dotted #FF5722; border-radius:6px; padding:12px; margin-bottom:12px;">
-                        <h4 style="margin-bottom:6px;">{s['title']}</h4>
-                        <p style="margin:0;">{s['body']}<br><em>Source: {s['source']}</em></p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                scenario_cards += f"""
+                <div style="
+                    border: 1px dotted #FF5722;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin: 8px;
+                    flex: 1;
+                    min-width: 280px;
+                    box-sizing: border-box;
+                ">
+                    <h4 style="margin:0 0 8px; color:#FF5722;">{s['title']}</h4>
+                    <p style="margin:0 0 12px; line-height:1.5; font-size:14px;">{s['body']}</p>
+                    <p style="margin:0; font-size:0.85em; color:gray;">Source: {s['source']}</p>
+                </div>
+                """
 
-        with strategy_tabs[4]:
-            recommendations = [
-                {
-                    "priority": 1,
-                    "title": "Authentic Local Sports Integration",
-                    "body": "Develop collaborations with traditional sports communities (Muay Thai, Sepak Takraw) to create culturally grounded product lines that respect heritage while meeting modern performance needs. Focus on storytelling that bridges traditional athletic culture with contemporary lifestyle aspirations."
-                },
-                {
-                    "priority": 2,
-                    "title": "Nano-Influencer Commerce Network",
-                    "body": "Build relationships with 1k–10k follower creators who embody authentic community leadership. Prioritize trust-building over reach metrics to match Southeast Asian preferences for intimate brand connections."
-                },
-                {
-                    "priority": 3,
-                    "title": "Cultural Moment Activation",
-                    "body": "Develop rapid-response capabilities to capitalize on viral sporting moments through real-time content creation and TikTok Live commerce activations that feel organic rather than opportunistic."
-                }
-            ]
+            # render the flex container
+            st.markdown(
+                f"""
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                ">
+                    {scenario_cards}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
+        # Actions: simple numbered list
+        with tabs[4]:
+            st.caption("Next steps—priority actions.")
             for r in recommendations:
                 st.markdown(
-                    f"""
-                    <div style="border-left:5px solid #4CAF50; padding:12px; margin-bottom:16px;">
-                        <h4 style="margin-bottom:6px;">{r['priority']}. {r['title']}</h4>
-                        <p style="margin:0;">{r['body']}</p>
-                    </div>
-                    """,
+                    f"<div style='border-left:5px solid #4CAF50;padding:12px;margin-bottom:8px;'>"
+                    f"<strong>{r['priority']}. {r['title']}</strong>"
+                    f"<p style='margin:4px 0;'>{r['body']}</p>"
+                    f"</div>",
                     unsafe_allow_html=True
                 )
+
+        
+        # with strategy_tabs[0]:
+        #     hypotheses = [
+        #         {
+        #             "cluster": "Narratives",
+        #             "statement": "Collaborating with local traditional sports communities (Muay Thai gyms, Sepak Takraw clubs) will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
+        #             "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
+        #         },
+        #         {
+        #             "cluster": "Personas",
+        #             "statement": "Targeting Digital Native Athletes with Paralympic-inspired adaptive sports gear will capture the emerging inclusion trend and drive 25% engagement increase.",
+        #             "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
+        #         },
+        #         {
+        #             "cluster": "Networks",
+        #             "statement": "Partnering with nano-influencers (1k–10k followers) for hyper-localized content will achieve 40% higher conversion rates than macro-influencer campaigns.",
+        #             "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok Shop conversion data, 2025</a>'
+        #         },
+        #         {
+        #             "cluster": "Trends",
+        #             "statement": "Launching TikTok Live commerce sessions during major sporting events will capitalize on viral cultural moments and drive 50% higher purchase intent.",
+        #             "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
+        #         }
+        #     ]
+
+        #     for h in hypotheses:
+        #         st.markdown(
+        #             f"""
+        #             <div style="border:1px solid #ccc; border-radius:6px; padding:12px; margin-bottom:12px;">
+        #                 <p style="margin:8px 0 4px 0;"> {h['statement']}</p>
+        #                 <p style="margin:0; font-size:0.85em; color:gray;"><em>Source: {h['source']}</em></p>
+        #             </div>
+        #             """,
+        #             unsafe_allow_html=True
+        #         )
+
+        # with strategy_tabs[1]:
+        #     gaps = [
+        #         {
+        #             "title": "Local Culture & Sports Heritage",
+        #             "body": "Co-design a Muay Thai and Sepak Takraw-inspired capsule with regional gyms and artisans, addressing the 60% of Heritage-Forward urban consumers in SEA who seek authentic cultural narratives in sportswear.",
+        #             "source": '<a href="https://www.dataxet.co/insights/olympic-games-2024-en" target="_blank">SEA social listening, Q3 2025</a>'
+        #         },
+        #         {
+        #             "title": "Immersive Social Commerce White Space",
+        #             "body": "Launch interactive TikTok Shop live events for Puma gear—leveraging under‑utilized social commerce channels to create shareable, event‑style shopping experiences and drive spontaneous sales spikes.",
+        #             "source": '<a href="https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia" target="_blank">TikTok commerce data, 2025</a>'
+        #         },
+        #         {
+        #             "title": "Nano-Influencer Community Partnerships",
+        #             "body": "Build a ‘Puma Community Crew’ of nano-influencers (1k–10k followers) across Bangkok, Jakarta, and Manila to co-create localized content and small-scale activations—capitalizing on 40% higher conversions vs. macros.",
+        #             "source": '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">TikTok engagement metrics, Q2 2025</a>'
+        #         },
+        #         {
+        #             "title": "Inclusive & Adaptive Gear Opportunity",
+        #             "body": "Introduce a ‘Puma Adapt & Modest’ line—featuring sports hijabs, full-coverage activewear, and adaptive footwear—responding to a 30% surge in regional searches post-Paralympics.",
+        #             "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">Live commerce analytics, ongoing</a>'
+        #         }
+        #     ]
+
+        #     for g in gaps:
+        #         st.markdown(
+        #             f"""
+        #             <div style="border:1px dashed #999; border-radius:6px; padding:12px; margin-bottom:12px;">
+        #                 <h4 style="margin-bottom:6px;">{g['title']}</h4>
+        #                 <p style="margin:0;">{g['body']} <br><em>Source: {g['source']}</em></p>
+        #             </div>
+        #             """,
+        #             unsafe_allow_html=True
+        #         )
+
+        # with strategy_tabs[2]:
+        #     creations = [
+        #         {
+        #             "title": "Authentic Local Culture Integration Playbook",
+        #             "body": "Step-by-step guide for co-designing with regional sports communities (e.g., Muay Thai, Sepak Takraw), including partner selection, design workshops, storytelling angles, and success metrics such as cultural authenticity lift.",
+        #             "source": '<a href="https://hbr.org/2024/05/marketing-playbooks-for-emerging-markets" target="_blank">HBR Playbook Frameworks, 2024</a>'
+        #         },
+        #         {
+        #             "title": "Nano-Influencer Network Playbook",
+        #             "body": "Framework for identifying, onboarding, and incentivizing nano- and micro-influencers across SEA cities, with guidelines on content co-creation, engagement tracking, and conversion measurement (+40% lift potential).",
+        #             "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
+        #         },
+        #         {
+        #             "title": "AR/VR Immersive Experience Playbook",
+        #             "body": "Blueprint for developing AR filters and VR try-on campaigns, covering ideation, tech partner selection, incentivization mechanisms (e.g., in-store reward redemptions), and KPIs like UGC volume and footfall.",
+        #             "source": '<a href="https://www.mckinsey.com/our-insights/experimental-marketing-labs" target="_blank">McKinsey Marketing Labs, 2025</a>'
+        #         },
+        #         {
+        #             "title": "Pop-Up Experiential Lab Playbook",
+        #             "body": "Guide to staging short-term pop-up labs that fuse retail with local culture, detailing site selection, interactive installations (e.g., foosball courts, customization workshops), and metrics (foot traffic, dwell time, social shares).",
+        #             "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
+        #         },
+        #         {
+        #             "title": "Co-Creation & Crowdsourced Design Playbook",
+        #             "body": "Instructions for running co-creation workshops and design contests with consumers and local artists, from ideation to prototyping and launch, measuring outputs like concepts generated and UGC sentiment.",
+        #             "source": '<a href="https://adage.com/article/cmo-strategy/brands-creative-workshops-engage-consumers/237042" target="_blank">AdAge, 2024</a>'
+        #         },
+        #         {
+        #             "title": "Digital Collectibles & Metaverse Drops Playbook",
+        #             "body": "Steps for launching phygital NFT drops and metaverse experiences, including drop structure, platform selection, redemption mechanics, and success metrics (NFT sell-out rates, virtual event attendance).",
+        #             "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
+        #         }
+        #     ]
+        #     for c in creations:
+        #         st.markdown(
+        #             f"""
+        #             <div style="border:1px solid #007ACC; border-radius:6px; padding:12px; margin-bottom:12px;">
+        #                 <h4 style="margin-bottom:6px;">{c['title']}</h4>
+        #                 <p style="margin:0;">{c['body']}<br><em>Source: {c['source']}</em></p>
+        #             </div>
+        #             """,
+        #             unsafe_allow_html=True
+        #         )
+
+        # with strategy_tabs[3]:
+        #     scenarios = [
+        #         {
+        #             "title": "Nano-Influencer Partnerships",
+        #             "body": "If Puma scales up its network of nano-influencers across key SEA cities, culture will shift toward grassroots authenticity, driving an estimated 15% increase in brand favorability and 40% conversion uplift.",
+        #             "source": '<a href="https://seasia.co/insight/nano-influencer-impact" target="_blank">SEAsia Nano-Influencer Study, 2025</a>'
+        #         },
+        #         {
+        #             "title": "Inclusive & Adaptive Gear Launch",
+        #             "body": "If Puma launches a dedicated ‘Adapt & Modest’ line co-designed with local athletes, culture will shift toward inclusive sports participation, leading to a projected 25% engagement rise among underrepresented segments.",
+        #             "source": '<a href="https://www.dataxet.co/insights/inclusive-sports-gear-sea" target="_blank">DataXet Inclusion Trends, Q1 2025</a>'
+        #         },
+        #         {
+        #             "title": "Monthly Community Festivals",
+        #             "body": "If Puma hosts recurring urban sports festivals, culture will shift toward communal brand experiences, boosting event-based sales spikes by up to 25% and generating increased local advocacy.",
+        #             "source": '<a href="https://marketing-interactive.com/community-event-impact-sea" target="_blank">Marketing Interactive Events Report, 2025</a>'
+        #         },
+        #         {
+        #             "title": "Real-Time Cultural Moment Activations",
+        #             "body": "If Puma deploys rapid-response campaigns around viral sports moments (e.g., live-stream commerce tied to a local team’s victory), culture will shift toward viewing Puma as culturally agile, driving 50% higher purchase intent during the activation window.",
+        #             "source": '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">RTL Live Commerce Analytics, ongoing</a>'
+        #         },
+        #         {
+        #             "title": "Phygital Metaverse Experience",
+        #             "body": "If Puma integrates metaverse drops with exclusive digital collectibles redeemable for physical products, culture will shift toward a tech-forward brand perception, resulting in an anticipated surge in digital engagement and brand heat among Gen Z users.",
+        #             "source": '<a href="https://www.coindesk.com/markets/2022/02/23/puma-launches-nft-collection/" target="_blank">CoinDesk: Puma NFT Launch, 2022</a>'
+        #         }
+        #     ]
+        #     for s in scenarios:
+        #         st.markdown(
+        #             f"""
+        #             <div style="border:1px dotted #FF5722; border-radius:6px; padding:12px; margin-bottom:12px;">
+        #                 <h4 style="margin-bottom:6px;">{s['title']}</h4>
+        #                 <p style="margin:0;">{s['body']}<br><em>Source: {s['source']}</em></p>
+        #             </div>
+        #             """,
+        #             unsafe_allow_html=True
+        #         )
+
+        # with strategy_tabs[4]:
+        #     recommendations = [
+        #         {
+        #             "priority": 1,
+        #             "title": "Authentic Local Sports Integration",
+        #             "body": "Develop collaborations with traditional sports communities (Muay Thai, Sepak Takraw) to create culturally grounded product lines that respect heritage while meeting modern performance needs. Focus on storytelling that bridges traditional athletic culture with contemporary lifestyle aspirations."
+        #         },
+        #         {
+        #             "priority": 2,
+        #             "title": "Nano-Influencer Commerce Network",
+        #             "body": "Build relationships with 1k–10k follower creators who embody authentic community leadership. Prioritize trust-building over reach metrics to match Southeast Asian preferences for intimate brand connections."
+        #         },
+        #         {
+        #             "priority": 3,
+        #             "title": "Cultural Moment Activation",
+        #             "body": "Develop rapid-response capabilities to capitalize on viral sporting moments through real-time content creation and TikTok Live commerce activations that feel organic rather than opportunistic."
+        #         }
+        #     ]
+
+        #     for r in recommendations:
+        #         st.markdown(
+        #             f"""
+        #             <div style="border-left:5px solid #4CAF50; padding:12px; margin-bottom:16px;">
+        #                 <h4 style="margin-bottom:6px;">{r['priority']}. {r['title']}</h4>
+        #                 <p style="margin:0;">{r['body']}</p>
+        #             </div>
+        #             """,
+        #             unsafe_allow_html=True
+        #         )
 
     def render_ask(self):
         st.markdown("""
