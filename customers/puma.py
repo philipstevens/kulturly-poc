@@ -1197,11 +1197,58 @@ class Puma(BaseCustomerRenderer):
         ]
 
         creations = [
-            {"title": "Local Culture Playbook", "body": "Guide for co-designing with sports communities, including workshops and storytelling metrics.", "source": "HBR Playbook Frameworks, 2024", "bg": "#E8F4FD", "border": "1px solid #007ACC"},
-            {"title": "Nano-Influencer Network", "body": "Framework for onboarding and incentivizing nano-influencers with +40% lift potential.", "source": "SEAsia Nano-Influencer Study, 2025", "bg": "#F0F8E8", "border": "1px solid #4ECDC4"},
-            {"title": "AR/VR Immersion", "body": "Blueprint for AR filters and VR try-on, with UGC and footfall KPIs.", "source": "McKinsey Marketing Labs, 2025", "bg": "#FFF7E6", "border": "1px solid #FFE66D"}
+            {
+                "title": "Local Culture Playbook",
+                "goal": "Co‑design with regional sports communities to drive cultural authenticity",
+                "steps": [
+                    "Map top 5 Muay Thai & Sepak Takraw clubs by engagement",
+                    "Host 3 co‑creation workshops (design + storyboarding)",
+                    "Prototype capsule collection with local artisans"
+                ],
+                "metrics": [
+                    "Authenticity lift via n=200 survey (+15% target)",
+                    "UGC posts with #LocalPlaybook (≥1K)",
+                    "Pilot sell‑through rate (≥30%)"
+                ],
+                "source": "HBR Playbook Frameworks, 2024",
+                "border": "1px solid #007ACC",
+                "bg": "#E8F4FD"
+            },
+            {
+                "title": "Nano‑Influencer Network",
+                "goal": "Leverage 1k–10k creators for hyper‑local trust",
+                "steps": [
+                    "Identify 12 top‑performing nano‑influencers per city",
+                    "Co‑create ‘day‑in‑the‑life’ video templates",
+                    "Run bi‑weekly briefs with performance benchmarks"
+                ],
+                "metrics": [
+                    "Conversion lift vs. control (≥40%)",
+                    "Avg. engagement rate (≥8%)",
+                    "Content volume per sprint (≥5 posts)"
+                ],
+                "source": "SEAsia Nano‑Influencer Study, 2025",
+                "border": "1px solid #4ECDC4",
+                "bg": "#F0F8E8"
+            },
+            {
+                "title": "AR/VR Immersion",
+                "goal": "Blend digital and physical brand experiences at scale",
+                "steps": [
+                    "Audit existing AR/VR tech partners and costs",
+                    "Design 2 pilot AR filters tied to product drops",
+                    "Integrate VR try‑on at 3 flagship stores"
+                ],
+                "metrics": [
+                    "Filter UGC uses (≥5K)",
+                    "VR demo sessions (≥500)",
+                    "Post‑campaign footfall lift (+10%)"
+                ],
+                "source": "McKinsey Marketing Labs, 2025",
+                "border": "1px solid #FFE66D",
+                "bg": "#FFF7E6"
+            }
         ]
-
         scenarios = [
             {"title": "Nano-Influencer Scale-Up", "body": "If Puma scales nano-influencer networks, then brand favorability rises 15% and conversions +40%.", "source": "SEAsia Nano-Influencer Study, 2025"},
             {"title": "Adaptive Line Launch", "body": "If Puma co-designs an adaptive line, then engagement among underrepresented segments jumps 25%.", "source": "DataXet Inclusion Trends, Q1 2025"},
@@ -1265,48 +1312,72 @@ class Puma(BaseCustomerRenderer):
 
         # Culture Creation: full-width playbook cards
         with tabs[2]:
-            st.caption("Guided playbooks for cultural activation.")
+            st.caption("Activation Playbooks—frameworks distilled by AI from 50K+ cultural data points")
+
             for c in creations:
-                render_card(
-                    title=c['title'],
-                    body_lines=[c['body'], f"Source: {c['source']}"],
-                    border=c['border']
+                parts = []
+                parts.append(f"<p><strong>Goal:</strong> {c['goal']}</p>")
+                parts.append(
+                    "<p><strong>Steps:</strong></p>"
+                    f"<ul style='margin:4px 0 8px 16px;'>"
+                    + "".join(f"<li>{s}</li>" for s in c["steps"])
+                    + "</ul>"
                 )
+                parts.append(
+                    "<p><strong>Metrics:</strong></p>"
+                    f"<ul style='margin:4px 0 8px 16px;'>"
+                    + "".join(f"<li>{m}</li>" for m in c["metrics"])
+                    + "</ul>"
+                )
+                parts.append(f"<p style='font-size:0.85em; color:gray;'><em>Source: {c['source']}</em></p>")
+                body_html = "".join(parts)
+                render_card(
+                    title=c["title"],
+                    body_lines=[body_html],
+                    border=c["border"]
+                )
+
 
         # What If: compact accordions
         with tabs[3]:
-            st.caption("Scenario tests—each if… then…")
-            scenario_cards = ""
-            for s in scenarios:
-                scenario_cards += f"""
+            st.caption("What If Scenarios — projected outcomes")
+
+            # Build a vertical list of numbered flex‑cards
+            scenario_html = '<div style="display:flex; flex-direction:column; gap:16px;">'
+            for idx, s in enumerate(scenarios, start=1):
+                scenario_html += f"""
+                <div style="display:flex; align-items:flex-start; gap:12px;">
+                <!-- Number badge -->
                 <div style="
-                    border: 1px dotted #FF5722;
-                    border-radius: 8px;
-                    padding: 16px;
-                    margin: 8px;
-                    flex: 1;
-                    min-width: 280px;
-                    box-sizing: border-box;
+                    min-width:32px; height:32px;
+                    border-radius:50%;
+                    background:#FF5722;
+                    color:#fff;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    font-weight:bold;
+                    font-size:14px;
                 ">
-                    <h4 style="margin:0 0 8px; color:#FF5722;">{s['title']}</h4>
-                    <p style="margin:0 0 12px; line-height:1.5; font-size:14px;">{s['body']}</p>
-                    <p style="margin:0; font-size:0.85em; color:gray;">Source: {s['source']}</p>
+                    {idx}
+                </div>
+                <!-- Content -->
+                <div style="flex:1;">
+                    <div style="font-size:15px; font-weight:bold; color:#FF5722; margin-bottom:4px;">
+                    {s['title']}
+                    </div>
+                    <div style="font-size:14px; line-height:1.5; margin-bottom:6px;">
+                    {s['body']}
+                    </div>
+                    <div style="font-size:12px; color:gray;">
+                    Source: {s['source']}
+                    </div>
+                </div>
                 </div>
                 """
+                scenario_html += "</div>"
 
-            # render the flex container
-            st.markdown(
-                f"""
-                <div style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                ">
-                    {scenario_cards}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            st.markdown(scenario_html, unsafe_allow_html=True)
 
         # Actions: simple numbered list
         with tabs[4]:
