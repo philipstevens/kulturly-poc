@@ -676,6 +676,7 @@ class Puma(BaseCustomerRenderer):
             narratives = [
                 {
                     "title": "TikTok Creator Economy",
+                    "color": "#FF6B6B",
                     "story": (
                         "Algorithm‑driven discovery on TikTok spawns new influence pathways beyond simple follower counts. "
                         "Nano‑influencers (1k–10k followers) achieve viral reach by blending entertainment and commerce—"
@@ -691,6 +692,7 @@ class Puma(BaseCustomerRenderer):
                 },
                 {
                     "title": "Traditional Sports Communities",
+                    "color": "#4ECDC4",
                     "story": (
                         "Olympic heroes (like Tennis Panipak), community gym leaders and indigenous sport masters "
                         "create authentic cultural moments that bridge the digital and physical worlds."
@@ -703,6 +705,7 @@ class Puma(BaseCustomerRenderer):
                 },
                 {
                     "title": "Sneakerhead Collectors",
+                    "color": "#FFE66D",
                     "story": (
                         "Local sneaker exhibitions and heritage‑brand founders fuel the #LocalPride movement. "
                         "They blend IRL events with digital storytelling to anchor powerful cultural narratives."
@@ -720,20 +723,27 @@ class Puma(BaseCustomerRenderer):
             cols = st.columns(2)
             for idx, nar in enumerate(narratives):
                 col = cols[idx % 2]
+                color = nar["color"]
                 evidence_html = self._parse_markdown_links(nar["evidence"])
                 with col:
                     card_html = (
-                        f'<div style="border: 2px solid #888; border-radius: 8px; padding: 16px; margin: 8px 0;">'
+                        f'<div style="border: 2px solid {color}; '
+                        f'border-radius: 8px; padding: 16px; margin: 8px;">'
                         # Header
                         f'  <div style="margin-bottom: 8px;">'
                         f'    <strong style="font-size: 16px;">{nar["title"]}</strong>'
                         f'  </div>'
                         # Teaser story
-                        f'  <p style="margin: 0 0 12px; opacity: 0.8;">{nar["story"][:100]}…</p>'
+                        f'  <p style="margin: 0 0 12px; opacity: 0.8;">'
+                        f'{nar["story"][:100]}…'
+                        f'  </p>'
                         # Details dropdown
                         f'  <details style="margin-top: 12px; border-radius: 8px; overflow: hidden;">'
-                        f'    <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>'
-                        f'    <div style="padding: 0 16px 16px; border-top: 1px solid rgba(0,0,0,0.1); line-height: 1.6;">'
+                        f'    <summary style="font-weight: bold; cursor: pointer; color: {color};">'
+                        f'Full Details'
+                        f'    </summary>'
+                        f'    <div style="padding: 0 16px 16px; '
+                        f'border-top: 1px solid {color}; line-height: 1.6;">'
                         f'      <section style="margin: 12px 0;">'
                         f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>'
                         f'        <p style="margin: 0;">{nar["story"]}</p>'
