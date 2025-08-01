@@ -36,14 +36,16 @@ class Puma(BaseCustomerRenderer):
             "🧠 Word Shifts"  
         ])
         
+        stories = self.data.get("stories", {})
+        themes = stories.get("themes", [])
+        framing = stories.get("framing", [])
         # Tab 1: Cultural Narratives
         with main_tabs[0]:
             st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
             
-            stories = self.data.get("stories", [])
-
+            
             cols = st.columns(2)
-            for idx, nar in enumerate(stories):
+            for idx, nar in enumerate(themes):
                 col = cols[idx % 2]
                 confidence_pct = int(nar["confidence"] * 100)
                 evidence_html = self._parse_markdown_links(nar["evidence"])
@@ -92,51 +94,10 @@ class Puma(BaseCustomerRenderer):
         with main_tabs[3]:
             st.caption("How core ideas are locally interpreted and emphasized across cultures")
             
+            
             framing_tabs = st.tabs(["Performance vs. Lifestyle", "Community vs. Individualism", "Tradition vs. Modernity"])
             
-            regional_framing_data = [
-                {
-                    "title": "Performance vs. Lifestyle",
-                    "data": [
-                        {"Country": "Indonesia", "Cultural Framing": "Frames fitness as community building and faith-compatible wellness", "Key Indicators": "Community gyms, halal fitness programs"},
-                        {"Country": "Malaysia", "Cultural Framing": "Balances multicultural sporting traditions with modern athleisure", "Key Indicators": "Multi-ethnic sports, fusion wear trends"},
-                        {"Country": "Thailand", "Cultural Framing": "Emphasizes individual achievement and national pride", "Key Indicators": "Olympic focus, Muay Thai heritage"}
-                    ],
-                    "evidence": [
-                        ("Sport in Thailand – Wikipedia", "https://en.wikipedia.org/wiki/Sport_in_Thailand"),
-                        ("JLL Thailand Sports Boom", "https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market")
-                    ],
-                    "strategic_impact": "Tailor messaging to resonate with local cultural values and sporting traditions"
-                },
-                {
-                    "title": "Community vs. Individualism", 
-                    "data": [
-                        {"Country": "Indonesia", "Cultural Framing": "Emphasizes collective fitness journeys and community events", "Key Indicators": "Group challenges, family fitness rituals"},
-                        {"Country": "Malaysia", "Cultural Framing": "Blends individual aspirations with multicultural community spirit", "Key Indicators": "Personal goals within diverse communities"},
-                        {"Country": "Thailand", "Cultural Framing": "Focuses on personal achievement and national pride in sports", "Key Indicators": "Individual excellence, national identity"}
-                    ],
-                    "evidence": [
-                        ("YouGov Singapore Running Community", "https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community"),
-                        ("Retail Asia K-Wave Trends", "https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends")
-                    ],
-                    "strategic_impact": "Leverage local cultural narratives to build community-driven campaigns"
-                },
-                {
-                    "title": "Tradition vs. Modernity",
-                    "data": [
-                        {"Country": "Indonesia", "Cultural Framing": "Integrates traditional sports with modern athleticism", "Key Indicators": "Sepak takraw evolution, modern training methods"},
-                        {"Country": "Malaysia", "Cultural Framing": "Balances heritage sports with contemporary fitness trends", "Key Indicators": "Traditional games, tech-enabled fitness"},
-                        {"Country": "Thailand", "Cultural Framing": "Celebrates traditional martial arts alongside modern fitness", "Key Indicators": "Muay Thai culture, contemporary workouts"}
-                    ],
-                    "evidence": [
-                        ("SemanticsScholar Local Product Preference", "https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf"),
-                        ("DataXet Olympic Engagement", "https://www.dataxet.co/insights/olympic-games-2024-en")
-                    ],
-                    "strategic_impact": "Highlight Puma's role in bridging cultural heritage with modern athleticism"
-                }
-            ]
-            
-            for i, content in enumerate(regional_framing_data):
+            for i, content in enumerate(framing):
                 with framing_tabs[i]:
                     # Create an interactive table
                     import pandas as pd
@@ -155,8 +116,7 @@ class Puma(BaseCustomerRenderer):
                     )
                     
                     # Add evidence with preserved links
-                    evidence_links = [f"[{text}]({url})" for text, url in content["evidence"]]
-                    st.markdown(f"**Evidence Sources:** {', '.join(evidence_links)}")
+                    st.markdown(f"**Evidence Sources:** {', '.join(content['evidence'])}")
                     
                     # Add strategic impact
                     st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
@@ -448,63 +408,13 @@ class Puma(BaseCustomerRenderer):
                     )
 
     def render_people(self):
-        personas = [
-            {
-                "name": "Digital Native Athletes",
-                "share": "25%",
-                "border_color": "#FF6F61",
-                "traits": ["Gen Z (18–25)", "Urban & tech‑savvy", "60% spend 6+ hours on mobile daily", "Performance‑focused", "Fastest growing segment 🚀"],
-                "behaviors": "Document fitness journeys, value tech innovation; Paralympic inclusion sparked fresh momentum in Indonesia.",
-                "evidence": (
-                    '<a href="https://www.mili.eu/sg/insights/meet-southeast-asias-gen-z" target="_blank">Meet SEA’s Gen Z</a>'
-                    ', '
-                    '<a href="https://seasia.co/infographic/what-are-the-top-google-searches-in-southeast-asia-in-2024" target="_blank">Top SEA searches 2024</a>'
-                ),
-                "implications": "Engage via in-app fitness features and inclusive performance storytelling."
-            },
-            {
-                "name": "Heritage‑Forward Trendsetters",
-                "share": "30%",
-                "border_color": "#6A5ACD",
-                "traits": ["Millennials (26–35)", "Middle‑income", "Cultural pride‑driven", "Multilingual content creators"],
-                "behaviors": "Blend traditional & modern aesthetics, support local brands, lead cultural storytelling.",
-                "evidence": ('<a href="https://seasia.co/infographic/how-many-gen-z-in-southeast-asia-2024" target="_blank">SEA Gen Z insights</a>'),
-                "implications": "Collaborate with artisans for fusion designs and heritage narratives."
-            },
-            {
-                "name": "Social Commerce Enthusiasts",
-                "share": "20%",
-                "border_color": "#FFB6C1",
-                "traits": ["Gen Z females (18–24)", "High social‑media engagement", "Live shopping participants"],
-                "behaviors": "Drive purchases through entertaining live‑shop events on TikTok & Instagram.",
-                "evidence": ('<a href="https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/" target="_blank">TikTok Shop growth</a> , '
-                            '<a href="https://today.rtl.lu/news/business-and-tech/a/2078371.html" target="_blank">TikTok commerce trends</a>'),
-                "implications": "Host influencer‑led live shopping events to accelerate conversion."
-            },
-            {
-                "name": "Authentic Community Builders",
-                "share": "25%",
-                "border_color": "#32CD32",
-                "traits": ["Mixed ages (20–35)", "Micro‑influencers", "Community‑focused", "Authenticity‑driven"],
-                "behaviors": "Trust nano‑influencers, champion transparent practices, create lasting advocacy.",
-                "evidence": ('<a href="http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/" target="_blank">Nano-influencer trust</a>'),
-                "implications": "Launch micro‑ambassador programs to amplify authentic stories."
-            },
-            {
-                "name": "Glocal Cultural Curators",
-                "share": "Emergent",
-                "border_color": "#FFD700",
-                "traits": ["Hybrid global‑local identities", "Trend synthesizers", "Resist categorization", "High creativity"],
-                "behaviors": "Blend global trends with local expressions to craft unique cultural mashups.",
-                "evidence": "Identified via emergent content clustering in SEA channels.",
-                "implications": "Pilot co‑creation labs with curators to refine hybrid campaigns."
-            }
-        ]
+        personas = self.data.get("people", [])
 
         # Display as styled cards with inline details
         cols = st.columns(3)
         for idx, p in enumerate(personas):
             col = cols[idx % 3]
+            evidence_html = self._parse_markdown_links(p["evidence"])
             traits_list = "".join(f"<li>{t}</li>" for t in p["traits"])
             border_color = p.get("border_color", "#DDD")
             card_html = f"""
@@ -524,7 +434,7 @@ class Puma(BaseCustomerRenderer):
             <details style="margin-top:16px;border-radius:8px;overflow:hidden;border-top:1px solid #CCC;">
                 <summary style="font-weight:bold;cursor:pointer;">Full Details</summary>
                 <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Behaviors</h4><p style="margin:0;">{p['behaviors']}</p></section>
-                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Evidence</h4><p style="margin:0;">{p['evidence']}</p></section>
+                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Evidence</h4><p style="margin:0;">{evidence_html}</p></section>
                 <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Implications</h4><p style="margin:0;">{p['implications']}</p></section>
             </details>
             </div>
@@ -538,58 +448,17 @@ class Puma(BaseCustomerRenderer):
             "🛤️ Diffusion Paths",
             "👑 Key Brokers",          
         ])
+
+        influencers = self.data.get("influencers", {})
+
+        narratives = influencers.get("narratives", [])
+        pathways = influencers.get("pathways", [])
+        brokers = influencers.get("brokers", [])
         
         # Tab 1: Core Influence Narratives
         with influencer_tabs[0]:
             st.caption("Key influencer ecosystems shaping cultural conversations and commerce")
             
-            narratives = [
-                {
-                    "title": "TikTok Creator Economy",
-                    "color": "#FF6B6B",
-                    "story": (
-                        "Algorithm‑driven discovery on TikTok spawns new influence pathways beyond simple follower counts. "
-                        "Nano‑influencers (1k–10k followers) achieve viral reach by blending entertainment and commerce—"
-                        "key brokers are live sellers who demo product and entertain in one stream."
-                    ),
-                    "evidence": (
-                        "[RTL Today on social commerce trends]"
-                        "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)  "
-                        "[Marketing Interactive on TikTok cultural play]"
-                        "(https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia)"
-                    ),
-                    "takeaway": "Partner with top live sellers and optimize for discovery‑first content formats."
-                },
-                {
-                    "title": "Traditional Sports Communities",
-                    "color": "#4ECDC4",
-                    "story": (
-                        "Olympic heroes (like Tennis Panipak), community gym leaders and indigenous sport masters "
-                        "create authentic cultural moments that bridge the digital and physical worlds."
-                    ),
-                    "evidence": (
-                        "[DataXet Olympic social engagement]"
-                        "(https://www.dataxet.co/insights/olympic-games-2024-en)"
-                    ),
-                    "takeaway": "Activate athlete ambassadors and local club sponsorships to spark organic buzz."
-                },
-                {
-                    "title": "Sneakerhead Collectors",
-                    "color": "#FFE66D",
-                    "story": (
-                        "Local sneaker exhibitions and heritage‑brand founders fuel the #LocalPride movement. "
-                        "They blend IRL events with digital storytelling to anchor powerful cultural narratives."
-                    ),
-                    "evidence": (
-                        "[SemScholar on local product preference]"
-                        "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)  "
-                        "[SNKRDUNK on sneaker culture]"
-                        "(https://snkrdunk.com/en/magazine/2024/08/07/snkrdunk-streetsnaps-rise-of-the-sneakers-the-playground-2024/)"
-                    ),
-                    "takeaway": "Co‑produce limited‑edition drops and livestream event recaps to amplify collector networks."
-                }
-            ]
-
             cols = st.columns(2)
             for idx, nar in enumerate(narratives):
                 col = cols[idx % 2]
@@ -634,98 +503,6 @@ class Puma(BaseCustomerRenderer):
         # Tab 2: Diffusion Pathways
         with influencer_tabs[1]:
             st.caption("How cultural moments spread through influencer networks to drive adoption")
-            
-            # Define pathways with node data
-            pathways = [
-                {
-                    "name": "Cultural Moment Path",
-                    "color": "#1f77b4",
-                    "nodes": [
-                        {
-                            "id": "Cultural Moment",
-                            "label": "Cultural\nMoment",
-                            "tooltip": "Origin of the moment—e.g. #RunDrop teaser on TikTok (5 M views): https://www.tiktok.com/@brandx/video/12345"
-                        },
-                        {
-                            "id": "TikTok Algorithm",
-                            "label": "TikTok\nAlgorithm",
-                            "tooltip": "Amplified by TikTok’s For You feed (ranked #2 trending with 1.2 M likes) per TikTok Analytics"
-                        },
-                        {
-                            "id": "Instagram Reels",
-                            "label": "Instagram\nReels",
-                            "tooltip": "Shared via official brand Reels account (300 k views): https://www.instagram.com/p/ABCde/"
-                        },
-                        {
-                            "id": "Local Forums",
-                            "label": "Local\nForums",
-                            "tooltip": "Discussed on Reddit r/StreetwearSEA (thread: https://reddit.com/r/StreetwearSEA/xyz) and regional Facebook groups"
-                        },
-                        {
-                            "id": "Physical Adoption",
-                            "label": "Physical\nAdoption",
-                            "tooltip": "Seen at community run meetups (reported by Marketing‑Interactive): https://marketing-interactive.com/run-event"
-                        }
-                    ]
-                },
-                {
-                    "name": "Olympic Victory Path",
-                    "color": "#ff7f0e",
-                    "nodes": [
-                        {
-                            "id": "Olympic Victory",
-                            "label": "Olympic\nVictory",
-                            "tooltip": "National swimmer’s gold medal, July 2024 – news coverage: https://news.example.com/olympic‑gold"
-                        },
-                        {
-                            "id": "Viral Content",
-                            "label": "Viral\nContent",
-                            "tooltip": "Highlight clip went viral on YouTube (2 M views): https://youtu.be/olympic_highlight"
-                        },
-                        {
-                            "id": "Community Discussion",
-                            "label": "Community\nDiscussion",
-                            "tooltip": "Debated on Twitter and LINE groups (see thread: https://twitter.com/SEAfans/status/67890)"
-                        },
-                        {
-                            "id": "Product Interest",
-                            "label": "Product\nInterest",
-                            "tooltip": "Search volume for performance swimwear spiked +75% on Google Trends: https://trends.google.com/trends/explore?q=performance%20swimwear"
-                        },
-                        {
-                            "id": "Purchase",
-                            "label": "Purchase",
-                            "tooltip": "E‑commerce sales jumped 30% on Shopee during campaign week (Shopee SEA report)"
-                        }
-                    ]
-                },
-                {
-                    "name": "Local Exhibition Path",
-                    "color": "#2ca02c",
-                    "nodes": [
-                        {
-                            "id": "Local Exhibition",
-                            "label": "Local\nExhibition",
-                            "tooltip": "Pop‑up art jam in Jakarta, May 2025 – event page: https://events.example.com/local-expo"
-                        },
-                        {
-                            "id": "Social Documentation",
-                            "label": "Social\nDocumentation",
-                            "tooltip": "User posts on Instagram Stories (1 k+ tags using #LocalLab): https://instagram.com/explore/tags/LocalLab"
-                        },
-                        {
-                            "id": "Hashtag Movement",
-                            "label": "Hashtag\nMovement",
-                            "tooltip": "#YourBrandGoesLocal trended at #5 on Twitter Indonesia: https://twitter.com/hashtag/YourBrandGoesLocal"
-                        },
-                        {
-                            "id": "Mainstream Adoption",
-                            "label": "Mainstream\nAdoption",
-                            "tooltip": "Featured in The Jakarta Post lifestyle section: https://www.thejakartapost.com/life/2025/05/20"
-                        }
-                    ]
-                }
-            ]
 
             pathways_dot = """
             digraph G {
@@ -769,111 +546,6 @@ class Puma(BaseCustomerRenderer):
         # Tab 3: Key Cultural Brokers
         with influencer_tabs[2]:
             st.caption("Most influential voices shaping brand perception and cultural trends")
-            
-            brokers = [
-                {
-                    "market": "Indonesia",
-                    "color": "#FF6B6B",
-                    "description": "World's largest TikTok market with strong local pride movements",
-                    "brokers": [
-                        {
-                            "name": "Christine Febriyanti", 
-                            "role": "TikTok live seller", 
-                            "impact": "Drives 30%+ conversion in live shopping streams",
-                            "followers": "2.1M TikTok followers",
-                            "engagement": "Average 45% engagement rate",
-                            "specialty": "Live fashion try-ons and product demonstrations",
-                            "brands": "Regular collaborations with Nike, Adidas, local Indonesian brands"
-                        },
-                        {
-                            "name": "Local sneaker exhibition organizers", 
-                            "role": "Cultural curators", 
-                            "impact": "Amplify #LocalPride movement across urban centers",
-                            "followers": "Network of 50+ organizers across Indonesia",
-                            "engagement": "Monthly events drawing 5,000+ attendees",
-                            "specialty": "Showcasing Indonesian sneaker designers and local collaborations",
-                            "brands": "Platform for emerging local brands and international partnerships"
-                        },
-                        {
-                            "name": "Paralympic athlete influencers", 
-                            "role": "Inclusive sports advocates", 
-                            "impact": "Champion adaptive gear and accessibility narratives",
-                            "followers": "Combined 800K across platforms",
-                            "engagement": "High trust scores among disability communities",
-                            "specialty": "Adaptive sports content and inclusive fitness messaging",
-                            "brands": "Partnerships with Nike, Under Armour for adaptive collections"
-                        }
-                    ]
-                },
-                {
-                    "market": "Malaysia", 
-                    "color": "#4ECDC4",
-                    "description": "Multicultural bridge between traditional and modern athletic culture",
-                    "brokers": [
-                        {
-                            "name": "Multilingual content creators", 
-                            "role": "Cultural translators", 
-                            "impact": "Bridge diverse communities through shared fitness content",
-                            "followers": "500K-1.5M across Malay, Chinese, Tamil audiences",
-                            "engagement": "Strong cross-cultural appeal and comment diversity",
-                            "specialty": "Multilingual fitness content and cultural fusion workouts",
-                            "brands": "Local Malaysian brands, Decathlon, international sportswear"
-                        },
-                        {
-                            "name": "Sepak Takraw community leaders", 
-                            "role": "Traditional sports ambassadors", 
-                            "impact": "Connect heritage sports with modern athletic lifestyle",
-                            "followers": "Grassroots network of 10,000+ players and fans",
-                            "engagement": "Strong community engagement at local tournaments",
-                            "specialty": "Traditional sport modernization and youth engagement",
-                            "brands": "Partnerships with traditional sports federations and modern brands"
-                        },
-                        {
-                            "name": "Tech‑lifestyle influencers", 
-                            "role": "Digital innovators", 
-                            "impact": "Merge fitness tech with authentic local experiences",
-                            "followers": "750K+ tech-savvy millennials and Gen Z",
-                            "engagement": "High engagement on fitness tech reviews and local experiences",
-                            "specialty": "Wearable tech, fitness apps, and digital wellness content",
-                            "brands": "Apple, Samsung, Garmin, plus local tech startups"
-                        }
-                    ]
-                },
-                {
-                    "market": "Thailand",
-                    "color": "#FFE66D", 
-                    "description": "Olympic excellence culture meets royal aesthetic traditions",
-                    "brokers": [
-                        {
-                            "name": "Tennis Panipak", 
-                            "role": "Olympic gold medalist", 
-                            "impact": "Generated 3M+ social interactions in single day post-victory",
-                            "followers": "1.8M Instagram, 900K TikTok",
-                            "engagement": "Extremely high during competitive seasons",
-                            "specialty": "Olympic-level performance content and national pride messaging",
-                            "brands": "Nike endorsement, Thai national team partnerships"
-                        },
-                        {
-                            "name": "Muay Thai fitness influencers", 
-                            "role": "Combat sports evangelists", 
-                            "impact": "Popularize traditional martial arts in modern fitness contexts",
-                            "followers": "Combined network of 2M+ across multiple creators",
-                            "engagement": "Strong international appeal, especially in fitness communities",
-                            "specialty": "Traditional martial arts training with modern fitness integration",
-                            "brands": "Reebok, local Thai martial arts equipment brands"
-                        },
-                        {
-                            "name": "Royal‑aesthetic lifestyle creators", 
-                            "role": "Cultural taste-makers", 
-                            "impact": "Set premium lifestyle standards and aspirational content trends",
-                            "followers": "500K-1.2M affluent Thai and regional followers",
-                            "engagement": "High-value audience with luxury brand affinity",
-                            "specialty": "Premium lifestyle content with Thai cultural elements",
-                            "brands": "Luxury sportswear, premium wellness brands, cultural collaborations"
-                        }
-                    ]
-                }
-            ]
 
             for market_data in brokers:
                 # 1) build all broker-card HTML
@@ -917,103 +589,6 @@ class Puma(BaseCustomerRenderer):
                     unsafe_allow_html=True,
                 )
  
-    def render_trends(self):
-        trends = [
-            {
-                "title": "TikTok Shop Live Commerce Boom",
-                "likelihood": "High",
-                "metrics": [
-                    "TikTok Shop GMV: $4.4B in SEA (2022), est. $15B+ by 2025",
-                    "Indonesia: 30–35% sales uplift from livestream-led product drops",
-                    "SEA users spending avg 38 mins/session on TikTok commerce tabs"
-                ],
-                "story": (
-                    "SEA consumers are increasingly shopping through livestreamed experiences. In Indonesia, TikTok "
-                    "live selling has shifted commerce from search-driven to entertainment-led discovery."
-                ),
-                "evidence": (
-                    "[VulcanPost – TikTok Shop growth](https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/)  \n"
-                    "[RTL Today – Live commerce behavior](https://today.rtl.lu/news/business-and-tech/a/2078371.html)"
-                ),
-                "forecast": (
-                    "By mid‑2026, 40% of SEA fashion purchases under $60 will originate from TikTok, especially among "
-                    "female Gen Z consumers in Indonesia and Malaysia."
-                ),
-                "impact": "Brands must design collections and campaigns for streamability and instant checkout flows."
-            },
-            {
-                "title": "#LocalPride Sneaker Movement",
-                "likelihood": "Medium",
-                "metrics": [
-                    "60.7% of Indonesians prefer local brands (2024 survey)",
-                    "Indo sneaker expos: 3x increase in foot traffic YoY since 2022",
-                    "Instagram hashtag growth: +88% for #LocalPride #MadeInIndonesia"
-                ],
-                "story": (
-                    "A counter-narrative to global sneaker hype is emerging. Young Indonesians increasingly celebrate "
-                    "local identity through streetwear, especially sneakers made or co-branded with homegrown brands."
-                ),
-                "evidence": (
-                    "[SemanticsScholar – Indonesian product sentiment](https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)"
-                ),
-                "forecast": (
-                    "By 2026, 1 in 4 sneaker collaborations in SEA will involve local designers or culturally-rooted campaigns."
-                ),
-                "impact": "Co-create drops with SEA creatives to earn authenticity and longtail brand loyalty."
-            },
-            {
-                "title": "K‑Culture Integration Wave",
-                "likelihood": "High",
-                "metrics": [
-                    "70% of SEA Gen Z follow at least 1 K-pop artist (YouGov 2025)",
-                    "Puma x Rosé TikTok campaign: 5.8M views, 12% CTR in Malaysia",
-                    "Search volume for 'K-fashion sneakers': +54% YoY"
-                ],
-                "story": (
-                    "Korean pop culture continues to shape SEA fashion norms. Regional ambassadors like Rosé drive aspirational "
-                    "looks and fandom-led product discovery, particularly in Malaysia and Thailand."
-                ),
-                "evidence": (
-                    "[Retail Asia – Korean influence in sportswear](https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"
-                ),
-                "forecast": (
-                    "SEA sportswear brands will compete on K-style fluency, not just athletic performance, by 2026."
-                ),
-                "impact": "Anchor influencer programs in K-aesthetic fluency and cross-platform virality."
-            },
-            {
-                "title": "Esports + Streetwear Convergence",
-                "likelihood": "Emerging",
-                "metrics": [
-                    "Mobile Legends users in SEA: 105M monthly active players (2025 est.)",
-                    "Top esports influencers generating 3–5x apparel engagement vs. traditional athletes",
-                    "Fashion-lifestyle collabs w/ gaming orgs up 60% YoY"
-                ],
-                "story": (
-                    "Gaming culture is reshaping fashion, especially among 15–30 year olds. Puma’s collabs with EVOS and "
-                    "streamer outfits are driving streetwear discoverability through esports channels."
-                ),
-                "evidence": (
-                    "[Marketing Interactive – TikTok as Gen Z culture engine](https://www.marketing-interactive.com/tiktok-is-gen-z-s-cultural-playground-in-southeast-asia)"
-                ),
-                "forecast": (
-                    "By 2026, esports collabs will be table stakes for sportswear brands targeting Gen Z in SEA."
-                ),
-                "impact": "Treat top gamers as new style icons and design apparel that bridges competitive and lifestyle looks."
-            }
-        ]
-
-        for trend in trends:
-            with st.expander(f"{trend['title']} ({trend['likelihood']} Likelihood)", expanded=False):
-                st.markdown(f"**Story:** {trend['story']}")
-                st.markdown("**Key Metrics:**")
-                for m in trend["metrics"]:
-                    m_safe = m.replace("$", "\\$")
-                    st.markdown(f"- {m_safe}")
-                st.markdown(f"**Evidence:** {trend['evidence']}")
-                st.markdown(f"**Forecast:** {trend['forecast']}")
-                st.markdown(f"**Strategic Impact:** {trend['impact']}")
-
     def render_ideas(self):
         tabs = st.tabs([
             "🧪 Hypotheses", 
@@ -1022,6 +597,8 @@ class Puma(BaseCustomerRenderer):
             "❓ What If",
             "🚀 Actions"
         ])
+
+        ideas = self.data.get("ideas", {})
 
         def render_card(title, body_lines, *, border="1px solid #ccc", bg_color=None, details=None):
             style = f"border:{border};"
@@ -1048,115 +625,11 @@ class Puma(BaseCustomerRenderer):
                 unsafe_allow_html=True
             )
 
-        hypotheses = [
-            {"statement": "Collaborating with local traditional sports communities will increase cultural authenticity perception by 35% among Heritage-Forward Trendsetters.",
-            "source": "SEA social listening, Q3 2025"},
-            {"statement": "Targeting Digital Native Athletes with adaptive sports gear will drive a 25% engagement increase.",
-            "source": "TikTok engagement metrics, Q2 2025"},
-            {"statement": "Partnering with nano-influencers for hyper-localized content achieves 40% higher conversion than macro campaigns.",
-            "source": "TikTok Shop conversion data, 2025"},
-            {"statement": "Launching TikTok Live commerce during major sporting events drives 50% higher purchase intent.",
-            "source": "Live commerce analytics, ongoing"}
-        ]
-
-        gaps = [
-            {"title": "Local Culture & Sports Heritage", "body": "Co-design capsule collection with regional gyms and artisans to capture 60% of urban consumers seeking authenticity.", "source": "SEA social listening, Q3 2025"},
-            {"title": "Immersive Social Commerce", "body": "Launch interactive TikTok Shop live events for Puma gear to create shareable shopping experiences.", "source": "TikTok commerce data, 2025"},
-            {"title": "Nano-Influencer Partnerships", "body": "Build a ‘Puma Community Crew’ of nano-influencers in SEA to drive 40% higher conversions.", "source": "TikTok engagement metrics, Q2 2025"},
-            {"title": "Adaptive Gear Line", "body": "Introduce ‘Adapt & Modest’ activewear responding to a 30% surge in post-Paralympics searches.", "source": "Live commerce analytics, ongoing"}
-        ]
-
-        creations = [
-            {
-                "title": "Local Culture Playbook",
-                "goal": "Co‑design with regional sports communities to drive cultural authenticity",
-                "steps": [
-                    "Map top 5 Muay Thai & Sepak Takraw clubs by engagement",
-                    "Host 3 co‑creation workshops (design + storyboarding)",
-                    "Prototype capsule collection with local artisans"
-                ],
-                "metrics": [
-                    "Authenticity lift via n=200 survey (+15% target)",
-                    "UGC posts with #LocalPlaybook (≥1K)",
-                    "Pilot sell‑through rate (≥30%)"
-                ],
-                "source": "HBR Playbook Frameworks, 2024",
-                "border": "1px solid #007ACC",
-                "bg": "#E8F4FD"
-            },
-            {
-                "title": "Nano‑Influencer Network",
-                "goal": "Leverage 1k–10k creators for hyper‑local trust",
-                "steps": [
-                    "Identify 12 top‑performing nano‑influencers per city",
-                    "Co‑create ‘day‑in‑the‑life’ video templates",
-                    "Run bi‑weekly briefs with performance benchmarks"
-                ],
-                "metrics": [
-                    "Conversion lift vs. control (≥40%)",
-                    "Avg. engagement rate (≥8%)",
-                    "Content volume per sprint (≥5 posts)"
-                ],
-                "source": "SEAsia Nano‑Influencer Study, 2025",
-                "border": "1px solid #4ECDC4",
-                "bg": "#F0F8E8"
-            },
-            {
-                "title": "AR/VR Immersion",
-                "goal": "Blend digital and physical brand experiences at scale",
-                "steps": [
-                    "Audit existing AR/VR tech partners and costs",
-                    "Design 2 pilot AR filters tied to product drops",
-                    "Integrate VR try‑on at 3 flagship stores"
-                ],
-                "metrics": [
-                    "Filter UGC uses (≥5K)",
-                    "VR demo sessions (≥500)",
-                    "Post‑campaign footfall lift (+10%)"
-                ],
-                "source": "McKinsey Marketing Labs, 2025",
-                "border": "1px solid #FFE66D",
-                "bg": "#FFF7E6"
-            }
-        ]
-        scenarios = [
-            {"title": "Nano-Influencer Scale-Up", "body": "If Puma scales nano-influencer networks, then brand favorability rises 15% and conversions +40%.", "source": "SEAsia Nano-Influencer Study, 2025"},
-            {"title": "Adaptive Line Launch", "body": "If Puma co-designs an adaptive line, then engagement among underrepresented segments jumps 25%.", "source": "DataXet Inclusion Trends, Q1 2025"},
-            {"title": "Real-Time Activations", "body": "If Puma executes rapid-response live commerce on viral sports moments, then purchase intent spikes 50%.", "source": "RTL Live Commerce Analytics, ongoing"}
-        ]
-
-        recommendations = [
-            {
-                "priority": 1,
-                "title": "Local Sports Integration",
-                "body": (
-                    "By Q4 2025, partner with 3 Muay Thai gyms in Bangkok and 2 Sepak Takraw clubs in Jakarta:\n"
-                    "- Host 2 co‑design workshops per city with local artisans\n"
-                    "- Finalize a capsule collection spec sheet by Nov 1\n"
-                    "- Pilot 200 units at pop‑up events, targeting 30% sell‑through rate"
-                )
-            },
-            {
-                "priority": 2,
-                "title": "Nano‑Influencer Commerce Network",
-                "body": (
-                    "Recruit and onboard 12 nano‑influencers (1–10 K followers) across Manila and Ho Chi Minh City by Sept 15:\n"
-                    "- Run bi‑weekly content sprints with templated briefs\n"
-                    "- Track conversion lift weekly; aim for ≥40% uplift vs. controls\n"
-                    "- Iterate compensation model based on $/engaged‑view"
-                )
-            },
-            {
-                "priority": 3,
-                "title": "Rapid‑Response Cultural Activations",
-                "body": (
-                    "Stand up a 24/7 “trend desk” by Aug 1 with these SLAs:\n"
-                    "- Monitor TikTok sports hashtag spikes in real‑time\n"
-                    "- Launch live‑commerce streams within 2 hrs of a local win\n"
-                    "- Measure purchase‑intent lift; target +50% during activations"
-                )
-            }
-        ]
+        hypotheses = ideas.get("hypotheses", [])
+        gaps = ideas.get("gaps", [])
+        playbooks = ideas.get("playbooks", [])
+        scenarios = ideas.get("scenarios", [])
+        recommendations = ideas.get("recommendations", [])
 
         with tabs[0]:
             st.caption("Key if–then hypotheses to test.")
@@ -1184,7 +657,7 @@ class Puma(BaseCustomerRenderer):
         with tabs[2]:
             st.caption("Activation Playbooks—frameworks distilled by AI from 50K+ cultural data points")
 
-            for c in creations:
+            for c in playbooks:
                 parts = []
                 parts.append(f"<p><strong>Goal:</strong> {c['goal']}</p>")
                 parts.append(
