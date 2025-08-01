@@ -2,6 +2,8 @@
 
 import streamlit as st
 import time
+import json
+import pathlib
 
 default_config = {
             "query_placeholder": "What do you want to explore?",
@@ -17,9 +19,10 @@ default_config = {
         }
 
 class BaseCustomerRenderer:
-    def __init__(self, name="Generic Customer", config=default_config):
+    def __init__(self, name, data_path):
         self.name = name
-        self.config = config
+        raw = pathlib.Path(data_path).read_text()
+        self.data = json.loads(raw)
 
     def render_stories(self):
         pass

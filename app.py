@@ -391,6 +391,8 @@ customer = CUSTOMER_CLASSES[st.session_state.brand_config["brand_name"]]()
 tabs = st.tabs(["Stories","People","Influencers","Trends","Strategy","Kultie ✨"])
 methods = ["render_stories","render_people","render_influencers","render_trends","render_ideas","render_ask"]
 
+# TODO: Pass current_study to each render method if needed
+# TODO: Only display tabs if the customer has data for them
 for tab, method_name in zip(tabs, methods):
     with tab:
         getattr(customer, method_name)()

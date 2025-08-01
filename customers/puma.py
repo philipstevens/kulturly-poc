@@ -13,14 +13,17 @@ import altair as alt
 
 class Puma(BaseCustomerRenderer):
     def __init__(self):
-        config = {
-            "default_geographies": ["Malaysia", "Thailand", "Indonesia"]
-        }
-        super().__init__(name="Puma", config=config)
+        super().__init__(
+            name="Puma",
+            data_path="data/puma.json"
+        )
     
     def _parse_markdown_links(self, text):
         """Convert markdown-style links [text](url) to HTML <a> tags"""
         import re
+        # if they passed a list of strings, join into one
+        if isinstance(text, (list, tuple)):
+            text = "<br>".join(text)
         pattern = r'\[([^\]]+)\]\(([^)]+)\)'
         return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
     
@@ -36,144 +39,11 @@ class Puma(BaseCustomerRenderer):
         # Tab 1: Cultural Narratives
         with main_tabs[0]:
             st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
-        
-            narratives = [
-                {
-                    "title": "TikTok Commerce Revolution",
-                    "story": (
-                        "In Indonesia, TikTok Shop transforms shopping into live entertainment—"
-                        "streamers debut new collections and viewers buy directly via in-app links."),
-                    "story_preview": "TikTok Shop transforms shopping into live entertainment in Indonesia...",
-                    "evidence": (
-                        "[VulcanPost on TikTok Shop's growth]"
-                        "(https://vulcanpost.com/834059/can-tiktok-shop-dethrone-shopee-lazada/) and "
-                        "[RTL Today on social-commerce trends]"
-                        "(https://today.rtl.lu/news/business-and-tech/a/2078371.html)"),
-                    "impact": "Leverage shoppable live events to create buzz around product launches.",
-                    "first_seen": "Aug 15, 2024",
-                    "velocity": "+1,247%",
-                    "volume": "542.3K mentions",
-                    "confidence": 0.92,
-                    "momentum": "🚀 Accelerating",
-                    "maturity": "Early Growth",
-                    "trend_color": "#FF6B6B"
-                },
-                {
-                    "title": "Authentic Local Pride Movement",
-                    "story": (
-                        "'Made in Indonesia' sneaker pop-ups spark grassroots rallies—"
-                        "consumers wear local brands as statements of national pride."),
-                    "story_preview": "'Made in Indonesia' sneaker pop-ups spark grassroots rallies...",
-                    "evidence": (
-                        "60.7% of Indonesians prefer local affordable products "
-                        "[SemanticsScholar study]"
-                        "(https://pdfs.semanticscholar.org/f0f9/df7097005f4aad83088ec3528c5d1d7e417a.pdf)"),
-                    "impact": "Co-create limited editions with local artisans to tap into cultural nationalism.",
-                    "first_seen": "Jun 22, 2024",
-                    "velocity": "+834%",
-                    "volume": "287.6K mentions",
-                    "confidence": 0.88,
-                    "momentum": "📈 Steady Growth",
-                    "maturity": "Emerging",
-                    "trend_color": "#4ECDC4"
-                },
-                {
-                    "title": "Traditional Sports Resurgence",
-                    "story": (
-                        "Sepak Takraw tournaments and Muay Thai events go viral on social feeds, "
-                        "drawing millions of interactions."),
-                    "story_preview": "Sepak Takraw tournaments and Muay Thai events go viral on social feeds...",
-                    "evidence": (
-                        "Thailand's Panipak Tennis Olympic gold generated 3M+ social interactions in one day "
-                        "[DataXet report]"
-                        "(https://www.dataxet.co/insights/olympic-games-2024-en)"),
-                    "impact": "Sponsor grassroots tournaments and integrate classical motifs into designs.",
-                    "first_seen": "Jul 28, 2024",
-                    "velocity": "+2,156%",
-                    "volume": "1.2M mentions",
-                    "confidence": 0.94,
-                    "momentum": "💥 Viral Spike",
-                    "maturity": "Peak Moment",
-                    "trend_color": "#FFE66D"
-                },
-                {
-                    "title": "Nano-Influencer Trust Economy",
-                    "story": (
-                        "Micro-influencers (1k–10k followers) spark authentic conversations—"
-                        "their daily posts on Puma gear drive deeper trust than celebrity endorsements."),
-                    "story_preview": "Micro-influencers spark authentic conversations with deeper trust...",
-                    "evidence": (
-                        "Nano-influencers command 46% greater trust [Pongoshare report]"
-                        "(http://pongoshare.com/trends-in-influencer-marketing-southeast-asia/) and "
-                        "87% of Indonesians prefer intimate messaging interactions [Statista]"
-                        "(https://www.statista.com/forecasts/1345510/asia-most-used-social-media-platforms-of-gen-z-by-country-and-type)"),
-                    "impact": "Build city-by-city micro-ambassador programs to amplify genuine stories.",
-                    "first_seen": "May 14, 2024",
-                    "velocity": "+445%",
-                    "volume": "398.1K mentions",
-                    "confidence": 0.89,
-                    "momentum": "⚡ Sustained Growth",
-                    "maturity": "Established",
-                    "trend_color": "#A8E6CF"
-                },
-                {
-                    "title": "Cross-Cultural K-Wave Integration",
-                    "story": (
-                        "K-pop ambassadors like Blackpink's Rosé make Puma styles aspirational—"
-                        "fans emulate viral dance looks across SEA."),
-                    "story_preview": "K-pop ambassadors make Puma styles aspirational across SEA...",
-                    "evidence": (
-                        "K-pop drives SEA sportswear trends [Retail Asia]"
-                        "(https://retailasia.com/videos/korean-culture-drives-southeast-asia-sportswear-trends)"),
-                    "impact": "Align product drops with major K-pop comebacks and fan events.",
-                    "first_seen": "Mar 8, 2024",
-                    "velocity": "+672%",
-                    "volume": "756.8K mentions",
-                    "confidence": 0.91,
-                    "momentum": "🔄 Cyclical Peaks",
-                    "maturity": "Mature",
-                    "trend_color": "#DDA0DD"
-                },
-                {
-                    "title": "Digital-Physical Sport Fusion",
-                    "story": (
-                        "Runners and athletes document temple runs and treks in Puma gear—"
-                        "turning workouts into social challenges."),
-                    "story_preview": "Runners document temple runs, turning workouts into social challenges...",
-                    "evidence": (
-                        "Over 40% run weekly and share journeys online [YouGov Singapore]"
-                        "(https://business.yougov.com/content/50255-a-look-at-singapores-growing-running-community)"),
-                    "impact": "Create geo-tagged digital challenges that bridge culture and sport.",
-                    "first_seen": "Apr 19, 2024",
-                    "velocity": "+523%",
-                    "volume": "334.2K mentions",
-                    "confidence": 0.87,
-                    "momentum": "📊 Steady Growth",
-                    "maturity": "Growing",
-                    "trend_color": "#87CEEB"
-                },
-                {
-                    "title": "Multigenerational Athletic Identity",
-                    "story": (
-                        "Olympic heroes and wellness seekers unite—grandparents and grandchildren "
-                        "share Puma fitness moments across generations."),
-                    "story_preview": "Olympic heroes and wellness seekers unite across generations...",
-                    "evidence": (
-                        "Cross-generational fitness engagement rising in SEA [DataXet, JLL]"
-                        "(https://www.jll.com.sg/en/trends-and-insights/research/thailand-s-sports-boom-energizes-the-retail-market)"),
-                    "impact": "Design campaigns celebrating family fitness and rituals.",
-                    "first_seen": "Jul 12, 2024",
-                    "velocity": "+789%",
-                    "volume": "423.7K mentions",
-                    "confidence": 0.85,
-                    "momentum": "🌱 Building",
-                    "maturity": "Early Growth",
-                    "trend_color": "#F0A500"
-                }
-            ]
             
+            stories = self.data.get("stories", [])
+
             cols = st.columns(2)
-            for idx, nar in enumerate(narratives):
+            for idx, nar in enumerate(stories):
                 col = cols[idx % 2]
                 confidence_pct = int(nar["confidence"] * 100)
                 evidence_html = self._parse_markdown_links(nar["evidence"])
