@@ -1,9 +1,7 @@
 import streamlit as st
-import datetime
 import time  
 import os
 from dotenv import load_dotenv
-import plotly.graph_objects as go
 from customers.puma import Puma
 from customers.morinaga import Morinaga
 
@@ -388,8 +386,8 @@ if st.session_state.get("creating_study", False):
 
 customer = CUSTOMER_CLASSES[st.session_state.brand_config["brand_name"]]()
 
-tabs = st.tabs(["Stories","People","Influencers","Trends","Strategy","Kultie ✨"])
-methods = ["render_stories","render_people","render_influencers","render_trends","render_ideas","render_ask"]
+tabs = st.tabs(["Stories","People","Influencers","Strategy","Kultie ✨"])
+methods = ["render_stories","render_people","render_influencers","render_ideas","render_ask"]
 
 # TODO: Pass current_study to each render method if needed
 # TODO: Only display tabs if the customer has data for them
