@@ -12,20 +12,12 @@ class InsightsRenderer:
     def __init__(self, data: dict):
         self.data = data
 
-    def _parse_markdown_links(self, text):
-        """Convert markdown-style links [text](url) to HTML <a> tags"""
-        import re
-        # if they passed a list of strings, join into one
-        if isinstance(text, (list, tuple)):
-            text = "<br>".join(text)
-        pattern = r'\[([^\]]+)\]\(([^)]+)\)'
-        return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
-    
     def render(self):
         stories = self.data.get("stories", {})
         people = self.data.get("people", [])
         influencers = self.data.get("influencers", {})
         ideas = self.data.get("ideas", {})
+        context = self.data.get("ai_context", {})
 
         tabs = st.tabs(["Stories", "People", "Influencers", "Ideas", "Kultie ✨"])
         with tabs[0]:
@@ -37,8 +29,18 @@ class InsightsRenderer:
         with tabs[3]:
             self._render_ideas(ideas)
         with tabs[4]:
-            self._render_ask()
+            self._render_ask(context)
 
+
+    def _parse_markdown_links(self, text):
+        """Convert markdown-style links [text](url) to HTML <a> tags"""
+        import re
+        # if they passed a list of strings, join into one
+        if isinstance(text, (list, tuple)):
+            text = "<br>".join(text)
+        pattern = r'\[([^\]]+)\]\(([^)]+)\)'
+        return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
+    
     def _render_stories(self, stories):
         # 1. Collect only non-empty sections
         sections = []
@@ -449,7 +451,19 @@ class InsightsRenderer:
                 unsafe_allow_html=True
             )
     
-    def _render_ask(self):
+    def _render_ask(self, ai_context):
+        DEFAULT_SYSTEM_CONTEXT = (
+            "You are Kultie, an assistant for exploring market and cultural insights. "
+            "Provide clear, evidence-based recommendations."
+        )
+
+        system_context = ai_context.get("system_context") or DEFAULT_SYSTEM_CONTEXT
+        research_file = ai_context.get("research_file")
+        research_path = None
+        if research_file:
+            research_path = pathlib.Path(research_file)
+
+
         st.markdown("""
             <style>
             .space-title {
@@ -506,7 +520,7 @@ class InsightsRenderer:
             
             user_prompt = st.text_area(
                 "",
-                placeholder="Ask about cultural trends, market insights, or strategic recommendations: e.g., How can Puma leverage the TikTok commerce trend in Indonesia?",
+                placeholder="Ask about cultural trends, market insights, or strategic recommendations",
                 height=100
             )
             
@@ -517,14 +531,14 @@ class InsightsRenderer:
                 submit_clicked = st.button("➤", key="submit_btn", help="Submit query")
                     
             if submit_clicked and user_prompt.strip():
-                if deep_research:
+                if deep_research and research_file and research_path.exists():
                     steps = [
-                    ("🔍", "Searching relevant sources...", 1.5),
-                    ("📚", "Analyzing 847 sources across Southeast Asia...", 2),
-                    ("🧠", "Identifying cultural patterns and connections...", 1.5),
-                    ("✅", "Cross-referencing with market data and social insights...", 1),
-                    ("🤔", "Refining research focus...", 1),
-                ]
+                        ("🔍", "Searching relevant sources...", 1.5),
+                        ("📚", "Analyzing 847 sources across Southeast Asia...", 2),
+                        ("🧠", "Identifying cultural patterns and connections...", 1.5),
+                        ("✅", "Cross-referencing with market data and social insights...", 1),
+                        ("🤔", "Refining research focus...", 1),
+                    ]
 
                     # 2) Render the log
                     build_container = st.container()
@@ -551,8 +565,11 @@ class InsightsRenderer:
                     build_log.markdown(final_html, unsafe_allow_html=True)
 
                     # 3) Load & display your local markdown
-                    # Load the raw Markdown
-                    raw_md = pathlib.Path("puma_research.md").read_text()
+                    try:
+                        raw_md = research_path.read_text()
+                    except Exception:
+                        st.error(f"Could not load research file: {research_file}")
+                        return
 
                     # Split on the "## Sources" header
                     if "## Sources" in raw_md:
@@ -572,28 +589,9 @@ class InsightsRenderer:
                         with st.expander("📑 Sources & Links", expanded=False):
                             st.markdown(sources_md, unsafe_allow_html=True)
 
-
                 else:
                     with st.spinner("Analyzing cultural context..."):
                         try:
-                            # Context and role setup for Puma Southeast Asia cultural insights
-                            system_context = """You are a cultural strategy expert specializing in Southeast Asian markets, specifically Indonesia, Malaysia, and Thailand. You have deep knowledge of:
-                            - TikTok commerce and live shopping trends
-                            - Local pride movements and authentic brand positioning  
-                            - Traditional sports culture (Muay Thai, Sepak Takraw) integration
-                            - K-pop cultural influence on fashion and lifestyle
-                            - Nano-influencer trust economy
-                            - Multi-generational fitness and family wellness trends
-                            - Digital-physical sport fusion and temple running culture
-
-                            Your responses should be:
-                            1. Culturally nuanced and respectful
-                            2. Backed by specific Southeast Asian consumer insights
-                            3. Actionable for Puma's brand strategy
-                            4. Focused on authentic engagement rather than superficial trends
-
-                            Provide strategic recommendations that balance global brand consistency with local cultural authenticity."""
-
                             response = client.chat.completions.create(
                                 model="gpt-4o-mini",  # Cheapest OpenAI model
                                 messages=[

@@ -2,52 +2,68 @@
   "stories": {
     "themes": [
       {
-        "title": "Probiotic Awareness Gap",
-        "story": "Despite clinical evidence, many Malaysian parents aren't aware of BB536’s health benefits.",
-        "story_preview": "Despite clinical evidence, many Malaysian parents aren't aware of BB536’s health benefits.",
+        "title": "Functional Indulgence Boom",
+        "story": "Consumers globally are seeking snacks that deliver both pleasure and health benefits, like low-sugar chocolates with added collagen or vitamins.",
+        "story_preview": "Snacks delivering pleasure and health benefits are surging worldwide.",
         "evidence": [
-          "[NutraIngredients BB536 science](https://www.nutraingredients-asia.com/Article/2019/08/01/Mimicking-mother-s-milk-Morinaga-Milk-Industry-to-focus-on-probiotic-applications-in-infant-formula)"
+          "[Mintel Functional Snacks Report](https://www.mintel.com/global-food-and-drink-trends)"
         ],
-        "impact": "Deploy pediatric-led education campaigns and translate probiotic science into visual content.",
-        "first_seen": "Jan 05, 2025",
-        "velocity": "+320%",
-        "volume": "45K mentions",
-        "confidence": 0.91,
+        "impact": "Develop functional confectionery lines (e.g., beauty-support chocolates, protein candies) to appeal to health-conscious indulgence seekers.",
+        "first_seen": "Oct 15, 2024",
+        "velocity": "+410%",
+        "volume": "95K mentions",
+        "confidence": 0.93,
         "momentum": "🚀 Accelerating",
         "maturity": "Emerging",
-        "trend_color": "#FF6B6B"
+        "trend_color": "#F5A623"
       },
       {
-        "title": "Old Brand, Young Doubts",
-        "story": "Morinaga has legacy trust but feels outdated vs. competitors like Enfa or Friso.",
-        "story_preview": "Morinaga has legacy trust but feels outdated vs. competitors like Enfa or Friso.",
+        "title": "Limited Edition Fever",
+        "story": "Seasonal and location-specific snack releases are driving social media buzz and purchase urgency across Asian and Western markets.",
+        "story_preview": "Limited editions fuel hype and drive urgency in confectionery sales.",
         "evidence": [
-          "[Morinaga Malaysia heritage](https://morinagamilk.com.my/story.php)"
+          "[Euromonitor Seasonal Product Trends](https://www.euromonitor.com/)"
         ],
-        "impact": "Modernize packaging and refresh influencer-facing brand kit.",
-        "first_seen": "Feb 10, 2025",
-        "velocity": "+210%",
-        "volume": "30K mentions",
+        "impact": "Expand regional limited editions using local flavors (e.g., yuzu, sakura, salted caramel) and co-branded celebrity collaborations.",
+        "first_seen": "Sep 12, 2024",
+        "velocity": "+320%",
+        "volume": "80K mentions",
+        "confidence": 0.89,
+        "momentum": "⚡ Rising",
+        "maturity": "Growing",
+        "trend_color": "#FF6F61"
+      },
+      {
+        "title": "Premium Gifting Renaissance",
+        "story": "Confectionery gifting is rebounding post-pandemic, with demand for artisanal packaging and elevated unboxing experiences.",
+        "story_preview": "Gifting-oriented sweets with premium design are surging post-pandemic.",
+        "evidence": [
+          "[Statista Premium Gift Market](https://www.statista.com/topics/1121/gift-market/)"
+        ],
+        "impact": "Invest in upscale packaging, gift bundles, and seasonal campaign storytelling to capture premium consumers and tourism gifting.",
+        "first_seen": "Aug 03, 2024",
+        "velocity": "+250%",
+        "volume": "60K mentions",
         "confidence": 0.88,
         "momentum": "📈 Steady Growth",
-        "maturity": "Growing",
+        "maturity": "Expanding",
         "trend_color": "#84A9AC"
       },
       {
-        "title": "Invisible in E-Commerce",
-        "story": "Morinaga probiotic SKUs often look identical to standard formulas online.",
-        "story_preview": "Morinaga probiotic SKUs often look identical to standard formulas online.",
+        "title": "Plant-Based Sweet Spot",
+        "story": "Plant-based confectionery alternatives, especially dairy-free chocolate and fruit-based candies, are capturing vegan and flexitarian shoppers.",
+        "story_preview": "Dairy-free and vegan confectionery categories are growing rapidly.",
         "evidence": [
-          "[HealthLane Morinaga Listings](https://estore.healthlane.com.my/Morinaga)"
+          "[Innova Market Insights Plant-Based Trend](https://www.innovamarketinsights.com/)"
         ],
-        "impact": "Fix product detail pages and emphasize BB536 in visuals and naming.",
-        "first_seen": "Mar 01, 2025",
-        "velocity": "+180%",
-        "volume": "25K mentions",
-        "confidence": 0.87,
-        "momentum": "⚡ Rising",
+        "impact": "Introduce plant-based product lines, focusing on taste parity and clean-label appeal.",
+        "first_seen": "Nov 20, 2024",
+        "velocity": "+295%",
+        "volume": "70K mentions",
+        "confidence": 0.9,
+        "momentum": "🚀 Accelerating",
         "maturity": "Early Growth",
-        "trend_color": "#FFB6B9"
+        "trend_color": "#4ECDC4"
       }
     ],
     "framing": [],
@@ -57,56 +73,56 @@
   },
   "people": [
     {
-      "name": "Millennial Urban Mothers",
-      "share": "40%",
+      "name": "Global Urban Snackers",
+      "share": "35%",
       "border_color": "#FF6F61",
       "traits": [
-        "Age 28–38",
-        "Working professional",
-        "Concerned with gut health",
-        "Trust online reviews"
+        "Age 20–35",
+        "Digital-first buyers",
+        "Value convenience and flavor novelty",
+        "Social media trend-driven"
       ],
-      "behaviors": "Explore parenting forums, follow pediatrician creators, value science-backed products.",
+      "behaviors": "Impulse purchase seasonal and limited-edition products online; post unboxing experiences on TikTok and Instagram.",
       "evidence": [
-        "<a href=\"https://www.nutraingredients-asia.com/Trends/Infant-childhood-nutrition\" target=\"_blank\">Infant Nutrition Trends</a>"
+        "<a href=\"https://www.mintel.com/snacking-trends\" target=\"_blank\">Mintel Snacking Trends</a>"
       ],
-      "implications": "Feature reviews and science summaries in e-commerce PDPs and mom groups."
+      "implications": "Leverage short-run viral flavors and influencer campaigns to drive trial and sharing."
     },
     {
-      "name": "Health-First Fathers",
-      "share": "20%",
-      "border_color": "#6A5ACD",
+      "name": "Health-Conscious Indulgence Seekers",
+      "share": "30%",
+      "border_color": "#4ECDC4",
       "traits": [
-        "Age 30–45",
-        "Fitness-focused",
-        "Often decision-maker for supplements"
+        "Age 25–45",
+        "Fitness-aware",
+        "Open to functional or fortified sweets"
       ],
-      "behaviors": "Skim clinical evidence and compare nutritional labels before purchase.",
+      "behaviors": "Compare nutrition labels, seek guilt-free indulgence, respond to clear functional benefit claims.",
       "evidence": [
-        "<a href=\"https://www.statista.com/outlook/hmo/dairy-products/milk/infant-formula/malaysia\" target=\"_blank\">Infant formula consumption Malaysia</a>"
+        "<a href=\"https://www.statista.com/functional-confectionery\" target=\"_blank\">Functional Confectionery Statistics</a>"
       ],
-      "implications": "Build comparisons and authority-driven copy into landing pages and videos."
+      "implications": "Communicate added health benefits and certifications clearly on pack and digital channels."
     }
   ],
   "influencers": {
     "narratives": [
       {
-        "title": "Parenting Community Leaders",
-        "color": "#FF6B6B",
-        "story": "Momfluencers and pediatricians shape infant formula opinions through YouTube, IG, and WhatsApp groups.",
+        "title": "Flavor Adventurers",
+        "color": "#F5A623",
+        "story": "Food bloggers and flavor-review YouTubers are creating viral demand for unique, limited-edition confectionery flavors.",
         "evidence": [
-          "[YouTube search: BB536 reviews Malaysia](https://www.youtube.com/results?search_query=morinaga+bb536+malaysia)"
+          "[YouTube: Limited Edition Candy Reviews](https://www.youtube.com/results?search_query=limited+edition+candy)"
         ],
-        "takeaway": "Engage local pediatric experts and multilingual momfluencers for regional relevance."
+        "takeaway": "Seed products with micro-influencers who specialize in unique flavors and viral snack trends."
       },
       {
-        "title": "Pharmacist Educators",
+        "title": "Wellness Gurus",
         "color": "#4ECDC4",
-        "story": "Malaysian pharmacists often advise on formula at the point of sale—especially in HealthLane or Caring chains.",
+        "story": "Nutrition-forward influencers and dietitians are highlighting functional indulgence as an acceptable cheat snack.",
         "evidence": [
-          "[Retail channel review – HealthLane Malaysia](https://estore.healthlane.com.my/Morinaga)"
+          "[Instagram #functionalchocolate](https://www.instagram.com/explore/tags/functionalchocolate/)"
         ],
-        "takeaway": "Offer shelf-talkers and QR code training tools to improve pharmacy-led recommendations."
+        "takeaway": "Develop partnerships with wellness influencers to validate health-forward indulgence messaging."
       }
     ],
     "pathways": [],
@@ -115,12 +131,12 @@
   "ideas": {
     "hypotheses": [
       {
-        "statement": "Emphasizing BB536 on packaging and in digital channels will increase trust and trial conversion by 25% among Malaysian urban mothers.",
-        "source": "<a href=\"https://www.nutraingredients-asia.com/Trends/Infant-childhood-nutrition\" target=\"_blank\">Infant nutrition clinical reports</a>"
+        "statement": "Expanding seasonal limited-edition flavors tied to cultural events will increase social buzz and premium sales by 30%.",
+        "source": "<a href=\"https://www.euromonitor.com/\" target=\"_blank\">Euromonitor Seasonal Reports</a>"
       },
       {
-        "statement": "Partnering with pediatricians and multilingual momfluencers will increase engagement by 40% versus traditional brand ads.",
-        "source": "<a href=\"https://www.youtube.com/results?search_query=morinaga+bb536+malaysia\" target=\"_blank\">YouTube influencer content</a>"
+        "statement": "Functional confectionery with clear health claims will capture incremental share from traditional sweets by appealing to health-conscious indulgence seekers.",
+        "source": "<a href=\"https://www.mintel.com/global-food-and-drink-trends\" target=\"_blank\">Mintel Functional Snacks</a>"
       }
     ],
     "gaps": [],
@@ -129,19 +145,22 @@
     "recommendations": [
       {
         "priority": 1,
-        "title": "Rebrand BB536 Probiotic SKU",
-        "body": "Redesign e-commerce and in-store messaging to clearly spotlight probiotic function and gut health story."
+        "title": "Seasonal Limited Edition Engine",
+        "body": "Build an agile NPD cycle for quarterly limited flavors aligned to cultural events and viral trends."
       },
       {
         "priority": 2,
-        "title": "Activate Pediatrician & Influencer Network",
-        "body": "Equip doctors and trusted momfluencers with content kits to explain BB536’s science in simple, relatable ways."
+        "title": "Functional Sweet Innovation",
+        "body": "Launch fortified confectionery lines (e.g., vitamin-infused chocolate, collagen gummies) with clean-label marketing."
       },
       {
         "priority": 3,
-        "title": "Multilingual Education Campaigns",
-        "body": "Run content in Malay, English, and Chinese across parenting forums and video channels to close probiotic awareness gaps."
+        "title": "Premium Gifting Experience",
+        "body": "Invest in packaging design, unboxing rituals, and luxury gifting bundles targeting tourism and e-commerce gifting channels."
       }
     ]
+  },
+  "ai_context": {
+    "system_context": "You are Kultie, an assistant for exploring market and cultural insights. Always provide clear, evidence-based recommendations aligned with the following brand voice and positioning, focusing on increasing sales and cultural resonance in Japan: Tone & Style: friendly, nostalgic, approachable, sweet, family-oriented, trustworthy, innovative yet traditional, playful, comforting, high-quality, wholesome; Industry Context: confectionery, chocolates, biscuits, dairy-based sweets, health-oriented snacks, functional confectionery, premium seasonal gift products; Product Focus: chocolate bars, milk caramel, Hi-Chew, Choco Ball, ice cream, seasonal limited-edition flavors, health-conscious and functional candies, souvenir and gift-oriented sweets; Audience: families, children, teenagers, young professionals, gift buyers, health-conscious snack consumers, tourists seeking Japanese confectionery culture; Persona Alignment: nostalgic local consumer valuing tradition, modern snack explorer seeking new flavors, parent buying for kids, trend-sensitive youth following seasonal limited editions, tourists purchasing as cultural souvenirs; Regional Focus: Japanese market cultural dynamics, convenience store dominance, strong seasonal and limited-edition culture, gifting traditions, local taste profiles (matcha, sakura, yuzu, red bean), premium packaging expectations, and a growing interest in functional or healthier indulgent products."
   }
 }
