@@ -10,7 +10,8 @@ from insights_renderer import InsightsRenderer
 
 load_dotenv()
 
-is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+# is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
+is_dev_mode = False
 
 if "global_configured" not in st.session_state:
     st.session_state.global_configured = False
@@ -35,6 +36,7 @@ def load_all_insights(data_dir="data"):
 
 all_data = load_all_insights()
 
+# 1. Landing page
 if not st.session_state.global_configured:
     st.markdown("""
         <style>
@@ -206,7 +208,6 @@ if not st.session_state.global_configured:
     if not choice:
         st.stop()
 
-    st.session_state.selected_study = "Global Insights"
     st.session_state.brand_config = {
         "brand_name": brand_key,
         "cultural_domains": cultural_domains,
@@ -284,23 +285,21 @@ if not st.session_state.global_configured:
                 
                 st.success("🎉 Observatory Built Successfully!")
         
+        st.session_state.selected_study = "Global Insights"
+        st.session_state.studies = []
         st.session_state.global_configured = True
-
         st.rerun()
 
     st.stop()
 
+# 2. Left Sidebar
 with st.sidebar:
     brand = st.session_state.brand_config["brand_name"]
     st.header(brand.title())
 
-    raw = list(all_data.get(brand, {}))
-    studies = []
-    if "Global Insights" in raw:
-        studies.append("Global Insights")
-    studies += [s for s in raw if s != "Global Insights"]
-    if not studies:
-        studies = ["Global Insights"]
+    studies = ["Global Insights"] + [s["name"] for s in st.session_state.studies]
+    if st.session_state.selected_study not in studies:
+        st.session_state.selected_study = "Global Insights"
 
     if st.session_state.get("selected_study") not in studies:
         st.session_state.selected_study = studies[0]
@@ -318,11 +317,20 @@ with st.sidebar:
     if st.button("➕ New Study", use_container_width=True):
         st.session_state.creating_study = True
 
+# 3. Create Study Form
 if st.session_state.get("creating_study", False):
     st.subheader("Create New Study")
 
+    if "study_templates_remaining" not in st.session_state:
+        st.session_state.study_templates_remaining = [
+            name
+            for name in all_data.get(brand, {})
+            if name != "Global Insights"
+        ]
+
     with st.form("new_study"):
-        name = st.text_input("Study Name", placeholder="e.g., Emerging Beverage Category 2025")
+        choices = [""] + st.session_state.study_templates_remaining
+        name = st.selectbox("Study Name", choices)
         
         focus = st.multiselect(
             "Strategic Focus Areas",
@@ -373,7 +381,6 @@ if st.session_state.get("creating_study", False):
             help="Quantifiable measures of success or indicators you plan to track."
         )
 
-
         geos = st.multiselect(
             "Target Geographies",
             options=[
@@ -385,6 +392,7 @@ if st.session_state.get("creating_study", False):
             placeholder="Select target markets",
             help="Regions or markets relevant to this study."
         )
+        
         ages = st.multiselect(
             "Target Age Groups",
             options=[
@@ -395,6 +403,7 @@ if st.session_state.get("creating_study", False):
             placeholder="Select audience age ranges",
             help="Target consumer age segments."
         )
+        
         personas = st.multiselect(
             "Target Personas",
             options=[
@@ -405,22 +414,52 @@ if st.session_state.get("creating_study", False):
             placeholder="Select audience personas",
             help="Key consumer or stakeholder profiles for focus."
         )
+        
         create = st.form_submit_button("Create Study")
-    if create:
-        new = {
-            "id": str(len(st.session_state.studies)+1),
-            "name": name,
-            "focus": focus,
-            "objectives": objectives,
-            "assumptions": assumptions,
-            "demographics": {"geos": geos, "ages": ages, "personas": personas}
-        }
-        st.session_state.studies.append(new)
-        st.session_state.creating_study = False
 
+    if create:
+        if name:
+            new = {
+                "id": str(len(st.session_state.studies)+1),
+                "name": name,
+                "focus": focus,
+                "objectives": objectives,
+                "assumptions": assumptions,
+                "demographics": {"geos": geos, "ages": ages, "personas": personas}
+            }
+            st.session_state.studies.append(new)
+            st.session_state.study_templates_remaining.remove(name)
+            st.session_state.selected_study = name
+        
+            if not is_dev_mode:
+                steps = [
+                    ("🔧", f"Initializing study '{name}' environment..."),
+                    ("📝", "Generating study structure..."),
+                    ("⚙️", "Integrating parameters and settings..."),
+                    ("🏁", "Finalizing study setup..."),
+                ]
+                log = st.empty()
+                done = []
+                for i, (emoji, msg) in enumerate(steps):
+                    html = "<div style='font-family: monospace;'>"
+                    for step in done:
+                        html += f"<div>✅ {step}</div>"
+                    html += f"<div style='animation: pulse 1.5s infinite;'>🔄 {msg}</div></div>"
+                    st.markdown(
+                        "<style>@keyframes pulse {0%{opacity:1;}50%{opacity:0.5;}100%{opacity:1;}}</style>",
+                        unsafe_allow_html=True
+                    )
+                    log.markdown(html, unsafe_allow_html=True)
+                    time.sleep(1 if i in (0, len(steps)-1) else 1.5)
+                    done.append(f"{emoji} {msg}")
+                # final success
+                st.success(f"🎉 Study '{name}' Created Successfully!")
+        
+        st.session_state.creating_study = False
         st.rerun()
     st.stop()
 
+# 4. Main Insight Page
 brand = st.session_state.brand_config["brand_name"]
 study = st.session_state.selected_study
 
