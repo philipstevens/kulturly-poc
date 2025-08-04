@@ -10,8 +10,7 @@ from insights_renderer import InsightsRenderer
 
 load_dotenv()
 
-# is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
-is_dev_mode = False
+is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
 
 if "global_configured" not in st.session_state:
     st.session_state.global_configured = False
