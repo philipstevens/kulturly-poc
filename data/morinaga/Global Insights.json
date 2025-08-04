@@ -1,0 +1,147 @@
+{
+  "stories": {
+    "themes": [
+      {
+        "title": "Probiotic Awareness Gap",
+        "story": "Despite clinical evidence, many Malaysian parents aren't aware of BB536’s health benefits.",
+        "story_preview": "Despite clinical evidence, many Malaysian parents aren't aware of BB536’s health benefits.",
+        "evidence": [
+          "[NutraIngredients BB536 science](https://www.nutraingredients-asia.com/Article/2019/08/01/Mimicking-mother-s-milk-Morinaga-Milk-Industry-to-focus-on-probiotic-applications-in-infant-formula)"
+        ],
+        "impact": "Deploy pediatric-led education campaigns and translate probiotic science into visual content.",
+        "first_seen": "Jan 05, 2025",
+        "velocity": "+320%",
+        "volume": "45K mentions",
+        "confidence": 0.91,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Emerging",
+        "trend_color": "#FF6B6B"
+      },
+      {
+        "title": "Old Brand, Young Doubts",
+        "story": "Morinaga has legacy trust but feels outdated vs. competitors like Enfa or Friso.",
+        "story_preview": "Morinaga has legacy trust but feels outdated vs. competitors like Enfa or Friso.",
+        "evidence": [
+          "[Morinaga Malaysia heritage](https://morinagamilk.com.my/story.php)"
+        ],
+        "impact": "Modernize packaging and refresh influencer-facing brand kit.",
+        "first_seen": "Feb 10, 2025",
+        "velocity": "+210%",
+        "volume": "30K mentions",
+        "confidence": 0.88,
+        "momentum": "📈 Steady Growth",
+        "maturity": "Growing",
+        "trend_color": "#84A9AC"
+      },
+      {
+        "title": "Invisible in E-Commerce",
+        "story": "Morinaga probiotic SKUs often look identical to standard formulas online.",
+        "story_preview": "Morinaga probiotic SKUs often look identical to standard formulas online.",
+        "evidence": [
+          "[HealthLane Morinaga Listings](https://estore.healthlane.com.my/Morinaga)"
+        ],
+        "impact": "Fix product detail pages and emphasize BB536 in visuals and naming.",
+        "first_seen": "Mar 01, 2025",
+        "velocity": "+180%",
+        "volume": "25K mentions",
+        "confidence": 0.87,
+        "momentum": "⚡ Rising",
+        "maturity": "Early Growth",
+        "trend_color": "#FFB6B9"
+      }
+    ],
+    "framing": [],
+    "dimensions": [],
+    "metaphors": [],
+    "evolution": []
+  },
+  "people": [
+    {
+      "name": "Millennial Urban Mothers",
+      "share": "40%",
+      "border_color": "#FF6F61",
+      "traits": [
+        "Age 28–38",
+        "Working professional",
+        "Concerned with gut health",
+        "Trust online reviews"
+      ],
+      "behaviors": "Explore parenting forums, follow pediatrician creators, value science-backed products.",
+      "evidence": [
+        "<a href=\"https://www.nutraingredients-asia.com/Trends/Infant-childhood-nutrition\" target=\"_blank\">Infant Nutrition Trends</a>"
+      ],
+      "implications": "Feature reviews and science summaries in e-commerce PDPs and mom groups."
+    },
+    {
+      "name": "Health-First Fathers",
+      "share": "20%",
+      "border_color": "#6A5ACD",
+      "traits": [
+        "Age 30–45",
+        "Fitness-focused",
+        "Often decision-maker for supplements"
+      ],
+      "behaviors": "Skim clinical evidence and compare nutritional labels before purchase.",
+      "evidence": [
+        "<a href=\"https://www.statista.com/outlook/hmo/dairy-products/milk/infant-formula/malaysia\" target=\"_blank\">Infant formula consumption Malaysia</a>"
+      ],
+      "implications": "Build comparisons and authority-driven copy into landing pages and videos."
+    }
+  ],
+  "influencers": {
+    "narratives": [
+      {
+        "title": "Parenting Community Leaders",
+        "color": "#FF6B6B",
+        "story": "Momfluencers and pediatricians shape infant formula opinions through YouTube, IG, and WhatsApp groups.",
+        "evidence": [
+          "[YouTube search: BB536 reviews Malaysia](https://www.youtube.com/results?search_query=morinaga+bb536+malaysia)"
+        ],
+        "takeaway": "Engage local pediatric experts and multilingual momfluencers for regional relevance."
+      },
+      {
+        "title": "Pharmacist Educators",
+        "color": "#4ECDC4",
+        "story": "Malaysian pharmacists often advise on formula at the point of sale—especially in HealthLane or Caring chains.",
+        "evidence": [
+          "[Retail channel review – HealthLane Malaysia](https://estore.healthlane.com.my/Morinaga)"
+        ],
+        "takeaway": "Offer shelf-talkers and QR code training tools to improve pharmacy-led recommendations."
+      }
+    ],
+    "pathways": [],
+    "brokers": []
+  },
+  "ideas": {
+    "hypotheses": [
+      {
+        "statement": "Emphasizing BB536 on packaging and in digital channels will increase trust and trial conversion by 25% among Malaysian urban mothers.",
+        "source": "<a href=\"https://www.nutraingredients-asia.com/Trends/Infant-childhood-nutrition\" target=\"_blank\">Infant nutrition clinical reports</a>"
+      },
+      {
+        "statement": "Partnering with pediatricians and multilingual momfluencers will increase engagement by 40% versus traditional brand ads.",
+        "source": "<a href=\"https://www.youtube.com/results?search_query=morinaga+bb536+malaysia\" target=\"_blank\">YouTube influencer content</a>"
+      }
+    ],
+    "gaps": [],
+    "playbooks": [],
+    "scenarios": [],
+    "recommendations": [
+      {
+        "priority": 1,
+        "title": "Rebrand BB536 Probiotic SKU",
+        "body": "Redesign e-commerce and in-store messaging to clearly spotlight probiotic function and gut health story."
+      },
+      {
+        "priority": 2,
+        "title": "Activate Pediatrician & Influencer Network",
+        "body": "Equip doctors and trusted momfluencers with content kits to explain BB536’s science in simple, relatable ways."
+      },
+      {
+        "priority": 3,
+        "title": "Multilingual Education Campaigns",
+        "body": "Run content in Malay, English, and Chinese across parenting forums and video channels to close probiotic awareness gaps."
+      }
+    ]
+  }
+}

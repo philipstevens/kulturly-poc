@@ -1,22 +1,16 @@
-import streamlit as st
-import datetime
-import time  
+import json
 import os
+from pathlib import Path
+import time
+
 from dotenv import load_dotenv
-import plotly.graph_objects as go
-from customers.puma import Puma
-from customers.morinaga import Morinaga
+import streamlit as st
+
+from insights_renderer import InsightsRenderer
 
 load_dotenv()
 
 is_dev_mode = os.getenv("DEV_MODE", "false").lower() == "true"
-
-CUSTOMER_CLASSES = {
-    "Puma": Puma,
-    "Morinaga": Morinaga
-}
-
-st.set_page_config(layout="wide")
 
 if "global_configured" not in st.session_state:
     st.session_state.global_configured = False
@@ -24,6 +18,22 @@ if "studies" not in st.session_state:
     st.session_state.studies = []
 if "selected_study" not in st.session_state:
     st.session_state.selected_study = None
+
+st.set_page_config(layout="wide")
+
+@st.cache_data
+def load_all_insights(data_dir="data"):
+    brands = {}
+    for brand_dir in Path(data_dir).iterdir():
+        if not brand_dir.is_dir():
+            continue
+        key = brand_dir.name.lower() 
+        brands.setdefault(key, {})
+        for file in brand_dir.glob("*.json"):
+            brands[key][file.stem] = json.loads(file.read_text())
+    return brands
+
+all_data = load_all_insights()
 
 if not st.session_state.global_configured:
     st.markdown("""
@@ -58,9 +68,9 @@ if not st.session_state.global_configured:
     st.markdown('<div class="space-title">Build Your Brand Voice</div>', unsafe_allow_html=True)
     st.markdown('<div class="space-subtitle">Define your brand voice before exploring insights</div>', unsafe_allow_html=True)
 
-    options = list(CUSTOMER_CLASSES.keys())
-    opts  = ["" ] + options
-    brand_name = st.selectbox("Brand Name", opts, index=0)
+    display_brands = [""] + [b.title() for b in all_data.keys()]
+    choice = st.selectbox("Brand Name", display_brands)
+    brand_key = choice.lower()
     
     col1, col2 = st.columns(2)
     
@@ -182,8 +192,23 @@ if not st.session_state.global_configured:
                 help="Cultural terms and trends to monitor (one per line)"
             )
 
+    build_disabled = (choice == "")
+
+    # show the button, but greyed out until they pick a brand
+    build_clicked = st.button(
+        "Build Brand Voice",
+        type="primary",
+        use_container_width=True,
+        disabled=build_disabled,
+        help="Enter a brand to continue" if build_disabled else None
+    )
+
+    if not choice:
+        st.stop()
+
+    st.session_state.selected_study = "Global Insights"
     st.session_state.brand_config = {
-        "brand_name": brand_name or "Puma",
+        "brand_name": brand_key,
         "cultural_domains": cultural_domains,
         "cultural_modifiers": cultural_modifiers,
         "default_geographies": geographies,
@@ -196,7 +221,7 @@ if not st.session_state.global_configured:
         "cultural_keywords": st.session_state.get("cultural_keywords", "")
     }
 
-    if st.button("Build Brand Voice", type="primary", use_container_width=True):
+    if build_clicked:
         if not is_dev_mode:
             steps = [
                 ("🔧", "Initializing observatory environment..."),
@@ -266,25 +291,39 @@ if not st.session_state.global_configured:
     st.stop()
 
 with st.sidebar:
-    st.header(st.session_state.brand_config["brand_name"])
-    if st.button("➕ New Study"):
+    brand = st.session_state.brand_config["brand_name"]
+    st.header(brand.title())
+
+    raw = list(all_data.get(brand, {}))
+    studies = []
+    if "Global Insights" in raw:
+        studies.append("Global Insights")
+    studies += [s for s in raw if s != "Global Insights"]
+    if not studies:
+        studies = ["Global Insights"]
+
+    if st.session_state.get("selected_study") not in studies:
+        st.session_state.selected_study = studies[0]
+
+    current = st.session_state.selected_study
+    selection = st.selectbox(
+        "Active Study",
+        studies,
+        index=studies.index(current)
+    )
+    if selection != current:
+        st.session_state.selected_study = selection
+        st.rerun()
+
+    if st.button("➕ New Study", use_container_width=True):
         st.session_state.creating_study = True
 
-    if "studies" not in st.session_state:
-        st.session_state.studies = []   # list of dicts {id,name,…}
-
-    study_names = ["Global Insights"] + [s["name"] for s in st.session_state.studies]
-    sel = st.selectbox("Active Study", study_names, index=0)
-    current_study = None if sel == "Global Insights" else next(s for s in st.session_state.studies if s["name"]==sel)
-
-# Study creation flow
 if st.session_state.get("creating_study", False):
     st.subheader("Create New Study")
 
     with st.form("new_study"):
         name = st.text_input("Study Name", placeholder="e.g., Emerging Beverage Category 2025")
         
-        # Strategic Focus (Why the study exists)
         focus = st.multiselect(
             "Strategic Focus Areas",
             options=[
@@ -302,7 +341,6 @@ if st.session_state.get("creating_study", False):
             help="High-level business driver or purpose (e.g., launch planning, risk mitigation, trend spotting)."
         )
 
-        # Objectives (What you need to learn or decide)
         objectives = st.text_area(
             "Research Objectives",
             placeholder=(
@@ -313,7 +351,6 @@ if st.session_state.get("creating_study", False):
             help="Specific outcomes or decisions the research should enable. Action-oriented and measurable."
         )
 
-        # Assumptions, Hypotheses & Open Questions (What you believe or wonder)
         assumptions = st.text_area(
             "Assumptions, Hypotheses & Open Questions",
             placeholder=(
@@ -324,14 +361,12 @@ if st.session_state.get("creating_study", False):
                 "These will be validated, challenged or refined."
         )
 
-        # How results will be used
         use_of_findings = st.text_area(
             "Intended Use of Findings",
             placeholder="e.g., support product launch strategy, investor pitch, brand repositioning",
             help="Where and how the results will influence decisions or actions."
         )
 
-        # Key Metrics
         kpis = st.text_area(
             "Key Metrics or KPIs",
             placeholder="e.g., awareness lift %, adoption intent, market size (USD), NPS change",
@@ -339,7 +374,6 @@ if st.session_state.get("creating_study", False):
         )
 
 
-        # Target Segmentation
         geos = st.multiselect(
             "Target Geographies",
             options=[
@@ -383,15 +417,17 @@ if st.session_state.get("creating_study", False):
         }
         st.session_state.studies.append(new)
         st.session_state.creating_study = False
+
         st.rerun()
     st.stop()
 
-customer = CUSTOMER_CLASSES[st.session_state.brand_config["brand_name"]]()
+brand = st.session_state.brand_config["brand_name"]
+study = st.session_state.selected_study
 
-tabs = st.tabs(["Stories","People","Influencers","Trends","Strategy","Kultie ✨"])
-methods = ["render_stories","render_people","render_influencers","render_trends","render_ideas","render_ask"]
+if study is None or study not in all_data.get(brand, {}):
+    st.error(f"No study selected for {brand}.")
+    st.stop()
 
-for tab, method_name in zip(tabs, methods):
-    with tab:
-        getattr(customer, method_name)()
-        # getattr(customer, method_name)(study=current_study)
+data = all_data[brand][study]
+renderer = InsightsRenderer(data)
+renderer.render()

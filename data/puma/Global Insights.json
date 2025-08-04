@@ -1,0 +1,439 @@
+{
+  "stories": {
+    "themes": [
+      {
+        "title": "Immersive Global Commerce",
+        "story": "Virtual shopping platforms and social livestreams now influence consumer behavior worldwide. Shoppers engage directly with hosts, explore products in 3D, and finalize purchases without leaving the experience.",
+        "story_preview": "Virtual shopping and livestreams reshape buying behavior worldwide...",
+        "evidence": [
+          "[McKinsey Future of Commerce 2025](https://www.mckinsey.com/industries/retail/our-insights/the-future-of-commerce)",
+          "[Statista Global Social Shopping Data](https://www.statista.com/topics/8719/social-commerce/)"
+        ],
+        "impact": "Adopt immersive shopping experiences and cross-platform integrations to capture spontaneous purchase behavior.",
+        "first_seen": "Feb 3, 2025",
+        "velocity": "+1,250%",
+        "volume": "2.9M mentions",
+        "confidence": 0.92,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Early Growth",
+        "trend_color": "#FF6B6B"
+      },
+      {
+        "title": "Climate-Driven Consumer Values",
+        "story": "A global rise in eco-consciousness pushes consumers toward sustainable, recyclable, and carbon-neutral products, shifting brand loyalty to those demonstrating verifiable environmental impact.",
+        "story_preview": "Consumers globally prioritize sustainable and carbon-neutral products...",
+        "evidence": [
+          "[UNEP Climate Impact Report](https://www.unep.org/resources)",
+          "[Deloitte Sustainable Consumer Survey 2025](https://www.deloitte.com/sustainable-consumer)"
+        ],
+        "impact": "Integrate transparent sustainability practices and communicate measurable outcomes.",
+        "first_seen": "Jan 20, 2025",
+        "velocity": "+880%",
+        "volume": "1.7M mentions",
+        "confidence": 0.89,
+        "momentum": "📈 Steady Growth",
+        "maturity": "Emerging",
+        "trend_color": "#4ECDC4"
+      },
+      {
+        "title": "Holistic Wellness Economy",
+        "story": "Consumers treat health as a lifestyle choice spanning fitness, diet, mental wellbeing, and digital health solutions—seeking products and services that integrate all these dimensions.",
+        "story_preview": "Health, fitness, and mental wellbeing integrate into one lifestyle...",
+        "evidence": [
+          "[WHO Global Wellness Brief 2025](https://www.who.int/health-wellness)",
+          "[PwC Consumer Wellness Insights](https://www.pwc.com/consumer-wellness)"
+        ],
+        "impact": "Develop integrated product ecosystems covering fitness, nutrition, and mindfulness tools.",
+        "first_seen": "Mar 11, 2025",
+        "velocity": "+1,460%",
+        "volume": "3.4M mentions",
+        "confidence": 0.94,
+        "momentum": "💥 Viral Spike",
+        "maturity": "Peak Moment",
+        "trend_color": "#FFE66D"
+      },
+      {
+        "title": "Decentralized Creator Influence",
+        "story": "Small-scale creators and niche community leaders outperform traditional celebrities. Peer-to-peer recommendation is trusted over conventional marketing campaigns.",
+        "story_preview": "Niche creators drive consumer trust and conversions globally...",
+        "evidence": [
+          "[Influencer Marketing Hub 2025 Report](https://influencermarketinghub.com/)",
+          "[HubSpot Digital Engagement Index](https://www.hubspot.com/engagement)"
+        ],
+        "impact": "Form alliances with micro and nano-creators who lead authentic niche conversations.",
+        "first_seen": "Feb 7, 2025",
+        "velocity": "+515%",
+        "volume": "1.4M mentions",
+        "confidence": 0.90,
+        "momentum": "⚡ Sustained Growth",
+        "maturity": "Established",
+        "trend_color": "#A8E6CF"
+      },
+      {
+        "title": "Cross-Cultural Digital Fusion",
+        "story": "Cultural exchange flows through music, esports, fashion, and online communities, blending aesthetics and identities into hybrid global styles embraced by Gen Z and Alpha consumers.",
+        "story_preview": "Esports, fashion, and music fuse into global hybrid identities...",
+        "evidence": [
+          "[UNESCO Digital Culture Report](https://www.unesco.org/digital-culture)",
+          "[Rolling Stone Cultural Exchange Study](https://www.rollingstone.com/music/culture-exchange)"
+        ],
+        "impact": "Collaborate with entertainment and gaming ecosystems to co-create hybrid lifestyle products.",
+        "first_seen": "Apr 12, 2025",
+        "velocity": "+675%",
+        "volume": "2.2M mentions",
+        "confidence": 0.91,
+        "momentum": "🔄 Cyclical Peaks",
+        "maturity": "Mature",
+        "trend_color": "#DDA0DD"
+      },
+      {
+        "title": "Phygital Retail Shift",
+        "story": "Consumers expect in-store and digital to merge—virtual try-ons, contactless pick-up, and gamified location-based challenges drive engagement and purchase frequency.",
+        "story_preview": "In-store and digital shopping experiences now merge seamlessly...",
+        "evidence": [
+          "[Accenture 2025 Hybrid Retail Report](https://www.accenture.com/hybrid-retail)",
+          "[Gartner Immersive Commerce Trends](https://www.gartner.com/immersive-commerce)"
+        ],
+        "impact": "Deploy AR, gamification, and connected store technology to meet evolving expectations.",
+        "first_seen": "May 5, 2025",
+        "velocity": "+560%",
+        "volume": "1.6M mentions",
+        "confidence": 0.88,
+        "momentum": "📊 Steady Growth",
+        "maturity": "Growing",
+        "trend_color": "#87CEEB"
+      },
+      {
+        "title": "Intergenerational Wellness",
+        "story": "Families adopt shared fitness and health habits, increasing demand for inclusive products and experiences that cater to multiple generations simultaneously.",
+        "story_preview": "Families embrace shared health habits, driving inclusive product demand...",
+        "evidence": [
+          "[OECD Family Fitness and Wellness Report](https://www.oecd.org/family-wellness)",
+          "[Global Inclusive Health Index 2025](https://www.globalindex.com/inclusive-health)"
+        ],
+        "impact": "Create accessible, multi-age product lines and family-oriented campaigns.",
+        "first_seen": "Jun 15, 2025",
+        "velocity": "+820%",
+        "volume": "1.2M mentions",
+        "confidence": 0.86,
+        "momentum": "🌱 Building",
+        "maturity": "Early Growth",
+        "trend_color": "#F0A500"
+      }
+    ],
+    "framing": [
+      {
+        "title": "Data-Driven Wellness vs. Experiential Lifestyle",
+        "data": [
+          {
+            "Country": "United States",
+            "Cultural Framing": "Emphasizes measurable fitness outcomes using technology",
+            "Key Indicators": "Wearables, bio-tracking apps"
+          },
+          {
+            "Country": "France",
+            "Cultural Framing": "Focuses on lifestyle elegance and balance over metrics",
+            "Key Indicators": "Cycling leisure culture, boutique wellness studios"
+          },
+          {
+            "Country": "Japan",
+            "Cultural Framing": "Integrates precision-driven health with harmonious daily rituals",
+            "Key Indicators": "Mindful walking, smart wellness devices"
+          }
+        ],
+        "evidence": [
+          "[OECD Global Health Analytics](https://www.oecd.org/health-analytics)",
+          "[Euromonitor Lifestyle Consumer 2025](https://www.euromonitor.com/lifestyle-consumer)"
+        ],
+        "strategic_impact": "Balance technology-driven and experiential messaging depending on regional health mindsets"
+      },
+      {
+        "title": "Shared Social Impact vs. Personal Aspiration",
+        "data": [
+          {
+            "Country": "Brazil",
+            "Cultural Framing": "Values community wellbeing initiatives and social responsibility",
+            "Key Indicators": "Community sports programs, volunteer-driven fitness events"
+          },
+          {
+            "Country": "India",
+            "Cultural Framing": "Combines family wellness traditions with personal achievement goals",
+            "Key Indicators": "Yoga collectives, goal-oriented digital coaching"
+          },
+          {
+            "Country": "Canada",
+            "Cultural Framing": "Prioritizes individual self-improvement supported by inclusive systems",
+            "Key Indicators": "Inclusive trail networks, self-directed wellness plans"
+          }
+        ],
+        "evidence": [
+          "[WHO Global Community Health Insights](https://www.who.int/community-insights)",
+          "[Statista Social Impact Consumption Data](https://www.statista.com/social-impact)"
+        ],
+        "strategic_impact": "Craft campaigns that flex between collective impact and individual motivation"
+      },
+      {
+        "title": "Legacy Practices vs. Next-Gen Innovation",
+        "data": [
+          {
+            "Country": "China",
+            "Cultural Framing": "Merges ancient wellness practices with emerging technology",
+            "Key Indicators": "Tai Chi with smart wearables, herbal tech blends"
+          },
+          {
+            "Country": "Italy",
+            "Cultural Framing": "Maintains craft traditions while embracing sustainable tech",
+            "Key Indicators": "Artisanal sportswear, biodegradable fabrics"
+          },
+          {
+            "Country": "South Korea",
+            "Cultural Framing": "Drives futuristic health experiences influenced by pop culture",
+            "Key Indicators": "E-sports wellness, AR-enabled workouts"
+          }
+        ],
+        "evidence": [
+          "[UNESCO Innovation & Heritage Report](https://www.unesco.org/heritage-innovation)",
+          "[Frost & Sullivan Global Wellness Tech](https://www.frost.com/wellness-tech)"
+        ],
+        "strategic_impact": "Position products as both technologically advanced and culturally resonant"
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "Cultural Tradition ↔ Technological Innovation",
+        "intuitive_label": "From Ancestral Rituals to AI-driven Habits",
+        "strength": "Strong",
+        "key_markers": ["heritage health practices", "sustainable fabrics", "AI personal trainers", "AR wellness apps"],
+        "narrative": "Consumers embrace both heritage rituals and futuristic tools, blending them into unified lifestyle behaviors."
+      },
+      {
+        "axis": "Collective Good ↔ Personal Achievement",
+        "intuitive_label": "From Community Care to Individual Mastery",
+        "strength": "Moderate",
+        "key_markers": ["community wellness programs", "volunteer-driven sports", "personal best tracking", "individualized coaching"],
+        "narrative": "Society values health for all while empowering individuals to reach their own peak performance."
+      },
+      {
+        "axis": "Functionality ↔ Emotional Experience",
+        "intuitive_label": "From Utility to Lifestyle Theater",
+        "strength": "Emerging",
+        "key_markers": ["basic activewear", "immersive AR commerce", "fitness entertainment", "mindfulness retreats"],
+        "narrative": "Product value extends beyond utility—consumers now expect emotional and experiential resonance."
+      }
+    ],
+    "metaphors": [
+      {
+        "title": "Ceremony and Launch",
+        "metaphor": "Cultural ceremonies and modern product launches both orchestrate anticipation and shared moments.",
+        "narrative": "From religious rituals to digital countdowns, shared anticipation creates emotional intensity.",
+        "columns": ["Ceremonial Moment", "Shared Structure", "Product Launch"],
+        "rows": [
+          {"Ceremonial Moment": "New Year countdown", "Shared Structure": "Timed celebration", "Product Launch": "Global debut event"},
+          {"Ceremonial Moment": "Harvest ritual", "Shared Structure": "Seasonal cycle", "Product Launch": "Sustainability product release"},
+          {"Ceremonial Moment": "Parade performance", "Shared Structure": "Public gathering", "Product Launch": "In-store activation"}
+        ]
+      },
+      {
+        "title": "Identity and Brand Signal",
+        "metaphor": "Cultural symbols and branded products both communicate group belonging.",
+        "narrative": "Whether it’s a traditional textile or a limited-edition wearable, symbols make personal identity visible.",
+        "columns": ["Identity Symbol", "Shared Function", "Product Signal"],
+        "rows": [
+          {"Identity Symbol": "National motif", "Shared Function": "Cultural pride marker", "Product Signal": "Special edition design"},
+          {"Identity Symbol": "Community badge", "Shared Function": "Belonging indicator", "Product Signal": "Exclusive collaboration"},
+          {"Identity Symbol": "Heritage tattoo", "Shared Function": "Personal story carrier", "Product Signal": "Custom personalization"}
+        ]
+      }
+    ],
+    "evolution": [
+      {
+        "title": "Wellness",
+        "evolution": {
+          "2020": "Fitness and diet as separate verticals",
+          "2022": "Integrated wellness and lifestyle services",
+          "2024": "Holistic platforms spanning mental and physical wellbeing"
+        },
+        "shift_driver": "Rise of health-tech and integrated digital ecosystems"
+      },
+      {
+        "title": "Sustainability",
+        "evolution": {
+          "2020": "Optional feature for niche buyers",
+          "2022": "Mainstream expectation in multiple categories",
+          "2024": "Non-negotiable factor driving brand loyalty"
+        },
+        "shift_driver": "Consumer activism and regulation alignment"
+      },
+      {
+        "title": "Influence",
+        "evolution": {
+          "2020": "Celebrity-driven mass outreach",
+          "2022": "Micro and niche influencers for authenticity",
+          "2024": "Community-driven peer influence with measurable conversion"
+        },
+        "shift_driver": "Platform algorithm evolution and trust economy"
+      },
+      {
+        "title": "Shopping",
+        "evolution": {
+          "2020": "E-commerce convenience focus",
+          "2022": "Blended digital and physical experiences",
+          "2024": "Immersive interactive commerce with social layers"
+        },
+        "shift_driver": "Livestream and AR commerce adoption"
+      }
+    ]
+  },
+  "people": [
+    {
+      "name": "Global Digital Natives",
+      "share": "30%",
+      "border_color": "#FF6F61",
+      "traits": ["Gen Z and Gen Alpha", "Mobile-first consumers", "High social content creation", "Early adopters of AR commerce"],
+      "behaviors": "Seek integrated digital experiences, document purchases, and value speed of discovery.",
+      "evidence": ["[Global Gen Z Trends](https://www.statista.com/global-genz-trends)"],
+      "implications": "Develop high-frequency digital activations with seamless purchase pathways."
+    },
+    {
+      "name": "Eco-Committed Buyers",
+      "share": "25%",
+      "border_color": "#6A5ACD",
+      "traits": ["Millennials and older Gen Z", "Sustainability-first mindset", "Higher disposable income"],
+      "behaviors": "Prioritize certified eco-products and transparent sourcing.",
+      "evidence": ["[Deloitte Sustainability Consumers](https://www2.deloitte.com/sustainability)"],
+      "implications": "Highlight certifications and carbon-neutral processes to build trust."
+    },
+    {
+      "name": "Hybrid Wellness Seekers",
+      "share": "20%",
+      "border_color": "#FFB6C1",
+      "traits": ["Mixed demographics", "Health-conscious", "Multi-service app users"],
+      "behaviors": "Use multiple apps and devices for fitness, nutrition, and mental wellbeing.",
+      "evidence": ["[PwC Health Consumer Insights](https://www.pwc.com/health-consumers)"],
+      "implications": "Integrate cross-sector wellness features and memberships."
+    },
+    {
+      "name": "Authenticity-Centric Micro-Communities",
+      "share": "15%",
+      "border_color": "#32CD32",
+      "traits": ["Niche enthusiasts", "Peer-led discovery", "High engagement in closed communities"],
+      "behaviors": "Rely on small-scale creators and trusted peers for recommendations.",
+      "evidence": ["[Influencer Marketing Hub Micro Study](https://influencermarketinghub.com/)"],
+      "implications": "Leverage grassroots influencers to seed product credibility."
+    },
+    {
+      "name": "Global Culture Curators",
+      "share": "Emergent",
+      "border_color": "#FFD700",
+      "traits": ["Culturally hybrid", "Early adopters of global trends", "High content output"],
+      "behaviors": "Mix styles, experiences, and digital fandom culture into unique identities.",
+      "evidence": ["[UNESCO Cultural Exchange Index](https://www.unesco.org/cultural-exchange)"],
+      "implications": "Pilot co-creation programs to harness cultural mashups."
+    }
+  ],
+  "influencers": {
+    "narratives": [
+      {
+        "title": "Livestream Commerce Leaders",
+        "color": "#FF6B6B",
+        "story": "Live shopping hosts and streamers now play critical roles in product discovery and purchase decisions worldwide.",
+        "evidence": [
+          "[McKinsey Live Commerce Study](https://www.mckinsey.com/live-commerce)",
+          "[Statista Live Retail Data](https://www.statista.com/live-commerce)"
+        ],
+        "takeaway": "Form strategic partnerships with top live hosts and train branded creator teams."
+      },
+      {
+        "title": "Wellness Advocates",
+        "color": "#4ECDC4",
+        "story": "Holistic health influencers combine physical fitness, mental wellbeing, and nutrition expertise to create trust-based ecosystems.",
+        "evidence": [
+          "[WHO Health Influencers Analysis](https://www.who.int/health-influencers)"
+        ],
+        "takeaway": "Develop integrated influencer campaigns covering multiple aspects of wellbeing."
+      },
+      {
+        "title": "Cultural Fusion Tastemakers",
+        "color": "#FFE66D",
+        "story": "Creators blending music, fashion, and esports drive hybrid lifestyle aesthetics.",
+        "evidence": [
+          "[UNESCO Digital Culture](https://www.unesco.org/digital-culture)"
+        ],
+        "takeaway": "Engage cross-domain creators for hybrid cultural drops and campaigns."
+      }
+    ],
+    "pathways": [
+      {
+        "name": "Immersive Retail Path",
+        "color": "#1f77b4",
+        "nodes": [
+          {"id": "Immersive Event", "label": "Immersive\nEvent", "tooltip": "AR-based launch generating 2M views"},
+          {"id": "Social Virality", "label": "Social\nVirality", "tooltip": "Shared across TikTok and Instagram trending"},
+          {"id": "Community Discussion", "label": "Community\nDiscussion", "tooltip": "Threads on Reddit and Discord"},
+          {"id": "Purchase Spike", "label": "Purchase\nSpike", "tooltip": "Sales +45% in launch week"}
+        ]
+      },
+      {
+        "name": "Health Movement Path",
+        "color": "#ff7f0e",
+        "nodes": [
+          {"id": "Wellness Challenge", "label": "Wellness\nChallenge", "tooltip": "Global participation event"},
+          {"id": "Content Explosion", "label": "Content\nExplosion", "tooltip": "User-generated content surged +200%"},
+          {"id": "Product Interest", "label": "Product\nInterest", "tooltip": "Searches for related gear increased 60%"},
+          {"id": "Conversion", "label": "Conversion", "tooltip": "Cart completion rate +25%"}
+        ]
+      },
+      {
+        "name": "Cultural Drop Path",
+        "color": "#2ca02c",
+        "nodes": [
+          {"id": "Culture Drop", "label": "Culture\nDrop", "tooltip": "Pop culture collab release"},
+          {"id": "Fan Amplification", "label": "Fan\nAmplification", "tooltip": "Fan communities drive virality"},
+          {"id": "Media Coverage", "label": "Media\nCoverage", "tooltip": "Global outlets highlight hybrid aesthetic"},
+          {"id": "Adoption Surge", "label": "Adoption\nSurge", "tooltip": "Demand spike +38%"}
+        ]
+      }
+    ],
+    "brokers": [
+      {
+        "market": "Global",
+        "color": "#FF6B6B",
+        "description": "Key figures shaping global product conversations",
+        "brokers": [
+          {"name": "Aisha Khan", "role": "Livestream commerce host", "impact": "Drives 20% conversion in interactive sessions", "followers": "1.8M", "engagement": "40% average", "specialty": "Fashion, lifestyle products", "brands": "Multiple global e-commerce platforms"},
+          {"name": "Diego Alvarez", "role": "Fitness & wellbeing creator", "impact": "Leads cross-platform wellness initiatives", "followers": "1.2M", "engagement": "35%", "specialty": "Holistic health", "brands": "Nutrition, fitness, tech wearables"},
+          {"name": "Li Wei", "role": "Cultural aesthetics curator", "impact": "Blends art and consumer trends", "followers": "900K", "engagement": "30%", "specialty": "Cultural fusion content", "brands": "Fashion and design houses"}
+        ]
+      }
+    ]
+  },
+  "ideas": {
+    "hypotheses": [
+      {"statement": "Integrating AR shopping increases engagement rate by 30% among Digital Natives.", "source": "Global commerce trials 2025"},
+      {"statement": "Highlighting carbon-neutral practices increases trust score by 20% among Eco-Committed Buyers.", "source": "Sustainability sentiment study 2025"},
+      {"statement": "Partnering with niche community influencers drives 40% conversion uplift compared to celebrity campaigns.", "source": "Influencer performance index 2025"},
+      {"statement": "Family wellness programs double adoption among Hybrid Wellness Seekers.", "source": "Wellness participation report 2025"}
+    ],
+    "gaps": [
+      {"title": "Immersive Retail Infrastructure", "body": "Develop scalable AR/VR try-on and live commerce capabilities.", "source": "Retail innovation audit 2025"},
+      {"title": "Verified Sustainability Proof", "body": "Implement blockchain-backed supply chain transparency tools.", "source": "Sustainability innovation lab 2025"},
+      {"title": "Micro-Influencer Toolkit", "body": "Create plug-and-play briefs and performance dashboards.", "source": "Influencer activation blueprint 2025"},
+      {"title": "Inclusive Family Product Lines", "body": "Expand SKUs designed for intergenerational usage.", "source": "Family product opportunity study 2025"}
+    ],
+    "playbooks": [
+      {"title": "Immersive Commerce Playbook","goal": "Build interactive shopping experience","steps": ["Select AR partners","Pilot interactive streaming events","Measure conversion lifts"],"metrics": ["Engagement ≥20%","Conversion uplift ≥30%"],"source": "Retail Immersion 2025","border": "1px solid #007ACC","bg": "#E8F4FD"},
+      {"title": "Sustainability Signal Playbook","goal": "Showcase verified eco-practices","steps": ["Deploy traceability tech","Highlight data in marketing","Run transparency campaigns"],"metrics": ["Trust score +20%","Repeat purchase +10%"],"source": "Eco Trust 2025","border": "1px solid #4ECDC4","bg": "#F0F8E8"},
+      {"title": "Community Influence Playbook","goal": "Activate niche micro-communities","steps": ["Map micro-influencers","Run co-creation content","Measure engagement"],"metrics": ["Conversion uplift ≥40%","UGC posts ≥1K"],"source": "Influence Network 2025","border": "1px solid #FFE66D","bg": "#FFF7E6"}
+    ],
+    "scenarios": [
+      {"title": "AR Adoption Surge", "body": "If AR commerce is widely adopted, expect +30% engagement and +20% purchase rate.", "source": "AR impact forecast 2025"},
+      {"title": "Sustainability Regulatory Push", "body": "If regulations tighten, verified supply chains will gain +15% market share.", "source": "Policy analysis 2025"},
+      {"title": "Micro-Influencer Scale Effect", "body": "Scaling micro-influencer networks yields +40% conversion improvements.", "source": "Influencer network modeling 2025"}
+    ],
+    "recommendations": [
+      {"priority": 1, "title": "AR Commerce Expansion", "body": "Deploy AR try-on and live commerce solutions in top 5 markets by Q4 2025."},
+      {"priority": 2, "title": "Sustainability Traceability", "body": "Launch blockchain-backed supply chain transparency by Q3 2025."},
+      {"priority": 3, "title": "Micro-Influencer Network", "body": "Build and manage 100+ niche creators across 10 key markets by Q2 2025."}
+    ]
+  }
+}
