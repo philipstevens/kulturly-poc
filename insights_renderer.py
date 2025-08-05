@@ -388,7 +388,7 @@ class InsightsRenderer:
             with cols[idx % 2]:
                 self._render_card(
                     title=h["statement"],
-                    body_lines=[f"Source: {h['source']}"],
+                    body_lines=[f"Source: {self._parse_markdown_links(h['source'])}"],
                     border="1px solid #888",
                     details=("Full Hypothesis", [h["statement"]])
                 )
@@ -398,7 +398,7 @@ class InsightsRenderer:
         for g in gaps:
             self._render_card(
                 title=f"🎯 {g['title']}",
-                body_lines=[g['body'], f"Source: {g['source']}"],
+                body_lines=[g['body'], f"Source: {self._parse_markdown_links(g['source'])}"],
                 border="1px dashed #999"
             )
 
@@ -411,7 +411,7 @@ class InsightsRenderer:
                 + "".join(f"<li>{s}</li>" for s in c["steps"]) + "</ul>",
                 "<p><strong>Metrics:</strong></p><ul style='margin:4px 0 8px 16px;'>"
                 + "".join(f"<li>{m}</li>" for m in c["metrics"]) + "</ul>",
-                f"<p style='font-size:0.85em; color:gray;'><em>Source: {c['source']}</em></p>"
+                f"<p style='font-size:0.85em; color:gray;'><em>Source: {self._parse_markdown_links(c['source'])}</em></p>"
             ]
             body_html = "".join(parts)
             self._render_card(
@@ -434,7 +434,7 @@ class InsightsRenderer:
                 f'margin-bottom:4px;">{s["title"]}</div>'
                 f'<div style="font-size:14px;line-height:1.5;margin-bottom:6px;">'
                 f'{s["body"]}</div>'
-                f'<div style="font-size:12px;color:gray;">Source: {s["source"]}</div>'
+                f'<div style="font-size:12px;color:gray;">Source: {self._parse_markdown_links(s["source"])}</div>'
                 f'</div></div>'
             )
         container += "</div>"

@@ -36,7 +36,7 @@ def load_all_insights(data_dir="data"):
 all_data = load_all_insights()
 
 # 1. Landing page
-if not st.session_state.global_configured:
+if not st.session_state.global_configured:  
     st.markdown("""
         <style>
         .space-title {
@@ -99,9 +99,10 @@ if not st.session_state.global_configured:
         cultural_modifiers = st.multiselect(
             "Brand Modifiers",
             [
-                "Luxury", "Premium", "Affordable", "Sustainable", "Traditional", "Modern",
-                "Local", "Global", "Underground", "Mainstream", "Emerging", "Established",
-                "Youth", "Adult", "Senior", "Male", "Female", "Non-binary", "Urban", "Rural"
+                "Adult", "Affordable", "Emerging", "Established", "Female", "Global", 
+                "Local", "Luxury", "Male", "Mainstream", "Modern", "Non-binary", "Premium", 
+                "Romance", "Rural", "Senior", "Social", "Sustainable", "Traditional", 
+                "Underground", "Urban", "Youth"
             ],
             help="Add modifiers to refine your brand space"
         )
@@ -112,10 +113,10 @@ if not st.session_state.global_configured:
         geographies = st.multiselect(
             "Default Geographies",
             [
-                "Global", "Southeast Asia", "East Asia", "South Asia", "North America", 
-                "Europe", "Latin America", "Africa", "Middle East", "Oceania",
-                "Malaysia", "Singapore", "Thailand", "Indonesia", "Philippines", 
-                "Vietnam", "Japan", "South Korea", "China", "India", "Australia"
+                "Global", "Africa", "Australia", "Brazil", "China", "East Asia", "Europe", 
+                "India", "Indonesia", "Japan", "Latin America", "Malaysia", "Middle East", 
+                "North America", "Oceania", "Philippines", "Singapore", "South Asia", 
+                "South Korea", "Southeast Asia", "Thailand", "Vietnam"
             ],
             default=["Global"],
             help="Select geographic markets to focus on"
@@ -125,9 +126,9 @@ if not st.session_state.global_configured:
         languages = st.multiselect(
             "Default Languages",
             [
-                "Any", "English", "Mandarin", "Bahasa Melayu", "Bahasa Indonesia", 
-                "Thai", "Vietnamese", "Tagalog", "Japanese", "Korean", "Hindi", 
-                "Tamil", "Arabic", "Spanish", "French", "German"
+                "Any", "Arabic", "Bahasa Indonesia", "Bahasa Melayu", "English", "French", 
+                "German", "Hindi", "Japanese", "Korean", "Mandarin", "Spanish", 
+                "Tagalog", "Tamil", "Thai", "Vietnamese"
             ],
             default=["Any"],
             help="Language preferences for cultural signals"
@@ -193,7 +194,6 @@ if not st.session_state.global_configured:
             st.text_area(
                 "Cultural Keywords",
                 height=80,
-                placeholder="streetwear\nsustainable fashion\nK-beauty\nwellness trends",
                 help="Cultural terms and trends to monitor (one per line)"
             )
 
@@ -201,7 +201,7 @@ if not st.session_state.global_configured:
 
     # show the button, but greyed out until they pick a brand
     build_clicked = st.button(
-        "Build Brand Voice",
+        "Build Cultural Space",
         type="primary",
         use_container_width=True,
         disabled=build_disabled,
@@ -298,7 +298,6 @@ if not st.session_state.global_configured:
 # 2. Left Sidebar
 with st.sidebar:
     brand = st.session_state.brand_config["brand_name"]
-    st.header(brand.title())
 
     studies = ["Global Insights"] + [s["name"] for s in st.session_state.studies]
     if st.session_state.selected_study not in studies:
@@ -319,6 +318,20 @@ with st.sidebar:
 
     if st.button("➕ New Project", use_container_width=True):
         st.session_state.creating_study = True
+
+    brand_options = [b.title() for b in all_data.keys()]
+    default_idx = brand_options.index(brand.title()) if brand.title() in brand_options else 0
+    selected_brand = st.selectbox("Active Space", brand_options, index=default_idx)
+
+    # If user picks a different brand, reset config and rerun
+    if selected_brand.lower() != brand.lower():
+        st.session_state.brand_config["brand_name"] = selected_brand.lower()
+        st.session_state.selected_study = "Global Insights"
+        st.rerun()
+
+    # Dummy button to create a new brand
+    if st.button("➕ New Space", use_container_width=True):
+        pass
 
 # 3. Create Study Form
 if st.session_state.get("creating_study", False):
@@ -465,6 +478,11 @@ if st.session_state.get("creating_study", False):
 # 4. Main Insight Page
 brand = st.session_state.brand_config["brand_name"]
 study = st.session_state.selected_study
+
+st.markdown(
+    f"<h1 style='text-align:center'>{brand.title()}: {study}</h1>",
+    unsafe_allow_html=True,
+)
 
 if study is None or study not in all_data.get(brand, {}):
     st.error(f"No project selected for {brand}.")
