@@ -1,0 +1,363 @@
+{
+  "stories": {
+    "themes": [
+      {
+        "title": "Social Media Oral Trends",
+        "story": "Brazilian oral care behaviors are increasingly shaped by social media platforms, with Instagram, Facebook, and TikTok driving discovery and purchasing. Influencers and peer comparisons create a strong emphasis on aesthetics and confidence-driven oral care consumption.",
+        "story_preview": "Social media drives oral care behaviors and purchasing.",
+        "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)", "[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
+        "impact": "Brands must leverage influencer ecosystems and social commerce integrations to capture younger demographics.",
+        "first_seen": "Jan 15, 2024",
+        "velocity": "+31.2%",
+        "volume": "12,500 mentions",
+        "confidence": 0.92,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Early Growth",
+        "trend_color": "#FF6B6B"
+      },
+      {
+        "title": "Festival Beauty Confidence",
+        "story": "Carnival and music festival culture in Brazil create seasonal spikes in whitening and aesthetic oral care products. Cultural identity and nightlife participation make oral care a central part of appearance-driven confidence behaviors.",
+        "story_preview": "Festivals drive oral aesthetic product demand.",
+        "evidence": ["[Sambazon](https://www.sambazon.com/blogs/lifestyle/brazilian-carnival)", "[Voye Global](https://voyeglobal.com/brazilian-music-and-dance/)"],
+        "impact": "Align marketing campaigns with major cultural events for rapid adoption.",
+        "first_seen": "Feb 20, 2024",
+        "velocity": "+18%",
+        "volume": "8,200 mentions",
+        "confidence": 0.87,
+        "momentum": "⚡ Rising",
+        "maturity": "Growing",
+        "trend_color": "#FFA500"
+      },
+      {
+        "title": "Immersive Commerce Shift",
+        "story": "Live shopping and AR try-ons are becoming popular in Brazil, with social platforms integrating purchasing and real-time product demonstrations. These features enhance consumer confidence and reduce purchase hesitation.",
+        "story_preview": "Live shopping and AR reshape buying experiences.",
+        "evidence": ["[PayNXT360](https://www.paynxt360.com/report-store/view/brazil-social-commerce-market-analysis-2025)", "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"],
+        "impact": "Brands need to invest in AR and live commerce to capture digitally native consumers.",
+        "first_seen": "Mar 05, 2024",
+        "velocity": "+37.9%",
+        "volume": "10,000 mentions",
+        "confidence": 0.9,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Emerging",
+        "trend_color": "#00CED1"
+      },
+      {
+        "title": "Sustainable Packaging Growth",
+        "story": "Brazilian oral care consumers increasingly demand eco-packaging and biodegradable materials. Brands using bamboo and biodegradable tubes gain competitive advantage and resonate with eco-conscious buyers.",
+        "story_preview": "Eco-packaging reshapes oral product preferences.",
+        "evidence": ["[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"],
+        "impact": "Transitioning to eco-packaging is now a market entry requirement.",
+        "first_seen": "Nov 22, 2023",
+        "velocity": "+15%",
+        "volume": "6,300 mentions",
+        "confidence": 0.85,
+        "momentum": "🌱 Building",
+        "maturity": "Growing",
+        "trend_color": "#228B22"
+      },
+      {
+        "title": "Herbal Ingredient Surge",
+        "story": "Brazilian consumers are adopting herbal oral care products using neem, clove, aloe vera, and tea tree oil. Cultural resonance with wellness and Ayurveda-inspired ingredients drives product differentiation.",
+        "story_preview": "Herbal oral care gains consumer trust.",
+        "evidence": ["[Multiresearch Journal](https://www.multiresearchjournal.com/arclist/list-2024.4.6/id-3529)"],
+        "impact": "Innovators can position heritage-based products for premium margins.",
+        "first_seen": "Dec 11, 2023",
+        "velocity": "+12%",
+        "volume": "5,500 mentions",
+        "confidence": 0.83,
+        "momentum": "📈 Steady Growth",
+        "maturity": "Early Growth",
+        "trend_color": "#9ACD32"
+      }
+    ],
+    "framing": [
+      {
+        "title": "Wellness-Oral Care Link",
+        "data": [
+          {"Country": "Brazil", "Cultural Framing": "Oral health linked to holistic wellness", "Key Indicators": "46.73% research linking oral-systemic health"},
+          {"Country": "US", "Cultural Framing": "Functional dental care focus", "Key Indicators": "Lower self-esteem link prevalence"},
+          {"Country": "India", "Cultural Framing": "Ayurvedic ingredient preference", "Key Indicators": "Herbal product share 25%+"}
+        ],
+        "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
+        "strategic_impact": "Position oral products as part of broader wellness ecosystems."
+      },
+      {
+        "title": "Social Confidence Emphasis",
+        "data": [
+          {"Country": "Brazil", "Cultural Framing": "Smile aesthetics critical to social acceptance", "Key Indicators": "72% youth compare smiles online"},
+          {"Country": "Japan", "Cultural Framing": "Functional hygiene more important than aesthetics", "Key Indicators": "Low whitening focus"},
+          {"Country": "Germany", "Cultural Framing": "Dental health as medical necessity", "Key Indicators": "Cosmetic market limited"}
+        ],
+        "evidence": ["[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
+        "strategic_impact": "Build confidence narratives into branding and influencer marketing."
+      },
+      {
+        "title": "Digital Retail Dominance",
+        "data": [
+          {"Country": "Brazil", "Cultural Framing": "Social media as main commerce channel", "Key Indicators": "84% of retailers use social commerce"},
+          {"Country": "UK", "Cultural Framing": "E-commerce leads, social commerce nascent", "Key Indicators": "16% adoption"},
+          {"Country": "China", "Cultural Framing": "Live shopping dominant", "Key Indicators": "40% share of social commerce"}
+        ],
+        "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)"],
+        "strategic_impact": "Invest early in platform-native commerce capabilities."
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "Confidence ↔ Health",
+        "intuitive_label": "From Medical to Social",
+        "strength": "Strong",
+        "key_markers": ["Smile aesthetics", "Whitening products", "Influencer-driven demand"],
+        "narrative": "Oral care perception is shifting from medical necessity to social enabler. Consumers invest in aesthetics for social and romantic confidence."
+      },
+      {
+        "axis": "Offline ↔ Online",
+        "intuitive_label": "Phygital Lifestyle",
+        "strength": "Moderate",
+        "key_markers": ["Live shopping", "AR try-ons", "BOPIS"],
+        "narrative": "The blending of online and offline shopping is becoming mainstream, with social media integrated into physical retail experiences."
+      },
+      {
+        "axis": "Synthetic ↔ Natural",
+        "intuitive_label": "Herbal Revival",
+        "strength": "Emerging",
+        "key_markers": ["Neem-based toothpaste", "Eco-packaging", "Herbal marketing"],
+        "narrative": "Consumers are shifting toward natural and herbal oral care, emphasizing eco-friendly packaging and botanical formulations."
+      }
+    ],
+    "metaphors": [
+      {
+        "title": "Smile Currency",
+        "metaphor": "A confident smile is treated like social currency.",
+        "narrative": "Brazilian youth equate oral aesthetics with personal and social value. Investments in whitening and aesthetics are perceived as investments in social capital.",
+        "columns": ["Aspect", "Value", "Implication"],
+        "rows": [
+          {"Aspect": "Whitening", "Value": "High", "Implication": "Premium service demand"},
+          {"Aspect": "Cosmetic alignment", "Value": "Medium", "Implication": "Influencer marketing"},
+          {"Aspect": "Daily care rituals", "Value": "High", "Implication": "Routine product sales"}
+        ]
+      },
+      {
+        "title": "Festival Mirror",
+        "metaphor": "Carnival acts as a mirror for beauty norms.",
+        "narrative": "Cultural events like Carnival set benchmarks for self-expression and aesthetics. Oral care products are positioned as enablers of these vibrant identities.",
+        "columns": ["Driver", "Effect", "Product Impact"],
+        "rows": [
+          {"Driver": "Carnival aesthetics", "Effect": "High whitening demand", "Product Impact": "Whitening strips and kits"},
+          {"Driver": "Music festivals", "Effect": "Bold fashion", "Product Impact": "Portable oral care solutions"},
+          {"Driver": "Social media coverage", "Effect": "Viral trends", "Product Impact": "Limited edition packaging"}
+        ]
+      },
+      {
+        "title": "Digital Beauty Counter",
+        "metaphor": "AR shopping is the new beauty counter.",
+        "narrative": "Consumers increasingly test and buy oral care products virtually. This shift reduces friction and drives premium product adoption.",
+        "columns": ["Tech", "Adoption", "Impact"],
+        "rows": [
+          {"Tech": "AR try-on", "Adoption": "High", "Impact": "Boosted conversion"},
+          {"Tech": "Live shopping", "Adoption": "Medium", "Impact": "Real-time engagement"},
+          {"Tech": "Mobile payment", "Adoption": "High", "Impact": "Seamless checkout"}
+        ]
+      }
+    ],
+    "evolution": [
+      {
+        "title": "Shopping",
+        "evolution": {"2020": "Traditional e-commerce", "2022": "Mobile-first commerce", "2024": "Live shopping with AR"},
+        "shift_driver": "Integration of immersive digital technologies and social commerce."
+      },
+      {
+        "title": "Oral Care Positioning",
+        "evolution": {"2020": "Functional hygiene", "2022": "Aesthetic appeal", "2024": "Confidence and wellness narrative"},
+        "shift_driver": "Consumer behavior emphasizing self-image and holistic health."
+      },
+      {
+        "title": "Packaging",
+        "evolution": {"2020": "Plastic-based packaging", "2022": "Recyclable materials", "2024": "Biodegradable eco-packaging"},
+        "shift_driver": "Sustainability expectations from consumers."
+      },
+      {
+        "title": "Consumer Education",
+        "evolution": {"2020": "In-store promotions", "2022": "Influencer content", "2024": "Holistic wellness education online"},
+        "shift_driver": "Shift from product marketing to lifestyle integration."
+      }
+    ]
+  },
+  "people": [
+    {
+      "name": "Digital-Native Oral Care Enthusiast",
+      "share": "35%",
+      "border_color": "#FF6B6B",
+      "traits": ["Gen Z", "Tech-savvy", "Eco-conscious", "Influencer-influenced", "Aesthetic-driven"],
+      "behaviors": "Researches products online, adopts AR try-on tools, influenced by social media aesthetics. Prefers natural ingredients and sustainable packaging.",
+      "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)"],
+      "implications": "Brands should prioritize mobile-first strategies and influencer partnerships."
+    },
+    {
+      "name": "Wellness-Conscious Professional",
+      "share": "28%",
+      "border_color": "#00CED1",
+      "traits": ["Health-oriented", "Premium buyer", "Time-conscious", "Brand loyal"],
+      "behaviors": "Seeks holistic wellness products, prefers professional-grade oral care, values convenience features and trust in brand reputation.",
+      "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
+      "implications": "Premium product lines and holistic health messaging are critical."
+    },
+    {
+      "name": "Socially-Connected Beauty Seeker",
+      "share": "22%",
+      "border_color": "#FFA500",
+      "traits": ["Aesthetic-focused", "Social sharer", "Trend-sensitive", "Fast adopter"],
+      "behaviors": "Driven by visual appeal and peer validation. Frequently purchases whitening and cosmetic oral care products.",
+      "evidence": ["[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
+      "implications": "Packaging design and viral marketing campaigns should be prioritized."
+    },
+    {
+      "name": "Eco-Conscious Minimalist",
+      "share": "Emergent",
+      "border_color": "#228B22",
+      "traits": ["Minimalist", "Sustainability advocate", "Price-flexible", "Ingredient-sensitive"],
+      "behaviors": "Chooses eco-friendly packaging and herbal ingredients, often willing to pay a premium for environmental impact.",
+      "evidence": ["[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"],
+      "implications": "Eco-focused products and transparency in sourcing build trust and loyalty."
+    }
+  ],
+  "influencers": {
+    "narratives": [
+      {
+        "title": "Micro-Influencer Authenticity",
+        "color": "#FF6B6B",
+        "story": "Micro-influencers deliver strong engagement and authentic brand advocacy. Their recommendations drive niche adoption at high ROI compared to celebrity influencers.",
+        "evidence": ["[HypeAuditor](https://hypeauditor.com/blog/state-of-influencer-marketing-in-brazil/)"],
+        "takeaway": "Prioritize partnerships with micro and nano-influencers for community engagement."
+      },
+      {
+        "title": "Platform Specialization",
+        "color": "#00CED1",
+        "story": "Different social platforms serve unique roles in consumer decision-making: YouTube for education, Instagram for aesthetic inspiration, TikTok for viral discovery.",
+        "evidence": ["[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC12035006/)"],
+        "takeaway": "Develop content strategies tailored to platform strengths."
+      },
+      {
+        "title": "Wellness Content Leaders",
+        "color": "#9ACD32",
+        "story": "Health-focused content creators are shaping oral care narratives as part of holistic wellness. Educational content linking oral and systemic health resonates strongly.",
+        "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
+        "takeaway": "Leverage health-oriented influencers to connect oral care with total wellness."
+      }
+    ],
+    "pathways": [
+      {
+        "name": "Influencer Commerce Path",
+        "color": "#FF6B6B",
+        "nodes": [
+          {"id": "n1", "label": "Discovery", "tooltip": "Social platform discovery of products"},
+          {"id": "n2", "label": "Engagement", "tooltip": "Influencer content interaction"},
+          {"id": "n3", "label": "Conversion", "tooltip": "In-app purchasing via social commerce"},
+          {"id": "n4", "label": "Advocacy", "tooltip": "Consumers share experiences online"}
+        ]
+      },
+      {
+        "name": "Wellness Adoption Path",
+        "color": "#00CED1",
+        "nodes": [
+          {"id": "n1", "label": "Education", "tooltip": "Content on oral-systemic health"},
+          {"id": "n2", "label": "Consideration", "tooltip": "Premium product research"},
+          {"id": "n3", "label": "Trial", "tooltip": "Purchase of health-oriented products"},
+          {"id": "n4", "label": "Routine Integration", "tooltip": "Incorporation into wellness regimen"}
+        ]
+      },
+      {
+        "name": "Sustainability Journey",
+        "color": "#228B22",
+        "nodes": [
+          {"id": "n1", "label": "Awareness", "tooltip": "Sustainability messaging exposure"},
+          {"id": "n2", "label": "Evaluation", "tooltip": "Eco-friendly product comparisons"},
+          {"id": "n3", "label": "Purchase", "tooltip": "Buying sustainable packaging products"},
+          {"id": "n4", "label": "Loyalty", "tooltip": "Repeat purchase for eco-benefits"}
+        ]
+      }
+    ],
+    "brokers": [
+      {
+        "market": "Brazil",
+        "color": "#FF6B6B",
+        "description": "Key local brokers in influencer marketing and social commerce.",
+        "brokers": [
+          {"name": "Flavia Influencer Hub", "role": "Micro-influencer aggregator", "impact": "High ROI campaigns", "followers": "250K", "engagement": "7%", "specialty": "Oral care aesthetics", "brands": "Colgate, Oral-B"},
+          {"name": "Kwai Retail Network", "role": "Live shopping partner", "impact": "AR try-on adoption", "followers": "500K", "engagement": "6%", "specialty": "Beauty and wellness", "brands": "Local DTC brands"}
+        ]
+      },
+      {
+        "market": "LATAM",
+        "color": "#00CED1",
+        "description": "Regional brokers integrating cross-border influencer campaigns.",
+        "brokers": [
+          {"name": "LATAM Creator Studio", "role": "Regional influencer management", "impact": "Cross-market storytelling", "followers": "1M", "engagement": "5%", "specialty": "Beauty and personal care", "brands": "Unilever, Natura"},
+          {"name": "TikTok Commerce LATAM", "role": "Viral commerce enabler", "impact": "High youth engagement", "followers": "2M", "engagement": "8%", "specialty": "Youth-driven oral care", "brands": "Sensodyne, Oral-B"}
+        ]
+      },
+      {
+        "market": "Global",
+        "color": "#228B22",
+        "description": "Brokers connecting Brazilian influencers to global markets.",
+        "brokers": [
+          {"name": "Global Social Agency", "role": "Cross-border influencer strategy", "impact": "International reach", "followers": "3M", "engagement": "4%", "specialty": "Health and wellness", "brands": "LISTERINE, Philips"},
+          {"name": "InfluenceX", "role": "Multi-market influencer aggregator", "impact": "Brand synergy creation", "followers": "1.5M", "engagement": "5.5%", "specialty": "Premium oral care", "brands": "Oral-B, Colgate"}
+        ]
+      }
+    ]
+  },
+  "ideas": {
+    "hypotheses": [
+      {"statement": "Social media-driven oral aesthetics significantly influence purchase intent for whitening products.", "source": "[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"},
+      {"statement": "AR-enabled shopping experiences increase add-to-cart conversion rates by 1000%.", "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"},
+      {"statement": "Eco-packaging drives premium brand loyalty among Gen Z consumers.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"}
+    ],
+    "gaps": [
+      {"title": "Holistic Oral Health Education", "body": "Few campaigns link oral care to overall systemic health despite consumer interest.", "source": "[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"},
+      {"title": "Phygital Retail Readiness", "body": "Retailers lack AR and live shopping capabilities at scale.", "source": "[PayNXT360](https://www.paynxt360.com/report-store/view/brazil-social-commerce-market-analysis-2025)"},
+      {"title": "Sustainability Transparency", "body": "Limited reporting on eco-packaging impact reduces trust.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"}
+    ],
+    "playbooks": [
+      {
+        "title": "Micro-Influencer Activation",
+        "goal": "Boost authentic brand engagement",
+        "steps": ["Identify niche influencers", "Create co-branded content", "Deploy social commerce links"],
+        "metrics": ["Engagement rate", "Conversion lift"],
+        "source": "[HypeAuditor](https://hypeauditor.com/blog/state-of-influencer-marketing-in-brazil/)",
+        "border": "1px solid #FF6B6B",
+        "bg": "#FFE5E5"
+      },
+      {
+        "title": "AR Commerce Rollout",
+        "goal": "Increase conversion through immersive tech",
+        "steps": ["Develop AR try-on", "Integrate live shopping features", "Train retail staff"],
+        "metrics": ["Add-to-cart rate", "Customer satisfaction"],
+        "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)",
+        "border": "1px solid #00CED1",
+        "bg": "#E5F6FF"
+      },
+      {
+        "title": "Sustainability Packaging Program",
+        "goal": "Lead market in eco-conscious packaging",
+        "steps": ["Source biodegradable materials", "Educate consumers", "Certify eco-labels"],
+        "metrics": ["Brand trust index", "Repeat purchase rate"],
+        "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)",
+        "border": "1px solid #228B22",
+        "bg": "#E6FFE6"
+      }
+    ],
+    "scenarios": [
+      {"title": "AR Dominance Scenario", "body": "If AR shopping adoption hits 80% of online buyers, premium oral products could see exponential conversion growth.", "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"},
+      {"title": "Sustainability Regulation Boost", "body": "Government mandates on eco-packaging accelerate sustainable oral care adoption.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"},
+      {"title": "Wellness-Centric Market", "body": "Holistic wellness integration leads to premium product normalization.", "source": "[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"}
+    ],
+    "recommendations": [
+      {"priority": 1, "title": "Invest in Phygital Commerce", "body": "Build AR and live shopping capabilities to reduce purchase friction and improve conversion. Integrate social commerce payment systems for seamless user experiences."},
+      {"priority": 2, "title": "Embed Sustainability and Wellness", "body": "Focus product development on eco-packaging and herbal formulations. Communicate wellness benefits to link oral health with holistic lifestyles."},
+      {"priority": 3, "title": "Leverage Micro-Influencers", "body": "Engage micro and nano-influencers to build community trust and amplify authentic brand narratives. Tailor platform-specific content for higher engagement."}
+    ]
+  }
+}

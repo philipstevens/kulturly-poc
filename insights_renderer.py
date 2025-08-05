@@ -461,7 +461,7 @@ class InsightsRenderer:
         research_file = ai_context.get("research_file")
         research_path = None
         if research_file:
-            research_path = pathlib.Path(research_file)
+            research_path = pathlib.Path("research") /pathlib.Path(research_file)
 
 
         st.markdown("""
@@ -534,7 +534,7 @@ class InsightsRenderer:
                 if deep_research and research_file and research_path.exists():
                     steps = [
                         ("🔍", "Searching relevant sources...", 1.5),
-                        ("📚", "Analyzing 847 sources across Southeast Asia...", 2),
+                        ("📚", "Analyzing 847 sources...", 2),
                         ("🧠", "Identifying cultural patterns and connections...", 1.5),
                         ("✅", "Cross-referencing with market data and social insights...", 1),
                         ("🤔", "Refining research focus...", 1),

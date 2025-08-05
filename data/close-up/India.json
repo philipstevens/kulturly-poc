@@ -1,0 +1,360 @@
+{
+  "stories": {
+    "themes": [
+      {
+        "title": "Picture Perfect Smiles",
+        "story": "Bollywood and festive traditions have amplified the pursuit of aesthetic smiles among Indian youth, making white teeth and fresh breath essential for confidence and social acceptance. This has increased the consumption of whitening toothpaste, cosmetic dentistry services, and premium oral care products.",
+        "story_preview": "Bollywood aesthetics drive youth toward perfect smiles.",
+        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/beauty/oral-care-is-the-new-lifestyle-beauty-category/articleshow/97689327.cms)", "[Diva Portal](https://www.diva-portal.org/smash/get/diva2:1442496/FULLTEXT01.pdf)"],
+        "impact": "Brands should focus on cosmetic whitening products and influencer-driven aesthetic campaigns.",
+        "first_seen": "Feb 12, 2023",
+        "velocity": "+65%",
+        "volume": "12,000 mentions",
+        "confidence": 0.9,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Growing",
+        "trend_color": "#FF6B6B"
+      },
+      {
+        "title": "Dating Confidence Revolution",
+        "story": "Indian youth link oral hygiene directly with dating success and nightlife confidence. Poor oral care is perceived to lower self-esteem and social attractiveness, pushing growth in male grooming and dental aesthetics.",
+        "story_preview": "Oral care now drives dating confidence.",
+        "evidence": ["[BriefLands](https://brieflands.com/articles/ijp-144530)", "[1MG](https://www.1mg.com/articles/the-male-grooming-revolution-secrets-to-looking-and-feeling-your-best/)"],
+        "impact": "Create male-focused oral care products and nightlife-themed brand collaborations.",
+        "first_seen": "Aug 20, 2022",
+        "velocity": "+73%",
+        "volume": "8,500 mentions",
+        "confidence": 0.88,
+        "momentum": "⚡ Rising",
+        "maturity": "Early Growth",
+        "trend_color": "#6C63FF"
+      },
+      {
+        "title": "Influencer Driven Oral Care",
+        "story": "Instagram Reels and YouTube Shorts dominate oral care awareness among youth, with influencers sharing engaging dental tips and aesthetic transformations. Brands increasingly invest in influencer partnerships to reach segmented audiences.",
+        "story_preview": "Influencers reshape oral care discovery online.",
+        "evidence": ["[Hobo Video](https://hobo.video/blog/top-10-celeb-dentists-influencers-on-instagram-in-india-in-2024/)", "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"],
+        "impact": "Allocate budget to influencer campaigns and content partnerships to build social trust.",
+        "first_seen": "Jan 5, 2024",
+        "velocity": "+85%",
+        "volume": "15,200 mentions",
+        "confidence": 0.92,
+        "momentum": "🚀 Accelerating",
+        "maturity": "Emerging",
+        "trend_color": "#34A853"
+      },
+      {
+        "title": "Immersive Oral Shopping",
+        "story": "AR try-ons and virtual shopping experiences are shifting how youth purchase oral care products. AR enhances purchase confidence and boosts conversion rates for aesthetic oral products.",
+        "story_preview": "AR elevates oral care shopping confidence.",
+        "evidence": ["[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)", "[Glance AI](https://glance.com/blogs/glanceai/ai-shopping/virtual-try-on-in-india)"],
+        "impact": "Integrate AR-based product trials and virtual assistance for D2C oral care brands.",
+        "first_seen": "Jul 11, 2024",
+        "velocity": "+57%",
+        "volume": "6,300 mentions",
+        "confidence": 0.84,
+        "momentum": "🌱 Building",
+        "maturity": "Early Growth",
+        "trend_color": "#F4B400"
+      },
+      {
+        "title": "Sustainable Oral Wellness",
+        "story": "Consumers increasingly choose ayurvedic and herbal oral care products with eco-friendly packaging. Ayurvedic formulations with neem, clove, and charcoal drive strong trust and adoption.",
+        "story_preview": "Herbal oral care and eco-packaging rise together.",
+        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)", "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"],
+        "impact": "Develop plant-based oral products and biodegradable packaging to meet evolving expectations.",
+        "first_seen": "Mar 14, 2023",
+        "velocity": "+48%",
+        "volume": "7,800 mentions",
+        "confidence": 0.87,
+        "momentum": "📈 Steady Growth",
+        "maturity": "Growing",
+        "trend_color": "#0F9D58"
+      }
+    ],
+    "framing": [
+      {
+        "title": "Social Aesthetic Norms",
+        "data": [
+          {"Country": "India", "Cultural Framing": "Festive and Bollywood-led beauty ideals", "Key Indicators": "High whitening product sales, celebrity endorsements"},
+          {"Country": "Thailand", "Cultural Framing": "Social harmony and personal presentation", "Key Indicators": "Grooming product growth, aesthetic dentistry uptake"}
+        ],
+        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/beauty/oral-care-is-the-new-lifestyle-beauty-category/articleshow/97689327.cms)"],
+        "strategic_impact": "Messaging should integrate cultural aesthetics and peer acceptance."
+      },
+      {
+        "title": "Digital First Behavior",
+        "data": [
+          {"Country": "India", "Cultural Framing": "Heavy social media engagement", "Key Indicators": "Influencer reach, short video adoption"},
+          {"Country": "Singapore", "Cultural Framing": "E-commerce focused oral care purchasing", "Key Indicators": "High online oral product sales"}
+        ],
+        "evidence": ["[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"],
+        "strategic_impact": "Brands must prioritize social content strategies over traditional advertising."
+      },
+      {
+        "title": "Herbal Heritage",
+        "data": [
+          {"Country": "India", "Cultural Framing": "Ayurvedic trust and holistic wellness", "Key Indicators": "Rising demand for natural formulations"},
+          {"Country": "Nepal", "Cultural Framing": "Traditional medicinal value", "Key Indicators": "Preference for herbal products"}
+        ],
+        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"],
+        "strategic_impact": "Highlight natural ingredients and sustainability in all messaging."
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "Aesthetics ↔ Functionality",
+        "intuitive_label": "Smile vs Health Priority",
+        "strength": "Strong",
+        "key_markers": ["Cosmetic dentistry growth", "Whitening toothpaste", "Social media image focus"],
+        "narrative": "Consumers balance the desire for a perfect smile with functional oral health. Aesthetic-driven buyers are increasing due to social image pressure."
+      },
+      {
+        "axis": "Traditional ↔ Digital",
+        "intuitive_label": "Heritage vs Digital Discovery",
+        "strength": "Moderate",
+        "key_markers": ["Ayurvedic products", "Influencer marketing", "E-commerce growth"],
+        "narrative": "Traditional oral care wisdom coexists with fast-growing digital purchase journeys. Ayurveda is positioned as modern and authentic."
+      },
+      {
+        "axis": "Price ↔ Premium",
+        "intuitive_label": "Value vs Prestige",
+        "strength": "Emerging",
+        "key_markers": ["Subscription models", "Luxury oral aesthetics", "Male grooming rise"],
+        "narrative": "A premium oral care segment is emerging, driven by young professionals seeking status and confidence through high-quality products."
+      }
+    ],
+    "metaphors": [
+      {
+        "title": "Smile Currency",
+        "metaphor": "A perfect smile is social capital.",
+        "narrative": "Youth treat their smile as a core social asset, investing in products and services that enhance perceived attractiveness and confidence.",
+        "columns": ["Behavior", "Product", "Social Effect"],
+        "rows": [
+          {"Behavior": "Teeth Whitening", "Product": "Whitening toothpaste", "Social Effect": "Increased dating success"},
+          {"Behavior": "Cosmetic Dentistry", "Product": "Aligners", "Social Effect": "Improved job prospects"},
+          {"Behavior": "Breath Freshening", "Product": "Mouthwash", "Social Effect": "Enhanced peer acceptance"}
+        ]
+      },
+      {
+        "title": "Digital Dentist",
+        "metaphor": "Social media acts as the new dental chair.",
+        "narrative": "Platforms like Instagram and YouTube guide oral care decisions, replacing traditional dental consultations for many cosmetic considerations.",
+        "columns": ["Platform", "Influencer Role", "Consumer Outcome"],
+        "rows": [
+          {"Platform": "Instagram Reels", "Influencer Role": "Beauty-focused dentists", "Consumer Outcome": "Trend adoption"},
+          {"Platform": "YouTube Shorts", "Influencer Role": "Education & reviews", "Consumer Outcome": "Informed purchase"},
+          {"Platform": "WhatsApp", "Influencer Role": "Community peer sharing", "Consumer Outcome": "Behavior change"}
+        ]
+      },
+      {
+        "title": "Green Smile Movement",
+        "metaphor": "Eco-conscious smiles are the new badge of honor.",
+        "narrative": "Youth link sustainability with self-care, choosing herbal products and eco-friendly packaging as part of their identity.",
+        "columns": ["Product Type", "Eco Element", "Impact"],
+        "rows": [
+          {"Product Type": "Toothpaste Tablets", "Eco Element": "Biodegradable packaging", "Impact": "Reduced waste"},
+          {"Product Type": "Charcoal Toothpaste", "Eco Element": "Natural ingredients", "Impact": "Chemical-free choice"},
+          {"Product Type": "Bamboo Brushes", "Eco Element": "Compostable handle", "Impact": "Plastic reduction"}
+        ]
+      }
+    ],
+    "evolution": [
+      {
+        "title": "Shopping",
+        "evolution": {"2020": "Offline pharmacy dominated", "2022": "Hybrid online-offline growth", "2024": "E-commerce and D2C heavy"},
+        "shift_driver": "E-commerce penetration and convenience adoption"
+      },
+      {
+        "title": "Marketing",
+        "evolution": {"2020": "TV ads and celebrity endorsements", "2022": "Influencer partnerships", "2024": "UGC and micro-celebrity focus"},
+        "shift_driver": "Rise of social media as primary information source"
+      },
+      {
+        "title": "Product Formulation",
+        "evolution": {"2020": "Fluoride-based toothpaste", "2022": "Herbal blends", "2024": "Eco-friendly and specialty solutions"},
+        "shift_driver": "Consumer preference for natural and sustainable products"
+      },
+      {
+        "title": "Wellness Integration",
+        "evolution": {"2020": "Hygiene focus", "2022": "Aesthetic confidence link", "2024": "Holistic health integration"},
+        "shift_driver": "Shift toward preventive and holistic health"
+      }
+    ]
+  },
+  "people": [
+    {
+      "name": "Gen Z Digital Natives",
+      "share": "35%",
+      "border_color": "#FF6F61",
+      "traits": ["Social media heavy", "Trend-sensitive", "Eco-conscious", "Impulse buyers", "Fast decision cycles"],
+      "behaviors": "They discover products on Instagram and TikTok, rely on influencers, and prefer quick purchasing. Sustainability drives their choice of herbal products.",
+      "evidence": ["[Market-Xcel](https://www.market-xcel.com/blogs/top-consumer-buying-behaviour-trends-in-india-for-2025)"],
+      "implications": "Use short-form content and sustainability claims to capture attention."
+    },
+    {
+      "name": "Millennial Experience Seekers",
+      "share": "40%",
+      "border_color": "#34A853",
+      "traits": ["Value loyalty", "Experience-driven", "Holistic wellness focus", "Review dependent"],
+      "behaviors": "They seek premium experiences and personalized solutions, and rely on peer reviews for validation before purchase.",
+      "evidence": ["[Project Guru](https://www.projectguru.in/factors-affecting-the-online-buying-behaviour-of-millennials-and-gen-z/)"],
+      "implications": "Focus on brand loyalty programs and wellness-aligned messaging."
+    },
+    {
+      "name": "Urban Professionals",
+      "share": "Emergent",
+      "border_color": "#4285F4",
+      "traits": ["Tech-savvy", "Premium product adopters", "Subscription model users", "Aesthetic-driven"],
+      "behaviors": "They adopt electric toothbrushes and subscription products, and seek high-quality cosmetic dental solutions.",
+      "evidence": ["[IMARC](https://www.imarcgroup.com/india-oral-care-market)"],
+      "implications": "Promote premium, technology-enabled offerings."
+    },
+    {
+      "name": "Holistic Health Advocates",
+      "share": "25%",
+      "border_color": "#0F9D58",
+      "traits": ["Wellness oriented", "Ayurvedic trust", "Preventive care focus", "Natural product preference"],
+      "behaviors": "They integrate oral health into overall wellness routines, favoring herbal and eco-friendly solutions.",
+      "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"],
+      "implications": "Highlight natural ingredients and holistic benefits."
+    }
+  ],
+  "influencers": {
+    "narratives": [
+      {
+        "title": "Aesthetic Self-Confidence",
+        "color": "#FF6B6B",
+        "story": "Social success and career growth are linked with a bright smile. Brands use this narrative to elevate oral care beyond hygiene.",
+        "evidence": ["[Diva Portal](https://www.diva-portal.org/smash/get/diva2:1442496/FULLTEXT01.pdf)"],
+        "takeaway": "Position oral care products as enablers of social and professional success."
+      },
+      {
+        "title": "Digital Oral Education",
+        "color": "#34A853",
+        "story": "YouTube and Instagram provide credible oral care education, shaping consumer decisions and brand trust.",
+        "evidence": ["[SAGE Journals](https://journals.sagepub.com/doi/10.1177/20552076251334734)"],
+        "takeaway": "Invest in educational content for trust-building and retention."
+      },
+      {
+        "title": "Sustainable Wellness",
+        "color": "#0F9D58",
+        "story": "Eco-friendly products symbolize modern wellness and responsible consumption.",
+        "evidence": ["[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"],
+        "takeaway": "Adopt green messaging and biodegradable packaging."
+      }
+    ],
+    "pathways": [
+      {
+        "name": "Influencer Collaboration",
+        "color": "#FF6F61",
+        "nodes": [
+          {"id": "1", "label": "Identify Influencers", "tooltip": "Dental and lifestyle creators"},
+          {"id": "2", "label": "Content Planning", "tooltip": "Video scripts and visual design"},
+          {"id": "3", "label": "Launch Campaign", "tooltip": "Reels, Shorts, UGC"},
+          {"id": "4", "label": "Measure Impact", "tooltip": "Engagement and conversions"}
+        ]
+      },
+      {
+        "name": "Sustainability Messaging",
+        "color": "#0F9D58",
+        "nodes": [
+          {"id": "1", "label": "Eco Product Design", "tooltip": "Herbal and biodegradable"},
+          {"id": "2", "label": "Storytelling", "tooltip": "Communicate green credentials"},
+          {"id": "3", "label": "Retail Integration", "tooltip": "Eco-packaged shelf presence"},
+          {"id": "4", "label": "Customer Advocacy", "tooltip": "Encourage social sharing"}
+        ]
+      },
+      {
+        "name": "Digital Education",
+        "color": "#4285F4",
+        "nodes": [
+          {"id": "1", "label": "Content Hub", "tooltip": "YouTube & Instagram education"},
+          {"id": "2", "label": "Influencer Participation", "tooltip": "Key opinion leaders"},
+          {"id": "3", "label": "Engagement Mechanics", "tooltip": "Polls, Q&A, live sessions"},
+          {"id": "4", "label": "Feedback Loop", "tooltip": "Incorporate user insights"}
+        ]
+      }
+    ],
+    "brokers": [
+      {
+        "market": "India",
+        "color": "#FF6F61",
+        "description": "Digital-first oral care influencer landscape",
+        "brokers": [
+          {"name": "Dr. Sandesh Mayekar", "role": "Cosmetic Dentist", "impact": "High trust aesthetic influencer", "followers": "250k", "engagement": "4.5%", "specialty": "Smile design", "brands": "Colgate, Perfora"},
+          {"name": "Tooth Fairy Co.", "role": "Eco Brand", "impact": "Sustainable oral care advocate", "followers": "120k", "engagement": "3.2%", "specialty": "Herbal and eco products", "brands": "Tooth Fairy, Bristlo"}
+        ]
+      },
+      {
+        "market": "Singapore",
+        "color": "#34A853",
+        "description": "Premium cosmetic dentistry brokers",
+        "brokers": [
+          {"name": "Smile Innovations", "role": "Clinic", "impact": "Premium dental aesthetics", "followers": "80k", "engagement": "3.8%", "specialty": "Aligners and whitening", "brands": "Invisalign"},
+          {"name": "Eco Smiles", "role": "Product Brand", "impact": "Eco-friendly oral care", "followers": "60k", "engagement": "2.9%", "specialty": "Sustainable oral products", "brands": "Eco Smiles"}
+        ]
+      },
+      {
+        "market": "Thailand",
+        "color": "#4285F4",
+        "description": "Hybrid wellness and aesthetics",
+        "brokers": [
+          {"name": "Thai Smile Dental", "role": "Clinic", "impact": "Regional aesthetics leader", "followers": "100k", "engagement": "3.1%", "specialty": "Cosmetic dentistry", "brands": "Thai Smile"},
+          {"name": "Green Dental Lab", "role": "Product Innovator", "impact": "Sustainable material specialist", "followers": "45k", "engagement": "2.7%", "specialty": "Eco-tech dentistry", "brands": "Green Dental Lab"}
+        ]
+      }
+    ]
+  },
+  "ideas": {
+    "hypotheses": [
+      {"statement": "Influencer-driven oral care marketing significantly increases Gen Z conversion rates.", "source": "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"},
+      {"statement": "Ayurvedic oral care formulations improve brand trust and loyalty among millennials.", "source": "[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"},
+      {"statement": "AR try-on technology boosts confidence in purchasing premium oral care products.", "source": "[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)"}
+    ],
+    "gaps": [
+      {"title": "Low Rural Penetration", "body": "Oral care awareness and product access remain low in rural markets.", "source": "[IMARC](https://www.imarcgroup.com/india-oral-care-market)"},
+      {"title": "Educational Content Deficit", "body": "Few brands provide consistent, trustworthy oral health education online.", "source": "[SAGE Journals](https://journals.sagepub.com/doi/10.1177/20552076251334734)"},
+      {"title": "Limited Eco Supply Chains", "body": "Sustainable packaging and production remain niche and underdeveloped.", "source": "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"}
+    ],
+    "playbooks": [
+      {
+        "title": "Influencer Campaign Blueprint",
+        "goal": "Drive engagement and conversion through dental influencer partnerships",
+        "steps": ["Identify micro and celebrity influencers", "Co-create visual storytelling content", "Deploy on Instagram and YouTube"],
+        "metrics": ["Engagement rate", "Conversion rate"],
+        "source": "[Hobo Video](https://hobo.video/blog/top-10-celeb-dentists-influencers-on-instagram-in-india-in-2024/)",
+        "border": "1px solid #FF6F61",
+        "bg": "#FFF5F2"
+      },
+      {
+        "title": "Sustainable Product Launch",
+        "goal": "Position herbal and eco-friendly oral care products",
+        "steps": ["Source sustainable packaging", "Highlight natural ingredients in marketing", "Partner with green influencers"],
+        "metrics": ["Eco product sales share", "Brand trust score"],
+        "source": "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)",
+        "border": "1px solid #0F9D58",
+        "bg": "#F2FFF8"
+      },
+      {
+        "title": "AR Shopping Rollout",
+        "goal": "Deploy AR try-on for online oral care shopping",
+        "steps": ["Integrate AR into D2C app", "Educate users through tutorials", "Measure AR-driven conversion lift"],
+        "metrics": ["AR adoption rate", "Conversion rate improvement"],
+        "source": "[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)",
+        "border": "1px solid #4285F4",
+        "bg": "#F2F8FF"
+      }
+    ],
+    "scenarios": [
+      {"title": "Digital-Led Market Surge", "body": "Influencer campaigns and AR commerce drive online dominance for oral care brands.", "source": "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"},
+      {"title": "Eco-Driven Premium Shift", "body": "Consumers pay premium for sustainable herbal oral products, accelerating eco adoption.", "source": "[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"},
+      {"title": "Hybrid Wellness Retail", "body": "Pharmacies adopt hybrid models merging online, offline, and wellness experiences.", "source": "[IMARC](https://www.imarcgroup.com/india-oral-care-market)"}
+    ],
+    "recommendations": [
+      {"priority": 1, "title": "Invest in Influencer Ecosystem", "body": "Expand influencer-driven campaigns to capture Gen Z and millennial audiences. Leverage micro-influencers for authenticity and community trust while amplifying reach through celebrity partnerships."},
+      {"priority": 2, "title": "Expand Sustainable Product Portfolio", "body": "Introduce eco-friendly packaging and herbal formulations across product lines. Position sustainability as a core brand pillar, aligning with consumer wellness and environmental values."},
+      {"priority": 3, "title": "Deploy Immersive Tech Solutions", "body": "Adopt AR try-ons and personalized virtual shopping experiences to enhance online purchase confidence. Integrate these solutions into omnichannel strategies for higher conversion and retention."}
+    ]
+  }
+}

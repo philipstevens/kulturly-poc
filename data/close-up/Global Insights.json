@@ -1,0 +1,392 @@
+{
+    "stories": {
+        "themes": [
+            {
+            "title": "AR Commerce Boom",
+            "story": "Augmented reality integration in oral care shopping is driving conversion rates 2.5x higher than traditional methods. AR try-ons for teeth whitening and orthodontics are improving consumer trust and purchase intent, fueled by younger digital-native consumers. Retailers like Sephora are leading with immersive try-on mirrors that simulate results before purchase.",
+            "story_preview": "AR try-ons boost oral care conversions 2.5x.",
+            "evidence": ["[Beauty AR Research](https://www.brandxr.io/research-report-how-beauty-brands-are-using-ar-mirrors-to-increase-sales)", "[AR Use Cases](https://rockpaperreality.com/insights/ar-use-cases/ar-beauty-cosmetics-industry/)"],
+            "impact": "Invest in AR visualization tools for oral care to drive higher conversion and customer satisfaction.",
+            "first_seen": "Jan 15, 2024",
+            "velocity": "+210%",
+            "volume": "3.2M mentions",
+            "confidence": 0.92,
+            "momentum": "🚀 Accelerating",
+            "maturity": "Early Growth",
+            "trend_color": "#FF6B6B"
+            },
+            {
+            "title": "Live Shopping Surge",
+            "story": "Live shopping for oral care has surged, growing 554% year over year. Platforms like TikTok and Instagram drive real-time discovery and purchase of dental products, powered by influencer-led experiences and micro-creator trust. This format is especially effective with Gen Z, who value interactive and authentic buying experiences.",
+            "story_preview": "Live shopping grew 554% for oral care.",
+            "evidence": ["[Social Commerce Growth](https://pmc.ncbi.nlm.nih.gov/articles/PMC11346642/)", "[Live Shopping Insights](https://clear.co/blog/transform-ecomm-with-live-shopping)"],
+            "impact": "Brands should adopt live shopping strategies with trusted influencers to accelerate adoption.",
+            "first_seen": "Oct 10, 2023",
+            "velocity": "+554%",
+            "volume": "1.7M mentions",
+            "confidence": 0.89,
+            "momentum": "💥 Viral Spike",
+            "maturity": "Emerging",
+            "trend_color": "#FFD93D"
+            },
+            {
+            "title": "Herbal Toothpaste Shift",
+            "story": "Consumers are increasingly choosing natural oral care products, with neem, clove, and bamboo-based products driving 8.1% CAGR growth. Sustainability, ingredient transparency, and herbal functionality are key drivers of this market expansion, appealing to health- and environment-conscious demographics.",
+            "story_preview": "Herbal oral care grows at 8.1% CAGR.",
+            "evidence": ["[Herbal Toothpaste Market](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)", "[Ingredient Trends](https://jdentalpanacea.org/article-details/21501)"],
+            "impact": "Brands should focus on herbal ingredient innovation and sustainability messaging.",
+            "first_seen": "Aug 20, 2024",
+            "velocity": "+8.1%",
+            "volume": "1.2M mentions",
+            "confidence": 0.87,
+            "momentum": "⚡ Rising",
+            "maturity": "Growing",
+            "trend_color": "#34D399"
+            },
+            {
+            "title": "Digital Gifting Growth",
+            "story": "Digital gifting for wellness and oral care is an $8 trillion opportunity, boosted by 80% growth in 'online gift' searches. Oral care products are increasingly positioned as thoughtful wellness gifts, supported by e-commerce gifting catalogs and shareable links.",
+            "story_preview": "Digital gifting drives oral care discovery.",
+            "evidence": ["[Online Gifting Trends](https://ecommercecoffeebreak.com/rise-of-online-gifting-and-how-ecommerce-brands-can-leverage-this-sales-channel/)", "[Dental Gifting Ideas](https://www.dennishahndds.com/dental-gift-ideas-unique-and-thoughtful-gifts-for-a-healthy-smile/)"],
+            "impact": "Position oral care products as premium wellness gifts to tap new consumer segments.",
+            "first_seen": "Dec 01, 2023",
+            "velocity": "+80%",
+            "volume": "950K mentions",
+            "confidence": 0.84,
+            "momentum": "🌱 Building",
+            "maturity": "Emerging",
+            "trend_color": "#60A5FA"
+            },
+            {
+            "title": "Micro-Influencer Effect",
+            "story": "Micro-influencers deliver 2.5x more engagement than celebrity endorsements in oral care, with 74% of Gen Z buying products based on their posts. Long-term brand partnerships with creators are emerging as more authentic and sustainable marketing models.",
+            "story_preview": "Micro-influencers outperform celebrity campaigns.",
+            "evidence": ["[Micro-Influencer Impact](https://stackinfluence.com/beauty-brands-that-work-with-micro-influencers/)", "[Creator Partnerships](https://stackinfluence.com/micro-influencer-tips-brand-partnerships-2025/)"],
+            "impact": "Develop long-term micro-influencer programs for sustained growth and authenticity.",
+            "first_seen": "Jul 18, 2024",
+            "velocity": "+150%",
+            "volume": "1.4M mentions",
+            "confidence": 0.9,
+            "momentum": "📈 Steady Growth",
+            "maturity": "Early Growth",
+            "trend_color": "#F97316"
+            }
+        ],
+        "framing": [
+            {
+            "title": "Holistic Health Alignment",
+            "data": [
+                {"Country": "USA", "Cultural Framing": "Oral care as part of whole-body health", "Key Indicators": "Wellness integration, premium products"},
+                {"Country": "Thailand", "Cultural Framing": "Dental hygiene as self-confidence enhancer", "Key Indicators": "High smile aesthetics, youth focus"}
+            ],
+            "evidence": ["[Wellness Integration](https://dentalhospitalthailand.com/guide-to-good-oral-hygiene-self-care-edition/)"],
+            "strategic_impact": "Position oral care products as wellness essentials, not just hygiene items."
+            },
+            {
+            "title": "Sustainability Priority",
+            "data": [
+                {"Country": "Germany", "Cultural Framing": "Eco-conscious oral care demand", "Key Indicators": "Herbal products, refillable systems"},
+                {"Country": "India", "Cultural Framing": "Herbal tradition and natural formulations", "Key Indicators": "Neem-based toothpaste dominance"}
+            ],
+            "evidence": ["[Herbal Trends](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
+            "strategic_impact": "Leverage eco-packaging and herbal heritage for differentiation."
+            },
+            {
+            "title": "Digital Confidence Culture",
+            "data": [
+                {"Country": "UK", "Cultural Framing": "Aesthetics linked to dating success", "Key Indicators": "Smile-focused content, influencer-driven purchases"},
+                {"Country": "Nigeria", "Cultural Framing": "Teeth as honor symbols", "Key Indicators": "Cultural songs, spiritual importance"}
+            ],
+            "evidence": ["[Cultural Oral Aesthetics](https://pmc.ncbi.nlm.nih.gov/articles/PMC11880028/)"],
+            "strategic_impact": "Embed cultural aesthetics and dating confidence messaging in campaigns."
+            }
+        ],
+        "dimensions": [
+            {
+            "axis": "Tech-Savvy ↔ Traditional",
+            "intuitive_label": "Digital comfort vs heritage methods",
+            "strength": "Strong",
+            "key_markers": ["AR shopping adoption", "Mobile-first purchasing", "Traditional herbal practices"],
+            "narrative": "Oral care consumers are splitting between digital-native buyers embracing AR and social commerce and those relying on traditional herbal products and in-store experiences."
+            },
+            {
+            "axis": "Eco-Driven ↔ Price-Driven",
+            "intuitive_label": "Sustainability value trade-off",
+            "strength": "Moderate",
+            "key_markers": ["Bamboo toothbrushes", "Compostable packaging", "Low-cost plastic options"],
+            "narrative": "A growing segment prioritizes sustainability despite higher costs, while others still default to cost-effective conventional options."
+            },
+            {
+            "axis": "Confidence-Oriented ↔ Functional-Oriented",
+            "intuitive_label": "Emotional vs utility motivations",
+            "strength": "Emerging",
+            "key_markers": ["Dating confidence", "Job interview anxiety", "Preventive care focus"],
+            "narrative": "Consumers are increasingly motivated by social confidence outcomes like dating and professional image rather than purely functional hygiene benefits."
+            }
+        ],
+        "metaphors": [
+            {
+            "title": "Smile As Passport",
+            "metaphor": "A great smile acts like a passport to social and professional opportunities.",
+            "narrative": "Healthy teeth are increasingly perceived as gateways to dating success, career opportunities, and social credibility. Brands that emphasize confidence outcomes resonate with aspirational consumers.",
+            "columns": ["Context", "Implication", "Opportunity"],
+            "rows": [
+                {"Context": "Dating", "Implication": "Higher match success", "Opportunity": "Teeth whitening kits"},
+                {"Context": "Jobs", "Implication": "Better interview performance", "Opportunity": "Professional oral care packages"},
+                {"Context": "Social Media", "Implication": "Selfie confidence boost", "Opportunity": "Content-friendly dental products"}
+            ]
+            },
+            {
+            "title": "Teeth As Status Symbol",
+            "metaphor": "White teeth function like a luxury watch in signaling success.",
+            "narrative": "Across cultures, white teeth symbolize health, success, and spiritual balance. Emphasizing this aesthetic narrative aligns with aspirational branding and lifestyle marketing.",
+            "columns": ["Region", "Cultural Value", "Brand Play"],
+            "rows": [
+                {"Region": "Nigeria", "Cultural Value": "Honor and spiritual balance", "Brand Play": "Cultural music integration"},
+                {"Region": "USA", "Cultural Value": "Professionalism and wealth", "Brand Play": "Premium whitening campaigns"},
+                {"Region": "Japan", "Cultural Value": "Cleanliness and discipline", "Brand Play": "Minimalist packaging"}
+            ]
+            },
+            {
+            "title": "Mouth As Wellness Hub",
+            "metaphor": "Oral health is the gateway to total body wellness.",
+            "narrative": "Consumers increasingly integrate oral care into holistic wellness routines, linking it to mental well-being and lifestyle optimization. This creates opportunities for cross-category health positioning.",
+            "columns": ["Wellness Area", "Connection", "Product Opportunity"],
+            "rows": [
+                {"Wellness Area": "Stress", "Connection": "Oral health linked to cortisol", "Product Opportunity": "Relaxation-infused toothpaste"},
+                {"Wellness Area": "Sleep", "Connection": "Night guards improving rest", "Product Opportunity": "Smart dental wearables"},
+                {"Wellness Area": "Diet", "Connection": "Enamel protection from acids", "Product Opportunity": "pH balancing rinses"}
+            ]
+            }
+        ],
+        "evolution": [
+            {
+            "title": "Shopping Experience",
+            "evolution": {
+                "2020": "In-store dominated purchases",
+                "2022": "Rise of click-and-collect and mobile commerce",
+                "2024": "Immersive AR shopping and live-stream purchases"
+            },
+            "shift_driver": "Digital native behaviors and immersive tech adoption"
+            },
+            {
+            "title": "Product Ingredients",
+            "evolution": {
+                "2020": "Mainstream fluoride-based formulations",
+                "2022": "Introduction of herbal and natural ingredients",
+                "2024": "Full eco- and herbal-focused product lines"
+            },
+            "shift_driver": "Consumer demand for natural and sustainable options"
+            },
+            {
+            "title": "Brand Messaging",
+            "evolution": {
+                "2020": "Focus on hygiene and freshness",
+                "2022": "Inclusion of holistic wellness positioning",
+                "2024": "Confidence and lifestyle outcome messaging"
+            },
+            "shift_driver": "Shift from functional hygiene to emotional outcomes"
+            },
+            {
+            "title": "Influencer Ecosystem",
+            "evolution": {
+                "2020": "Celebrity endorsements dominate",
+                "2022": "Rise of micro-influencers and niche creators",
+                "2024": "Community-driven, long-term influencer partnerships"
+            },
+            "shift_driver": "Trust and authenticity becoming key differentiators"
+            }
+        ]
+    },
+    "people": [
+    {
+        "name": "The Conscious Consumer",
+        "share": "25%",
+        "border_color": "#34D399",
+        "traits": ["Sustainability-focused", "Ingredient-aware", "Value-driven", "Research-intensive", "Brand-loyal"],
+        "behaviors": "They research product ingredients extensively, prefer eco-friendly packaging, and are loyal to brands with ethical practices. Often pay premium prices for sustainability and natural formulations.",
+        "evidence": ["[Herbal Trends](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
+        "implications": "Highlight eco-values and transparent ingredient sourcing to capture this segment."
+    },
+    {
+        "name": "The Digital Native",
+        "share": "40%",
+        "border_color": "#60A5FA",
+        "traits": ["Tech-savvy", "Influencer-influenced", "Mobile-first", "Early adopter"],
+        "behaviors": "They embrace AR try-ons, live shopping, and micro-influencer content to guide purchase decisions. They are motivated by instant gratification and personalized experiences.",
+        "evidence": ["[AR Influence](https://rockpaperreality.com/insights/ar-use-cases/ar-beauty-cosmetics-industry/)"],
+        "implications": "Develop immersive commerce and social commerce strategies."
+    },
+    {
+        "name": "The Wellness Enthusiast",
+        "share": "20%",
+        "border_color": "#F59E0B",
+        "traits": ["Holistic thinker", "Prevention-focused", "Routine-oriented", "Premium buyer"],
+        "behaviors": "They integrate oral care into overall wellness routines and are willing to pay more for products with added therapeutic or holistic benefits.",
+        "evidence": ["[Wellness Shift](https://dentalhospitalthailand.com/guide-to-good-oral-hygiene-self-care-edition/)"],
+        "implications": "Position oral care as part of holistic wellness lifestyle."
+    },
+    {
+        "name": "The Social Optimizer",
+        "share": "Emergent",
+        "border_color": "#EF4444",
+        "traits": ["Appearance-conscious", "Confidence-driven", "Image-focused", "Peer-influenced"],
+        "behaviors": "They link oral health directly to dating and social success, using whitening products and social media for validation.",
+        "evidence": ["[Dating Confidence](https://www.byarsdental.com/blog/2024/02/dental-health-tips-for-relationships/)"],
+        "implications": "Highlight emotional benefits like confidence and attractiveness."
+    }
+    ],
+    "influencers": {
+        "narratives": [
+            {
+            "title": "Confidence Equals Success",
+            "color": "#FBBF24",
+            "story": "Messaging that connects smiles to career and dating outcomes resonates widely, with one-third of young adults hesitant to smile due to dental issues. Brands leveraging confidence as a narrative see stronger social traction.",
+            "evidence": ["[Self-Confidence Link](https://www.myparksfamilydental.com/blog/?p=90)"],
+            "takeaway": "Use confidence outcomes in messaging to build emotional connection."
+            },
+            {
+            "title": "Cultural Heritage Appeal",
+            "color": "#34D399",
+            "story": "Cultural narratives, like Yorùbá traditions linking teeth to honor, inspire product and messaging strategies rooted in local values. Music and rituals amplify oral health symbolism.",
+            "evidence": ["[Cultural Aesthetics](https://pmc.ncbi.nlm.nih.gov/articles/PMC11880028/)"],
+            "takeaway": "Cultural integration improves resonance and authenticity."
+            },
+            {
+            "title": "Tech-Enhanced Care",
+            "color": "#3B82F6",
+            "story": "Smart oral devices and AI-driven diagnostics are reframing oral health as part of digital wellness ecosystems. These technologies promise better outcomes and personalized experiences.",
+            "evidence": ["[Smart Care](https://spreecommerce.org/success-stories/spree-commerce-powers-goby-a-direct-to-consumer-oral-care-startup/)"],
+            "takeaway": "Invest in smart and AI-driven care innovations for differentiation."
+            }
+        ],
+        "pathways": [
+            {
+            "name": "Confidence Purchase Path",
+            "color": "#F59E0B",
+            "nodes": [
+                {"id": 1, "label": "Social Pressure", "tooltip": "Peer expectations and dating confidence triggers"},
+                {"id": 2, "label": "Content Discovery", "tooltip": "Influencer-driven content"},
+                {"id": 3, "label": "AR Visualization", "tooltip": "Seeing results before purchase"},
+                {"id": 4, "label": "Purchase", "tooltip": "Whitening or cosmetic oral products"}
+            ]
+            },
+            {
+            "name": "Sustainable Choice Path",
+            "color": "#34D399",
+            "nodes": [
+                {"id": 1, "label": "Eco Concern", "tooltip": "Environmental awareness triggers research"},
+                {"id": 2, "label": "Ingredient Research", "tooltip": "Transparency and certifications"},
+                {"id": 3, "label": "Product Selection", "tooltip": "Natural or refillable products"},
+                {"id": 4, "label": "Brand Loyalty", "tooltip": "Sustained repeat purchases"}
+            ]
+            },
+            {
+            "name": "Tech Adoption Path",
+            "color": "#3B82F6",
+            "nodes": [
+                {"id": 1, "label": "Digital Content", "tooltip": "Exposure to smart care content"},
+                {"id": 2, "label": "Trial", "tooltip": "First purchase of smart devices"},
+                {"id": 3, "label": "Feedback", "tooltip": "Integration with health apps"},
+                {"id": 4, "label": "Retention", "tooltip": "Subscription renewals"}
+            ]
+            }
+        ],
+        "brokers": [
+            {
+            "market": "USA",
+            "color": "#2563EB",
+            "description": "Leading creators influencing oral care confidence trends.",
+        "brokers": [
+        {"name": "SmilePro Influencer", "role": "Dental content creator", "impact": "Confidence narrative amplification", "followers": "120K", "engagement": "5.2%", "specialty": "Whitening & aesthetics", "brands": ["Colgate", "Crest"]},
+        {"name": "WellnessDent", "role": "Holistic care advocate", "impact": "Wellness integration", "followers": "80K", "engagement": "4.8%", "specialty": "Holistic oral care", "brands": ["Tom's of Maine"]}
+        ]
+        },
+        {
+        "market": "Nigeria",
+        "color": "#10B981",
+        "description": "Cultural brokers blending oral care with heritage aesthetics.",
+        "brokers": [
+        {"name": "AfroSmile", "role": "Cultural music influencer", "impact": "Cultural oral health promotion", "followers": "90K", "engagement": "6.1%", "specialty": "Traditional aesthetics", "brands": ["Local herbal brands"]},
+        {"name": "HeritageTeeth", "role": "Dental tradition promoter", "impact": "Cultural ritual alignment", "followers": "65K", "engagement": "5.9%", "specialty": "Herbal and spiritual oral care", "brands": ["Herbal Toothpaste Co."]}
+        ]
+        },
+        {
+        "market": "Thailand",
+        "color": "#F59E0B",
+        "description": "Regional influencers linking oral care to wellness and beauty.",
+        "brokers": [
+        {"name": "ThaiSmileCare", "role": "Beauty wellness influencer", "impact": "Youth wellness influence", "followers": "150K", "engagement": "5.4%", "specialty": "Cosmetic oral health", "brands": ["Colgate", "Sensodyne"]},
+        {"name": "EcoOralThai", "role": "Sustainable living creator", "impact": "Eco-product advocacy", "followers": "70K", "engagement": "4.7%", "specialty": "Sustainable oral care", "brands": ["Bamboo Brush Co."]}
+        ]
+        }
+        ]
+    },
+    "ideas": {
+        "hypotheses": [
+        {"statement": "AR try-on tools increase oral care purchase conversion rates significantly.", "source": "[AR Use Cases](https://rockpaperreality.com/insights/ar-use-cases/ar-beauty-cosmetics-industry/)"},
+        {"statement": "Micro-influencer campaigns deliver better ROI than celebrity partnerships.", "source": "[Influencer ROI](https://stackinfluence.com/beauty-brands-that-work-with-micro-influencers/)"},
+        {"statement": "Holistic positioning of oral care enhances premium product adoption.", "source": "[Wellness Integration](https://dentalhospitalthailand.com/guide-to-good-oral-hygiene-self-care-edition/)"}
+        ],
+        "gaps": [
+        {"title": "Low Awareness of Oral Confidence Link", "body": "Many consumers still see oral care as purely functional hygiene, not social confidence building.", "source": "[Confidence Research](https://www.byarsdental.com/blog/2024/02/dental-health-tips-for-relationships/)"},
+        {"title": "Fragmented Digital Gifting Experience", "body": "No dominant player has integrated oral care into mainstream digital gifting.", "source": "[Gifting Trend](https://ecommercecoffeebreak.com/rise-of-online-gifting-and-how-ecommerce-brands-can-leverage-this-sales-channel/)"},
+        {"title": "Limited Cultural Narrative Integration", "body": "Few brands leverage heritage aesthetics or cultural rituals in oral care marketing.", "source": "[Cultural Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11880028/)"}
+        ],
+        "playbooks": [
+        {
+        "title": "Influencer Partnership Model",
+        "goal": "Build trust and reach via micro-influencers",
+        "steps": ["Identify niche influencers", "Establish long-term contracts", "Create authentic content campaigns"],
+        "metrics": ["Engagement rate", "Conversion uplift"],
+        "source": "[Influencer Strategy](https://stackinfluence.com/micro-influencer-tips-brand-partnerships-2025/)",
+        "border": "1px solid #FBBF24",
+        "bg": "#FEF3C7"
+        },
+        {
+        "title": "AR Commerce Integration",
+        "goal": "Deploy immersive AR tools to enhance purchase confidence",
+        "steps": ["Implement AR try-on tools", "Train staff for AR-assisted sales", "Promote interactive features on social media"],
+        "metrics": ["Conversion rate change", "Session duration"],
+        "source": "[AR Commerce](https://www.brandxr.io/research-report-how-beauty-brands-are-using-ar-mirrors-to-increase-sales)",
+        "border": "1px solid #60A5FA",
+        "bg": "#DBEAFE"
+        },
+        {
+        "title": "Cultural Messaging Campaign",
+        "goal": "Integrate heritage narratives in brand communication",
+        "steps": ["Map cultural values", "Develop culturally resonant visuals", "Collaborate with cultural influencers"],
+        "metrics": ["Brand sentiment score", "Regional adoption rate"],
+        "source": "[Cultural Integration](https://pmc.ncbi.nlm.nih.gov/articles/PMC11880028/)",
+        "border": "1px solid #34D399",
+        "bg": "#D1FAE5"
+        }
+        ],
+        "scenarios": [
+        {"title": "Premium Whitening Explosion", "body": "A surge in whitening-focused premium products as dating confidence messaging accelerates adoption.", "source": "[Dating Influence](https://www.byarsdental.com/blog/2024/02/dental-health-tips-for-relationships/)"},
+        {"title": "Smart Oral Device Mainstreaming", "body": "AI-enabled oral devices become standard in urban households.", "source": "[Smart Devices](https://spreecommerce.org/success-stories/spree-commerce-powers-goby-a-direct-to-consumer-oral-care-startup/)"},
+        {"title": "Eco-Product Regulation Push", "body": "Stricter environmental regulations accelerate eco-packaging and herbal ingredient adoption.", "source": "[Eco Regulation](https://www.trendhunter.com/trends/toothbrush-packaging)"}
+        ],
+        "recommendations": [
+        {
+        "priority": 1,
+        "title": "Invest in AR and Live Shopping",
+        "body": "Integrate AR visualization and live commerce strategies to enhance customer experience and drive conversion rates. Partner with social platforms to create engaging real-time shopping events."
+        },
+        {
+        "priority": 2,
+        "title": "Expand Herbal and Sustainable Lines",
+        "body": "Develop and market herbal ingredient-based and eco-friendly products to capture the growing conscious consumer base and comply with tightening environmental standards."
+        },
+        {
+        "priority": 3,
+        "title": "Leverage Cultural and Confidence Messaging",
+        "body": "Create campaigns that tie oral health to confidence, dating, and professional success, integrating cultural aesthetics for authentic brand differentiation."
+        }
+        ]
+    },
+    "ai_context": {
+        "system_context":"You are Kultie, an assistant for exploring market and cultural insights, providing clear evidence-based recommendations aligned with this brand voice and positioning: youthful, energetic, bold, confident, playful, fresh, intimate, modern, socially connected, daring, inclusive, relationship-driven, approachable; industry context: oral care (toothpaste, mouthwash, breath freshening, beauty-adjacent self-care); product focus: fresh breath and whitening toothpaste (gel-based, herbal), mouthwash, breath strips, romantic and confidence-driven bundles, limited-edition flavors (mint, citrus, herbal, fruit fusions); audience: teenagers, young adults, millennials, Gen Z, socially active, dating and nightlife enthusiasts, image-conscious consumers, couples; persona alignment: confident socializers, dating-focused youth, trend adopters, expressive experimental early adopters, urban consumers influenced by social and digital platforms; regional focus: dating, romance, and confidence cultures (Southeast Asia, Latin America, Africa), youthful urban populations, retail and e-commerce presence, influencer-led campaigns, local flavor preferences, and messaging on emotional and social confidence benefits.",
+        "research_file": "closeup.md"
+    }
+}

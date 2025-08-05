@@ -66,11 +66,15 @@ if not st.session_state.global_configured:
         unsafe_allow_html=True
     )
 
-    st.markdown('<div class="space-title">Build Your Brand Voice</div>', unsafe_allow_html=True)
-    st.markdown('<div class="space-subtitle">Define your brand voice before exploring insights</div>', unsafe_allow_html=True)
+    st.markdown('<div class="space-title">Build Your Cultural Space</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="space-subtitle">Define your brand\'s default cultural space before exploring insights.</div>',
+        unsafe_allow_html=True
+    )
+
 
     display_brands = [""] + [b.title() for b in all_data.keys()]
-    choice = st.selectbox("Brand Name", display_brands)
+    choice = st.selectbox("Space Name", display_brands)
     brand_key = choice.lower()
     
     col1, col2 = st.columns(2)
@@ -305,7 +309,7 @@ with st.sidebar:
 
     current = st.session_state.selected_study
     selection = st.selectbox(
-        "Active Study",
+        "Active Project",
         studies,
         index=studies.index(current)
     )
@@ -313,12 +317,12 @@ with st.sidebar:
         st.session_state.selected_study = selection
         st.rerun()
 
-    if st.button("➕ New Study", use_container_width=True):
+    if st.button("➕ New Project", use_container_width=True):
         st.session_state.creating_study = True
 
 # 3. Create Study Form
 if st.session_state.get("creating_study", False):
-    st.subheader("Create New Study")
+    st.subheader("Create New Project")
 
     if "study_templates_remaining" not in st.session_state:
         st.session_state.study_templates_remaining = [
@@ -329,7 +333,7 @@ if st.session_state.get("creating_study", False):
 
     with st.form("new_study"):
         choices = [""] + st.session_state.study_templates_remaining
-        name = st.selectbox("Study Name", choices)
+        name = st.selectbox("Project Name", choices)
         
         focus = st.multiselect(
             "Strategic Focus Areas",
@@ -414,7 +418,7 @@ if st.session_state.get("creating_study", False):
             help="Key consumer or stakeholder profiles for focus."
         )
         
-        create = st.form_submit_button("Create Study")
+        create = st.form_submit_button("Create Project")
 
     if create:
         if name:
@@ -432,10 +436,10 @@ if st.session_state.get("creating_study", False):
         
             if not is_dev_mode:
                 steps = [
-                    ("🔧", f"Initializing study '{name}' environment..."),
-                    ("📝", "Generating study structure..."),
+                    ("🔧", f"Initializing project '{name}' environment..."),
+                    ("📝", "Generating project structure..."),
                     ("⚙️", "Integrating parameters and settings..."),
-                    ("🏁", "Finalizing study setup..."),
+                    ("🏁", "Finalizing project setup..."),
                 ]
                 log = st.empty()
                 done = []
@@ -452,7 +456,7 @@ if st.session_state.get("creating_study", False):
                     time.sleep(1 if i in (0, len(steps)-1) else 1.5)
                     done.append(f"{emoji} {msg}")
                 # final success
-                st.success(f"🎉 Study '{name}' Created Successfully!")
+                st.success(f"🎉 Project '{name}' Created Successfully!")
         
         st.session_state.creating_study = False
         st.rerun()
@@ -463,7 +467,7 @@ brand = st.session_state.brand_config["brand_name"]
 study = st.session_state.selected_study
 
 if study is None or study not in all_data.get(brand, {}):
-    st.error(f"No study selected for {brand}.")
+    st.error(f"No project selected for {brand}.")
     st.stop()
 
 data = all_data[brand][study]
