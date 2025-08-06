@@ -8,6 +8,109 @@ import openai
 import pandas as pd
 import streamlit as st
 
+TOOLTIPS = {
+    "stories": {
+        "themes": {
+            "title": "Name of the cultural trend (from aggregated social and news data).",
+            "story": "Narrative explaining why this trend matters and how it is evolving.",
+            "evidence": "Links supporting the existence and relevance of this trend.",
+            "impact": "Strategic or business actions recommended based on this trend.",
+            "first_seen": "Earliest date when this trend was detected in the data.",
+            "velocity": "Rate of change in mentions compared to baseline (percentage growth).",
+            "volume": "Total mentions collected in the last scan period (rounded).",
+            "confidence": "Model certainty this is a valid trend signal (0–1 scale converted to %).",
+            "momentum": "Growth direction and intensity (e.g., 🚀 Accelerating, 💥 Viral Spike).",
+            "maturity": "Lifecycle stage: Emerging <6 mo, Early Growth 6–18 mo, Mature >18 mo."
+        },
+        "dimensions": {
+            "axis": "Cultural tension axis framing the meaning space (e.g., Tradition ↔ Modernity).",
+            "intuitive_label": "Human-readable label summarizing the axis meaning.",
+            "strength": "Qualitative prominence of this dimension (Emerging, Moderate, Strong).",
+            "key_markers": "Top observed signals (keywords, behaviors) that map to this dimension.",
+            "narrative": "Explanation of why this dimension matters and what it reveals."
+        },
+        "metaphors": {
+            "title": "Name of the metaphor linking different domains.",
+            "metaphor": "One-line statement describing the structural parallel.",
+            "narrative": "Explanation of why these parallels are important.",
+            "columns": "Column headers for metaphor comparison table.",
+            "rows": "Row-level pairings showing how two domains map onto each other."
+        },
+        "framing": {
+            "title": "Name of the framing lens (comparison context).",
+            "data": "Table of country-specific interpretations of the same idea.",
+            "evidence": "Links supporting the cultural framing analysis.",
+            "strategic_impact": "Implications of these cultural framings for strategy."
+        },
+        "evolution": {
+            "title": "Concept or term being tracked over time.",
+            "evolution": "Year-to-meaning mapping showing semantic/narrative drift.",
+            "shift_driver": "Key factor(s) driving the meaning change."
+        }
+    },
+    "people": {
+        "name": "Persona name, representing an audience segment.",
+        "share": "Percentage of conversation attributed to this persona.",
+        "traits": "Key demographic and behavioral attributes.",
+        "behaviors": "Common actions associated with this persona.",
+        "evidence": "Data sources supporting this persona.",
+        "implications": "Strategic considerations for engaging this persona."
+    },
+    "influencers": {
+        "narratives": {
+            "title": "Influencer-driven storyline shaping discussion.",
+            "story": "Summary of the narrative's content and focus.",
+            "evidence": "Links supporting relevance of this narrative.",
+            "takeaway": "Implication or action recommended."
+        },
+        "pathways": {
+            "name": "Pathway title showing idea diffusion route.",
+            "color": "Line color used to visually differentiate this path.",
+            "nodes": "Steps or actors involved in spreading an idea, each with its tooltip."
+        },
+        "brokers": {
+            "market": "Geographic or cultural market where brokers operate.",
+            "description": "Summary of how influencers in this market shape trends.",
+            "broker": {
+                "name": "Name of the broker (individual influencer or organization).",
+                "role": "Influence role or area of expertise for this broker.",
+                "impact": "Primary way this broker shapes narratives or behaviors.",
+                "followers": "Number of social media followers (reach indicator).",
+                "engagement": "Engagement rate (likes, shares, comments as % of followers).",
+                "specialty": "Main topical focus or specialization of this broker.",
+                "brands": "Brands currently associated or partnered with this broker."
+            }
+        }
+    },
+    "ideas": {
+        "hypotheses": {
+            "title": "If–then prediction derived from observed data relationships.",
+            "source": "Reference supporting the hypothesis."
+        },
+        "gaps": {
+            "title": "Unmet opportunity area detected in the market or culture.",
+            "body": "Explanation of what is missing and why it matters.",
+            "source": "Evidence supporting this gap."
+        },
+        "playbooks": {
+            "title": "Action plan derived from repeatable success patterns.",
+            "goal": "What the playbook aims to achieve.",
+            "steps": "Key steps recommended for execution.",
+            "metrics": "Measures of success for this playbook.",
+            "source": "Reference for this playbook."
+        },
+        "scenarios": {
+            "title": "What-if scenario for strategic planning.",
+            "body": "Expected outcomes based on scenario assumptions.",
+            "source": "Supporting evidence for scenario assumptions."
+        },
+        "recommendations": {
+            "title": "Priority action suggested by AI analysis.",
+            "body": "Explanation of why this action is recommended and intended impact."
+        }
+    }
+}
+
 class InsightsRenderer:
     def __init__(self, data: dict):
         self.data = data
@@ -30,7 +133,6 @@ class InsightsRenderer:
             self._render_ideas(ideas)
         with tabs[4]:
             self._render_ask(context)
-
 
     def _parse_markdown_links(self, text):
         """Convert markdown-style links [text](url) to HTML <a> tags"""
@@ -81,41 +183,44 @@ class InsightsRenderer:
     def _render_themes(self, themes):
         st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
                     
+        
         cols = st.columns(2)
         for idx, nar in enumerate(themes):
             col = cols[idx % 2]
             confidence_pct = int(nar["confidence"] * 100)
             evidence_html = self._parse_markdown_links(nar["evidence"])
-            
+            theme_tooltips = TOOLTIPS["stories"]["themes"]
+
             with col:
                 card_html = (
                     f'<div style="border: 2px solid {nar["trend_color"]}; border-radius: 8px; padding: 16px; margin-bottom: 16px;">'
                     f'  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">'
-                    f'    <strong style="font-size: 16px;">{nar["title"]}</strong>'
-                    f'    <b><small style="background-color: {nar["trend_color"]}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;">{nar["maturity"]}</small></b>'
+                    f'    <strong style="font-size: 16px;" title="{theme_tooltips["title"]}">{nar["title"]}</strong>'
+                    f'    <b><small style="background-color: {nar["trend_color"]}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;" '
+                    f'        title="{theme_tooltips["maturity"]}">{nar["maturity"]}</small></b>'
                     f'  </div>'
                     f'  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">'
-                    f'    <div><strong>{nar["momentum"]}</strong></div>'
-                    f'    <div><strong>{confidence_pct}% confidence</strong></div>'
-                    f'    <div><strong>Volume:</strong> {nar["volume"]}</div>'
-                    f'    <div><strong>Velocity:</strong> {nar["velocity"]}</div>'
+                    f'    <div title="{theme_tooltips["momentum"]}"><strong>{nar["momentum"]}</strong></div>'
+                    f'    <div title="{theme_tooltips["confidence"]}"><strong>{confidence_pct}% confidence</strong></div>'
+                    f'    <div title="{theme_tooltips["volume"]}"><strong>Volume:</strong> {nar["volume"]}</div>'
+                    f'    <div title="{theme_tooltips["velocity"]}"><strong>Velocity:</strong> {nar["velocity"]}</div>'
                     f'  </div>'
                     f'  <details style="margin-top: 16px; border-radius: 8px; overflow: hidden;">'
                     f'    <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>'
                     f'    <div style="padding: 0 16px 16px; border-top: 1px solid; line-height: 1.6;">'
-                    f'      <section style="margin: 12px 0;">'
+                    f'      <section style="margin: 12px 0;" title="{theme_tooltips["story"]}">'
                     f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>'
                     f'        <p style="margin: 0;">{nar["story"]}</p>'
                     f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
+                    f'      <section style="margin: 12px 0;" title="{theme_tooltips["evidence"]}">'
                     f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Evidence</h4>'
                     f'        <p style="margin: 0;">{evidence_html}</p>'
                     f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
+                    f'      <section style="margin: 12px 0;" title="{theme_tooltips["impact"]}">'
                     f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Strategic Impact</h4>'
                     f'        <p style="margin: 0;">{nar["impact"]}</p>'
                     f'      </section>'
-                    f'      <section style="margin: 12px 0;">'
+                    f'      <section style="margin: 12px 0;" title="{theme_tooltips["first_seen"]}">'
                     f'        <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>'
                     f'        <p style="margin: 0;">First seen: {nar["first_seen"]}</p>'
                     f'      </section>'
@@ -132,6 +237,7 @@ class InsightsRenderer:
             "Moderate": "#FFD700",   # gold
             "Strong":   "#00B050"    # green
         }
+        dim_tooltips = TOOLTIPS["stories"]["dimensions"]
 
         cols = st.columns(3)
         for idx, dim in enumerate(dimensions):
@@ -141,94 +247,135 @@ class InsightsRenderer:
                 card_html = (
                         f'<div style="border:2px solid {border_color}; border-radius:8px; padding:16px; margin-bottom:16px;">'
                         f'  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">'
-                        f'    <strong style="font-size:16px;">{dim["axis"]}</strong>'
+                        f'    <strong style="font-size:16px;" title="{dim_tooltips["axis"]}">{dim["axis"]}</strong>'
                         f'  </div>'
                         f'  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;">'
-                        f'    <div><strong>Signal Strength:</strong> <span style="background-color: {border_color}; color: black; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;">{dim["strength"]}</span></div>'
-                        f'    <div><strong>Key Markers:</strong> {", ".join(dim["key_markers"])}</div>'
+                        f'    <div title="{dim_tooltips["strength"]}"><strong>Signal Strength:</strong> '
+                        f'<span style="background-color: {border_color}; color: black; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: bold;">{dim["strength"]}</span></div>'
+                        f'    <div title="{dim_tooltips["key_markers"]}"><strong>Key Markers:</strong> {", ".join(dim["key_markers"])}</div>'
                         f'  </div>'
                         f'  <details style="margin-top:16px; border-radius:8px; overflow:hidden;">'
                         f'    <summary style="font-weight:bold; cursor:pointer;">Full Details</summary>'
-                        f'    <div style="padding:0 16px 16px; border-top:1px solid #CCC; line-height:1.6;">'
+                        f'    <div style="padding:0 16px 16px; border-top:1px solid #CCC; line-height:1.6;" title="{dim_tooltips["narrative"]}">'
                         f'      <p>{dim["narrative"]}</p>'
                         f'    </div>'
                         f'  </details>'
                         f'</div>'
-
                 )
                 st.markdown(card_html, unsafe_allow_html=True)
 
     def _render_metaphors(self, metaphors):
+        metaphor_tooltips = TOOLTIPS["stories"]["metaphors"]
+
         st.caption("Illustrative parallels showing shared structure across domains")
         tabs = st.tabs([m["title"] for m in metaphors])
 
         for tab, m in zip(tabs, metaphors):
             with tab:
-                st.markdown(f"*{m['metaphor']}*")
-                st.caption(m["narrative"])
+                st.markdown(
+                    f"*<span title='{metaphor_tooltips['metaphor']}'>{m['metaphor']}</span>*",
+                    unsafe_allow_html=True
+                )
+                st.caption(
+                    f"<span title='{metaphor_tooltips['narrative']}'>{m['narrative']}</span>",
+                    unsafe_allow_html=True
+                )
                 df = pd.DataFrame(m["rows"])
                 col_cfg = {
-                    col: st.column_config.TextColumn(col, width="medium")
+                    col: st.column_config.TextColumn(
+                        col, width="medium", help=metaphor_tooltips["rows"]
+                    )
                     for col in m["columns"]
                 }
-                st.dataframe(df, use_container_width=True, hide_index=True, column_config=col_cfg)
+                st.dataframe(
+                    df,
+                    use_container_width=True,
+                    hide_index=True,
+                    column_config=col_cfg
+                )
 
     def _render_framing(self, framing):
+        framing_tooltips = TOOLTIPS["stories"]["framing"]
         st.caption("How core ideas are locally interpreted and emphasized across cultures")
         
         titles = [item["title"] for item in framing]
         framing_tabs = st.tabs(titles)
-
         for tab, content in zip(framing_tabs, framing):
             with tab:
                 df = pd.DataFrame(content["data"])
-                
+
                 st.dataframe(
                     df,
                     use_container_width=True,
                     hide_index=True,
                     column_config={
-                        "Country": st.column_config.TextColumn("Country", width="small"),
-                        "Cultural Framing": st.column_config.TextColumn("Cultural Framing", width="large"),
-                        "Key Indicators": st.column_config.TextColumn("Key Indicators", width="medium")
+                        "Country": st.column_config.TextColumn(
+                            "Country", width="small", help=framing_tooltips["data"]
+                        ),
+                        "Cultural Framing": st.column_config.TextColumn(
+                            "Cultural Framing", width="large", help=framing_tooltips["data"]
+                        ),
+                        "Key Indicators": st.column_config.TextColumn(
+                            "Key Indicators", width="medium", help=framing_tooltips["data"]
+                        )
                     }
                 )
-                st.markdown(f"**Evidence Sources:** {', '.join(content['evidence'])}")
-                st.markdown(f"**Strategic Impact:** {content['strategic_impact']}")
-
+                st.markdown(
+                    f"**Evidence Sources:** <span title='{framing_tooltips['evidence']}'>{', '.join(content['evidence'])}</span>",
+                    unsafe_allow_html=True
+                )
+                st.markdown(
+                    f"**Strategic Impact:** <span title='{framing_tooltips['strategic_impact']}'>{content['strategic_impact']}</span>",
+                    unsafe_allow_html=True
+                )
+        
     def _render_evolution(self, evolution):
+        evolution_tooltips = TOOLTIPS["stories"]["evolution"]
+
         st.caption("How key terms shift meaning across contexts and time")
 
         tab_names = [m['title'] for m in evolution]
         evolution_tabs = st.tabs(tab_names)
         
         for tab, data in zip(evolution_tabs, evolution):
-            with tab:              
-                timeline_html = '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
+            with tab:
+                timeline_html = (
+                    '<div style="border:1px solid #ddd; border-radius:8px; padding:16px; margin-bottom:16px;">'
+                )
                 for year, meaning in data["evolution"].items():
-                    timeline_html += f'<div style="margin-bottom:12px;"><strong>{year}</strong> → {meaning}</div>'
-                timeline_html += '</div>'               
-                st.markdown(timeline_html, unsafe_allow_html=True)              
-                st.info(f"**Shift driver:** {data['shift_driver']}")
+                    timeline_html += (
+                        f'<div style="margin-bottom:12px;" '
+                        f'title="{evolution_tooltips["evolution"]}">'
+                        f'<strong>{year}</strong> → {meaning}</div>'
+                    )
+                timeline_html += '</div>'
+                st.markdown(timeline_html, unsafe_allow_html=True)
+
+                st.markdown(
+                    f"<span title='{evolution_tooltips['shift_driver']}'><strong>Shift driver:</strong> {data['shift_driver']}</span>",
+                    unsafe_allow_html=True
+                )
 
     def _render_people(self, personas):
 
-        # Display as styled cards with inline details
+        persona_tooltips = TOOLTIPS["people"]
         cols = st.columns(3)
         for idx, p in enumerate(personas):
             col = cols[idx % 3]
             evidence_html = self._parse_markdown_links(p["evidence"])
             traits_list = "".join(f"<li>{t}</li>" for t in p["traits"])
             border_color = p.get("border_color", "#DDD")
+            
             card_html = f"""
             <div style="border:2px solid {border_color};border-radius:8px;padding:16px;margin:16px 0;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                <strong style="font-size:16px;">{p['name']}</strong>
-                <b><small style="background-color:{border_color};color:#000;padding:2px 6px;border-radius:4px;font-size:14px;">
-                Share: {p['share']}
+                <strong style="font-size:16px;" title="{persona_tooltips['name']}">{p['name']}</strong>
+                <b><small style="background-color:{border_color};color:#000;padding:2px 6px;border-radius:4px;font-size:14px;"
+                    title="{persona_tooltips['share']}">
+                    Share: {p['share']}
                 </small></b>
             </div>
-            <div style="margin:12px 0;">
+            <div style="margin:12px 0;" title="{persona_tooltips['traits']}">
                 <strong>Key Traits:</strong>
                 <ul style="margin:4px 0 0 1rem; padding-left:1rem;">
                     {traits_list}
@@ -236,12 +383,22 @@ class InsightsRenderer:
             </div>
             <details style="margin-top:16px;border-radius:8px;overflow:hidden;border-top:1px solid #CCC;">
                 <summary style="font-weight:bold;cursor:pointer;">Full Details</summary>
-                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Behaviors</h4><p style="margin:0;">{p['behaviors']}</p></section>
-                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Evidence</h4><p style="margin:0;">{evidence_html}</p></section>
-                <section style="margin:12px 0;"><h4 style="margin:0 0 4px;font-size:14px;">Implications</h4><p style="margin:0;">{p['implications']}</p></section>
+                <section style="margin:12px 0;" title="{persona_tooltips['behaviors']}">
+                    <h4 style="margin:0 0 4px;font-size:14px;">Behaviors</h4>
+                    <p style="margin:0;">{p['behaviors']}</p>
+                </section>
+                <section style="margin:12px 0;" title="{persona_tooltips['evidence']}">
+                    <h4 style="margin:0 0 4px;font-size:14px;">Evidence</h4>
+                    <p style="margin:0;">{evidence_html}</p>
+                </section>
+                <section style="margin:12px 0;" title="{persona_tooltips['implications']}">
+                    <h4 style="margin:0 0 4px;font-size:14px;">Implications</h4>
+                    <p style="margin:0;">{p['implications']}</p>
+                </section>
             </details>
             </div>
             """.strip()
+
             col.markdown(card_html, unsafe_allow_html=True)
 
     def _render_influencers(self, infl):
@@ -268,6 +425,7 @@ class InsightsRenderer:
                 fn(data)
 
     def _render_narratives(self, narratives):
+        narrative_tooltips = TOOLTIPS["influencers"]["narratives"]
         st.caption("Key influencer ecosystems shaping cultural conversations and commerce")
         cols = st.columns(2)
         for idx, nar in enumerate(narratives):
@@ -275,60 +433,79 @@ class InsightsRenderer:
             color = nar["color"]
             evidence_html = self._parse_markdown_links(nar["evidence"])
             with col:
-                # existing card_html logic...
                 st.markdown(
                     f'<div style="border:2px solid {color};border-radius:8px;padding:16px;margin:8px;">'
-                    f'  <strong style="font-size:16px;">{nar["title"]}</strong>'
-                    f'  <p style="opacity:0.8;">{nar["story"][:100]}…</p>'
+                    f'  <strong style="font-size:16px;" title="{narrative_tooltips["title"]}">{nar["title"]}</strong>'
                     f'  <details style="border-top:1px solid {color};margin-top:12px;">'
-                    f'    <summary style="font-weight:bold;color:{color};">Full Details</summary>'
-                    f'    <p>{nar["story"]}</p>'
-                    f'    <p>{evidence_html}</p>'
-                    f'    <p><strong>Takeaway:</strong> {nar["takeaway"]}</p>'
+                    f'    <summary style="font-weight:bold;color:{color};" title="Click to view full details">Full Details</summary>'
+                    f'    <p title="{narrative_tooltips["story"]}">{nar["story"]}</p>'
+                    f'    <p title="{narrative_tooltips["evidence"]}">{evidence_html}</p>'
+                    f'    <p title="{narrative_tooltips["takeaway"]}"><strong>Takeaway:</strong> {nar["takeaway"]}</p>'
                     f'  </details>'
                     f'</div>',
                     unsafe_allow_html=True
                 )
 
     def _render_pathways(self, pathways):
-        st.caption("How cultural moments spread through influencer networks to drive adoption")
-        dot = ["digraph G {",
+        pathways_tooltips = TOOLTIPS["influencers"]["pathways"]
+
+        st.caption(
+            "How cultural moments spread through influencer networks to drive adoption",
+            help=pathways_tooltips["name"]
+        )
+
+        dot = [
+            "digraph G {",
             "  rankdir=LR; graph [bgcolor=transparent,nodesep=1,ranksep=1];",
             "  node [shape=circle,fixedsize=true,width=1.2,height=1.2,style=filled,fontname=\"Helvetica-Bold\",fontsize=10];",
-            "  edge [penwidth=2];"]
+            "  edge [penwidth=2];"
+        ]
+
         for p in pathways:
-            ids  = [f'"{n["id"]}"' for n in p["nodes"]]
+            ids = [f'"{n["id"]}"' for n in p["nodes"]]
             dot.append(f"  {' -> '.join(ids)} [color=\"{p['color']}\"];")
             for n in p["nodes"]:
-                dot.append(f'  "{n["id"]}" [fillcolor="{p["color"]}",label="{n["label"]}",tooltip="{n["tooltip"]}"];')
+                # Preserve the node-specific tooltip provided by the data
+                dot.append(
+                    f'  "{n["id"]}" [fillcolor="{p["color"]}", label="{n["label"]}", tooltip="{n["tooltip"]}"];'
+                )
+
         dot.append("}")
         st.graphviz_chart("\n".join(dot))
 
     def _render_brokers(self, brokers_list):
         st.caption("Most influential voices shaping brand perception and cultural trends")
+        broker_tooltips = TOOLTIPS["influencers"]["brokers"]
+        entity_tooltips = broker_tooltips["broker"]
+
         for market_data in brokers_list:
             cards = []
             for b in market_data["brokers"]:
                 cards.append(
                     f'<div style="flex:1;min-width:220px;border:1px solid {market_data["color"]};'
-                    f'border-radius:6px;padding:12px;margin:8px;">'
-                    f'<strong style="color:{market_data["color"]};">{b["name"]}</strong><br>'
-                    f'<em>{b["role"]}</em><p>{b["impact"]}</p>'
+                    f'border-radius:6px;padding:12px;margin:8px;" title="{entity_tooltips["name"]}">'
+                    f'<strong style="color:{market_data["color"]};" title="{entity_tooltips["name"]}">{b["name"]}</strong><br>'
+                    f'<em title="{entity_tooltips["role"]}">{b["role"]}</em>'
+                    f'<p title="{entity_tooltips["impact"]}">{b["impact"]}</p>'
                     f'<details><summary style="color:{market_data["color"]};">Details</summary>'
-                    f'<p>Followers: {b["followers"]}</p><p>Engagement: {b["engagement"]}</p></details>'
+                    f'<p title="{entity_tooltips["followers"]}">Followers: {b["followers"]}</p>'
+                    f'<p title="{entity_tooltips["engagement"]}">Engagement: {b["engagement"]}</p>'
+                    f'<p title="{entity_tooltips["specialty"]}">Specialty: {b["specialty"]}</p>'
+                    f'<p title="{entity_tooltips["brands"]}">Brands: {", ".join(b["brands"])}</p>'
+                    f'</details>'
                     f'</div>'
                 )
             container = (
-                f'<div style="border:2px solid {market_data["color"]};border-radius:8px;'
-                f'padding:16px;margin-bottom:24px;">'
-                f'<strong style="font-size:18px;">{market_data["market"]}</strong>'
-                f'<p style="opacity:0.8;"><em>{market_data["description"]}</em></p>'
+                f'<div style="flex:1;min-width:220px;border:1px solid {market_data["color"]};'
+                f'border-radius:6px;padding:12px;margin:8px;" title="{broker_tooltips["description"]}">'
+                f'<strong style="font-size:18px;" title="{broker_tooltips["market"]}">{market_data["market"]}</strong>'
+                f'<p style="opacity:0.8;" title="{broker_tooltips["description"]}"><em>{market_data["description"]}</em></p>'
                 f'<div style="display:flex;flex-wrap:wrap;justify-content:space-between;">'
                 + "".join(cards) +
                 '</div></div>'
             )
             st.markdown(container, unsafe_allow_html=True)
- 
+
     def _render_ideas(self, ideas):
         sections = []
         if ideas.get("hypotheses"):
@@ -382,46 +559,55 @@ class InsightsRenderer:
             )
           
     def _render_hypotheses(self, hypotheses):
+        hypotheses_tooltips = TOOLTIPS["ideas"]["hypotheses"]
         st.caption("Key if–then hypotheses to test.")
         cols = st.columns(2)
         for idx, h in enumerate(hypotheses):
             with cols[idx % 2]:
                 self._render_card(
-                    title=h["statement"],
-                    body_lines=[f"Source: {self._parse_markdown_links(h['source'])}"],
+                    title=f"<span title='{hypotheses_tooltips['title']}'>{h['statement']}</span>",
+                    body_lines=[
+                        f"<span title='{hypotheses_tooltips['source']}'>Source: {self._parse_markdown_links(h['source'])}</span>"
+                    ],
                     border="1px solid #888",
                     details=("Full Hypothesis", [h["statement"]])
                 )
 
     def _render_gaps(self, gaps):
         st.caption("Unmet opportunities—each gap is a trigger for action.")
+        gaps_tooltips = TOOLTIPS["ideas"]["gaps"]
         for g in gaps:
             self._render_card(
-                title=f"🎯 {g['title']}",
-                body_lines=[g['body'], f"Source: {self._parse_markdown_links(g['source'])}"],
+                title=f"<span title='{gaps_tooltips['title']}'>🎯 {g['title']}</span>",
+                body_lines=[
+                    f"<span title='{gaps_tooltips['body']}'>{g['body']}</span>",
+                    f"<span title='{gaps_tooltips['source']}'>Source: {self._parse_markdown_links(g['source'])}</span>"
+                ],
                 border="1px dashed #999"
             )
 
     def _render_playbooks(self, playbooks):
         st.caption("Activation Playbooks—frameworks distilled by AI from 50K+ cultural data points")
+        playbooks_tooltips = TOOLTIPS["ideas"]["playbooks"]
         for c in playbooks:
             parts = [
-                f"<p><strong>Goal:</strong> {c['goal']}</p>",
-                "<p><strong>Steps:</strong></p><ul style='margin:4px 0 8px 16px;'>"
-                + "".join(f"<li>{s}</li>" for s in c["steps"]) + "</ul>",
-                "<p><strong>Metrics:</strong></p><ul style='margin:4px 0 8px 16px;'>"
-                + "".join(f"<li>{m}</li>" for m in c["metrics"]) + "</ul>",
-                f"<p style='font-size:0.85em; color:gray;'><em>Source: {self._parse_markdown_links(c['source'])}</em></p>"
+                f"<p title='{playbooks_tooltips['goal']}'><strong>Goal:</strong> {c['goal']}</p>",
+                "<p title='{0}'><strong>Steps:</strong></p><ul style='margin:4px 0 8px 16px;'>".format(playbooks_tooltips['steps'])
+                + "".join(f"<li title='{playbooks_tooltips['steps']}'>{s}</li>" for s in c["steps"]) + "</ul>",
+                "<p title='{0}'><strong>Metrics:</strong></p><ul style='margin:4px 0 8px 16px;'>".format(playbooks_tooltips['metrics'])
+                + "".join(f"<li title='{playbooks_tooltips['metrics']}'>{m}</li>" for m in c["metrics"]) + "</ul>",
+                f"<p style='font-size:0.85em; color:gray;' title='{playbooks_tooltips['source']}'><em>Source: {self._parse_markdown_links(c['source'])}</em></p>"
             ]
             body_html = "".join(parts)
             self._render_card(
-                title=c["title"],
+                title=f"<span title='{playbooks_tooltips['title']}'>{c['title']}</span>",
                 body_lines=[body_html],
                 border=c.get("border", "1px solid #ccc")
             )
 
     def _render_scenarios(self, scenarios):
         st.caption("What If Scenarios — projected outcomes")
+        scenarios_tooltips = TOOLTIPS["ideas"]["scenarios"]
         container = '<div style="display:flex;flex-direction:column;gap:16px;">'
         for idx, s in enumerate(scenarios, start=1):
             container += (
@@ -430,11 +616,12 @@ class InsightsRenderer:
                 f'background:#FF5722;color:#fff;display:flex;align-items:center;'
                 f'justify-content:center;font-weight:bold;font-size:14px;">{idx}</div>'
                 f'<div style="flex:1;">'
-                f'<div style="font-size:15px;font-weight:bold;color:#FF5722;'
-                f'margin-bottom:4px;">{s["title"]}</div>'
-                f'<div style="font-size:14px;line-height:1.5;margin-bottom:6px;">'
-                f'{s["body"]}</div>'
-                f'<div style="font-size:12px;color:gray;">Source: {self._parse_markdown_links(s["source"])}</div>'
+                f'<div style="font-size:15px;font-weight:bold;color:#FF5722;margin-bottom:4px;" '
+                f'title="{scenarios_tooltips["title"]}">{s["title"]}</div>'
+                f'<div style="font-size:14px;line-height:1.5;margin-bottom:6px;" '
+                f'title="{scenarios_tooltips["body"]}">{s["body"]}</div>'
+                f'<div style="font-size:12px;color:gray;" '
+                f'title="{scenarios_tooltips["source"]}">Source: {self._parse_markdown_links(s["source"])}</div>'
                 f'</div></div>'
             )
         container += "</div>"
@@ -443,10 +630,12 @@ class InsightsRenderer:
     def _render_recommendations(self, recs):
         st.caption("Next steps—priority actions.")
         for r in recs:
+            recommendations_tooltips = TOOLTIPS["ideas"]["recommendations"]
             st.markdown(
-                f"<div style='border-left:5px solid #4CAF50;padding:12px;margin-bottom:8px;'>"
+                f"<div style='border-left:5px solid #4CAF50;padding:12px;margin-bottom:8px;' "
+                f"title='{recommendations_tooltips['title']}'>"
                 f"<strong>{r['priority']}. {r['title']}</strong>"
-                f"<p style='margin:4px 0;'>{r['body']}</p>"
+                f"<p style='margin:4px 0;' title='{recommendations_tooltips['body']}'>{r['body']}</p>"
                 f"</div>",
                 unsafe_allow_html=True
             )

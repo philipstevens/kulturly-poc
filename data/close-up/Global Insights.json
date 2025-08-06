@@ -297,29 +297,29 @@
             "market": "USA",
             "color": "#2563EB",
             "description": "Leading creators influencing oral care confidence trends.",
-        "brokers": [
-        {"name": "SmilePro Influencer", "role": "Dental content creator", "impact": "Confidence narrative amplification", "followers": "120K", "engagement": "5.2%", "specialty": "Whitening & aesthetics", "brands": ["Colgate", "Crest"]},
-        {"name": "WellnessDent", "role": "Holistic care advocate", "impact": "Wellness integration", "followers": "80K", "engagement": "4.8%", "specialty": "Holistic oral care", "brands": ["Tom's of Maine"]}
-        ]
-        },
-        {
-        "market": "Nigeria",
-        "color": "#10B981",
-        "description": "Cultural brokers blending oral care with heritage aesthetics.",
-        "brokers": [
-        {"name": "AfroSmile", "role": "Cultural music influencer", "impact": "Cultural oral health promotion", "followers": "90K", "engagement": "6.1%", "specialty": "Traditional aesthetics", "brands": ["Local herbal brands"]},
-        {"name": "HeritageTeeth", "role": "Dental tradition promoter", "impact": "Cultural ritual alignment", "followers": "65K", "engagement": "5.9%", "specialty": "Herbal and spiritual oral care", "brands": ["Herbal Toothpaste Co."]}
-        ]
-        },
-        {
-        "market": "Thailand",
-        "color": "#F59E0B",
-        "description": "Regional influencers linking oral care to wellness and beauty.",
-        "brokers": [
-        {"name": "ThaiSmileCare", "role": "Beauty wellness influencer", "impact": "Youth wellness influence", "followers": "150K", "engagement": "5.4%", "specialty": "Cosmetic oral health", "brands": ["Colgate", "Sensodyne"]},
-        {"name": "EcoOralThai", "role": "Sustainable living creator", "impact": "Eco-product advocacy", "followers": "70K", "engagement": "4.7%", "specialty": "Sustainable oral care", "brands": ["Bamboo Brush Co."]}
-        ]
-        }
+                "brokers": [
+                    {"name": "SmilePro Influencer", "role": "Dental content creator", "impact": "Confidence narrative amplification", "followers": "120K", "engagement": "5.2%", "specialty": "Whitening & aesthetics", "brands": ["Colgate", "Crest"]},
+                    {"name": "WellnessDent", "role": "Holistic care advocate", "impact": "Wellness integration", "followers": "80K", "engagement": "4.8%", "specialty": "Holistic oral care", "brands": ["Tom's of Maine"]}
+                ]
+            },
+            {
+                "market": "Nigeria",
+                "color": "#10B981",
+                "description": "Cultural brokers blending oral care with heritage aesthetics.",
+                "brokers": [
+                    {"name": "AfroSmile", "role": "Cultural music influencer", "impact": "Cultural oral health promotion", "followers": "90K", "engagement": "6.1%", "specialty": "Traditional aesthetics", "brands": ["Local herbal brands"]},
+                    {"name": "HeritageTeeth", "role": "Dental tradition promoter", "impact": "Cultural ritual alignment", "followers": "65K", "engagement": "5.9%", "specialty": "Herbal and spiritual oral care", "brands": ["Herbal Toothpaste Co."]}
+                ]
+            },
+            {
+                "market": "Thailand",
+                "color": "#F59E0B",
+                "description": "Regional influencers linking oral care to wellness and beauty.",
+                "brokers": [
+                    {"name": "ThaiSmileCare", "role": "Beauty wellness influencer", "impact": "Youth wellness influence", "followers": "150K", "engagement": "5.4%", "specialty": "Cosmetic oral health", "brands": ["Colgate", "Sensodyne"]},
+                    {"name": "EcoOralThai", "role": "Sustainable living creator", "impact": "Eco-product advocacy", "followers": "70K", "engagement": "4.7%", "specialty": "Sustainable oral care", "brands": ["Bamboo Brush Co."]}
+                ]
+            }
         ]
     },
     "ideas": {
