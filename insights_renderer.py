@@ -4,6 +4,7 @@ from datetime import datetime
 import os
 import pathlib
 import time
+import hashlib
 
 import openai
 import pandas as pd
@@ -187,196 +188,64 @@ TOOLTIPS = {
     }
 }
 
-themes2 = [
-            {
-                "title": "AR Commerce Boom",
-                "story": (
-                    "This theme captures a cultural redefinition of how consumers experience shopping in oral care. "
-                    "Augmented reality is no longer just a novelty—it is reshaping expectations of trust and product engagement. "
-                    "Consumers are using AR try-ons to preview outcomes before committing, reframing oral care as a lifestyle "
-                    "decision rather than a commodity purchase. Younger, digital-native consumers are spearheading this shift, "
-                    "seeking experiences that collapse the barrier between digital browsing and physical trial. "
-                    "Retailers like Sephora demonstrate how immersive try-on mirrors influence not just conversion rates "
-                    "but also identity and self-expression in wellness routines."
-                ),
-                "evidence": [
-                    "[Beauty AR Research](https://www.brandxr.io/research-report-how-beauty-brands-are-using-ar-mirrors-to-increase-sales)",
-                    "[AR Use Cases](https://rockpaperreality.com/insights/ar-use-cases/ar-beauty-cosmetics-industry/)"
-                ],
-                "impact": "Invest in AR visualization tools and experiential commerce strategies to build trust and drive conversion.",
-                "first_seen": "2024-01-15",
-                "last_seen": "2025-08-01",
-                "current_volume": 320000, 
-                "previous_volume": 110000,
-                "volume": 3200000,
-                "confidence": 92,
-                "perspectives": {
-                    "Consumers": "Expect seamless, immersive product experiences before purchase.",
-                    "Retailers": "Adopting AR to increase conversion and differentiate from competitors.",
-                    "Tech Providers": "Positioning AR platforms as critical retail infrastructure."
-                },
-                "coder_views": "Consensus among analyst agents: AR enhances trust; younger users see it as playful identity expression.",
-                "interpretive_conflict": "Low disagreement (0.12) – consistent interpretation across coding agents.",
-                "symbolic_meaning": "Represents technology as a trust-building ritual, merging digital and physical identity validation.",
-                "value_conflicts": "Convenience vs authenticity in personal retail experiences.",
-                "representative_signal": "\"This AR try-on convinced me to switch brands—it felt like testing in person.\"",
-                "evolution": "Initially an experiment in beauty and fashion, AR try-ons are now expanding into oral care, framing it as part of a broader self-care ecosystem.",
-                "trend_color": "#FF6B6B"
-            },
-            {
-                "title": "Live Shopping Surge",
-                "story": (
-                    "Live commerce in oral care is transforming the act of purchase into an interactive performance. "
-                    "What began as influencer experiments has matured into a core retail channel where trust is built in real time. "
-                    "Younger consumers engage with oral care products as part of social entertainment, guided by micro-creators "
-                    "who blend expertise with relatability. The theme illustrates a deep shift in value exchange: consumers no longer "
-                    "just buy products—they co-create moments of discovery with the sellers and communities they trust."
-                ),
-                "evidence": [
-                    "[Social Commerce Growth](https://pmc.ncbi.nlm.nih.gov/articles/PMC11346642/)",
-                    "[Live Shopping Insights](https://clear.co/blog/transform-ecomm-with-live-shopping)"
-                ],
-                "impact": "Adopt live shopping formats and influencer partnerships to accelerate consumer trust and conversion.",
-                "first_seen": "2023-10-10",
-                "last_seen": "2025-08-01",
-                "current_volume": 280000, 
-                "previous_volume": 43000,
-                "volume": 1700000,
-                "confidence": 89,
-                "perspectives": {
-                    "Influencers": "Leverage live content as an income channel and credibility platform.",
-                    "Brands": "See live shopping as essential for Gen Z conversion.",
-                    "Consumers": "Treat live shopping as entertainment and trusted advice."
-                },
-                "coder_views": "Most agents framed live shopping as co-creation and social entertainment; one agent noted privacy risks as a counterpoint.",
-                "interpretive_conflict": "Moderate disagreement (0.28) – discussion focused on entertainment value vs surveillance concerns.",
-                "symbolic_meaning": "Embodies commerce as performance and trust-building via human connection.",
-                "value_conflicts": "Spontaneity and entertainment vs consumer data privacy and control.",
-                "representative_signal": "\"I bought toothpaste during a TikTok Live demo—it felt like hanging out with a trusted friend.\"",
-                "evolution": "Once limited to beauty and fashion, live shopping now includes wellness and oral care, driven by consumer comfort with parasocial commerce.",
-                "trend_color": "#FFD93D"
-            },
-            {
-                "title": "Herbal Toothpaste Shift",
-                "story": (
-                    "This theme reflects a reframing of oral care as part of a holistic wellness practice. "
-                    "Herbal toothpaste represents a rejection of purely synthetic formulations in favor of ingredient transparency, "
-                    "sustainability, and ancestral wisdom. The rise of neem, clove, and bamboo-based products is more than just "
-                    "a materials trend—it signifies consumers making oral care choices aligned with values of environmental ethics "
-                    "and personal health sovereignty."
-                ),
-                "evidence": [
-                    "[Herbal Toothpaste Market](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)",
-                    "[Ingredient Trends](https://jdentalpanacea.org/article-details/21501)"
-                ],
-                "impact": "Develop herbal formulations and emphasize transparency and sustainability to meet shifting consumer expectations.",
-                "first_seen": "2024-08-20",
-                "last_seen": "2025-08-01",
-                "current_volume": 120000, 
-                "previous_volume": 111000,
-                "volume": 1200000,
-                "confidence": 87,
-                "perspectives": {
-                    "Consumers": "Seek alignment with natural and sustainable lifestyles.",
-                    "Brands": "Use herbal differentiation to stand out in crowded markets.",
-                    "Regulators": "Increase scrutiny on ingredient labeling and health claims."
-                },
-                "coder_views": "Agents consistently interpreted herbal oral care as symbolic of natural living and ancestral wisdom; one flagged market hype risk.",
-                "interpretive_conflict": "Low disagreement (0.15) – convergence on wellness symbolism.",
-                "symbolic_meaning": "Represents purity, ancestral wisdom, and harmony with nature.",
-                "value_conflicts": "Traditional knowledge vs modern science; authenticity vs marketing greenwashing.",
-                "representative_signal": "\"Finally switched to bamboo toothpaste—healthier and eco-friendly!\"",
-                "evolution": "Once niche health-store offerings, herbal oral care products are now mainstreamed through online marketplaces and major retail chains.",
-                "trend_color": "#34D399"
-            },
-            {
-                "title": "Digital Gifting Growth",
-                "story": (
-                    "Digital gifting is reframing oral care as part of a broader culture of wellness exchange. "
-                    "What was once a private personal hygiene product is now positioned as a thoughtful gift, signaling "
-                    "care for health and wellbeing. This shift is driven by digital gifting platforms and consumer interest in "
-                    "expressive, non-traditional wellness gifting—blurring the line between personal use and social gesture."
-                ),
-                "evidence": [
-                    "[Online Gifting Trends](https://ecommercecoffeebreak.com/rise-of-online-gifting-and-how-ecommerce-brands-can-leverage-this-sales-channel/)",
-                    "[Dental Gifting Ideas](https://www.dennishahndds.com/dental-gift-ideas-unique-and-thoughtful-gifts-for-a-healthy-smile/)"
-                ],
-                "impact": "Position oral care products as premium wellness gifts and integrate into curated digital gifting platforms.",
-                "first_seen": "2023-12-01",
-                "last_seen": "2025-08-01",
-                "current_volume": 95000, 
-                "previous_volume": 53000,
-                "volume": 950000,
-                "confidence": 84,
-                "perspectives": {
-                    "Consumers": "See oral care as part of expressing wellbeing and care for others.",
-                    "E-commerce Platforms": "Expand curated gifting categories to wellness products.",
-                    "Brands": "Reframe oral care as part of premium self-care gifting."
-                },
-                "coder_views": "Agents agreed on gifting as symbolic care and wellness signaling; divergent views on commodification of intimacy.",
-                "interpretive_conflict": "Moderate disagreement (0.22) – debate over authenticity of digital gift-giving.",
-                "symbolic_meaning": "Frames wellness products as relational tokens of care and status.",
-                "value_conflicts": "Authenticity of gesture vs commercialization of personal expression.",
-                "representative_signal": "\"I gifted a premium electric toothbrush as a wellness present—it was surprisingly appreciated.\"",
-                "evolution": "Gifting trends have expanded from digital vouchers to curated health and wellness bundles, normalizing oral care as a luxury wellness item.",
-                "trend_color": "#60A5FA"
-            },
-            {
-                "title": "Micro-Influencer Effect",
-                "story": (
-                    "This theme captures a shift from celebrity-driven marketing to authentic, community-level influence. "
-                    "Micro-influencers in oral care have higher engagement because they embody relatability and trust. "
-                    "The emphasis has moved from one-off endorsements to long-term creator partnerships, reflecting a cultural "
-                    "demand for authenticity and sustained relationship-building between consumers and brands."
-                ),
-                "evidence": [
-                    "[Micro-Influencer Impact](https://stackinfluence.com/beauty-brands-that-work-with-micro-influencers/)",
-                    "[Creator Partnerships](https://stackinfluence.com/micro-influencer-tips-brand-partnerships-2025/)"
-                ],
-                "impact": "Develop long-term partnerships with micro-influencers for sustainable brand advocacy.",
-                "first_seen": "2024-07-18",
-                "last_seen": "2025-08-01",
-                "current_volume": 140000, 
-                "previous_volume": 56000,
-                "volume": 1400000,
-                "confidence": 90,
-                "perspectives": {
-                    "Micro-Influencers": "Seek sustainable brand relationships with creative freedom.",
-                    "Consumers": "View micro-creators as authentic and trustworthy sources.",
-                    "Brands": "Shift budgets from celebrity endorsements to micro-influencer ecosystems."
-                },
-                "coder_views": "Agents emphasized authenticity and community-building as core meanings; one agent noted risk of saturation and distrust.",
-                "interpretive_conflict": "Low disagreement (0.18) – consensus on shift from celebrity to relatable creators.",
-                "symbolic_meaning": "Represents decentralization of influence and grassroots trust-building.",
-                "value_conflicts": "Authenticity vs monetization; individuality vs algorithm-driven sameness.",
-                "representative_signal": "\"I trust micro-influencers more than celebrity endorsements—they feel genuine.\"",
-                "evolution": "Influencer marketing has evolved from transaction-based celebrity shoutouts to community-rooted, long-term partnerships with relatable creators.",
-                "trend_color": "#F97316"
-            }
-        ]
+themes = [{
+  "title": "Signature Mix",
+  "subtitle": "Luxury reimagined as a personalised blend, not a fixed brand choice.",
+  "first_seen": "2024-05-15",
+  "last_scan": "2025-08-08",
+  "current_volume": 382000,
+  "previous_volume": 222000,
+  "volume": 3100000,
+  "summary": "Gen Z luxury beauty buyers in India elevate status by curating their own product mix: pairing one or two prestige items with local, ingredient-led favourites. Prestige is expressed through composition and knowledge, not brand uniformity.",
+  "story": "For this market, “luxury” is shifting from owning a complete set to designing a unique personal blend. They combine: Prestige anchors – a signature global luxury product (e.g., Dior lipstick, La Mer cream); Heritage or indie companions – Ayurvedic oils, botanical toners, local niche brands. Why this matters: Status comes from taste, discernment, and ingredient literacy—aligning with India’s cultural preference for quiet sophistication over conspicuous brand devotion.",
+  "proof_points": [
+    "A Bengaluru influencer’s “Monsoon Skin Edit” video paired La Mer cream with a low-cost Ayurvedic toner, gaining 240k views.",
+    "Instagram #LuxuryMixIndia reels often show Dior lipstick alongside Kama Ayurveda oils, framing luxury as ingredient-first.",
+    "In Tokyo, Dior markets full “journey kits” (complete regimens), contrasting India’s mix-and-match approach.",
+    "Indian beauty blogs post step-by-step pairing guides for blending global luxury with local heritage."
+  ],
+  "quotes": [
+    "I keep one splurge, then build the rest around it so it feels mine. — 21, Mumbai, beauty micro-influencer",
+    "Mixing Dior with my Ayurvedic oil makes it feel personal. — 24, Bengaluru, consumer interview"
+  ],
+  "personas": {
+    "Trend-Setter": "Uses mixing to signal creativity and personal style.",
+    "Tradition Lover": "Keeps trusted traditional ingredients alongside prestige pieces.",
+    "Simple Luxury Fan": "Chooses a few high-quality items, rotating them for variety."
+  },
+  "drivers": [
+    "Economic calibration of aspiration – Discretionary incomes of urban youth is rising, but persistent inflation and uneven salary growth keep full luxury regimens out of reach for most. Consumers adapt by integrating selective prestige into otherwise affordable routines.",
+    "Influencer-led normalisation of mixing – On Instagram and YouTube, luxury beauty tutorials in India often feature at least one non-luxury product, framing blending as aspirational.",
+    "Ingredient-driven cultural pride – Ayurveda and botanical actives have moved from niche to mainstream in both domestic and global beauty marketing. Ingredient literacy is now a status marker, reinforced by peer reviews and beauty forums."
+  ],
+  "also_emerging_in": ["Thailand", "Indonesia"],
+  "other_markets": {
+    "Japan": "Theme is brand-loyal prestige; experimentation contained within brand range.",
+    "Brazil": "Theme becomes bold, colourful, and extroverted self-expression; mixing as statement-making.",
+    "UK": "Theme driven by product rotation, often driven by seasonal “hero” launches, rather than ongoing personal curation."
+  },
+  "language": "Frequently used in India, less common elsewhere: “mixable,” “ingredient-first,” “routine swap,” “curation”. Common globally but rare in India: “heritage set,” “complete regimen,” “signature look”.",
+  "evolution": {
+    "early": "People only swapped products within one luxury brand.",
+    "now": "People mix luxury, indie, and traditional brands together.",
+    "next": "Brands may start selling products made to be easily combined — “mix-friendly” luxury."
+  },
+  "signals": [
+    "Prestige products sold in smaller or refillable packs.",
+    "More influencer videos pairing global luxury with local brands.",
+    "Ingredient names used as hashtags or video titles.",
+    "Store displays showing mixed-brand routines.",
+    "Collaborations between prestige and indie beauty brands."
+  ]
+}]
 
 class InsightsRenderer:
     def __init__(self, data: dict):
         self.data = data
 
     def render(self):
-        stories = self.data.get("stories", {})
-        people = self.data.get("people", [])
-        influencers = self.data.get("influencers", {})
-        ideas = self.data.get("ideas", {})
-        context = self.data.get("ai_context", {})
-
-        tabs = st.tabs(["Stories", "People", "Influencers", "Ideas", "Kultie ✨"])
-        with tabs[0]:
-            self._render_stories(stories)
-        with tabs[1]:
-            self._render_people(people)
-        with tabs[2]:
-            self._render_influencers(influencers)
-        with tabs[3]:
-            self._render_ideas(ideas)
-        with tabs[4]:
-            self._render_ask(context)
+        # themes = self.data.get("themes", {})
+        self._render_themes(themes)
 
     def _parse_markdown_links(self, text):
         """Convert markdown-style links [text](url) to HTML <a> tags"""
@@ -424,18 +293,48 @@ class InsightsRenderer:
                 elif label == "🧠 Word Shifts":
                     self._render_evolution(data)
        
-    def _render_themes(self, themes):
-        st.caption("Observable stories and behaviors shaping culture right now • Last scan: 2 hours ago")
-                         
-        def format_number(n):
+    def _pick_color(self, name: str, palette=None):
+        if palette is None:
+            palette = ["#C084FC", "#60A5FA", "#34D399", "#F97316", "#FFD93D", "#FF6B6B", "#8B5CF6", "#22D3EE"]
+        h = int(hashlib.md5(name.encode("utf-8")).hexdigest(), 16)
+        return palette[h % len(palette)]
+
+    def _safe(self, nar, key, default=""):
+        return nar.get(key, default) if nar.get(key) not in (None, "", []) else default
+
+    def _html_list(self, items):
+        if not items:
+            return "<em>No data</em>"
+        return "".join(f"<li>{i}</li>" for i in items)
+
+    def _html_kv_list(self, d):
+        if not d:
+            return "<em>No data</em>"
+        return "".join(f"<li><strong>{k}:</strong> {v}</li>" for k, v in d.items())
+
+    def _derive_maturity_from_scan(self, first_seen, last_scan):
+        # same logic as derive_maturity but with 'last_scan'
+        first_date = datetime.strptime(first_seen, "%Y-%m-%d")
+        last_date = datetime.strptime(last_scan, "%Y-%m-%d")
+        months = (last_date.year - first_date.year) * 12 + (last_date.month - first_date.month)
+        if months < 3:
+            return "Nascent"
+        elif months < 6:
+            return "Emerging"
+        elif months < 18:
+            return "Scaling"
+        else:
+            return "Established"
+
+    def _format_number(self, n):
             """Convert raw integers to readable strings (e.g., 210000 -> 210k)."""
             if n >= 1_000_000:
                 return f"{n/1_000_000:.1f}M"
             if n >= 1_000:
                 return f"{n/1_000:.0f}k"
             return str(n)
-
-        def derive_momentum(current_volume, previous_volume):
+    
+    def _derive_momentum(self, current_volume, previous_volume):
             """
             Derive velocity, growth percentage, and momentum label.
             """
@@ -459,97 +358,134 @@ class InsightsRenderer:
 
             return label, growth_pct, velocity
 
-        def derive_maturity(first_seen, last_seen):
-            """Map theme lifecycle stage based on observation period."""
-            first_date = datetime.strptime(first_seen, "%Y-%m-%d")
-            last_date = datetime.strptime(last_seen, "%Y-%m-%d")
-            months = (last_date.year - first_date.year) * 12 + (last_date.month - first_date.month)
-            if months < 3:
-                return "Nascent"
-            elif months < 6:
-                return "Emerging"
-            elif months < 18:
-                return "Scaling"
-            elif months >= 18:
-                return "Established"
-            # Optionally, you could include Established or Declining logic based on longer observation.
+    def _render_themes(self, themes):
+        theme_tooltips = TOOLTIPS["stories"]["themes"]
 
-        for idx, nar in enumerate(themes2):
-            confidence_pct = int(nar["confidence"])
-            evidence_html = self._parse_markdown_links(nar["evidence"])
-            theme_tooltips = TOOLTIPS["stories"]["themes"]
+        st.caption("Observable stories and behaviors shaping culture right now • Last scan: " +
+                (self._safe(themes[0], "last_scan") if themes else "—"))
 
-            maturity = derive_maturity(nar["first_seen"], nar["last_seen"])
+        for idx, nar in enumerate(themes):
 
-            momentum_label, growth_pct, velocity = derive_momentum(
-                nar["current_volume"], nar["previous_volume"]
-            )
+            # Required numerics (fallback to 0 if missing)
+            current_volume = int(nar.get("current_volume", 0))
+            previous_volume = int(nar.get("previous_volume", 0))
+            total_volume = int(nar.get("volume", 0))
+
+            # Derivations (reuse your existing helpers if already in scope)
+            momentum_label, growth_pct, velocity = self._derive_momentum(current_volume, previous_volume)
             momentum_display = f"{momentum_label} ({growth_pct:+.1f}% MoM)"
-            volume_str = f'{format_number(nar["volume"])} signals'
+            volume_str = f"{self._format_number(total_volume)} signals"
             sign = "+" if velocity > 0 else ""
-            velocity_str = f'{sign}{format_number(velocity)} signals (MoM)'
+            velocity_str = f"{sign}{self._format_number(velocity)} signals (MoM)"
 
-            perspectives_html = "".join(
-                f'<li><strong>{actor}:</strong> {view}</li>'
-                for actor, view in nar.get("perspectives", {}).items()
-            )
+            # Dates & maturity (schema uses first_seen + last_scan)
+            first_seen = self._safe(nar, "first_seen", "—")
+            last_scan = self._safe(nar, "last_scan", "—")
+            maturity = self._derive_maturity_from_scan(first_seen, last_scan) if first_seen != "—" and last_scan != "—" else "—"
+
+            # Visual color (fallback if no trend_color present)
+            trend_color = nar.get("trend_color", self._pick_color(self._safe(nar, "title", "Theme")))
+
+            # Headline block
+            title = self._safe(nar, "title", "Untitled Theme")
+            subtitle = self._safe(nar, "subtitle")
+
+            # Long-form fields
+            summary = self._safe(nar, "summary")
+            story = self._safe(nar, "story")
+
+            # Lists/maps
+            proof_points = nar.get("proof_points", [])
+            quotes = nar.get("quotes", [])
+            personas = nar.get("personas", {})
+            drivers = nar.get("drivers", [])
+            also_emerging_in = nar.get("also_emerging_in", [])
+            other_markets = nar.get("other_markets", {})
+            language = self._safe(nar, "language")
+            evolution = nar.get("evolution", {})
+            signals = nar.get("signals", [])
+
+            # Evidence HTML (use your existing helper to convert [text](url) if any)
+            evidence_html = self._parse_markdown_links(proof_points)
+
+            personas_html = self._html_kv_list(personas)
+            drivers_html = self._html_list(drivers)
+            quotes_html = self._html_list(quotes)
+            also_html = self._html_list(also_emerging_in)
+            other_markets_html = self._html_kv_list(other_markets)
+
+            evolution_html = ""
+            if evolution:
+                evo_rows = []
+                if "early" in evolution: evo_rows.append(f"<li><strong>Early:</strong> {evolution['early']}</li>")
+                if "now" in evolution: evo_rows.append(f"<li><strong>Now:</strong> {evolution['now']}</li>")
+                if "next" in evolution: evo_rows.append(f"<li><strong>Next:</strong> {evolution['next']}</li>")
+                evolution_html = "".join(evo_rows) if evo_rows else "<em>No data</em>"
+            else:
+                evolution_html = "<em>No data</em>"
+
+            signals_html = self._html_list(signals)
 
             card_html = f"""
-            <div style="border: 2px solid {nar['trend_color']}; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <strong style="font-size: 16px;" title="{theme_tooltips['title']}">{nar['title']}</strong>
-                    <b><small style="background-color: {nar['trend_color']}; color: black; padding: 2px 6px; border-radius: 4px; font-size: 14px;"
-                        title="{theme_tooltips['maturity']}">{maturity}</small></b>
+            <div style="border: 2px solid {trend_color}; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px;">
+                    <div style="margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #E0E0E0;">
+                        <div style="border:2px solid {trend_color};padding:4px 10px;border-radius:6px;display:inline-block;">
+                            <strong style="font-size:19px;line-height:1.2;letter-spacing:.2px;" title="{theme_tooltips['title']}">{title}</strong>
+                        </div>
+                        {"<div style='font-size:13px;line-height:1.45;opacity:.85;margin-top:4px;'>" + subtitle + "</div>" if subtitle else ""}
+                    </div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0;">
-                    <div title="{theme_tooltips['momentum']}"><strong>Momentum:</strong> {momentum_display}</div>
-                    <div title="{theme_tooltips['confidence']}"><strong>Confidence:</strong> {confidence_pct}%</div>
-                    <div title="{theme_tooltips['volume']}"><strong>Volume:</strong> {volume_str}</div>
-                    <div title="{theme_tooltips['velocity']}"><strong>Velocity:</strong> {velocity_str}</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;">
+                    <div title="{theme_tooltips['momentum']}"><strong>Growth:</strong> {momentum_display}</div>
+                    <div><strong>Last Scan:</strong> {last_scan}</div>
+                    <div><strong>Also Emerging In:</strong> {", ".join(also_emerging_in) if also_emerging_in else "—"}</div>
+                    <div title="{theme_tooltips['maturity']}"><strong>Stage:</strong> {maturity}</div>
                 </div>
-                <details style="margin-top: 16px; border-radius: 8px; overflow: hidden;">
+                {"<div style='margin-top:12px;padding:8px 10px;border:1px solid #E0E0E0;border-radius:4px;font-size:14px;line-height:1.5;'><strong style='display:block;margin-bottom:4px;font-size:15px;'>Summary</strong>" + summary + "</div>" if summary else ""}
+                <details style="margin-top: 14px; border-radius: 8px; overflow: hidden;">
                     <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>
-                    <div style="padding: 0 16px 16px; border-top: 1px solid; line-height: 1.6;">
+                    <div style="padding: 10px 4px 0; border-top: 1px solid #e5e7eb; line-height: 1.6;">
                         <section style="margin: 12px 0;" title="{theme_tooltips['story']}">
                             <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>
-                            <p style="margin: 0;">{nar['story']}</p>
+                            <p style="margin: 0;">{story if story else "<em>No story provided</em>"}</p>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['perspectives']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Stakeholder Perspectives</h4>
-                            <ul style="margin: 0; padding-left: 16px;">{perspectives_html}</ul>
+                        <section style="margin: 12px 0;" title="Key proof points and examples supporting the theme.">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Proof Points</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{evidence_html if proof_points else "<em>No proof points</em>"}</ul>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['coder_views']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Analyst Perspectives (Multi-Agent)</h4>
-                            <p style="margin: 0;">{nar.get('coder_views','No divergent coder views captured')}</p>
+                        <section style="margin: 12px 0;">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Quotes</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{quotes_html}</ul>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['symbolic_meaning']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Symbolic Meaning</h4>
-                            <p style="margin: 0;">{nar.get('symbolic_meaning','No symbolic/archetypal interpretation provided')}</p>
+                        <section style="margin: 12px 0;" title="{TOOLTIPS['people']['traits']}">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Personas</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{personas_html}</ul>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['value_conflicts']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Value Conflicts</h4>
-                            <p style="margin: 0;">{nar.get('value_conflicts','No explicit value conflicts detected')}</p>
+                        <section style="margin: 12px 0;">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Why Now? (Drivers)</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{drivers_html}</ul>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['representative_signal']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Representative Signal</h4>
-                            <p style="margin: 0;">{nar['representative_signal']} <a href='#'>(source)</a></p>
+                        <section style="margin: 12px 0;">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">How the Theme Differs in Other Markets</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{other_markets_html}</ul>
+                        </section>
+                        <section style="margin: 12px 0;">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Linguistic Fingerprint</h4>
+                            <p style="margin: 0;">{language if language else "<em>No language notes</em>"}</p>
                         </section>
                         <section style="margin: 12px 0;" title="{theme_tooltips['evolution']}">
                             <h4 style="margin: 0 0 4px; font-size: 14px;">Evolution</h4>
-                            <p style="margin: 0;">{nar['evolution']}</p>
+                            <ul style="margin: 0; padding-left: 16px;">{evolution_html}</ul>
                         </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['evidence']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Evidence</h4>
-                            <p style="margin: 0;">{evidence_html}</p>
-                        </section>
-                        <section style="margin: 12px 0;" title="{theme_tooltips['impact']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Strategic Impact</h4>
-                            <p style="margin: 0;">{nar['impact']}</p>
+                        <section style="margin: 12px 0;">
+                            <h4 style="margin: 0 0 4px; font-size: 14px;">Signals to Watch</h4>
+                            <ul style="margin: 0; padding-left: 16px;">{signals_html}</ul>
                         </section>
                         <section style="margin: 12px 0;">
                             <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>
-                            <p style="margin: 0;" title="{theme_tooltips['first_seen']}">First seen: {nar['first_seen']}</p>
-                            <p style="margin: 0;" title="{theme_tooltips['last_seen']}">Last seen: {nar['last_seen']}</p>
+                            <p style="margin: 0;" title="{theme_tooltips['first_seen']}"><strong>First seen:</strong> {first_seen}</p>
+                            <p style="margin: 0;"><strong>Last scan:</strong> {last_scan}</p>
                         </section>
                     </div>
                 </details>
