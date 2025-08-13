@@ -197,16 +197,16 @@ themes = [{
   "previous_volume": 222000,
   "volume": 3100000,
   "summary": "Gen Z luxury beauty buyers in India elevate status by curating their own product mix: pairing one or two prestige items with local, ingredient-led favourites. Prestige is expressed through composition and knowledge, not brand uniformity.",
-  "story": "For this market, “luxury” is shifting from owning a complete set to designing a unique personal blend. They combine: Prestige anchors – a signature global luxury product (e.g., Dior lipstick, La Mer cream); Heritage or indie companions – Ayurvedic oils, botanical toners, local niche brands. Why this matters: Status comes from taste, discernment, and ingredient literacy—aligning with India’s cultural preference for quiet sophistication over conspicuous brand devotion.",
+  "story": "For this market, “luxury” is shifting from owning a complete set to designing a unique personal blend.\n\nThey combine:\n- **Prestige anchors** – a signature global luxury product (e.g., Dior lipstick, La Mer cream)\n- **Heritage or indie companions** – Ayurvedic oils, botanical toners, local niche brands\n\n**Why this matters:** Status comes from taste, discernment, and ingredient literacy — aligning with India’s cultural preference for quiet sophistication over conspicuous brand devotion.",
   "proof_points": [
-    "A Bengaluru influencer’s “Monsoon Skin Edit” video paired La Mer cream with a low-cost Ayurvedic toner, gaining 240k views.",
-    "Instagram #LuxuryMixIndia reels often show Dior lipstick alongside Kama Ayurveda oils, framing luxury as ingredient-first.",
-    "In Tokyo, Dior markets full “journey kits” (complete regimens), contrasting India’s mix-and-match approach.",
-    "Indian beauty blogs post step-by-step pairing guides for blending global luxury with local heritage."
+    "A Bengaluru influencer’s [**Monsoon Skin Edit**](https://example.com) video paired **La Mer cream** with a low-cost *Ayurvedic toner*, gaining **240k views**.",
+    "Instagram [#LuxuryMixIndia](https://instagram.com/explore/tags/LuxuryMixIndia) reels often show **Dior lipstick** alongside **Kama Ayurveda oils**, framing luxury as *ingredient-first*.",
+    "In Tokyo, **Dior** markets full *“journey kits”* (complete regimens), contrasting India’s *mix-and-match* approach.",
+    "Indian beauty blogs post **step-by-step pairing guides** for blending global luxury with local heritage."
   ],
   "quotes": [
-    "I keep one splurge, then build the rest around it so it feels mine. — 21, Mumbai, beauty micro-influencer",
-    "Mixing Dior with my Ayurvedic oil makes it feel personal. — 24, Bengaluru, consumer interview"
+    ["I keep one splurge, then build the rest around it so it feels mine.", "21, Mumbai, beauty micro-influencer"],
+    ["Mixing Dior with my Ayurvedic oil makes it feel personal.", "24, Bengaluru, consumer interview"]
   ],
   "personas": {
     "Trend-Setter": "Uses mixing to signal creativity and personal style.",
@@ -255,43 +255,6 @@ class InsightsRenderer:
             text = "<br>".join(text)
         pattern = r'\[([^\]]+)\]\(([^)]+)\)'
         return re.sub(pattern, r'<a href="\2" target="_blank">\1</a>', text)
-    
-    def _render_stories(self, stories):
-        # 1. Collect only non-empty sections
-        sections = []
-        if stories.get("themes"):
-            sections.append(("📖 Themes", stories["themes"]))
-        if stories.get("dimensions"):
-            sections.append(("🔎 Deep Patterns", stories["dimensions"]))
-        if stories.get("metaphors"):
-            sections.append(("🔗 Shared Signals", stories["metaphors"]))
-        if stories.get("framing"):
-            sections.append(("🌍 Local Lenses", stories["framing"]))
-        if stories.get("evolution"):
-            sections.append(("🧠 Word Shifts", stories["evolution"]))
-
-        # 2. If nothing to show, bail out
-        if not sections:
-            st.write("No story data available.")
-            return
-
-        # 3. Create tabs dynamically
-        labels, datas = zip(*sections)
-        tabs = st.tabs(labels)
-
-        # 4. Dispatch each tab to its renderer
-        for (label, data), tab in zip(sections, tabs):
-            with tab:
-                if label == "📖 Themes":
-                    self._render_themes(data)
-                elif label == "🔎 Deep Patterns":
-                    self._render_dimensions(data)
-                elif label == "🔗 Shared Signals":
-                    self._render_metaphors(data)
-                elif label == "🌍 Local Lenses":
-                    self._render_framing(data)
-                elif label == "🧠 Word Shifts":
-                    self._render_evolution(data)
        
     def _pick_color(self, name: str, palette=None):
         if palette is None:
@@ -358,6 +321,29 @@ class InsightsRenderer:
 
             return label, growth_pct, velocity
 
+    def _quotes_to_html(self, quotes):
+            """
+            quotes: list of strings or (quote, author) tuples
+            returns: HTML string of styled blockquotes
+            """
+            html_parts = []
+            for item in quotes:
+                if isinstance(item, (list, tuple)) and len(item) == 2:
+                    quote_text, author = item
+                    html_parts.append(
+                        f'<blockquote style="margin: 0 0 8px; padding-left: 12px; border-left: 3px solid;">'
+                        f'“{quote_text}”'
+                        f'<footer style="font-size: 0.85em; margin-top: 4px;">— {author}</footer>'
+                        f'</blockquote>'
+                    )
+                else:
+                    html_parts.append(
+                        f'<blockquote style="margin: 0 0 8px; padding-left: 12px; border-left: 3px solid;">'
+                        f'“{item}”'
+                        f'</blockquote>'
+                    )
+            return "\n".join(html_parts)
+    
     def _render_themes(self, themes):
         theme_tooltips = TOOLTIPS["stories"]["themes"]
 
@@ -405,13 +391,10 @@ class InsightsRenderer:
             evolution = nar.get("evolution", {})
             signals = nar.get("signals", [])
 
-            # Evidence HTML (use your existing helper to convert [text](url) if any)
-            evidence_html = self._parse_markdown_links(proof_points)
-
+            evidence_html = self._html_list(proof_points)
             personas_html = self._html_kv_list(personas)
             drivers_html = self._html_list(drivers)
-            quotes_html = self._html_list(quotes)
-            also_html = self._html_list(also_emerging_in)
+            quotes_html = self._quotes_to_html(quotes)
             other_markets_html = self._html_kv_list(other_markets)
 
             evolution_html = ""
@@ -425,6 +408,7 @@ class InsightsRenderer:
                 evolution_html = "<em>No data</em>"
 
             signals_html = self._html_list(signals)
+            title_size = 18
 
             card_html = f"""
             <div style="border: 2px solid {trend_color}; border-radius: 10px; padding: 16px; margin-bottom: 16px;">
@@ -447,45 +431,40 @@ class InsightsRenderer:
                     <summary style="font-weight: bold; cursor: pointer;">Full Details</summary>
                     <div style="padding: 10px 4px 0; border-top: 1px solid #e5e7eb; line-height: 1.6;">
                         <section style="margin: 12px 0;" title="{theme_tooltips['story']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Story</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">What's Happening?</h4>
                             <p style="margin: 0;">{story if story else "<em>No story provided</em>"}</p>
                         </section>
                         <section style="margin: 12px 0;" title="Key proof points and examples supporting the theme.">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Proof Points</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Proof Points: How does the theme show up?</h4>
                             <ul style="margin: 0; padding-left: 16px;">{evidence_html if proof_points else "<em>No proof points</em>"}</ul>
                         </section>
                         <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Quotes</h4>
-                            <ul style="margin: 0; padding-left: 16px;">{quotes_html}</ul>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Quotes: What people are saying?</h4>
+                            {quotes_html}
                         </section>
                         <section style="margin: 12px 0;" title="{TOOLTIPS['people']['traits']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Personas</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Personas: Different types of consumer</h4>
                             <ul style="margin: 0; padding-left: 16px;">{personas_html}</ul>
                         </section>
                         <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Why Now? (Drivers)</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Drivers: Why do they do it and why now?</h4>
                             <ul style="margin: 0; padding-left: 16px;">{drivers_html}</ul>
                         </section>
                         <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">How the Theme Differs in Other Markets</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">How the Theme Differs in Other Markets</h4>
                             <ul style="margin: 0; padding-left: 16px;">{other_markets_html}</ul>
                         </section>
                         <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Linguistic Fingerprint</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Linguistic Fingerprint</h4>
                             <p style="margin: 0;">{language if language else "<em>No language notes</em>"}</p>
                         </section>
                         <section style="margin: 12px 0;" title="{theme_tooltips['evolution']}">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Evolution</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Evolution</h4>
                             <ul style="margin: 0; padding-left: 16px;">{evolution_html}</ul>
                         </section>
                         <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Signals to Watch</h4>
+                            <h4 style="margin: 0 0 4px; font-size: {title_size}px;">Signals to Watch</h4>
                             <ul style="margin: 0; padding-left: 16px;">{signals_html}</ul>
-                        </section>
-                        <section style="margin: 12px 0;">
-                            <h4 style="margin: 0 0 4px; font-size: 14px;">Timeline</h4>
-                            <p style="margin: 0;" title="{theme_tooltips['first_seen']}"><strong>First seen:</strong> {first_seen}</p>
-                            <p style="margin: 0;"><strong>Last scan:</strong> {last_scan}</p>
                         </section>
                     </div>
                 </details>
