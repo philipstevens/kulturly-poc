@@ -153,6 +153,8 @@ class ThemeCard:
         title_size = 20
         
         for i, nar in enumerate(themes):
+            pop_id = f"insight-pop-{i}"
+            btn_id = f"insight-btn-{i}"
             trend_color = nar.get("trend_color", self._pick_color(i))
             title = self._safe(nar, "title", "Untitled Theme")
             subtitle = self._safe(nar, "subtitle")
@@ -192,8 +194,37 @@ class ThemeCard:
             quotes_html = self.md_quotes(quotes)
 
             card_html = f"""
-                <div style="border:2px solid {trend_color};border-radius:10px;padding:16px;margin-bottom:16px;">
-                    
+                <div style="border:2px solid {trend_color};border-radius:10px;padding:16px;margin-bottom:16px;position:relative;">
+
+                    <button id="{btn_id}"
+                            popovertarget="{pop_id}"
+                            aria-haspopup="menu"
+                            title="Actions"
+                            style="anchor-name: --{btn_id}; position:absolute; top:8px; right:8px;
+                                border:1px solid {trend_color}; background:none;
+                                padding:4px 8px; border-radius:6px; cursor:pointer; font-size:14px; line-height:1;">
+                    Edit
+                    </button>
+
+                    <div id="{pop_id}" popover anchor="{btn_id}"
+                        style="position-anchor: --{btn_id};
+                                top: anchor(bottom);
+                                left: anchor(right);
+                                transform: translate(-100%, 6px);  /* align right edges; drop 6px */
+                                margin:0;
+                                padding:8px;
+                                border:2px solid {trend_color};
+                                box-shadow:none;
+                                border-radius:8px;
+                                min-width:220px;">
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Track</button>
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Rename</button>
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Ask Kultie</button>
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Add Example</button>
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Merge</button>
+                        <button type="button" style="display:block;width:100%;text-align:left;background:none;border:none;border-radius:6px;padding:8px 12px;font-size:14px;line-height:1.2;cursor:pointer;">Split</button>
+                    </div>
+
                     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px;">
                         <div style="margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #E0E0E0;">
                             <div style="border:2px solid {trend_color};padding:3px 10px;border-radius:6px;display:inline-flex;align-items:center;line-height:1;margin:1px;margin-bottom:4px;">
