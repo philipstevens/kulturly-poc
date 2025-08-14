@@ -305,13 +305,14 @@ if not st.session_state.global_configured:
 with st.sidebar:
     brand = st.session_state.brand_config["brand_name"]
 
+    # --- Group 1: Market ---
     studies = list(all_data[brand].keys())
     if st.session_state.selected_study not in studies:
         st.session_state.selected_study = studies[0]
     
     current = st.session_state.selected_study
     selection = st.selectbox(
-        "Active Project",
+        "Active Market",
         studies,
         index=studies.index(current)
     )
@@ -319,20 +320,36 @@ with st.sidebar:
         st.session_state.selected_study = selection
         st.rerun()
 
-    if st.button("➕ New Project", use_container_width=True):
-        st.session_state.creating_study = True
+    if st.button("➕ New Market", use_container_width=True):
+        pass
 
+    # Bigger gap between sections
+    st.markdown("<div style='margin-bottom:1.5rem;'></div>", unsafe_allow_html=True)
+
+    # --- Group 2: Brand ---
     brand_options = [b.title() for b in all_data.keys()]
     default_idx = brand_options.index(brand.title()) if brand.title() in brand_options else 0
-    selected_brand = st.selectbox("Active Space", brand_options, index=default_idx)
+    selected_brand = st.selectbox("Active Brand", brand_options, index=default_idx)
 
     if selected_brand.lower() != brand.lower():
         st.session_state.brand_config["brand_name"] = selected_brand.lower()
         st.session_state.selected_study = next(iter(all_data[selected_brand.lower()]))
         st.rerun()
 
-    if st.button("➕ New Space", use_container_width=True):
+    if st.button("➕ New Brand", use_container_width=True):
         pass
+
+    # Bigger gap between sections
+    st.markdown("<div style='margin-bottom:1.5rem;'></div>", unsafe_allow_html=True)
+
+    # --- Group 3: Ask Kultie ---
+    user_query = st.text_area(
+        "Ask Kultie ✨",
+        placeholder="Type your question about markets, brands, or culture..."
+    )
+    if st.button("Send", use_container_width=True):
+        pass
+
 
 # 3. Create Study Form
 if st.session_state.get("creating_study", False):
