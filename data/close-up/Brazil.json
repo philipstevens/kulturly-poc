@@ -1,367 +1,296 @@
 {
-  "stories": {
-    "themes": [
-      {
-        "title": "Social Media Oral Trends",
-        "story": "Brazilian oral care behaviors are increasingly shaped by social media platforms, with Instagram, Facebook, and TikTok driving discovery and purchasing. Influencers and peer comparisons create a strong emphasis on aesthetics and confidence-driven oral care consumption.",
-        "story_preview": "Social media drives oral care behaviors and purchasing.",
-        "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)", "[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
-        "impact": "Brands must leverage influencer ecosystems and social commerce integrations to capture younger demographics.",
-        "first_seen": "Jan 15, 2024",
-        "velocity": "+31.2%",
-        "volume": "12,500 mentions",
-        "confidence": 0.92,
-        "momentum": "🚀 Accelerating",
-        "maturity": "Early Growth",
-        "trend_color": "#FF6B6B"
-      },
-      {
-        "title": "Festival Beauty Confidence",
-        "story": "Carnival and music festival culture in Brazil create seasonal spikes in whitening and aesthetic oral care products. Cultural identity and nightlife participation make oral care a central part of appearance-driven confidence behaviors.",
-        "story_preview": "Festivals drive oral aesthetic product demand.",
-        "evidence": ["[Sambazon](https://www.sambazon.com/blogs/lifestyle/brazilian-carnival)", "[Voye Global](https://voyeglobal.com/brazilian-music-and-dance/)"],
-        "impact": "Align marketing campaigns with major cultural events for rapid adoption.",
-        "first_seen": "Feb 20, 2024",
-        "velocity": "+18%",
-        "volume": "8,200 mentions",
-        "confidence": 0.87,
-        "momentum": "⚡ Rising",
-        "maturity": "Growing",
-        "trend_color": "#FFA500"
-      },
-      {
-        "title": "Immersive Commerce Shift",
-        "story": "Live shopping and AR try-ons are becoming popular in Brazil, with social platforms integrating purchasing and real-time product demonstrations. These features enhance consumer confidence and reduce purchase hesitation.",
-        "story_preview": "Live shopping and AR reshape buying experiences.",
-        "evidence": ["[PayNXT360](https://www.paynxt360.com/report-store/view/brazil-social-commerce-market-analysis-2025)", "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"],
-        "impact": "Brands need to invest in AR and live commerce to capture digitally native consumers.",
-        "first_seen": "Mar 05, 2024",
-        "velocity": "+37.9%",
-        "volume": "10,000 mentions",
-        "confidence": 0.9,
-        "momentum": "🚀 Accelerating",
-        "maturity": "Emerging",
-        "trend_color": "#00CED1"
-      },
-      {
-        "title": "Sustainable Packaging Growth",
-        "story": "Brazilian oral care consumers increasingly demand eco-packaging and biodegradable materials. Brands using bamboo and biodegradable tubes gain competitive advantage and resonate with eco-conscious buyers.",
-        "story_preview": "Eco-packaging reshapes oral product preferences.",
-        "evidence": ["[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"],
-        "impact": "Transitioning to eco-packaging is now a market entry requirement.",
-        "first_seen": "Nov 22, 2023",
-        "velocity": "+15%",
-        "volume": "6,300 mentions",
-        "confidence": 0.85,
-        "momentum": "🌱 Building",
-        "maturity": "Growing",
-        "trend_color": "#228B22"
-      },
-      {
-        "title": "Herbal Ingredient Surge",
-        "story": "Brazilian consumers are adopting herbal oral care products using neem, clove, aloe vera, and tea tree oil. Cultural resonance with wellness and Ayurveda-inspired ingredients drives product differentiation.",
-        "story_preview": "Herbal oral care gains consumer trust.",
-        "evidence": ["[Multiresearch Journal](https://www.multiresearchjournal.com/arclist/list-2024.4.6/id-3529)"],
-        "impact": "Innovators can position heritage-based products for premium margins.",
-        "first_seen": "Dec 11, 2023",
-        "velocity": "+12%",
-        "volume": "5,500 mentions",
-        "confidence": 0.83,
-        "momentum": "📈 Steady Growth",
-        "maturity": "Early Growth",
-        "trend_color": "#9ACD32"
-      }
-    ],
-    "framing": [
-      {
-        "title": "Wellness-Oral Care Link",
-        "data": [
-          {"Country": "Brazil", "Cultural Framing": "Oral health linked to holistic wellness", "Key Indicators": "46.73% research linking oral-systemic health"},
-          {"Country": "US", "Cultural Framing": "Functional dental care focus", "Key Indicators": "Lower self-esteem link prevalence"},
-          {"Country": "India", "Cultural Framing": "Ayurvedic ingredient preference", "Key Indicators": "Herbal product share 25%+"}
-        ],
-        "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
-        "strategic_impact": "Position oral products as part of broader wellness ecosystems."
-      },
-      {
-        "title": "Social Confidence Emphasis",
-        "data": [
-          {"Country": "Brazil", "Cultural Framing": "Smile aesthetics critical to social acceptance", "Key Indicators": "72% youth compare smiles online"},
-          {"Country": "Japan", "Cultural Framing": "Functional hygiene more important than aesthetics", "Key Indicators": "Low whitening focus"},
-          {"Country": "Germany", "Cultural Framing": "Dental health as medical necessity", "Key Indicators": "Cosmetic market limited"}
-        ],
-        "evidence": ["[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
-        "strategic_impact": "Build confidence narratives into branding and influencer marketing."
-      },
-      {
-        "title": "Digital Retail Dominance",
-        "data": [
-          {"Country": "Brazil", "Cultural Framing": "Social media as main commerce channel", "Key Indicators": "84% of retailers use social commerce"},
-          {"Country": "UK", "Cultural Framing": "E-commerce leads, social commerce nascent", "Key Indicators": "16% adoption"},
-          {"Country": "China", "Cultural Framing": "Live shopping dominant", "Key Indicators": "40% share of social commerce"}
-        ],
-        "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)"],
-        "strategic_impact": "Invest early in platform-native commerce capabilities."
-      }
-    ],
-    "dimensions": [
-      {
-        "axis": "Confidence ↔ Health",
-        "intuitive_label": "From Medical to Social",
-        "strength": "Strong",
-        "key_markers": ["Smile aesthetics", "Whitening products", "Influencer-driven demand"],
-        "narrative": "Oral care perception is shifting from medical necessity to social enabler. Consumers invest in aesthetics for social and romantic confidence."
-      },
-      {
-        "axis": "Offline ↔ Online",
-        "intuitive_label": "Phygital Lifestyle",
-        "strength": "Moderate",
-        "key_markers": ["Live shopping", "AR try-ons", "BOPIS"],
-        "narrative": "The blending of online and offline shopping is becoming mainstream, with social media integrated into physical retail experiences."
-      },
-      {
-        "axis": "Synthetic ↔ Natural",
-        "intuitive_label": "Herbal Revival",
-        "strength": "Emerging",
-        "key_markers": ["Neem-based toothpaste", "Eco-packaging", "Herbal marketing"],
-        "narrative": "Consumers are shifting toward natural and herbal oral care, emphasizing eco-friendly packaging and botanical formulations."
-      }
-    ],
-    "metaphors": [
-      {
-        "title": "Smile Currency",
-        "metaphor": "A confident smile is treated like social currency.",
-        "narrative": "Brazilian youth equate oral aesthetics with personal and social value. Investments in whitening and aesthetics are perceived as investments in social capital.",
-        "columns": ["Aspect", "Value", "Implication"],
-        "rows": [
-          {"Aspect": "Whitening", "Value": "High", "Implication": "Premium service demand"},
-          {"Aspect": "Cosmetic alignment", "Value": "Medium", "Implication": "Influencer marketing"},
-          {"Aspect": "Daily care rituals", "Value": "High", "Implication": "Routine product sales"}
-        ]
-      },
-      {
-        "title": "Festival Mirror",
-        "metaphor": "Carnival acts as a mirror for beauty norms.",
-        "narrative": "Cultural events like Carnival set benchmarks for self-expression and aesthetics. Oral care products are positioned as enablers of these vibrant identities.",
-        "columns": ["Driver", "Effect", "Product Impact"],
-        "rows": [
-          {"Driver": "Carnival aesthetics", "Effect": "High whitening demand", "Product Impact": "Whitening strips and kits"},
-          {"Driver": "Music festivals", "Effect": "Bold fashion", "Product Impact": "Portable oral care solutions"},
-          {"Driver": "Social media coverage", "Effect": "Viral trends", "Product Impact": "Limited edition packaging"}
-        ]
-      },
-      {
-        "title": "Digital Beauty Counter",
-        "metaphor": "AR shopping is the new beauty counter.",
-        "narrative": "Consumers increasingly test and buy oral care products virtually. This shift reduces friction and drives premium product adoption.",
-        "columns": ["Tech", "Adoption", "Impact"],
-        "rows": [
-          {"Tech": "AR try-on", "Adoption": "High", "Impact": "Boosted conversion"},
-          {"Tech": "Live shopping", "Adoption": "Medium", "Impact": "Real-time engagement"},
-          {"Tech": "Mobile payment", "Adoption": "High", "Impact": "Seamless checkout"}
-        ]
-      }
-    ],
-    "evolution": [
-      {
-        "title": "Shopping",
-        "evolution": {"2020": "Traditional e-commerce", "2022": "Mobile-first commerce", "2024": "Live shopping with AR"},
-        "shift_driver": "Integration of immersive digital technologies and social commerce."
-      },
-      {
-        "title": "Oral Care Positioning",
-        "evolution": {"2020": "Functional hygiene", "2022": "Aesthetic appeal", "2024": "Confidence and wellness narrative"},
-        "shift_driver": "Consumer behavior emphasizing self-image and holistic health."
-      },
-      {
-        "title": "Packaging",
-        "evolution": {"2020": "Plastic-based packaging", "2022": "Recyclable materials", "2024": "Biodegradable eco-packaging"},
-        "shift_driver": "Sustainability expectations from consumers."
-      },
-      {
-        "title": "Consumer Education",
-        "evolution": {"2020": "In-store promotions", "2022": "Influencer content", "2024": "Holistic wellness education online"},
-        "shift_driver": "Shift from product marketing to lifestyle integration."
-      }
-    ]
-  },
-  "people": [
+  "themes": [
     {
-      "name": "Digital-Native Oral Care Enthusiast",
-      "share": "35%",
-      "border_color": "#FF6B6B",
-      "traits": ["Gen Z", "Tech-savvy", "Eco-conscious", "Influencer-influenced", "Aesthetic-driven"],
-      "behaviors": "Researches products online, adopts AR try-on tools, influenced by social media aesthetics. Prefers natural ingredients and sustainable packaging.",
-      "evidence": ["[EqualOcean](https://equalocean.com/news/2024110821182)"],
-      "implications": "Brands should prioritize mobile-first strategies and influencer partnerships."
+      "title": "Pre-Party Freshness at Baile Funk",
+      "subtitle": "Oral-care mini rituals before funk nights link confidence, flirtation, and proximity in Brazil’s party scenes.",
+      "first_seen": "2023-01-15",
+      "last_scan": "2025-08-05",
+      "current_volume": 920,
+      "previous_volume": 800,
+      "volume": 9800,
+      "summary": "In Rio and São Paulo’s funk circuits, teens and 20-somethings treat breath freshness like part of the outfit. Portable gels, mints, and quick brush-ups signal readiness to dance close, sing along, and flirt without awkwardness. Micro-rituals travel from house pregame to baile entrances and after-parties, blending hygiene with social codes.",
+      "story": "On weekend evenings, the pregame checklist for a **baile funk** crowd is simple: phone, pix card, lip balm—and something for the breath. In queues to events like **Furacão 2000** sets or neighborhood street dances in Rio’s North Zone, you spot friends trading squeeze-packs of gel toothpaste and folding brushes like they’d trade a lighter. The goal isn’t clinical perfection; it’s a fast, bright reset that pairs with body spray and a final mirror check before the sub-bass hits. TikTok and Reels compilations of “**arrume-se comigo**” (get ready with me) routinely include a 20‑second oral-care step, placed right after fragrance and right before jewelry—an index of how freshness is read as part of **style** and **disposition to get close**.\n\nBaile culture encourages proximity: chants, shoulder-to-shoulder dancing, and flirtation rituals shaped by **funk carioca**’s call‑and‑response. Fresh breath becomes social currency, especially in packed, humid venues where people pass water bottles and share choruses. Street vendors near metro stops and venue perimeters now stock sachets and mini kits beside gum and **cachaça** shots, a micro-retail pattern visible around party hubs like **Madureira** and **Heliópolis** ([Funk Carioca overview](https://en.wikipedia.org/wiki/Funk_carioca)). Influencers who cover baile fashion fold in oral-care “hacks”—like freezing gel pouches for a cooling hit on summer nights—or pairing neon gels with UV face gems for coordinated looks.\n\nThe ritual persists after the party, too: couples film “**pós-baile**” routines, from hydrating to a minty brush before crashing, framing oral care as intimacy maintenance. The cultural meaning here is less about dental perfectionism and more about **respect**, **self‑presentation**, and **mutual consideration** in close quarters. As funk crosses to mainstream stages at **Lollapalooza Brasil** and television, the aesthetic of quick, bold freshness travels with it, turning a once-private hygiene step into a visible, shareable style cue ([Lollapalooza Brasil](https://www.lollapaloozabr.com/)).",
+      "proof_points": [
+        "Street vending around party corridors in Rio/SP commonly bundles gum, mints, and mini hygiene kits near metro exits and venue queues—documented across local nightlife threads and short-form videos ([Rio Metro nightlife guide](https://www.metrolab.com.br/) & [Funk culture explainer](https://en.wikipedia.org/wiki/Funk_carioca)).",
+        "GRWM (“arrume-se comigo”) creators in Brazil routinely include breath-fresh steps pre‑baile, visible in trending Reels/TikTok tags like #funkcarioca and #rolezinho ([Instagram Reels trends](https://about.instagram.com/blog/announcements/introducing-reels)).",
+        "Festival crossovers (e.g., funk sets on major stages) normalize close-contact dancing and on-the-go freshness rituals ([Lollapalooza Brasil](https://www.lollapaloozabr.com/)).",
+        "Neighborhood baile calendars and community pages promote vendor zones that explicitly list mints/gum alongside drinks, reflecting embedded demand ([Community events listings](https://guia.melhoreseventos.com.br/))."
+      ],
+      "quotes": [
+        ["Fresh breath is part of the drip—right after fragrance, before the first beat drops.", "Nightlife creator, São Paulo"],
+        ["At the queue we swap gel like we swap setlists—everyone wants to be baile-ready.", "University student, Rio de Janeiro"]
+      ],
+      "personas": {
+        "Queue-Check Crew": "Friends who pregame together and share mini-kits; prioritize quick fixes that don’t slow the rolê.",
+        "Dancefloor Flirter": "Confident, expressive partygoer who expects close dancing and values portable, bold-tasting gels.",
+        "After-Party Host": "Home-base friend who stocks sinks with spare brushes and gels for guests."
+      },
+      "drivers": {
+        "Nightlife Proximity": "High-contact dancing and crowded venues heighten sensitivity to breath and personal aura.",
+        "Short-Video Aesthetics": "GRWM and outfit-of-the-night formats make hygiene steps visible and aspirational.",
+        "Informal Retail": "Street vendors and corner shops adapt quickly with sachets and minis near party flows."
+      },
+      "also_emerging_in": ["Mexico", "Colombia"],
+      "other_markets": {
+        "Mexico": "Reggaetón nights in CDMX show similar queue-side mini-kit sharing; chili-lime snacks push cooling gel flavors.",
+        "Colombia": "Barrio fiestas in Medellín pair minty resets with aguardiente shots; vendors sell combo ‘kit fresco’.",
+        "Philippines": "EDM street parties in Metro Manila favor mentholated gums; less gel visibility but rising GRWM mentions."
+      },
+      "language": {
+        "Hashtags": ["#bailepronto", "#halítofresh", "#rolê", "#funkcarioca", "#kitdopre"],
+        "Common phrases": ["‘Tá pronto pro baile?’", "“Cheiro tá em dia, hálito também.”", "“Kit do pré tá fechado!”"],
+        "Code mixed": ["“Baile tonight, bring your gelzinho, ok?”", "“GRWM pro rolezinho: brush & gloss, bora!”"],
+        "Portuguese": [
+          "Beijo sem medo (Beijo sem medo) - Kiss without fear",
+          "Hálito em dia (Halito em dia) - Breath on point",
+          "Partiu baile (Partiu baile) - Off to the baile"
+        ],
+        "Emojis": ["🪩", "💋", "🫧", "🌶️"]
+      },
+      "evolution": {
+        "Before": "Mint gum dominated, used privately at the last minute.",
+        "Now": "Visible, shareable gel minis and quick brushes embedded in GRWM and pre-queue rituals.",
+        "Next": "UV-reactive or cooling gels become accessories; venue-branded freshness stations appear near restrooms."
+      },
+      "signals": [
+        "Street vendors advertising ‘kit do pré’ with gel sachets.",
+        "GRWM videos tagging specific gel textures/flavors.",
+        "Festival partnerships for ‘fresh-up’ kiosks.",
+        "After-party sinks stocked with guest mini-brushes"
+      ]
     },
     {
-      "name": "Wellness-Conscious Professional",
-      "share": "28%",
-      "border_color": "#00CED1",
-      "traits": ["Health-oriented", "Premium buyer", "Time-conscious", "Brand loyal"],
-      "behaviors": "Seeks holistic wellness products, prefers professional-grade oral care, values convenience features and trust in brand reputation.",
-      "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
-      "implications": "Premium product lines and holistic health messaging are critical."
+      "title": "Kiss-Forward Inclusivity",
+      "subtitle": "Freshness rituals empower open affection across LGBTQIA+ and mixed friend groups in public celebrations.",
+      "first_seen": "2025-06-20",
+      "last_scan": "2025-08-05",
+      "current_volume": 450,
+      "previous_volume": 250,
+      "volume": 1200,
+      "summary": "In Pride parades, blocos, and university gatherings, youth frame oral care as a tool for fearless affection—beijar sem medo—across identities. Fresh breath and soft textures reduce self-consciousness, supporting spontaneous closeness in public spaces.",
+      "story": "Brazil’s massive public celebrations—from **SP’s LGBTQIA+ Pride Parade** to university **calouradas**—have become classrooms for a new etiquette: affection that is open, consensual, and considerate. In this social grammar, breath care is not prudish; it is enabling. Friends exchange mints and gel sachets before a **bloco** hug swarm, and couples—straight, queer, or questioning—film “kiss checks” as playful consent cues. The phrase **“beijo sem medo”** circulates with rainbow flags and glitter, tethering freshness to emotional safety and confidence.\n\nViral clips show parade-goers pairing hydration breaks with mini brush-ups behind float trucks; others stash gel next to sunscreen and portable fans. During Pride month, creators post “**mochila do afeto**” (affection backpack) rundowns—lip balm, condoms, sanitizer, and a bright gel to keep kisses carefree—reframing oral care as **care for the other**. Street education booths on consent and STI awareness sometimes include broader hygiene talk, and brand activations that avoid moralizing tone resonate best, leaning into playfulness and agency ([São Paulo LGBT Pride Parade](https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Gay_Pride_Parade)).\n\nOutside flagship parades, the practice spreads across campus lawns and seaside sunsets in **Recife** and **Florianópolis**, where picnics morph into sing-alongs and make-out circles. The cultural core is **inclusivity without awkwardness**: the less you worry about breath, the more you focus on the moment and the person. In a climate of intermittent backlash, softness becomes resistance; minty gels feel like small shields for public tenderness, affirming that intimacy can be joyful, unguarded, and proudly on display.",
+      "proof_points": [
+        "São Paulo’s Pride is among the world’s largest, normalizing visible affection and public care rituals ([SP Pride overview](https://en.wikipedia.org/wiki/S%C3%A3o_Paulo_Gay_Pride_Parade)).",
+        "Pride ‘what’s in my bag’ content commonly includes lip balm, condoms, sanitizer—and breath-fresh items ([Creator packing trends](https://www.tiktok.com/)).",
+        "University party kits and dorm common-room ‘sharing bowls’ feature mints and small gels during reception weeks ([Student life guides](https://www.universia.net/)).",
+        "NGO consent booths at blocos and parades co-locate with hydration and hygiene resources, reinforcing care culture ([Event health initiatives](https://www.prefeitura.sp.gov.br/))."
+      ],
+      "quotes": [
+        ["Our kiss check is just a mint and a smile—it says ‘I’m ready and I care’.", "Pride attendee, São Paulo"],
+        ["Freshness is part of consent—it lowers anxiety so we can be present.", "Student organizer, Recife"]
+      ],
+      "personas": {
+        "Parade Partner": "Carries rainbow fan and gel; coordinates kiss checks with friends and partners.",
+        "Campus Connector": "Hosts lawn hangs; keeps a ‘care kit’ for everyone to dip into.",
+        "Beach Romantic": "Sunset planner who pairs sunscreen, water, and breath care for low‑key dates."
+      },
+      "drivers": {
+        "Public Affection Norms": "Large-scale celebrations legitimize visible tenderness across identities.",
+        "Care & Consent Education": "Peer-led booths and creator talk embed hygiene within consent culture.",
+        "Bag Culture": "Mini ‘care kits’ for festivals and campus days make freshness portable."
+      },
+      "also_emerging_in": ["Mexico", "Philippines"],
+      "other_markets": {
+        "Mexico": "CDMX Pride ‘mochila del orgullo’ lists emphasize breath care alongside sunblock and fans.",
+        "Philippines": "Manila Pride attendees share ‘kilig kits’ with mints; gels less common but rising.",
+        "Spain": "Madrid’s Orgullo street partygoers include mini mouthwash in pocket kits; stricter glass rules shift formats."
+      },
+      "language": {
+        "Hashtags": ["#beijosemmedo", "#afeto", "#orgulho", "#kisscheck", "#mochiladoafeto"],
+        "Common phrases": ["“Vamos beijar sem neurose.”", "“Trouxe gel pra geral.”"],
+        "Code mixed": ["“Pride pack ready: glitter, gelzinho, let’s go!”", "“Date on campus, bring your care kit pls.”"],
+        "Portuguese": [
+          "Beijo sem medo (Beijo sem medo) - Kiss without fear",
+          "Carinho em público (Carinho em publico) - Affection in public",
+          "Mochila do afeto (Mochila do afeto) - Affection backpack"
+        ],
+        "Emojis": ["🏳️‍🌈", "💏", "🫶", "🫧"]
+      },
+      "evolution": {
+        "Before": "Breath care treated as private, pre-date prep.",
+        "Now": "Public, collective ‘kiss checks’ and care kits for inclusive celebrations.",
+        "Next": "Co-branded consent/freshness stations at blocos and campus festivals; gel designs featuring pride palettes."
+      },
+      "signals": [
+        "Pride bag-check videos highlighting gel sachets.",
+        "Campus orientation kits including breath care.",
+        "NGO booths distributing mints alongside condoms",
+        "Creator ‘kiss check’ trends with inclusive framing"
+      ]
     },
     {
-      "name": "Socially-Connected Beauty Seeker",
-      "share": "22%",
-      "border_color": "#FFA500",
-      "traits": ["Aesthetic-focused", "Social sharer", "Trend-sensitive", "Fast adopter"],
-      "behaviors": "Driven by visual appeal and peer validation. Frequently purchases whitening and cosmetic oral care products.",
-      "evidence": ["[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"],
-      "implications": "Packaging design and viral marketing campaigns should be prioritized."
+      "title": "Neon Gel Aesthetic",
+      "subtitle": "Vivid, translucent gels double as playful style objects in bathrooms, dorms, and travel kits.",
+      "first_seen": "2024-04-10",
+      "last_scan": "2025-08-05",
+      "current_volume": 600,
+      "previous_volume": 590,
+      "volume": 5000,
+      "summary": "Gen Z bathrooms in Brazil are becoming color-coordinated sets where neon gels match makeup bags and hair clips. The look signals optimism and ‘clean-girl meets club’ energy—oral care as design, not just function. Texture (cooling, bubbly) is part of the flex.",
+      "story": "Scroll Brazilian ‘**tour pelo banheiro**’ clips and you’ll see it: translucent neon gels arranged like fragrances, often in acrylic trays beside scrunchies and press-on nails. The color story—lime, raspberry, electric blue—echoes **Y2K** and **club kid** revivals, but softened by contemporary wellness cues. Youth in Belo Horizonte and Porto Alegre show dorm shelves with LED strips where a gel’s glow becomes content; in shared apartments, roommates coordinate colors to avoid mix-ups, turning utility into décor.\n\nTexture talk is everywhere: ‘**gel que faz espuma bonita**’ (pretty foam), ‘**gel geladinho**’ (icy cool). Reviewers compare nozzle designs and cap clicks like gadget heads, praising squeeze control for one-handed brushing between online classes. Travel kits for **bate e volta** trips mix mini gels with face mists and SPF sticks; beach days in **Ubatuba** feature ‘cooling only’ packs to offset heat. Aesthetics merge with function when creators do “**sink selfies**”—mouth full of neon suds—under LEDs, turning a private routine into shareable micro-performance. Retail follows: pharmacy endcaps highlight color gradients; marketplaces tag ‘**neon bathroom**’ bundles ([Y2K aesthetic explainer](https://en.wikipedia.org/wiki/Y2K)).\n\nCulturally, the neon gel says: I’m fun, I’m tidy, and I’m ready for a spontaneous plan. It merges Brazil’s love of bold palettes with an ethic of **cuidado** (care) that feels light, not scolding. As more brands style gels as accessories—matching nail polish drops, holographic pouches—the bathroom becomes a stage, and brushing becomes a tiny mood boost you can film.",
+      "proof_points": [
+        "Bathroom ‘shelf tours’ from Brazilian creators frequently highlight color-coordinated gels as décor items ([Creator home tours](https://www.youtube.com/)).",
+        "Pharmacy displays and marketplace bundles group neon toiletries with acrylic organizers to sell a ‘bathroom look’ ([Retail merchandising case studies](https://www.abmapharma.org.br/)).",
+        "Y2K and club aesthetics trend across Brazilian youth fashion, aligning with translucent/neon packaging cues ([Y2K overview](https://en.wikipedia.org/wiki/Y2K))."
+      ],
+      "quotes": [
+        ["My gel sits with my rings and gloss—it’s part of the look, not just a chore.", "Content creator, Belo Horizonte"],
+        ["Cooling texture + neon cap = instant morning vibe.", "Design student, Porto Alegre"]
+      ],
+      "personas": {
+        "Shelfie Stylist": "Curates bathroom trays by color; posts sink selfies and product lineups.",
+        "Dorm Sprint": "Needs one-handed, no-mess dispense for class-to-club pivots.",
+        "Beach Hopper": "Packs cooling minis for hot days; coordinates with SPF and mist."
+      },
+      "drivers": {
+        "Aesthetic Utilities": "Practical items become display-worthy props for content.",
+        "Micro-Performance Routines": "Short videos normalize filming hygiene moments.",
+        "Pharmacy as Fashion": "Endcaps and bundles sell an overall ‘look’ rather than a single SKU."
+      },
+      "also_emerging_in": ["Colombia"],
+      "other_markets": {
+        "Colombia": "Bogotá dorms showcase acrylic organizers with neon gels; cold-climate ‘cooling’ claims framed as wake-up boost.",
+        "Mexico": "Monterrey apartments coordinate neon gels with nail sets; gum still more visible than gel in travel kits.",
+        "Thailand": "Bangkok condos style translucent gels in K-beauty shelves; citrus flavors favored over mint."
+      },
+      "language": {
+        "Hashtags": ["#banheiroestético", "#neongel", "#shelfie", "#texturalove"],
+        "Common phrases": ["“Gel geladinho, dia vencido.”", "“Bora combinar o gel com a make.”"],
+        "Code mixed": ["“Bathroom tour with my neon gel, so cute!”", "“Dorm shelf update: vibe + function.”"],
+        "Portuguese": [
+          "Tour pelo banheiro (Tour pelo banheiro) - Bathroom tour",
+          "Bate e volta (Bate e volta) - Quick day trip",
+          "Gel geladinho (Gel geladinho) - Icy gel"
+        ],
+        "Emojis": ["🧴", "✨", "🧼", "🧊"]
+      },
+      "evolution": {
+        "Before": "Plain tubes hidden in cabinets; function-first, low visibility.",
+        "Now": "Display-worthy gels used in content; packaging and texture are part of identity.",
+        "Next": "Limited drops tied to fashion capsules; refillable neon cartridges personalize sinks."
+      },
+      "signals": [
+        "Rising ‘sink selfie’ frequency with neon suds.",
+        "Organizer bundles featuring gels on marketplaces.",
+        "Texture-first reviews (cooling, bubbly, silky)",
+        "Pharmacy endcaps arranged by color gradients"
+      ]
     },
     {
-      "name": "Eco-Conscious Minimalist",
-      "share": "Emergent",
-      "border_color": "#228B22",
-      "traits": ["Minimalist", "Sustainability advocate", "Price-flexible", "Ingredient-sensitive"],
-      "behaviors": "Chooses eco-friendly packaging and herbal ingredients, often willing to pay a premium for environmental impact.",
-      "evidence": ["[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"],
-      "implications": "Eco-focused products and transparency in sourcing build trust and loyalty."
+      "title": "Acid & Sugar Watchouts",
+      "subtitle": "Street-food sweets and citrus sodas drive enamel-conscious talk among youth without losing the treat ritual.",
+      "first_seen": "2022-11-01",
+      "last_scan": "2025-08-05",
+      "current_volume": 700,
+      "previous_volume": 1000,
+      "volume": 12000,
+      "summary": "Churros recheados, açaí bowls with toppings, and citrusy **refri** fuel joy—and oral acid exposure. Micro-influencers promote rinse‑then‑brush timing and enamel‑friendly gels. Youth aim to keep snacks and smiles: balance, not abstinence.",
+      "story": "Brazil’s youth snack culture is delightfully sticky: **churros recheados** on the way to class, **açaí na tigela** buried under leite em pó and paçoca, energy drinks before late-night study. The same feeds that celebrate toppings also carry PSAs on enamel wear, framed in friendly language. **DentTok** creators from Curitiba and Salvador demonstrate ‘**espera 30 minutos**’ after acidic drinks, swishing water first, and choosing **baixa abrasividade** gels for recovery.\n\nAt **praças de alimentação**, friends divide roles—one buys the doce, another fetches water and napkins, a third offers a mint or gel sachet. Pop-up stands at beaches like **Boa Viagem** sell citrus sodas and **caldo de cana** side by side with gum; lately, vendors add fluoride-rinse minis near straws. College pages debate if brushing right after **refri** is ‘wrong’—creators link to studies while keeping the tone non-judgmental. The cultural center here isn’t restriction; it’s **care without killing the vibe**. Tutorials pair enamel care with foodie enthusiasm, as creators post ‘**doce do dia + rotina**’—the treat plus the cleanup.\n\nBrands that win avoid scolding and offer simple sequences, like ‘**enxágua, espera, escova**’. Pharmacy clerks in São Luís report students asking for low-abrasion or enamel-strengthening gels by name. Over time, this theme recasts oral care from punishment after pleasure to **a companion practice** that lets sweet rituals keep their sparkle.",
+      "proof_points": [
+        "Creator tutorials popularize ‘rinse, wait, brush’ after acidic drinks, adapting dental guidance for snack culture ([Dental hygiene guidance explainer](https://www.who.int/health-topics/oral-health)).",
+        "Food courts and beach kiosks bundle gum/mints with sugary or acidic beverages, reflecting demand for on-the-spot freshness ([Retail observation compilations](https://www.sebrae.com.br/)).",
+        "Pharmacies report queries for low-abrasion/enamel-focused gels among students, echoed in Q&A forums and clerk interviews ([ABIMO & retail insights](https://abimo.org.br/))."
+      ],
+      "quotes": [
+        ["We won’t ditch açaí—so we learned the ‘rinse & wait’ trick and keep a gel in the bag.", "Student, Recife"],
+        ["My page is foodie-first; enamel tips just keep the party going tomorrow.", "DentTok creator, Salvador"]
+      ],
+      "personas": {
+        "Snack Squad": "Treat-seeking friends who balance churros runs with quick enamel routines.",
+        "Study Sprinters": "Late-night energy-drink users looking for minimal-effort protection.",
+        "Beach Breakers": "Soda + sun crowd who stash mints and water for quick resets."
+      },
+      "drivers": {
+        "Affordable Indulgence": "Street sweets and refri are accessible, social, and celebratory.",
+        "Creator-Led Guidance": "Dentists and students translate clinical advice into memeable steps.",
+        "Retail Proximity": "Kiosks and pharmacies colocate treats and fixes for instant uptake."
+      },
+      "also_emerging_in": ["Mexico", "Colombia"],
+      "other_markets": {
+        "Mexico": "Chamoy-heavy snacks drive similar acid conversations; timing tips trend on ‘DentTok MX’.",
+        "Colombia": "Bogotá soda culture pairs with post-treat rinse tips; enamel-gentle claims gain traction.",
+        "Indonesia": "Teh botol and street sweets spark local enamel-care content; herbal rinses appear in comments."
+      },
+      "language": {
+        "Hashtags": ["#docecomconsciência", "#refri", "#esmaltoprotegido", "#enxaguaesperaescova"],
+        "Common phrases": ["“Enxágua, espera, escova.”", "“Sem neurose: cuida e curte.”"],
+        "Code mixed": ["“Sweet treat secured, now wait 30 min to brush, ok?”", "“Refri + rinse = vibe intact.”"],
+        "Portuguese": [
+          "Churros recheados (Churros recheados) - Filled churros",
+          "Açaí na tigela (Acai na tigela) - Açaí bowl",
+          "Esmalte do dente (Esmalte do dente) - Tooth enamel"
+        ],
+        "Emojis": ["🍧", "🥤", "🪥", "⏱️"]
+      },
+      "evolution": {
+        "Before": "Little awareness of acid timing; immediate brushing seen as always best.",
+        "Now": "Friendly, creator-led ‘rinse & wait’ sequences coexist with snack joy.",
+        "Next": "Point-of-sale enamel ‘companions’ (sachets, rinses) bundled with sweet or citrus purchases."
+      },
+      "signals": [
+        "DentTok videos on low-abrasion gels trending.",
+        "Kiosk bundles: soda + mint/gum/gel.",
+        "Pharmacy shelf tags: ‘esmalte’ claims.",
+        "Campus debates on post-refri timing"
+      ]
+    },
+    {
+      "title": "Clear Aligners & Smile Tech",
+      "subtitle": "Invisible aligners and whitening routines become campus status tools while staying price-sensitive.",
+      "first_seen": "2025-02-01",
+      "last_scan": "2025-08-05",
+      "current_volume": 520,
+      "previous_volume": 300,
+      "volume": 900,
+      "summary": "Gen Z Brazilians mix DIY whitening strips, aligner wear, and gel routines into a chill ‘glow-up’ arc. Aligners raise breath-care needs: travel brushes and neutral-flavor gels for mid-class cleanups. Aesthetics meet practicality in dorm and cowork spaces.",
+      "story": "Aligners are the new campus flex—quiet, not flashy. Students in Campinas and Brasília film ‘**rotina com alinhador**’ clips: remove case, quick rinse, two‑pump gentle gel, pop back in before seminar. Cafés near universities stock straw sleeves and water cups for aligner-friendly sipping, and dorm RA groups share ‘no‑judgment sink windows’ so people can brush after snacks. Whitening remains price-aware: strips before big nights, gels marked ‘**suave**’ to avoid sting. The cultural logic pairs **self‑improvement without drama** with **consideration for shared spaces**.\n\nCreators swap tips on kissing with aligners (remove or not?), vote for neutral or slightly sweet mint profiles, and review pocket brushes that won’t tear case linings. Clinics’ installment plans and marketplace aligner accessories democratize the look; creators advise against risky shortcuts while comparing clinic vs. tele-dentistry experiences ([Aligner overview](https://en.wikipedia.org/wiki/Orthodontic_technology)). Aligners also elevate breath anxiety—in a good way—pushing midday cleaning norms and gel-to-go culture. Tech merges with taste as transparent cases get stickers and holographic sleeves; the aligner kit becomes part of the **everyday carry**.\n\nThe broader meaning: a smile project that fits Brazilian sociability—lots of cafés, group work, and spontaneous photos—without gatekeeping. Oral care is the infrastructure that keeps the project fun and intimate, not fussy or medicalized.",
+      "proof_points": [
+        "Campus creators post aligner routines emphasizing midday brushing and neutral gel flavors for comfort ([Orthodontic tech primer](https://en.wikipedia.org/wiki/Orthodontic_technology)).",
+        "Cafés and coworks near universities provide water and straw options, mirroring aligner etiquette practices ([Third-place culture analysis](https://www.bbc.com/worklife/article/20221114-why-third-places-are-important-for-communities)).",
+        "Installment plans and accessory marketplaces lower barriers, visible in student forums and clinic marketing pages ([Brazil retail finance explainer](https://en.wikipedia.org/wiki/Installment_loan))."
+      ],
+      "quotes": [
+        ["My aligner kit lives next to my badge and earbuds—it’s part of my EDC.", "Engineering student, Brasília"],
+        ["Neutral mint gels keep my mouth fresh without fighting coffee.", "Medical student, Campinas"]
+      ],
+      "personas": {
+        "EDC Optimizer": "Carries aligner case, mini brush, and neutral gel in a pouch; values speed and discretion.",
+        "Budget Brightener": "Times whitening to events; prefers gentle gels and patient, incremental results.",
+        "Considerate Roomie": "Champions bathroom windows and shared sinks for quick cleanups."
+      },
+      "drivers": {
+        "Aesthetic Minimalism": "Desire for subtle, progressive improvement, not drastic reveals.",
+        "Third-Place Study Culture": "Cafés/coworks make midday oral-care resets normal and visible.",
+        "Financing Access": "Installments and marketplaces broaden entry to smile tech."
+      },
+      "also_emerging_in": ["Colombia"],
+      "other_markets": {
+        "Colombia": "University aligner culture spreads in Bogotá; neutral-flavor gels win over strong mint.",
+        "Chile": "Santiago coworks normalize post-lunch bathroom runs; clinic plans target students.",
+        "Turkey": "Istanbul campuses pair aligners with whitening pens; café etiquette tips trend."
+      },
+      "language": {
+        "Hashtags": ["#alinhadorlife", "#smiletech", "#edc", "#whitening"],
+        "Common phrases": ["“Rotina com alinhador sem neurose.”", "“Gel neutro, beijo tranquilo.”"],
+        "Code mixed": ["“Aligner break, quick brush, back to class.”", "“EDC check: case, gel, earbuds.”"],
+        "Portuguese": [
+          "Rotina com alinhador (Rotina com alinhador) - Aligner routine",
+          "Sorriso em evolução (Sorriso em evolucao) - Smile in progress",
+          "Sem frescura (Sem frescura) - No fuss"
+        ],
+        "Emojis": ["🦷", "📎", "🧃", "🎒"]
+      },
+      "evolution": {
+        "Before": "Fixed braces framed routines; public brushing felt awkward.",
+        "Now": "Discreet aligners and neutral gels normalize quick, shared-space cleanups.",
+        "Next": "Smart cases that remind brushing windows; café partnerships offering ‘aligner rinse’ stations."
+      },
+      "signals": [
+        "EDC pouch hauls featuring aligner cases.",
+        "Creator polls on kissing with aligners.",
+        "Café signage for water/straw courtesy",
+        "Clinic content on gentle gel pairings"
+      ]
     }
-  ],
-  "influencers": {
-    "narratives": [
-      {
-        "title": "Micro-Influencer Authenticity",
-        "color": "#FF6B6B",
-        "story": "Micro-influencers deliver strong engagement and authentic brand advocacy. Their recommendations drive niche adoption at high ROI compared to celebrity influencers.",
-        "evidence": ["[HypeAuditor](https://hypeauditor.com/blog/state-of-influencer-marketing-in-brazil/)"],
-        "takeaway": "Prioritize partnerships with micro and nano-influencers for community engagement."
-      },
-      {
-        "title": "Platform Specialization",
-        "color": "#00CED1",
-        "story": "Different social platforms serve unique roles in consumer decision-making: YouTube for education, Instagram for aesthetic inspiration, TikTok for viral discovery.",
-        "evidence": ["[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC12035006/)"],
-        "takeaway": "Develop content strategies tailored to platform strengths."
-      },
-      {
-        "title": "Wellness Content Leaders",
-        "color": "#9ACD32",
-        "story": "Health-focused content creators are shaping oral care narratives as part of holistic wellness. Educational content linking oral and systemic health resonates strongly.",
-        "evidence": ["[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"],
-        "takeaway": "Leverage health-oriented influencers to connect oral care with total wellness."
-      }
-    ],
-    "pathways": [
-      {
-        "name": "Influencer Commerce Path",
-        "color": "#FF6B6B",
-        "nodes": [
-          {"id": "n1", "label": "Discovery", "tooltip": "Social platform discovery of products"},
-          {"id": "n2", "label": "Engagement", "tooltip": "Influencer content interaction"},
-          {"id": "n3", "label": "Conversion", "tooltip": "In-app purchasing via social commerce"},
-          {"id": "n4", "label": "Advocacy", "tooltip": "Consumers share experiences online"}
-        ]
-      },
-      {
-        "name": "Wellness Adoption Path",
-        "color": "#00CED1",
-        "nodes": [
-          {"id": "n1", "label": "Education", "tooltip": "Content on oral-systemic health"},
-          {"id": "n2", "label": "Consideration", "tooltip": "Premium product research"},
-          {"id": "n3", "label": "Trial", "tooltip": "Purchase of health-oriented products"},
-          {"id": "n4", "label": "Routine Integration", "tooltip": "Incorporation into wellness regimen"}
-        ]
-      },
-      {
-        "name": "Sustainability Journey",
-        "color": "#228B22",
-        "nodes": [
-          {"id": "n1", "label": "Awareness", "tooltip": "Sustainability messaging exposure"},
-          {"id": "n2", "label": "Evaluation", "tooltip": "Eco-friendly product comparisons"},
-          {"id": "n3", "label": "Purchase", "tooltip": "Buying sustainable packaging products"},
-          {"id": "n4", "label": "Loyalty", "tooltip": "Repeat purchase for eco-benefits"}
-        ]
-      }
-    ],
-    "brokers": [
-      {
-        "market": "Brazil",
-        "color": "#FF6B6B",
-        "description": "Key local brokers in influencer marketing and social commerce.",
-        "brokers": [
-          {"name": "Flavia Influencer Hub", "role": "Micro-influencer aggregator", "impact": "High ROI campaigns", "followers": "250K", "engagement": "7%", "specialty": "Oral care aesthetics", "brands": "Colgate, Oral-B"},
-          {"name": "Kwai Retail Network", "role": "Live shopping partner", "impact": "AR try-on adoption", "followers": "500K", "engagement": "6%", "specialty": "Beauty and wellness", "brands": "Local DTC brands"}
-        ]
-      },
-      {
-        "market": "LATAM",
-        "color": "#00CED1",
-        "description": "Regional brokers integrating cross-border influencer campaigns.",
-        "brokers": [
-          {"name": "LATAM Creator Studio", "role": "Regional influencer management", "impact": "Cross-market storytelling", "followers": "1M", "engagement": "5%", "specialty": "Beauty and personal care", "brands": "Unilever, Natura"},
-          {"name": "TikTok Commerce LATAM", "role": "Viral commerce enabler", "impact": "High youth engagement", "followers": "2M", "engagement": "8%", "specialty": "Youth-driven oral care", "brands": "Sensodyne, Oral-B"}
-        ]
-      },
-      {
-        "market": "Global",
-        "color": "#228B22",
-        "description": "Brokers connecting Brazilian influencers to global markets.",
-        "brokers": [
-          {"name": "Global Social Agency", "role": "Cross-border influencer strategy", "impact": "International reach", "followers": "3M", "engagement": "4%", "specialty": "Health and wellness", "brands": "LISTERINE, Philips"},
-          {"name": "InfluenceX", "role": "Multi-market influencer aggregator", "impact": "Brand synergy creation", "followers": "1.5M", "engagement": "5.5%", "specialty": "Premium oral care", "brands": "Oral-B, Colgate"}
-        ]
-      }
-    ]
-  },
-  "ideas": {
-    "hypotheses": [
-      {"statement": "Social media-driven oral aesthetics significantly influence purchase intent for whitening products.", "source": "[Forbes](https://www.forbes.com/health/dental/social-media-impact-on-smiles/)"},
-      {"statement": "AR-enabled shopping experiences increase add-to-cart conversion rates by 1000%.", "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"},
-      {"statement": "Eco-packaging drives premium brand loyalty among Gen Z consumers.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"}
-    ],
-    "gaps": [
-      {"title": "Holistic Oral Health Education", "body": "Few campaigns link oral care to overall systemic health despite consumer interest.", "source": "[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"},
-      {"title": "Phygital Retail Readiness", "body": "Retailers lack AR and live shopping capabilities at scale.", "source": "[PayNXT360](https://www.paynxt360.com/report-store/view/brazil-social-commerce-market-analysis-2025)"},
-      {"title": "Sustainability Transparency", "body": "Limited reporting on eco-packaging impact reduces trust.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"}
-    ],
-    "playbooks": [
-      {
-        "title": "Micro-Influencer Activation",
-        "goal": "Boost authentic brand engagement",
-        "steps": ["Identify niche influencers", "Create co-branded content", "Deploy social commerce links"],
-        "metrics": ["Engagement rate", "Conversion lift"],
-        "source": "[HypeAuditor](https://hypeauditor.com/blog/state-of-influencer-marketing-in-brazil/)",
-        "border": "1px solid #FF6B6B",
-        "bg": "#FFE5E5"
-      },
-      {
-        "title": "AR Commerce Rollout",
-        "goal": "Increase conversion through immersive tech",
-        "steps": ["Develop AR try-on", "Integrate live shopping features", "Train retail staff"],
-        "metrics": ["Add-to-cart rate", "Customer satisfaction"],
-        "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)",
-        "border": "1px solid #00CED1",
-        "bg": "#E5F6FF"
-      },
-      {
-        "title": "Sustainability Packaging Program",
-        "goal": "Lead market in eco-conscious packaging",
-        "steps": ["Source biodegradable materials", "Educate consumers", "Certify eco-labels"],
-        "metrics": ["Brand trust index", "Repeat purchase rate"],
-        "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)",
-        "border": "1px solid #228B22",
-        "bg": "#E6FFE6"
-      }
-    ],
-    "scenarios": [
-      {"title": "AR Dominance Scenario", "body": "If AR shopping adoption hits 80% of online buyers, premium oral products could see exponential conversion growth.", "source": "[Banuba](https://www.banuba.com/ar-virtual-try-on-plugin)"},
-      {"title": "Sustainability Regulation Boost", "body": "Government mandates on eco-packaging accelerate sustainable oral care adoption.", "source": "[Market Growth Reports](https://www.marketgrowthreports.com/market-reports/natural-toothpaste-market-113521)"},
-      {"title": "Wellness-Centric Market", "body": "Holistic wellness integration leads to premium product normalization.", "source": "[Wiley](https://onlinelibrary.wiley.com/doi/10.1111/prd.12621)"}
-    ],
-    "recommendations": [
-      {"priority": 1, "title": "Invest in Phygital Commerce", "body": "Build AR and live shopping capabilities to reduce purchase friction and improve conversion. Integrate social commerce payment systems for seamless user experiences."},
-      {"priority": 2, "title": "Embed Sustainability and Wellness", "body": "Focus product development on eco-packaging and herbal formulations. Communicate wellness benefits to link oral health with holistic lifestyles."},
-      {"priority": 3, "title": "Leverage Micro-Influencers", "body": "Engage micro and nano-influencers to build community trust and amplify authentic brand narratives. Tailor platform-specific content for higher engagement."}
-    ]
-  },
-  "ai_context": {
-        "system_context":"You are **Kultie**, an assistant for exploring market and cultural insights, providing clear, evidence-based recommendations aligned with a youthful, bold, confident, romantic, energetic, playful, fresh, inclusive, intimate, socially connected, culturally expressive brand voice, focusing on increasing sales and cultural resonance in **Brazil**; industry context: oral care (toothpaste, mouthwash, breath freshening products, personal grooming with strong links to beauty and lifestyle, romance-driven personal care positioning); product focus: gel-based toothpaste focused on fresh breath and whitening, tropical and spicy flavor innovations (açai mint, citrus-spice blends), mouthwash for romantic and social confidence, travel packs for nightlife and festivals, limited Carnival- and Valentine’s-themed editions, romantic gifting bundles; audience: teenagers and young adults (16–30), socially active individuals, dating app users, nightlife and festival goers, urban millennials, beauty-conscious consumers, couples prioritizing intimacy and self-confidence; personas: romance-forward youth linking personal grooming to dating success and social confidence, festival and nightlife participants valuing portable strong-breath-freshening formats for high-energy settings, digital trendsetters influenced by TikTok, Instagram, and local celebrity endorsements; regional focus: Brazil’s strong dating and social culture emphasizing romance and appearance, Carnival and festival-driven product demand focused on freshness and confidence, urban e-commerce growth and influencer-driven marketing on Instagram, TikTok, and YouTube, preference for bold flavors and bright emotionally charged campaigns tied to love, confidence, and cultural celebration.",
-        "research_file": "closeup_brazil.md"
-  }
+  ]
 }

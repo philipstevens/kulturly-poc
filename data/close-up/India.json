@@ -1,364 +1,286 @@
 {
-  "stories": {
-    "themes": [
-      {
-        "title": "Picture Perfect Smiles",
-        "story": "Bollywood and festive traditions have amplified the pursuit of aesthetic smiles among Indian youth, making white teeth and fresh breath essential for confidence and social acceptance. This has increased the consumption of whitening toothpaste, cosmetic dentistry services, and premium oral care products.",
-        "story_preview": "Bollywood aesthetics drive youth toward perfect smiles.",
-        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/beauty/oral-care-is-the-new-lifestyle-beauty-category/articleshow/97689327.cms)", "[Diva Portal](https://www.diva-portal.org/smash/get/diva2:1442496/FULLTEXT01.pdf)"],
-        "impact": "Brands should focus on cosmetic whitening products and influencer-driven aesthetic campaigns.",
-        "first_seen": "Feb 12, 2023",
-        "velocity": "+65%",
-        "volume": "12,000 mentions",
-        "confidence": 0.9,
-        "momentum": "🚀 Accelerating",
-        "maturity": "Growing",
-        "trend_color": "#FF6B6B"
-      },
-      {
-        "title": "Dating Confidence Revolution",
-        "story": "Indian youth link oral hygiene directly with dating success and nightlife confidence. Poor oral care is perceived to lower self-esteem and social attractiveness, pushing growth in male grooming and dental aesthetics.",
-        "story_preview": "Oral care now drives dating confidence.",
-        "evidence": ["[BriefLands](https://brieflands.com/articles/ijp-144530)", "[1MG](https://www.1mg.com/articles/the-male-grooming-revolution-secrets-to-looking-and-feeling-your-best/)"],
-        "impact": "Create male-focused oral care products and nightlife-themed brand collaborations.",
-        "first_seen": "Aug 20, 2022",
-        "velocity": "+73%",
-        "volume": "8,500 mentions",
-        "confidence": 0.88,
-        "momentum": "⚡ Rising",
-        "maturity": "Early Growth",
-        "trend_color": "#6C63FF"
-      },
-      {
-        "title": "Influencer Driven Oral Care",
-        "story": "Instagram Reels and YouTube Shorts dominate oral care awareness among youth, with influencers sharing engaging dental tips and aesthetic transformations. Brands increasingly invest in influencer partnerships to reach segmented audiences.",
-        "story_preview": "Influencers reshape oral care discovery online.",
-        "evidence": ["[Hobo Video](https://hobo.video/blog/top-10-celeb-dentists-influencers-on-instagram-in-india-in-2024/)", "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"],
-        "impact": "Allocate budget to influencer campaigns and content partnerships to build social trust.",
-        "first_seen": "Jan 5, 2024",
-        "velocity": "+85%",
-        "volume": "15,200 mentions",
-        "confidence": 0.92,
-        "momentum": "🚀 Accelerating",
-        "maturity": "Emerging",
-        "trend_color": "#34A853"
-      },
-      {
-        "title": "Immersive Oral Shopping",
-        "story": "AR try-ons and virtual shopping experiences are shifting how youth purchase oral care products. AR enhances purchase confidence and boosts conversion rates for aesthetic oral products.",
-        "story_preview": "AR elevates oral care shopping confidence.",
-        "evidence": ["[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)", "[Glance AI](https://glance.com/blogs/glanceai/ai-shopping/virtual-try-on-in-india)"],
-        "impact": "Integrate AR-based product trials and virtual assistance for D2C oral care brands.",
-        "first_seen": "Jul 11, 2024",
-        "velocity": "+57%",
-        "volume": "6,300 mentions",
-        "confidence": 0.84,
-        "momentum": "🌱 Building",
-        "maturity": "Early Growth",
-        "trend_color": "#F4B400"
-      },
-      {
-        "title": "Sustainable Oral Wellness",
-        "story": "Consumers increasingly choose ayurvedic and herbal oral care products with eco-friendly packaging. Ayurvedic formulations with neem, clove, and charcoal drive strong trust and adoption.",
-        "story_preview": "Herbal oral care and eco-packaging rise together.",
-        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)", "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"],
-        "impact": "Develop plant-based oral products and biodegradable packaging to meet evolving expectations.",
-        "first_seen": "Mar 14, 2023",
-        "velocity": "+48%",
-        "volume": "7,800 mentions",
-        "confidence": 0.87,
-        "momentum": "📈 Steady Growth",
-        "maturity": "Growing",
-        "trend_color": "#0F9D58"
-      }
-    ],
-    "framing": [
-      {
-        "title": "Social Aesthetic Norms",
-        "data": [
-          {"Country": "India", "Cultural Framing": "Festive and Bollywood-led beauty ideals", "Key Indicators": "High whitening product sales, celebrity endorsements"},
-          {"Country": "Thailand", "Cultural Framing": "Social harmony and personal presentation", "Key Indicators": "Grooming product growth, aesthetic dentistry uptake"}
-        ],
-        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/beauty/oral-care-is-the-new-lifestyle-beauty-category/articleshow/97689327.cms)"],
-        "strategic_impact": "Messaging should integrate cultural aesthetics and peer acceptance."
-      },
-      {
-        "title": "Digital First Behavior",
-        "data": [
-          {"Country": "India", "Cultural Framing": "Heavy social media engagement", "Key Indicators": "Influencer reach, short video adoption"},
-          {"Country": "Singapore", "Cultural Framing": "E-commerce focused oral care purchasing", "Key Indicators": "High online oral product sales"}
-        ],
-        "evidence": ["[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"],
-        "strategic_impact": "Brands must prioritize social content strategies over traditional advertising."
-      },
-      {
-        "title": "Herbal Heritage",
-        "data": [
-          {"Country": "India", "Cultural Framing": "Ayurvedic trust and holistic wellness", "Key Indicators": "Rising demand for natural formulations"},
-          {"Country": "Nepal", "Cultural Framing": "Traditional medicinal value", "Key Indicators": "Preference for herbal products"}
-        ],
-        "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"],
-        "strategic_impact": "Highlight natural ingredients and sustainability in all messaging."
-      }
-    ],
-    "dimensions": [
-      {
-        "axis": "Aesthetics ↔ Functionality",
-        "intuitive_label": "Smile vs Health Priority",
-        "strength": "Strong",
-        "key_markers": ["Cosmetic dentistry growth", "Whitening toothpaste", "Social media image focus"],
-        "narrative": "Consumers balance the desire for a perfect smile with functional oral health. Aesthetic-driven buyers are increasing due to social image pressure."
-      },
-      {
-        "axis": "Traditional ↔ Digital",
-        "intuitive_label": "Heritage vs Digital Discovery",
-        "strength": "Moderate",
-        "key_markers": ["Ayurvedic products", "Influencer marketing", "E-commerce growth"],
-        "narrative": "Traditional oral care wisdom coexists with fast-growing digital purchase journeys. Ayurveda is positioned as modern and authentic."
-      },
-      {
-        "axis": "Price ↔ Premium",
-        "intuitive_label": "Value vs Prestige",
-        "strength": "Emerging",
-        "key_markers": ["Subscription models", "Luxury oral aesthetics", "Male grooming rise"],
-        "narrative": "A premium oral care segment is emerging, driven by young professionals seeking status and confidence through high-quality products."
-      }
-    ],
-    "metaphors": [
-      {
-        "title": "Smile Currency",
-        "metaphor": "A perfect smile is social capital.",
-        "narrative": "Youth treat their smile as a core social asset, investing in products and services that enhance perceived attractiveness and confidence.",
-        "columns": ["Behavior", "Product", "Social Effect"],
-        "rows": [
-          {"Behavior": "Teeth Whitening", "Product": "Whitening toothpaste", "Social Effect": "Increased dating success"},
-          {"Behavior": "Cosmetic Dentistry", "Product": "Aligners", "Social Effect": "Improved job prospects"},
-          {"Behavior": "Breath Freshening", "Product": "Mouthwash", "Social Effect": "Enhanced peer acceptance"}
-        ]
-      },
-      {
-        "title": "Digital Dentist",
-        "metaphor": "Social media acts as the new dental chair.",
-        "narrative": "Platforms like Instagram and YouTube guide oral care decisions, replacing traditional dental consultations for many cosmetic considerations.",
-        "columns": ["Platform", "Influencer Role", "Consumer Outcome"],
-        "rows": [
-          {"Platform": "Instagram Reels", "Influencer Role": "Beauty-focused dentists", "Consumer Outcome": "Trend adoption"},
-          {"Platform": "YouTube Shorts", "Influencer Role": "Education & reviews", "Consumer Outcome": "Informed purchase"},
-          {"Platform": "WhatsApp", "Influencer Role": "Community peer sharing", "Consumer Outcome": "Behavior change"}
-        ]
-      },
-      {
-        "title": "Green Smile Movement",
-        "metaphor": "Eco-conscious smiles are the new badge of honor.",
-        "narrative": "Youth link sustainability with self-care, choosing herbal products and eco-friendly packaging as part of their identity.",
-        "columns": ["Product Type", "Eco Element", "Impact"],
-        "rows": [
-          {"Product Type": "Toothpaste Tablets", "Eco Element": "Biodegradable packaging", "Impact": "Reduced waste"},
-          {"Product Type": "Charcoal Toothpaste", "Eco Element": "Natural ingredients", "Impact": "Chemical-free choice"},
-          {"Product Type": "Bamboo Brushes", "Eco Element": "Compostable handle", "Impact": "Plastic reduction"}
-        ]
-      }
-    ],
-    "evolution": [
-      {
-        "title": "Shopping",
-        "evolution": {"2020": "Offline pharmacy dominated", "2022": "Hybrid online-offline growth", "2024": "E-commerce and D2C heavy"},
-        "shift_driver": "E-commerce penetration and convenience adoption"
-      },
-      {
-        "title": "Marketing",
-        "evolution": {"2020": "TV ads and celebrity endorsements", "2022": "Influencer partnerships", "2024": "UGC and micro-celebrity focus"},
-        "shift_driver": "Rise of social media as primary information source"
-      },
-      {
-        "title": "Product Formulation",
-        "evolution": {"2020": "Fluoride-based toothpaste", "2022": "Herbal blends", "2024": "Eco-friendly and specialty solutions"},
-        "shift_driver": "Consumer preference for natural and sustainable products"
-      },
-      {
-        "title": "Wellness Integration",
-        "evolution": {"2020": "Hygiene focus", "2022": "Aesthetic confidence link", "2024": "Holistic health integration"},
-        "shift_driver": "Shift toward preventive and holistic health"
-      }
-    ]
-  },
-  "people": [
+  "themes": [
     {
-      "name": "Gen Z Digital Natives",
-      "share": "35%",
-      "border_color": "#FF6F61",
-      "traits": ["Social media heavy", "Trend-sensitive", "Eco-conscious", "Impulse buyers", "Fast decision cycles"],
-      "behaviors": "They discover products on Instagram and TikTok, rely on influencers, and prefer quick purchasing. Sustainability drives their choice of herbal products.",
-      "evidence": ["[Market-Xcel](https://www.market-xcel.com/blogs/top-consumer-buying-behaviour-trends-in-india-for-2025)"],
-      "implications": "Use short-form content and sustainability claims to capture attention."
+      "title": "Hostel Sink Status",
+      "subtitle": "Shared bathrooms become stages for self-expression, with flashy gels signaling taste, hygiene and micro-prestige.",
+      "first_seen": "2023-03-10",
+      "last_scan": "2025-08-11",
+      "current_volume": 1575,
+      "previous_volume": 1500,
+      "volume": 13250,
+      "summary": "In Indian PGs and hostels, the bathroom sink has become a visible canvas where bold gels and accessories signal taste, confidence, and belonging.",
+      "story": "In PGs and [hostel accommodations](https://en.wikipedia.org/wiki/Paying_guest) across India, the bathroom sink has quietly evolved into a public stage. In spaces where shelves are open and counters shared, every tube, dispenser, and accessory becomes part of a resident’s social signature. Clear, neon, or bead-infused gels are not only functional—they are aesthetic choices that photograph well for [dorm tours](https://www.instagram.com/explore/tags/dormtour/) and [mirror selfies](https://www.instagram.com/explore/tags/mirrorselfie/).\n\nThe presence of [refill clubs](https://www.instagram.com/explore/tags/refillclub/), mini-tube swaps, and [lockable caddies](https://www.amazon.in/) has shifted oral care from a purely private act to a visible, shared ritual. During high-social seasons like [college fests](https://en.wikipedia.org/wiki/College_festivals_in_India) and admission weeks, residents coordinate ‘sink makeovers’ to align with personal style or group identity, often tagging [#SinkSetup](https://www.instagram.com/explore/tags/sinksetup/) and [#ShelfieIndia](https://www.instagram.com/explore/tags/shelfieindia/).\n\nThis visibility transforms the sink into a form of low-effort personal branding. A well-chosen gel can signal creativity, hygiene discipline, or generosity if it’s part of a shared refill routine. Over time, the sink has become a curated space where practical utility meets performative belonging—blending the everyday with a subtle, playful competition for aesthetic and social recognition.",
+      "proof_points": [
+        "Dorm tour [reels](https://www.instagram.com/reels/) featuring color-coordinated ‘sink setups’ trend during admission seasons in [Pune](https://en.wikipedia.org/wiki/Pune), [Delhi-NCR](https://en.wikipedia.org/wiki/National_Capital_Region_(India)) and [Bengaluru](https://en.wikipedia.org/wiki/Bangalore); creators tag [#HostelHaul](https://www.instagram.com/explore/tags/hostelhaul/) and [#Shelfie](https://www.instagram.com/explore/tags/shelfie/).",
+        "[Campus flea markets](https://en.wikipedia.org/wiki/Flea_market) and fests sell clip-on caddies and travel-sized gel packs positioned as ‘roomie-share friendly’.",
+        "[Online PG groups](https://www.facebook.com/) discuss ‘toothpaste theft’ and recommend lockable organizers and name-labeled dispensers.",
+        "Influencer [room-makeover](https://www.instagram.com/explore/tags/roommakeover/) content includes ‘oral care shelf glow-ups’ with transparent gels as statement items."
+      ],
+      "quotes": [
+        ["If it’s on the sink, it has to look cool—my roommates judge packaging first, scent second.", "Student, Bengaluru"],
+        ["We buy one jumbo refill for three people and keep our own smaller tubes for guests.", "PG resident, Pune"]
+      ],
+      "personas": {
+        "Shelf Curator": "Design-obsessed student who coordinates gel color with room aesthetic and posts dorm reels.",
+        "Practical Splitter": "Budget-focused PG resident who organizes refill pools and labels shared items.",
+        "Fest Socialite": "Joins college events; seeks products that photograph well in mirror selfies and GRWMs."
+      },
+      "drivers": {
+        "Space Visibility": "Open shelving in PGs/hostels makes personal care items publicly viewable.",
+        "Creator Culture": "Dorm content and GRWM formats reward visually striking products.",
+        "Value-Sharing": "Bulk-buy economics and refill behaviors normalize visible, communal storage."
+      },
+      "also_emerging_in": ["Indonesia", "Philippines"],
+      "other_markets": {
+        "Indonesia": "Boarding houses highlight pastel dispensers; gels used as décor during kost room tours.",
+        "Philippines": "Dorm TikToks favor scented variants; less emphasis on lockable storage, more on matching sets.",
+        "Thailand": "Student condos feature open vanity displays; color-matched oral care trends on local Instagram."
+      },
+      "language": {
+        "Hashtags": ["#HostelHaul", "#ShelfieIndia", "#SinkSetup"],
+        "Common phrases": ["PG hacks", "roomie-share", "aesthetic gel", "shelf glow-up"],
+        "Code mixed": ["Roomie-share friendly gel, bhai!", "Sink pe style hona chahiye"],
+        "हिंदी (Hindi)": "सिंक सेटअप गोल्स (sink setup goals) — Sink setup goals",
+        "ಕನ್ನಡ (Kannada)": "ಸಿಂಕ್ ಮೇಲೆ show ಆಗ್ಬೇಕು (sink mele show aagbēku) — Should show on the sink",
+        "Emojis": ["🧴", "✨", "🪞"]
+      },
+      "evolution": {
+        "Before": "Oral care stored out of sight; plain white pastes dominated.",
+        "Now": "Translucent or bead-infused gels displayed as taste and status signals.",
+        "Next": "Modular dispensers with QR-refills; limited-edition campus collabs as collectible décor."
+      },
+      "signals": [
+        "Rise in lockable, labeled caddies on marketplace apps.",
+        "Reels that tag #SinkSetup or #PGhacks mentioning gel aesthetics.",
+        "Fest booth ‘shelf styling’ contests featuring oral care props.",
+        "Bulk refill bags promoted in student neighborhoods."
+      ]
     },
     {
-      "name": "Millennial Experience Seekers",
-      "share": "40%",
-      "border_color": "#34A853",
-      "traits": ["Value loyalty", "Experience-driven", "Holistic wellness focus", "Review dependent"],
-      "behaviors": "They seek premium experiences and personalized solutions, and rely on peer reviews for validation before purchase.",
-      "evidence": ["[Project Guru](https://www.projectguru.in/factors-affecting-the-online-buying-behaviour-of-millennials-and-gen-z/)"],
-      "implications": "Focus on brand loyalty programs and wellness-aligned messaging."
+      "title": "Mint-First Dating Rituals",
+      "subtitle": "Pre-date freshness hacks become a quiet ritual for India’s app-first youth.",
+      "first_seen": "2023-11-15",
+      "last_scan": "2025-08-12",
+      "current_volume": 4200,
+      "previous_volume": 3800,
+      "volume": 26100,
+      "summary": "Across metros and large tier-2 cities, young Indians fold quick oral-care routines into the moments before first meets arranged on dating apps. ‘Fresh breath’ is framed as a green flag and a courtesy to the other person, especially for café, metro, and college-campus meetups. The behavior is strongest among 18–26 year olds who juggle classes, internships, and late transport, valuing portable, fast solutions.",
+      "story": "You can see it in the tiny pauses before a café entrance in Koramangala, Andheri West, or Sector 29: a breath strip, a travel-size gel brush in a coworking restroom, a sip-and-swirl with a pocket rinse. Since the pandemic eased, urban youth in India have returned to dense social schedules—degree classes by day, gigs and soft dates by night—where proximity is constant. Dating is organized on apps and confirmed on WhatsApp; the pre-meet routine has become a small choreography of self-respect and mutual care.\n\nPlatforms reinforce the script. ‘Green flags’ content—often stitched on Reels—lists clean nails, subtle fragrance, and fresh breath. Influencers talk about ‘first five minutes confidence’, where you want to focus on the person, not your own self-consciousness. Trend roundups like Tinder’s India “Year in Swipe” recap underscore daytime dating and low-stakes hangs, where a quick freshen-up is part of the micro-ritual before walking in ([Tinder Newsroom](https://www.tinderpressroom.com/), India roundups). Meanwhile, Bumble India’s insights spotlight young daters seeking clarity and kindness—a vibe that extends to low-drama, high-consideration grooming ([Bumble India blog](https://bumble.com/en-in/the-buzz)).\n\nThe setting matters: scooters and metros, hostel bathrooms, mall restrooms between movie and dessert. Most youth can’t carry elaborate kits; they optimize for tiny, vivid products that feel expressive rather than clinical. The rise of café culture and board-game bars in places like Indiranagar and Lower Parel compresses distances; you’re close enough to notice the chai on each other’s breath, so the ritual sticks. For inclusive communities—queer-friendly cafés, poetry slams, K-culture clubs—freshness signals respect for boundaries and readiness for conversation. In a crowded country, it’s a quiet social contract: show up present, and show up fresh.",
+      "proof_points": [
+        "Dating trend roundups highlight casual, daytime meets and ‘low-pressure’ first dates in India ([Tinder Newsroom](https://www.tinderpressroom.com/)).",
+        "Bumble India publishes guidance on kind, considerate dating behaviors that map to grooming ‘green flags’ ([Bumble India – The Buzz](https://bumble.com/en-in/the-buzz)).",
+        "Café-led socializing expands in urban neighborhoods like Koramangala, Indiranagar, Andheri and Bandra, creating short-distance, close-proximity dates ([The Hindu – Café culture features](https://www.thehindu.com/)).",
+        "Reels/TikTok-style ‘green flag’ compilations popularize breath and grooming checks among Indian Gen Z creators ([Instagram Creators India](https://about.instagram.com/creators))."
+      ],
+      "quotes": [
+        ["Five minutes in the washroom with my mini brush and I stop thinking about my breath—then I can actually enjoy the date.", "Student, Bengaluru"],
+        ["Fresh breath is like consent for closeness—you’re telling the other person you care about their comfort too.", "Queer café organizer, Mumbai"]
+      ],
+      "personas": {
+        "Hostel Hopper": "Lives in PG/hostel, moves between classes, labs and cafés; relies on travel minis and breath strips.",
+        "Metro Multitasker": "Commutes long distances; freshens up between office and early-evening dates.",
+        "Soft-Date Seeker": "Prefers short, low-pressure meets; uses freshness as a confidence reset."
+      },
+      "drivers": {
+        "App-Led Socializing": "Dating apps normalize frequent first meets in public, raising the premium on first-impression hygiene.",
+        "Micro-Mobility": "Scooters, metros and walkable high streets enable spontaneous plans, requiring portable grooming.",
+        "Green Flag Discourse": "Social content reframes cleanliness and courtesy as attractive traits."
+      },
+      "also_emerging_in": ["Philippines", "Indonesia"],
+      "other_markets": {
+        "Philippines": "Similar café-first dates and mall culture drive pocket-size freshness products; Catholic values frame ‘courtesy grooming’.",
+        "Indonesia": "Modest mingling and mall meets encourage discreet, quick-fix breath care tied to politeness norms.",
+        "Thailand": "Night-market and café scenes boost on-the-go mouth fresheners, but with sweeter flavor profiles.",
+        "UAE": "Car-centric, climate-controlled meets favor mints and premium rinses stashed in glove compartments."
+      },
+      "language": {
+        "Hashtags": ["#DateReady", "#GreenFlag", "#HostelHacks", "#FirstFiveMinutes"],
+        "Common phrases": ["Fresh start, fresh talk", "No chai-breath today yaar", "Confidence = clean breath"],
+        "Code mixed": ["Aaj vibe full on fresh lag rahi hai", "Brush kar liya, now let’s go meet-cute"],
+        "हिंदी (Hindi)": "ताज़ा साँस, साफ़ इरादा (taaza saans, saaf iraada) — Fresh breath, clear intent",
+        "தமிழ் (Tamil)": "புதிய மூச்சு, புதிய நம்பிக்கை (pudhiya moochu, pudhiya nambikkai) — New breath, new confidence",
+        "বাংলা (Bengali)": "টাটকা নিশ্বাস, দারুণ প্রথম ইমপ্রেশন (tatka nishshash, darun prothom impression) — Fresh breath, great first impression",
+        "Emojis": ["🫶", "🫧", "🚇", "🪥"]
+      },
+      "evolution": {
+        "Before": "Occasional mint kept for exams or interviews; grooming seen as event-based.",
+        "Now": "Pre-date micro-rituals tied to café and metro culture; freshness as ‘green flag’.",
+        "Next": "Ambient freshness layers—sugar-free chews, low-alcohol rinses, and scented gels that match personal style."
+      },
+      "signals": [
+        "Spike in reels showing ‘five-minute restroom routine’.",
+        "Higher search for ‘travel toothpaste gel’ and ‘breath strips’ in metro postcodes.",
+        "Dating app prompts about ‘green flags’ mentioning hygiene/freshness.",
+        "Cafés adding mouthwash in restrooms during festivals/weekends."
+      ]
+    },
+     {
+      "title": "Masala Breath Anxiety & Tea-Stain Fixation",
+      "subtitle": "Urban professionals develop micro-fixations on strong spice breath and tea stains as signs of social carelessness.",
+      "first_seen": "2024-02-05",
+      "last_scan": "2025-08-13",
+      "current_volume": 3100,
+      "previous_volume": 2050,
+      "volume": 18400,
+      "summary": "In India’s urban workplaces, anxiety about strong spice breath and tea-stained teeth is rising as more meetings happen face-to-face in compact spaces. This is shaping personal routines and even beverage choices during work hours.",
+      "story": "Post-pandemic, hybrid offices have brought back dense, high-contact environments — from startup huddles in Indiranagar cafés to glass-walled meeting rooms in Gurugram. The classic Indian workday chai break, often multiple times a day, leaves visible tannin stains and lingering masala notes. These were once invisible within the social rhythm but are now being re-evaluated in light of close-quarters networking, speed interviews, and global client exposure.\n\nMany younger professionals, especially in customer-facing and media roles, are treating breath and stain management as part of their ‘meeting readiness’. The shift is visible in LinkedIn posts discussing personal grooming as career etiquette and in the popularity of discreet stain-removal pens, whitening gels, and portable rinses in corporate gift hampers. Influencers in the ‘corporate creator’ niche produce “bag dump” videos revealing stain wipes next to chargers and AirPods. Even tea brands have introduced ‘low-stain’ variants, positioning them as metro-lifestyle friendly.\n\nIn Bangalore’s co-working scene, it’s common to see someone swirl a quick rinse after chai, especially before joining a video booth. Online, Reddit India threads dissect ‘masala breath paranoia’ with humorous resignation, sharing hacks like cardamom pods or mid-meeting mints. The trend is not about abandoning spice or chai — these remain cultural anchors — but about subtly managing their after-effects in an era where a close conversation can be the first impression.",
+      "proof_points": [
+        "Tea brands like [Tata Tea](https://www.tatatea.com/) experimenting with ‘low-stain’ blends marketed to metro professionals.",
+        "LinkedIn posts on ‘meeting-ready grooming’ include portable rinses and teeth wipes as essentials.",
+        "[Corporate gifting catalogs](https://www.fnp.com/) feature whitening kits alongside diaries and mugs.",
+        "Reddit India threads on ‘masala breath’ share humorous but detailed freshness hacks."
+      ],
+      "quotes": [
+        ["After three client meetings in one day, you start smelling your own lunch and chai… that’s when I started carrying mini rinse bottles.", "Brand manager, Mumbai"],
+        ["My chai isn’t going anywhere — I just follow it with a mint now.", "Tech lead, Bengaluru"]
+      ],
+      "personas": {
+        "Pitch-Ready Pro": "Keeps a grooming kit in the laptop bag to reset between meetings.",
+        "Hybrid Hustler": "Splits week between home and co-working spaces, adapts routines accordingly.",
+        "Conscious Chai Lover": "Keeps chai ritual but uses low-stain or herbal blends."
+      },
+      "drivers": {
+        "Hybrid Work": "Increased frequency of in-person but short-duration meetings.",
+        "Corporate Grooming Culture": "Professionalism reframed to include oral freshness.",
+        "Tea & Spice Heritage": "Deeply rooted consumption habits adapting to modern presentation norms."
+      },
+      "also_emerging_in": ["Singapore", "Malaysia"],
+      "other_markets": {
+        "Singapore": "Kopi breath and curry spices prompt similar quick-freshness routines in CBD workers.",
+        "Malaysia": "Teh tarik drinkers use tongue scrapers and portable mints before formal meetings.",
+        "UAE": "Arabic coffee and spice-heavy snacks inspire discreet mid-meeting refresh habits."
+      },
+      "language": {
+        "Hashtags": ["#MeetingReady", "#ChaiBreakHack", "#SpiceSmart"],
+        "Common phrases": ["chai breath", "stain check", "mint before meet"],
+        "Code mixed": ["Chai ke baad ek mint zaroor", "Masala breath not welcome in pitch room"],
+        "हिंदी (Hindi)": "दाग़-रहित मुस्कान (daag-rahit muskaan) — Stain-free smile",
+        "മലയാളം (Malayalam)": "പുളിമുഖം വേണ്ട (pulimukham venda) — No sour breath",
+        "Emojis": ["☕", "🫚", "🦷", "🫗"]
+      },
+      "evolution": {
+        "Before": "Chai breaks were socially neutral, no active management of breath/stains.",
+        "Now": "Subtle anxiety and proactive routines for freshness before meetings.",
+        "Next": "Office pantries offering mouthwash and low-stain chai blends as standard."
+      },
+      "signals": [
+        "Growth in whitening pen sales in corporate hubs.",
+        "Office washrooms stocking disposable mouth rinses.",
+        "Content on LinkedIn about grooming kits for professionals.",
+        "Tea ads mentioning stain reduction."
+      ]
     },
     {
-      "name": "Urban Professionals",
-      "share": "Emergent",
-      "border_color": "#4285F4",
-      "traits": ["Tech-savvy", "Premium product adopters", "Subscription model users", "Aesthetic-driven"],
-      "behaviors": "They adopt electric toothbrushes and subscription products, and seek high-quality cosmetic dental solutions.",
-      "evidence": ["[IMARC](https://www.imarcgroup.com/india-oral-care-market)"],
-      "implications": "Promote premium, technology-enabled offerings."
+      "title": "K-Gloss Smile Aesthetics",
+      "subtitle": "K-beauty inspired glossy lips and teeth aesthetics spill over into India’s urban youth grooming culture.",
+      "first_seen": "2024-06-22",
+      "last_scan": "2025-08-12",
+      "current_volume": 1450,
+      "previous_volume": 900,
+      "volume": 8700,
+      "summary": "Among Indian K-pop and K-drama fans, a distinct ‘K-gloss smile’ look — clear, hydrated lips and reflective teeth — is becoming a niche but aspirational grooming standard.",
+      "story": "From Kolkata fan cafés to Delhi K-culture festivals, Indian Gen Z’s K-wave devotion has expanded beyond music and drama into beauty rituals. The ‘K-gloss smile’ — perfected by idols and actors — features even, bright teeth paired with moist, reflective lips. It’s seen as friendly yet aspirational, approachable but polished.\n\nOn Instagram, Indian fan accounts post side-by-sides of idols and their own recreated looks, often tagging lip oils, whitening gels, and high-gloss mouth tints. Beauty YouTubers in Mumbai and Chennai produce ‘Get Ready With Me’ videos combining oral care steps with lip routines. Korean beauty brands entering India, like [Innisfree](https://www.innisfree.com/) and [Laneige](https://www.laneige.com/), promote lip masks and glosses alongside teeth-whitening strips in curated kits.\n\nOffline, themed cafés in cities like Bengaluru stock K-beauty-inspired grooming accessories at merch counters. There’s a crossover with dating culture too: fans say the glossy look photographs better for profile pictures and date nights. Though niche, the look’s influence is growing among youth who treat grooming as part of fandom participation — a way of signaling alignment with a global, pop-driven aesthetic.",
+      "proof_points": [
+        "K-culture festivals in Delhi, Bengaluru selling lip and teeth-care kits alongside merch.",
+        "Indian influencers tagging K-beauty lip oils and whitening gels in GRWM videos.",
+        "[Nykaa](https://www.nykaa.com/) reporting growth in Korean oral-lip care categories.",
+        "Cafés hosting K-pop nights selling themed beauty accessories."
+      ],
+      "quotes": [
+        ["When I watch dramas, I notice the teeth and lips — it’s like a glow filter in real life.", "Student, Kolkata"],
+        ["My bias smiles like that, so now I do the whole gloss and gel routine before meetups.", "Fan, Chennai"]
+      ],
+      "personas": {
+        "Fandom Stylist": "Uses beauty routines to replicate idol aesthetics for events and online posts.",
+        "Gloss Minimalist": "Focuses on hydrated lips and bright teeth as a low-effort polish.",
+        "Event-Ready Fan": "Preps for K-culture meets with oral-lip kits."
+      },
+      "drivers": {
+        "K-wave Influence": "K-pop and K-drama aesthetics driving new grooming norms.",
+        "Social Media Visuality": "High-res selfies and fan content push detail-focused looks.",
+        "Cross-Cultural Retail": "K-beauty brands entering Indian e-commerce and events."
+      },
+      "also_emerging_in": ["Philippines", "Vietnam"],
+      "other_markets": {
+        "Philippines": "K-wave fandoms normalize lip and teeth care before fan meets.",
+        "Vietnam": "Young fans adopt gloss-smile look for café selfies.",
+        "Thailand": "Idol look trends influence whitening gel sales."
+      },
+      "language": {
+        "Hashtags": ["#KGlossSmile", "#BiasLook", "#KDramaGlow"],
+        "Common phrases": ["idol smile", "gloss goals", "bias look"],
+        "Code mixed": ["Bias jaisa smile chahiye", "Gloss laga ke stage-ready"],
+        "हिंदी (Hindi)": "चमकती मुस्कान (chamakti muskaan) — Shining smile",
+        "한국어 (Korean)": "광나는 미소 (gwangnaneun miso) — Radiant smile",
+        "Emojis": ["💋", "✨", "📸"]
+      },
+      "evolution": {
+        "Before": "K-wave influence limited to fashion and hair.",
+        "Now": "Oral-lip care integrated into fandom grooming.",
+        "Next": "Mainstream adoption through crossover beauty collabs."
+      },
+      "signals": [
+        "Increase in lip mask and teeth gel bundles on Nykaa.",
+        "Fan content tagging oral-lip products.",
+        "K-beauty pop-ups selling oral care.",
+        "Dating app selfies with gloss-smile aesthetic."
+      ]
     },
     {
-      "name": "Holistic Health Advocates",
-      "share": "25%",
-      "border_color": "#0F9D58",
-      "traits": ["Wellness oriented", "Ayurvedic trust", "Preventive care focus", "Natural product preference"],
-      "behaviors": "They integrate oral health into overall wellness routines, favoring herbal and eco-friendly solutions.",
-      "evidence": ["[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"],
-      "implications": "Highlight natural ingredients and holistic benefits."
+      "title": "Portable Puja-to-Party Freshness",
+      "subtitle": "Youth navigate days that move from religious spaces to nightlife, using discreet oral-care products to adapt.",
+      "first_seen": "2024-09-14",
+      "last_scan": "2025-08-10",
+      "current_volume": 980,
+      "previous_volume": 1100,
+      "volume": 6900,
+      "summary": "In cities where a single day can include temple visits and clubbing, oral care becomes a discreet, portable bridge between contrasting social settings.",
+      "story": "In Chennai, Hyderabad, and Pune, it’s not unusual for young professionals to begin their day attending a family religious function and end it dancing with friends. Food, drink, and proximity norms differ sharply between these spaces. This creates a subtle demand for quick oral resets that remove traces of one setting before entering another.\n\nBreath strips, travel gels, and scented rinses feature in sling bags and clutches. Some products are chosen for their mildness to suit religious environments, others for boldness to match party culture. In club restrooms, it’s common to see discreet swaps — a temple-appropriate clove rinse traded for a mint gel before hitting the dance floor.\n\nBrands are responding: boutique oral-care startups launch ‘day-to-night’ packs marketed for weddings and festivals, and online marketplaces see spikes in portable kits around major religious holidays. Influencers create reels showing “temple to terrace party” transitions, with oral care as a humorous but relatable step.",
+      "proof_points": [
+        "Instagram reels showing ‘temple to club’ transformations include oral care swaps.",
+        "Marketplaces feature oral-care kits during wedding/festival season.",
+        "Startups selling dual-flavor packs marketed for day-night versatility.",
+        "Party venues stocking complimentary mints in women’s restrooms."
+      ],
+      "quotes": [
+        ["My mint gel is like my change of shoes — it’s part of the shift from puja to party mode.", "Designer, Hyderabad"],
+        ["I can’t smell of prasad when I’m at a bar — it’s just weird.", "Student, Pune"]
+      ],
+      "personas": {
+        "Versatile Planner": "Keeps dual-use products for different social settings in one day.",
+        "Festival Socialite": "Navigates long days with varied environments during festive seasons.",
+        "Quick Switcher": "Optimizes routines for speed between events."
+      },
+      "drivers": {
+        "Hybrid Social Schedules": "Same-day transitions between formal/religious and informal/nightlife spaces.",
+        "Portable Grooming": "Rise in small-format, multipurpose oral-care products.",
+        "Event-Driven Consumption": "Festivals and weddings intensify multi-setting days."
+      },
+      "also_emerging_in": ["Indonesia", "Malaysia"],
+      "other_markets": {
+        "Indonesia": "Idul Fitri to nightlife transitions prompt portable freshness routines.",
+        "Malaysia": "Hari Raya events see similar day-night shifts.",
+        "Philippines": "Fiesta to party culture encourages versatile grooming kits."
+      },
+      "language": {
+        "Hashtags": ["#PujaToParty", "#DayNightFresh", "#SwitchMode"],
+        "Common phrases": ["from mandir to music", "temple to terrace", "freshness shift"],
+        "Code mixed": ["Mandir ke baad party ready", "Puja se party switch"],
+        "हिंदी (Hindi)": "मंदिर से पार्टी (mandir se party) — Temple to party",
+        "தமிழ் (Tamil)": "கோவிலில் இருந்து பார்ட்டிக்கு (kovilil irundhu partykku) — From temple to party",
+        "Emojis": ["🙏", "💃", "🪥"]
+      },
+      "evolution": {
+        "Before": "Separate grooming routines for different occasions.",
+        "Now": "Integrated day-night oral-care strategies.",
+        "Next": "Smart pouches with time-of-day product sections."
+      },
+      "signals": [
+        "Rise in sales of small-format oral care around festivals.",
+        "Reels showcasing social setting transitions.",
+        "Event gift hampers with dual-use oral care.",
+        "Venues offering complimentary mints."
+      ]
     }
-  ],
-  "influencers": {
-    "narratives": [
-      {
-        "title": "Aesthetic Self-Confidence",
-        "color": "#FF6B6B",
-        "story": "Social success and career growth are linked with a bright smile. Brands use this narrative to elevate oral care beyond hygiene.",
-        "evidence": ["[Diva Portal](https://www.diva-portal.org/smash/get/diva2:1442496/FULLTEXT01.pdf)"],
-        "takeaway": "Position oral care products as enablers of social and professional success."
-      },
-      {
-        "title": "Digital Oral Education",
-        "color": "#34A853",
-        "story": "YouTube and Instagram provide credible oral care education, shaping consumer decisions and brand trust.",
-        "evidence": ["[SAGE Journals](https://journals.sagepub.com/doi/10.1177/20552076251334734)"],
-        "takeaway": "Invest in educational content for trust-building and retention."
-      },
-      {
-        "title": "Sustainable Wellness",
-        "color": "#0F9D58",
-        "story": "Eco-friendly products symbolize modern wellness and responsible consumption.",
-        "evidence": ["[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"],
-        "takeaway": "Adopt green messaging and biodegradable packaging."
-      }
-    ],
-    "pathways": [
-      {
-        "name": "Influencer Collaboration",
-        "color": "#FF6F61",
-        "nodes": [
-          {"id": "1", "label": "Identify Influencers", "tooltip": "Dental and lifestyle creators"},
-          {"id": "2", "label": "Content Planning", "tooltip": "Video scripts and visual design"},
-          {"id": "3", "label": "Launch Campaign", "tooltip": "Reels, Shorts, UGC"},
-          {"id": "4", "label": "Measure Impact", "tooltip": "Engagement and conversions"}
-        ]
-      },
-      {
-        "name": "Sustainability Messaging",
-        "color": "#0F9D58",
-        "nodes": [
-          {"id": "1", "label": "Eco Product Design", "tooltip": "Herbal and biodegradable"},
-          {"id": "2", "label": "Storytelling", "tooltip": "Communicate green credentials"},
-          {"id": "3", "label": "Retail Integration", "tooltip": "Eco-packaged shelf presence"},
-          {"id": "4", "label": "Customer Advocacy", "tooltip": "Encourage social sharing"}
-        ]
-      },
-      {
-        "name": "Digital Education",
-        "color": "#4285F4",
-        "nodes": [
-          {"id": "1", "label": "Content Hub", "tooltip": "YouTube & Instagram education"},
-          {"id": "2", "label": "Influencer Participation", "tooltip": "Key opinion leaders"},
-          {"id": "3", "label": "Engagement Mechanics", "tooltip": "Polls, Q&A, live sessions"},
-          {"id": "4", "label": "Feedback Loop", "tooltip": "Incorporate user insights"}
-        ]
-      }
-    ],
-    "brokers": [
-      {
-        "market": "India",
-        "color": "#FF6F61",
-        "description": "Digital-first oral care influencer landscape",
-        "brokers": [
-          {"name": "Dr. Sandesh Mayekar", "role": "Cosmetic Dentist", "impact": "High trust aesthetic influencer", "followers": "250k", "engagement": "4.5%", "specialty": "Smile design", "brands": "Colgate, Perfora"},
-          {"name": "Tooth Fairy Co.", "role": "Eco Brand", "impact": "Sustainable oral care advocate", "followers": "120k", "engagement": "3.2%", "specialty": "Herbal and eco products", "brands": "Tooth Fairy, Bristlo"}
-        ]
-      },
-      {
-        "market": "Singapore",
-        "color": "#34A853",
-        "description": "Premium cosmetic dentistry brokers",
-        "brokers": [
-          {"name": "Smile Innovations", "role": "Clinic", "impact": "Premium dental aesthetics", "followers": "80k", "engagement": "3.8%", "specialty": "Aligners and whitening", "brands": "Invisalign"},
-          {"name": "Eco Smiles", "role": "Product Brand", "impact": "Eco-friendly oral care", "followers": "60k", "engagement": "2.9%", "specialty": "Sustainable oral products", "brands": "Eco Smiles"}
-        ]
-      },
-      {
-        "market": "Thailand",
-        "color": "#4285F4",
-        "description": "Hybrid wellness and aesthetics",
-        "brokers": [
-          {"name": "Thai Smile Dental", "role": "Clinic", "impact": "Regional aesthetics leader", "followers": "100k", "engagement": "3.1%", "specialty": "Cosmetic dentistry", "brands": "Thai Smile"},
-          {"name": "Green Dental Lab", "role": "Product Innovator", "impact": "Sustainable material specialist", "followers": "45k", "engagement": "2.7%", "specialty": "Eco-tech dentistry", "brands": "Green Dental Lab"}
-        ]
-      }
-    ]
-  },
-  "ideas": {
-    "hypotheses": [
-      {"statement": "Influencer-driven oral care marketing significantly increases Gen Z conversion rates.", "source": "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"},
-      {"statement": "Ayurvedic oral care formulations improve brand trust and loyalty among millennials.", "source": "[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"},
-      {"statement": "AR try-on technology boosts confidence in purchasing premium oral care products.", "source": "[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)"}
-    ],
-    "gaps": [
-      {"title": "Low Rural Penetration", "body": "Oral care awareness and product access remain low in rural markets.", "source": "[IMARC](https://www.imarcgroup.com/india-oral-care-market)"},
-      {"title": "Educational Content Deficit", "body": "Few brands provide consistent, trustworthy oral health education online.", "source": "[SAGE Journals](https://journals.sagepub.com/doi/10.1177/20552076251334734)"},
-      {"title": "Limited Eco Supply Chains", "body": "Sustainable packaging and production remain niche and underdeveloped.", "source": "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)"}
-    ],
-    "playbooks": [
-      {
-        "title": "Influencer Campaign Blueprint",
-        "goal": "Drive engagement and conversion through dental influencer partnerships",
-        "steps": ["Identify micro and celebrity influencers", "Co-create visual storytelling content", "Deploy on Instagram and YouTube"],
-        "metrics": ["Engagement rate", "Conversion rate"],
-        "source": "[Hobo Video](https://hobo.video/blog/top-10-celeb-dentists-influencers-on-instagram-in-india-in-2024/)",
-        "border": "1px solid #FF6F61",
-        "bg": "#FFF5F2"
-      },
-      {
-        "title": "Sustainable Product Launch",
-        "goal": "Position herbal and eco-friendly oral care products",
-        "steps": ["Source sustainable packaging", "Highlight natural ingredients in marketing", "Partner with green influencers"],
-        "metrics": ["Eco product sales share", "Brand trust score"],
-        "source": "[Bristlo](https://bristlo.com/blogs/small-tabs-big-impact/sustainable-oral-care-a-comprehensive-guide)",
-        "border": "1px solid #0F9D58",
-        "bg": "#F2FFF8"
-      },
-      {
-        "title": "AR Shopping Rollout",
-        "goal": "Deploy AR try-on for online oral care shopping",
-        "steps": ["Integrate AR into D2C app", "Educate users through tutorials", "Measure AR-driven conversion lift"],
-        "metrics": ["AR adoption rate", "Conversion rate improvement"],
-        "source": "[BrandXR](https://www.brandxr.io/2025-augmented-reality-in-retail-e-commerce-research-report)",
-        "border": "1px solid #4285F4",
-        "bg": "#F2F8FF"
-      }
-    ],
-    "scenarios": [
-      {"title": "Digital-Led Market Surge", "body": "Influencer campaigns and AR commerce drive online dominance for oral care brands.", "source": "[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC11747421/)"},
-      {"title": "Eco-Driven Premium Shift", "body": "Consumers pay premium for sustainable herbal oral products, accelerating eco adoption.", "source": "[Times of India](https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/real-people-real-feedback-why-people-are-moving-towards-organic-and-ayurvedic/articleshow/121377872.cms)"},
-      {"title": "Hybrid Wellness Retail", "body": "Pharmacies adopt hybrid models merging online, offline, and wellness experiences.", "source": "[IMARC](https://www.imarcgroup.com/india-oral-care-market)"}
-    ],
-    "recommendations": [
-      {"priority": 1, "title": "Invest in Influencer Ecosystem", "body": "Expand influencer-driven campaigns to capture Gen Z and millennial audiences. Leverage micro-influencers for authenticity and community trust while amplifying reach through celebrity partnerships."},
-      {"priority": 2, "title": "Expand Sustainable Product Portfolio", "body": "Introduce eco-friendly packaging and herbal formulations across product lines. Position sustainability as a core brand pillar, aligning with consumer wellness and environmental values."},
-      {"priority": 3, "title": "Deploy Immersive Tech Solutions", "body": "Adopt AR try-ons and personalized virtual shopping experiences to enhance online purchase confidence. Integrate these solutions into omnichannel strategies for higher conversion and retention."}
-    ]
-  },
-    "ai_context": {
-        "system_context":"You are **Kultie**, an assistant for exploring market and cultural insights, providing clear, evidence-based recommendations aligned with a youthful, energetic, bold, confident, playful, intimate, fresh, socially connected, inclusive, relationship-driven, modern, local-culturally aware brand voice, focusing on increasing sales and cultural resonance in **India**; industry context: oral care (toothpaste, mouthwash, breath freshening, personal hygiene, beauty-adjacent self-care, Ayurveda-inspired oral care); product focus: gel-based toothpaste for fresh breath and whitening, herbal/natural variants (clove, neem, tulsi), confidence-driven mouthwash (dates, social occasions), innovative flavor formats (spicy mint, citrus-herbal fusions), romantic/confidence-centric bundles, limited festival editions (Valentine’s, Diwali gifting packs); audience: teenagers and young adults (16–30), urban millennials and Gen Z in Tier 1 and Tier 2 cities, socially active, dating app users, nightlife participants, fashion/beauty-conscious consumers, couples seeking confidence-enhancing products; personas: romance-driven millennials linking fresh breath to social/romantic success, health-conscious youth preferring herbal/natural trust-based products, trend-sensitive digital natives influenced by Bollywood, streaming stars, social media challenges; regional focus: strong youth culture and rising dating app adoption (Bumble, Tinder) boosting breath confidence, preference for herbal/natural wellness traditions, highly competitive market with legacy brands and Ayurvedic challengers (Dabur, Patanjali), high engagement on social and short video platforms (Instagram Reels, YouTube Shorts) requiring localized influencer campaigns, regional language content, and high-visibility festival promotions.",
-        "research_file": "closeup_india.md"
-  }
+  ]
 }

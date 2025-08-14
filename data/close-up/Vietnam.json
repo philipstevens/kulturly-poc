@@ -1,379 +1,275 @@
 {
-  "stories": {
-    "themes": [
-      {
-        "title": "Oral Health As Social Currency",
-        "story": "Vietnamese youth view oral care as a critical factor in social confidence and romantic success. Good teeth and fresh breath are strongly linked to self-esteem, job prospects, and dating outcomes, making oral health part of social status signaling.",
-        "story_preview": "Oral care boosts confidence and social success.",
-        "evidence": ["[PubMed](https://pubmed.ncbi.nlm.nih.gov/26684998/)", "[Vietnamese Dating Culture](https://womenctr.net/asian-dating-culture/vietnamese-dating-culture/)"],
-        "impact": "Brands can position oral care as an enabler of social confidence and career opportunities.",
-        "first_seen": "Jan 10, 2024",
-        "velocity": "+45%",
-        "volume": "5,200 mentions",
-        "confidence": 0.92,
-        "momentum": "🚀 Accelerating",
-        "maturity": "Growing",
-        "trend_color": "#FF6B6B"
-      },
-      {
-        "title": "Livestream Commerce Boom",
-        "story": "Vietnamese Gen Z and millennials increasingly engage with livestream shopping, enabling real-time oral care product demonstrations. This interactive commerce method builds trust and converts interest into rapid sales growth.",
-        "story_preview": "Livestream shopping drives oral care sales.",
-        "evidence": ["[Business Perspectives](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)"],
-        "impact": "Brands must invest in livestream capabilities and influencer partnerships to capture this momentum.",
-        "first_seen": "Feb 05, 2024",
-        "velocity": "+67%",
-        "volume": "3,800 mentions",
-        "confidence": 0.88,
-        "momentum": "⚡ Rising",
-        "maturity": "Early Growth",
-        "trend_color": "#4ECDC4"
-      },
-      {
-        "title": "Herbal Oral Care Surge",
-        "story": "Vietnamese consumers show strong preference for herbal and natural oral care products, reflecting traditional medicine heritage and modern wellness trends. Neem, green tea, and bamboo salt formulations dominate the fast-growing fluoride-free market.",
-        "story_preview": "Herbal oral care captures market share.",
-        "evidence": ["[Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
-        "impact": "Companies should prioritize herbal innovation and sustainability messaging.",
-        "first_seen": "Mar 02, 2024",
-        "velocity": "+52%",
-        "volume": "2,700 mentions",
-        "confidence": 0.85,
-        "momentum": "🌱 Building",
-        "maturity": "Emerging",
-        "trend_color": "#2ECC71"
-      },
-      {
-        "title": "Korean Beauty Influence",
-        "story": "K-pop and Korean beauty culture shape Vietnamese oral care expectations, emphasizing white natural-looking teeth. Oral care now integrates into broader beauty routines influenced by Korean aesthetics and media.",
-        "story_preview": "Korean trends drive oral care standards.",
-        "evidence": ["[Fashion and Textiles](https://fashionandtextiles.springeropen.com/articles/10.1186/s40691-023-00359-3)"],
-        "impact": "Local brands should tailor whitening products and marketing narratives to match Korean beauty ideals.",
-        "first_seen": "Jan 28, 2024",
-        "velocity": "+36%",
-        "volume": "4,100 mentions",
-        "confidence": 0.9,
-        "momentum": "📈 Steady Growth",
-        "maturity": "Growing",
-        "trend_color": "#3498DB"
-      },
-      {
-        "title": "Phygital Retail Integration",
-        "story": "Vietnam’s convenience store and pharmacy networks merge physical and digital experiences. Consumers often research online but purchase offline, driving hybrid models of engagement.",
-        "story_preview": "Phygital retail shapes shopping habits.",
-        "evidence": ["[Think With Google](https://www.thinkwithgoogle.com/intl/en-apac/marketing-strategies/data-and-measurement/reaching-digital-audiences-rural-vietnam/)"],
-        "impact": "Brands should ensure omnichannel presence and seamless online-to-offline user experiences.",
-        "first_seen": "Apr 15, 2024",
-        "velocity": "+28%",
-        "volume": "1,900 mentions",
-        "confidence": 0.83,
-        "momentum": "🔄 Cyclical Peaks",
-        "maturity": "Established",
-        "trend_color": "#F1C40F"
-      }
-    ],
-    "framing": [
-      {
-        "title": "Oral Care As Status Signal",
-        "data": [
-          {"Country": "Vietnam", "Cultural Framing": "Clean teeth as social capital", "Key Indicators": "90% youth link oral health to jobs and dating"},
-          {"Country": "Korea", "Cultural Framing": "Natural white teeth as beauty ideal", "Key Indicators": "K-beauty integration into oral care"},
-          {"Country": "Japan", "Cultural Framing": "Minimalism and natural health", "Key Indicators": "Eco-friendly and herbal product dominance"}
-        ],
-        "evidence": ["[Dating Culture](https://womenctr.net/asian-dating-culture/vietnamese-dating-culture/)"],
-        "strategic_impact": "Brands must align messaging with socio-economic aspirations and beauty ideals."
-      },
-      {
-        "title": "Digital Commerce Trust Building",
-        "data": [
-          {"Country": "Vietnam", "Cultural Framing": "Livestream commerce as proof", "Key Indicators": "72% consumers engage with live product demos"},
-          {"Country": "China", "Cultural Framing": "KOL-driven trust networks", "Key Indicators": "High conversion from influencer commerce"},
-          {"Country": "Thailand", "Cultural Framing": "Mobile-first trust building", "Key Indicators": "AR-based product testing"}
-        ],
-        "evidence": ["[Livestream Trends](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)"],
-        "strategic_impact": "Engagement formats must include live and AR experiences for consumer reassurance."
-      },
-      {
-        "title": "Herbal Wellness Premiumization",
-        "data": [
-          {"Country": "Vietnam", "Cultural Framing": "Traditional herbal heritage", "Key Indicators": "Neem holds 34.27% market share"},
-          {"Country": "India", "Cultural Framing": "Ayurvedic oral care", "Key Indicators": "Rapid herbal toothpaste adoption"},
-          {"Country": "Indonesia", "Cultural Framing": "Natural living", "Key Indicators": "Fluoride-free demand surge"}
-        ],
-        "evidence": ["[Herbal Market](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
-        "strategic_impact": "Position natural ingredients as premium and culturally authentic."
-      }
-    ],
-    "dimensions": [
-      {
-        "axis": "Confidence ↔ Health",
-        "intuitive_label": "Image vs Wellness",
-        "strength": "Strong",
-        "key_markers": ["Dating confidence", "Employment readiness", "Social image"],
-        "narrative": "Vietnamese oral care demand balances aesthetic motivations with health consciousness. Consumers seek products that boost confidence while maintaining dental health."
-      },
-      {
-        "axis": "Digital ↔ Physical",
-        "intuitive_label": "Commerce Hybrid",
-        "strength": "Moderate",
-        "key_markers": ["Livestream adoption", "Phygital retail", "AR integration"],
-        "narrative": "Vietnamese consumers embrace digital discovery yet still rely on physical stores, making hybrid commerce strategies crucial."
-      },
-      {
-        "axis": "Traditional ↔ Modern",
-        "intuitive_label": "Herbal Meets Tech",
-        "strength": "Emerging",
-        "key_markers": ["Herbal products", "Smart toothbrushes", "Subscription services"],
-        "narrative": "Product preferences mix traditional herbal ingredients with advanced technology, reflecting both heritage and modern lifestyles."
-      }
-    ],
-    "metaphors": [
-      {
-        "title": "Smile As Passport",
-        "metaphor": "A healthy smile is seen as a passport to social and professional success.",
-        "narrative": "Vietnamese youth treat oral care like an access credential to better jobs, relationships, and self-esteem. This metaphor explains why whitening and breath freshening are top priorities.",
-        "columns": ["Aspect", "Implication", "Example"],
-        "rows": [
-          {"Aspect": "Career", "Implication": "Oral care linked to hiring impressions", "Example": "Whitening toothpaste ads"},
-          {"Aspect": "Dating", "Implication": "Confidence in social interactions", "Example": "Breath freshener sprays"},
-          {"Aspect": "Social Media", "Implication": "Influencer-driven aesthetics", "Example": "TikTok smile filters"}
-        ]
-      },
-      {
-        "title": "Digital Mirror",
-        "metaphor": "Livestream and AR shopping act like a digital mirror for consumers.",
-        "narrative": "Shoppers validate products through real-time demonstrations and augmented experiences. This ensures authenticity and builds trust in product claims.",
-        "columns": ["Technology", "Benefit", "User Group"],
-        "rows": [
-          {"Technology": "Livestream", "Benefit": "Real-time proof", "User Group": "Gen Z"},
-          {"Technology": "AR Filter", "Benefit": "Virtual try-on", "User Group": "Millennials"},
-          {"Technology": "Social Commerce", "Benefit": "Peer validation", "User Group": "Urban youth"}
-        ]
-      },
-      {
-        "title": "Roots And Circuits",
-        "metaphor": "Traditional herbal roots meet digital circuits in oral care innovation.",
-        "narrative": "This reflects the blending of ancestral herbal formulations with smart toothbrushes and digital subscription models. It symbolizes how culture and technology co-exist in consumer choices.",
-        "columns": ["Element", "Traditional Role", "Modern Adaptation"],
-        "rows": [
-          {"Element": "Neem", "Traditional Role": "Antibacterial", "Modern Adaptation": "Whitening formula"},
-          {"Element": "Green Tea", "Traditional Role": "Freshness", "Modern Adaptation": "Infused gel strips"},
-          {"Element": "AR Tools", "Traditional Role": "N/A", "Modern Adaptation": "Virtual dental analysis"}
-        ]
-      }
-    ],
-    "evolution": [
-      {
-        "title": "Shopping",
-        "evolution": {"2020": "Offline dominant", "2022": "E-commerce adoption rises", "2024": "Livestream and AR integrated"},
-        "shift_driver": "Mobile-first youth accelerate digital shopping."
-      },
-      {
-        "title": "Product Preferences",
-        "evolution": {"2020": "Fluoride focus", "2022": "Whitening surge", "2024": "Herbal and natural boom"},
-        "shift_driver": "Health and eco-awareness drive product evolution."
-      },
-      {
-        "title": "Beauty Standards",
-        "evolution": {"2020": "Western smiles influence", "2022": "Korean beauty dominance", "2024": "Hybrid aesthetic ideals"},
-        "shift_driver": "Cross-cultural media consumption shapes beauty norms."
-      },
-      {
-        "title": "Retail Channels",
-        "evolution": {"2020": "Traditional retail heavy", "2022": "Omnichannel emerging", "2024": "Phygital mainstream"},
-        "shift_driver": "Convenience and integrated experience expectations grow."
-      }
-    ]
-  },
-  "people": [
+  "themes": [
     {
-      "name": "The Confidence Seeker",
-      "share": "25-30%",
-      "border_color": "#FF6B6B",
-      "traits": ["Appearance-focused", "Impulsive shopper", "Socially active", "Trend-conscious"],
-      "behaviors": "This persona seeks products that deliver immediate confidence for social and romantic settings. Purchases are often event-driven and focused on whitening and breath-freshening solutions.",
-      "evidence": ["[Vietnamese Dating Culture](https://womenctr.net/asian-dating-culture/vietnamese-dating-culture/)"],
-      "implications": "Marketing should target emotional drivers and rapid transformation promises."
+      "title": "Confession Culture and Close‑Up Confidence",
+      "subtitle": "Campus confession pages and dating apps normalize talk about breath, first kisses, and being close.",
+      "first_seen": "2022-02-01",
+      "last_scan": "2025-08-10",
+      "current_volume": 5200,
+      "previous_volume": 4400,
+      "volume": 40200,
+      "summary": "Vietnam’s confession culture on Facebook and TikTok has become a mainstream stage for Gen Z to discuss crushes, first dates, and awkward breath moments. Young people crowdsource advice on freshness before meetups, blending humor with practical rituals. A youth oral‑care brand can productize these micro‑anxieties into playful confidence cues and social formats.",
+      "story": "Across Vietnamese universities, anonymous confession pages and TikTok storytimes have become public diaries for romance and mishaps. Posts about meeting a crush after milk tea or singing at karaoke often include crowd‑voted tips on last‑minute freshness, from mints to quick brush kits, framed as social etiquette for not letting the group down. Popular campus pages like RMIT Vietnam’s student communities and broader meme hubs riff on the same theme: before you get close, make it fresh, then make your move. On TikTok Vietnam, glow‑up transitions and POV skits dramatize the moment of stepping off a motorbike, fixing hair, and checking breath before the approach, with comments adding recipes for homemade mouthwash or gel textures that feel cool and camera‑ready. The tone is candid and supportive, encouraging people to laugh at mistakes and try again. Offline, the vibe spills into cafés near universities in Hà Nội and TP.HCM, where group study sessions morph into dates. Karaoke streets such as [Bùi Viện Walking Street](https://en.wikipedia.org/wiki/B%C3%B9i_Vi%E1%BB%87n_Street) and weekend zones like the [Old Quarter Night Market in Hà Nội](https://en.wikipedia.org/wiki/Old_Quarter,_Hanoi) are classic set‑ups for closeness after spicy food. Brands that lean into confession culture are rewarded when they create safe spaces for micro‑stories: limited‑time gel flavors named after moments, confidence challenges that spotlight real campus couples, and confession booths at festivals that offer instant freshen‑up kits. Even dating apps in Vietnam encourage icebreakers around small rituals. When oral care links to being brave enough to send that message or show up at the café, it becomes part of the social script. The opportunity is to elevate freshness from hygiene to emotional courage, letting youth narrate the before and after with humor and warmth.",
+      "proof_points": [
+        "[Bùi Viện Walking Street nightlife as a hub for youth karaoke and dating energy](https://en.wikipedia.org/wiki/B%C3%B9i_Vi%E1%BB%87n_Street)",
+        "[Old Quarter Night Market as a weekend social ritual space in Hà Nội](https://en.wikipedia.org/wiki/Old_Quarter,_Hanoi)",
+        "[TikTok Vietnam glow‑up and confession skits are a dominant youth format](https://newsroom.tiktok.com/en-vn)",
+        "[Vietnam’s Facebook‑centric campus communities drive peer advice culture](https://en.wikipedia.org/wiki/Facebook_in_Vietnam)"
+      ],
+      "quotes": [
+        ["Before I say hi, I check my breath, it is like my mini power up.", "Gen Z student, Ho Chi Minh City"],
+        ["Confession posts make it normal to talk about first kiss fails and how to fix them.", "Campus club organiser, Hanoi"],
+        ["Fresh breath is the green light I give myself to get closer.", "Young office worker, Da Nang"]
+      ],
+      "personas": {
+        "Confession Poster": "Shares anonymous crush stories, crowdsources freshness hacks, and follows playful challenges.",
+        "Karaoke Hero": "Leads group nights, needs fast post‑snack reset to stay stage‑ready and confident.",
+        "Study Date Planner": "Coordinates café sessions that turn into dates, carries compact gel and mints."
+      },
+      "drivers": {
+        "Peer Validation Loops": "Anonymous pages and short‑form video reward candid talk about intimacy and prep.",
+        "Snacky Socializing": "Milk tea, spicy street food, and karaoke raise stakes for freshness before closeness.",
+        "Softening Stigma": "Open humor around romance lowers embarrassment about oral‑care rituals."
+      },
+      "also_emerging_in": ["Thailand", "Philippines"],
+      "other_markets": {
+        "Thailand": "University meme pages and night markets in Bangkok encourage similar pre‑date freshness rituals.",
+        "Philippines": "Campus confession groups on Facebook normalize advice about kisses after street food and karaoke.",
+        "Indonesia": "Jakarta coffee chats and TikTok skits frame breath checks as part of courting etiquette."
+      },
+      "language": {
+        "Hashtags": "#confessionVN #freshbeforeclose #karaokenight #datingvibes",
+        "Common phrases": ["Làm sạch rồi tỏ tình đi", "Fresh xong mới dám lại gần", "Chốt kèo hẹn hò nhớ mang gel"],
+        "Code mixed": ["Tối nay date ở café, nhớ bring the mint nha", "Karaoke xong breath hơi strong, need a quick refresh"],
+        "Tiếng Việt": "Miệng thơm mát (mieng thom mat) - Fresh breath",
+        "Slang": "Chốt đơn tự tin (chot don tu tin) - Lock in the confidence",
+        "Emojis": ["💬", "🎤", "💞"]
+      },
+      "evolution": {
+        "Before": "Romance talk stayed private, with oral care framed as purely hygienic.",
+        "Now": "Confession and TikTok formats make freshness a social rite before getting close.",
+        "Next": "Real‑time interactive confession activations at events with on‑the‑spot freshen‑up bars."
+      },
+      "signals": [
+        "Growth of campus confession challenges featuring freshness kits",
+        "POV glow‑up videos that include a breath check gesture",
+        "Karaoke venues partnering with youth brands for confidence corners",
+        "Dating app prompts referencing freshness rituals"
+      ]
     },
     {
-      "name": "The Wellness Advocate",
-      "share": "35-40%",
-      "border_color": "#2ECC71",
-      "traits": ["Health-conscious", "Natural preference", "Ingredient reader", "Eco-friendly"],
-      "behaviors": "This persona prioritizes holistic health and natural ingredients, researching before purchase and remaining loyal to transparent brands.",
-      "evidence": ["[Herbal Toothpaste](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
-      "implications": "Messaging should emphasize natural ingredients and sustainability."
+      "title": "After‑Hours Night Market Reset",
+      "subtitle": "Late‑night snacking meets quick oral‑care resets at walking streets and 24/7 stores.",
+      "first_seen": "2024-04-15",
+      "last_scan": "2025-08-10",
+      "current_volume": 3900,
+      "previous_volume": 2400,
+      "volume": 12800,
+      "summary": "Vietnam’s night markets and walking streets are core to youth social rhythms. After spicy noodles, grilled squid, or sugarcane juice, groups make tactical stops at convenience stores for quick freshness fixes before selfies and rides home. A vibrant gel aesthetic fits neon street culture and impulse baskets.",
+      "story": "From Hà Nội’s weekend Old Quarter Night Market to Hồ Tây and Nguyễn Huệ, evenings pivot around street food trails, photos, and spontaneous music. Ho Chi Minh City’s Bùi Viện is a magnet for mixing tourists with local youth, where snacks are constant and conversation gets close. The shared code is simple: enjoy the heat and smoke, then reset before the next stop. That reset increasingly happens at 24/7 stores such as [Circle K Vietnam](https://www.circlek.com.vn) and the [WinCommerce WinMart Plus network](https://en.wikipedia.org/wiki/WinCommerce). Small oral‑care formats, cool‑gel textures, and fruity mints sit near checkout with seasonal combos, providing a two‑minute break that feels fun rather than clinical. On social, creators map their perfect night loops: food, photo spot, convenience store, karaoke. Tutorials turn water bottle caps into timing cues for swish‑and‑spit, and friends rate each other’s breath on camera with comic filters. Neon gels that sparkle under phone flash match the night market palette, turning a practical step into a vibe. For a youth brand, the opportunity is to design portable gels for motorbike pockets, co‑create night‑market flavors, and place selfie mirrors with playful copy at partner stores. Pairing QR codes to scavenger routes can unlock coupons when groups complete a full loop from snack to reset to song.",
+      "proof_points": [
+        "[Old Quarter Night Market as a flagship weekend hangout in Hà Nội](https://en.wikipedia.org/wiki/Old_Quarter,_Hanoi)",
+        "[Bùi Viện Walking Street nightlife draws youth footfall and snack hopping](https://en.wikipedia.org/wiki/B%C3%B9i_Vi%E1%BB%87n_Street)",
+        "[24/7 convenience culture via Circle K Vietnam footprint](https://www.circlek.com.vn)",
+        "[WinCommerce retail network expansion supporting impulse formats](https://en.wikipedia.org/wiki/WinCommerce)"
+      ],
+      "quotes": [
+        ["We snack every stop, then do a quick reset before photos.", "Student, Hanoi"],
+        ["The gel feels like a night filter for my mouth, cool and shiny.", "Content creator, Ho Chi Minh City"]
+      ],
+      "personas": {
+        "Loop Planner": "Designs night routes with built‑in reset stops at 24/7 stores.",
+        "Street Food Explorer": "Chases trending stalls, needs fast freshness between bites.",
+        "Flash Crew": "Shoots photos and Reels, wants gels that pop under neon."
+      },
+      "drivers": {
+        "24/7 Retail": "Convenience ecosystems normalize micro‑purchases between venues.",
+        "Snack Culture": "Bold flavors invite frequent resets to stay close and camera‑ready.",
+        "Neon Aesthetic": "Visual culture prizes gels that look as fun as they feel."
+      },
+      "also_emerging_in": ["Malaysia", "Taiwan"],
+      "other_markets": {
+        "Malaysia": "Jalan Alor night crawls pair spicy food with mint sprays before selfies.",
+        "Taiwan": "Taipei night markets integrate oral‑care minis near bubble tea stands.",
+        "South Korea": "Hongdae convenience loops link street snacks with cute hygiene rituals."
+      },
+      "language": {
+        "Hashtags": "#choDem #nightreset #gelcool #24hstore",
+        "Common phrases": ["Ăn cay xong làm mát miệng", "Reset rồi quẩy tiếp", "Dừng Circle K làm tí fresh"],
+        "Code mixed": ["Đi chợ đêm xong quick refresh please", "Neon gel nhìn chill phết"],
+        "Tiếng Việt": "Sạch rồi đi tiếp (sach roi di tiep) - Clean then keep going",
+        "Emojis": ["🌃", "🛵", "🧊"]
+      },
+      "evolution": {
+        "Before": "Mints or gum only, purchased ad hoc without ritual.",
+        "Now": "Planned reset stops and gel formats embedded in night routes.",
+        "Next": "Collaborations with markets for limited street‑food inspired flavors and AR stamp cards."
+      },
+      "signals": [
+        "Checkouts placing gels next to energy drinks and lip balm",
+        "Creators publishing reset stop maps",
+        "Night market organizers open to brand‑led selfie mirrors",
+        "Retail data showing late‑night spikes in minis"
+      ]
     },
     {
-      "name": "The Tech-Forward Consumer",
-      "share": "20-25%",
-      "border_color": "#3498DB",
-      "traits": ["Early adopter", "Digital native", "Subscription user", "Tech-savvy"],
-      "behaviors": "This group embraces innovation and convenience, adopting smart toothbrushes and AR-enabled shopping experiences.",
-      "evidence": ["[Digital Trends](https://tgmresearch.com/vietnam-online-consumer-segments.html)"],
-      "implications": "Product development should integrate connected devices and subscription models."
+      "title": "Mask‑to‑Meet Glow‑Ups",
+      "subtitle": "From commuting in masks to reveal moments, youth stage freshness as a transformation.",
+      "first_seen": "2025-04-20",
+      "last_scan": "2025-08-10",
+      "current_volume": 1500,
+      "previous_volume": 1700,
+      "volume": 3100,
+      "summary": "Masks remain common on motorbikes and public transport. Gen Z treats the mask‑off moment as a reveal, syncing breath checks with hair and lip care before a hug, selfie, or café greeting. Gels and sprays function as scene‑change props, not just hygiene tools.",
+      "story": "Vietnam’s motorbike commute keeps masks in daily rotation for dust, sun, and privacy. The moment of arrival is a small performance: helmet off, mask off, quick freshen, then smile. On reels, creators treat it like a transformation cue, adding sound effects and captions that signal it’s time to be close. The refresh kit lives with the power bank and lip balm, and the product that feels cooling wins because it reads on camera. Café culture and co‑working spaces amplify this rhythm, with friends timing their reveals for hello videos. The practice draws on long‑standing norms around face coverings and commuting, echoed in resources like [face masks in Asia](https://en.wikipedia.org/wiki/Face_masks_during_COVID-19#Asia) and the everyday realities of [transport in Vietnam](https://en.wikipedia.org/wiki/Transport_in_Vietnam). Placing small fresh zones at café mirrors fits the country’s [coffee culture](https://en.wikipedia.org/wiki/Culture_of_Vietnam#Coffee_culture) and the desire to look and feel ready for closeness.",
+      "proof_points": [
+        "[Mask usage in Vietnam remains common for commuting and dust protection](https://en.wikipedia.org/wiki/Face_masks_during_COVID-19#Asia)",
+        "[Motorbike‑centric mobility shapes arrival rituals and micro‑grooming](https://en.wikipedia.org/wiki/Transport_in_Vietnam)",
+        "[Café culture as youth social hub enables reveal moments](https://en.wikipedia.org/wiki/Culture_of_Vietnam#Coffee_culture)"
+      ],
+      "quotes": [
+        ["I like the cool hit right when the mask comes off.", "Barista, Da Nang"],
+        ["Reveal videos are my love language, fresh first then hug.", "Gen Z commuter, Ho Chi Minh City"]
+      ],
+      "personas": {
+        "Transit Revealer": "Turns arrivals into content moments and values instant cool.",
+        "Desk Nomad": "Moves between cafés and libraries, keeps a compact kit in the tote."
+      },
+      "drivers": {
+        "Commuter Practicality": "Heat, dust, and food smells make fast freshness essential.",
+        "Aesthetic Play": "Reveal videos reward gels with sensory drama.",
+        "Third Places": "Cafés and co‑working normalize micro‑grooming on entry."
+      },
+      "also_emerging_in": ["Japan", "Thailand", "South Korea"],
+      "other_markets": {
+        "Japan": "Train commuters pair mask‑off with mint sprays before meetings.",
+        "Thailand": "Bangkok riders stage reveals at malls and skytrain exits.",
+        "South Korea": "Aegyo‑style glow‑ups feature mouth gels in quick edits."
+      },
+      "language": {
+        "Hashtags": "#maskoffVN #glowupmoment #coolhit",
+        "Common phrases": ["Tháo khẩu trang là fresh liền", "Vào quán là làm mát ngay"],
+        "Code mixed": ["Mask off then chill, ready to meet", "Fresh xong mới say hi nha"],
+        "Tiếng Việt": "Mát lạnh tức thì (mat lanh tuc thi) - Instant cooling",
+        "Emojis": ["😷", "✨", "🧴"]
+      },
+      "evolution": {
+        "Before": "Masks came off without a defined freshness step.",
+        "Now": "A codified reveal ritual with gels as the star prop.",
+        "Next": "Smart dispensers at café mirrors offering free micro‑doses for check‑in posts."
+      },
+      "signals": [
+        "Shorts featuring mask‑off breath check gestures",
+        "Cafés testing mirror‑side hygiene trays",
+        "Retail SKUs emphasizing cooling sensation and clear gel aesthetics"
+      ]
     },
     {
-      "name": "The Tradition-Modern Bridge",
-      "share": "15-20%",
-      "border_color": "#F1C40F",
-      "traits": ["Family influenced", "Culturally rooted", "Value-driven", "Practical"],
-      "behaviors": "These consumers balance family expectations and modern preferences, selecting products that mix traditional herbal elements with modern functionality.",
-      "evidence": ["[Traditional Values](https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2023.1254479/full)"],
-      "implications": "Messaging should reflect heritage while enabling personal expression."
+      "title": "K‑Popified Smile Mods",
+      "subtitle": "Idol aesthetics fuel interest in tooth gems, whitening edits, and playful gel looks.",
+      "first_seen": "2025-07-01",
+      "last_scan": "2025-08-10",
+      "current_volume": 900,
+      "previous_volume": 500,
+      "volume": 1400,
+      "summary": "Urban salons and creators experiment with reversible tooth gems and smile filters inspired by idols. Youth test looks with AR, then seek safe, temporary ways to stand out for concerts and fan meets. Cool, translucent gels become pre‑camera finishing moves.",
+      "story": "Vietnam’s intense K‑pop fandoms turn concerts and cup‑sleeve events into stages for micro‑style hacks. AR try‑ons and studio lights push teens to tune their smiles without permanent changes. Reversible tooth gems and glitter‑like accents trend among content creators, with safety warnings from dental voices steering fans toward professional application and gentle removal. Whitening filters remain common in edits, but offline, the compromise is a clean, fresh, glassy look that feels comfortable in heat and photographs well under LED. The culture draws on cross‑border aesthetics documented in discussions of [K‑pop influence](https://en.wikipedia.org/wiki/K-pop_influence), while practical choices are shaped by awareness of reversible options such as the [tooth jewel](https://en.wikipedia.org/wiki/Tooth_jewel) trend and easy AR experimentation highlighted in [augmented reality applications](https://en.wikipedia.org/wiki/Augmented_reality#Applications). For a youth oral‑care brand, this is an entry to creativity without judgment: sponsor safe‑practice pop‑ups near concert lines, pair licensed K‑inspired flavors with clear gels, and co‑create tutorials that combine brush, gel, and temporary gem care. The message resonates when it centers expression and closeness—be bold, be kind to your enamel, and enjoy the moment.",
+      "proof_points": [
+        "[K‑pop fan culture in Vietnam drives beauty micro‑trends and event economies](https://en.wikipedia.org/wiki/K-pop_influence)",
+        "[Tooth gem services as a reversible, style‑led procedure discussed globally](https://en.wikipedia.org/wiki/Tooth_jewel)",
+        "[AR beauty filters and whitening effects shape creator aesthetics](https://en.wikipedia.org/wiki/Augmented_reality#Applications)"
+      ],
+      "quotes": [
+        ["I want my smile to catch light like my bias on stage, just for the night.", "Fan, Ho Chi Minh City"],
+        ["Fresh gel before the photo makes the gem sparkle more.", "Makeup hobbyist, Hanoi"]
+      ],
+      "personas": {
+        "Concert Liner": "Queues early, wants safe temporary sparkle and lasting freshness.",
+        "Filter Tinkerer": "Tests AR looks, seeks gels that read glossy on camera.",
+        "Cautious Creator": "Follows dental tips to avoid damage while experimenting."
+      },
+      "drivers": {
+        "Idol Aesthetics": "Fans mirror stage looks with reversible, low‑commitment smile mods.",
+        "AR Normalization": "Filters encourage offline experiments framed as playful.",
+        "Safety Discourse": "Dentists and creators promote non‑damaging routines."
+      },
+      "also_emerging_in": ["Thailand", "Malaysia"],
+      "other_markets": {
+        "Thailand": "Fan events in Bangkok pair tooth gem booths with gentle care kits.",
+        "Malaysia": "KL pop‑ups offer safe sparkle with aftercare leaflets.",
+        "Japan": "Harajuku style labs test reversible smile accents with hygiene guidance."
+      },
+      "language": {
+        "Hashtags": "#toothgemVN #idolsmile #glassygel",
+        "Common phrases": ["Lấp lánh nhẹ thôi, vẫn sạch khỏe", "Cười xinh kiểu idol"],
+        "Code mixed": ["Gem xíu thôi but safe please", "Glossy vibe nhưng keep it healthy"],
+        "Tiếng Việt": "Nụ cười lung linh (nu cuoi lung linh) - Sparkling smile",
+        "Emojis": ["💎", "📸", "🎶"]
+      },
+      "evolution": {
+        "Before": "Static whitening talk without style play.",
+        "Now": "Temporary, reversible smile accents with safety tips and clear gels.",
+        "Next": "Brand‑backed mobile salons offering pro‑applied sparkle with dental oversight."
+      },
+      "signals": [
+        "Spike in creator content about reversible gems",
+        "Salon menus adding temporary smile accents",
+        "AR filters promoting glossy, glassy teeth effects"
+      ]
+    },
+    {
+      "title": "Motorbike Life Micro‑Freshness",
+      "subtitle": "Helmet hair, dust, and street food make portable gels standard kit for riders.",
+      "first_seen": "2023-01-10",
+      "last_scan": "2025-08-10",
+      "current_volume": 2600,
+      "previous_volume": 2650,
+      "volume": 22000,
+      "summary": "With most urban trips done on motorbikes, youth carry compact oral‑care kits beside sunscreen and lip balm. Stops between classes or deliveries are chances to reset before hugs, greetings, and photos. Freshness enables closeness in a high‑mobility, snack‑heavy lifestyle.",
+      "story": "Vietnam’s streets pulse with motorbikes, shaping what people carry and how they socialize. Riders stash small gels and sprays in phone pouches or under seats. Between bites at sidewalk stalls and quick coffee meetings, a two‑minute pit stop becomes a courtesy before getting close. Delivery riders and students alike value formats that open with one hand, do not spill, and cool instantly in tropical heat. Retail responds with minis near tills and helmet hooks at cafés that invite brief grooming breaks. The reality of [road transport in Vietnam](https://en.wikipedia.org/wiki/Transport_in_Vietnam#Road_transport) and the ever‑present pull of [Vietnamese cuisine](https://en.wikipedia.org/wiki/Vietnamese_cuisine) make freshness a social signal as much as a hygiene step, especially when arrivals lead straight into hugs, selfies, or group study.",
+      "proof_points": [
+        "[Motorbikes dominate Vietnamese urban mobility and shape daily routines](https://en.wikipedia.org/wiki/Transport_in_Vietnam#Road_transport)",
+        "[Street food culture intertwines with quick hygiene resets](https://en.wikipedia.org/wiki/Vietnamese_cuisine)",
+        "[Café third places provide parking and brief grooming pauses](https://en.wikipedia.org/wiki/Culture_of_Vietnam#Coffee_culture)"
+      ],
+      "quotes": [
+        ["I keep gel in my saddle box next to the raincoat.", "Student rider, Can Tho"],
+        ["A quick cool mouth makes greetings feel respectful after the road.", "Office worker, Ho Chi Minh City"]
+      ],
+      "personas": {
+        "Campus Rider": "Shuttles between classes and cafés, uses pocket gels between stops.",
+        "Food Courier": "Works in heat and fumes, needs reliable one‑hand open packaging.",
+        "Road Tripper": "Phượt weekends, shares kits with friends at scenic pull‑outs."
+      },
+      "drivers": {
+        "High Mobility": "Frequent short trips demand portable, spill‑safe formats.",
+        "Heat and Dust": "Climate realities make cooling sensation prized.",
+        "Snack Frequency": "Street food cadence increases need to reset before closeness."
+      },
+      "also_emerging_in": ["Indonesia", "Philippines", "Thailand"],
+      "other_markets": {
+        "Indonesia": "Jakarta riders carry sprays in scooter compartments for post‑bakso resets.",
+        "Philippines": "Manila tricycle and scooter commuters favor mint minis before greetings.",
+        "Thailand": "Bangkok motorbike taxis normalize quick fresh breaks at curbside cafés."
+      },
+      "language": {
+        "Hashtags": "#doixechothom #rideandrefresh #gelmini",
+        "Common phrases": ["Đỗ xe cái là làm mát miệng", "Trước khi ôm chào thì fresh đã"],
+        "Code mixed": ["Dừng quán vỉa hè, quick gel rồi đi tiếp", "Helm off, fresh on"],
+        "Tiếng Việt": "Đi phượt cho mát lòng (di phuot cho mat long) - Road trip to feel cool and free",
+        "Emojis": ["🛵", "🥤", "🧴"]
+      },
+      "evolution": {
+        "Before": "Chewing gum kept in pockets without consistent use.",
+        "Now": "Standardized rider kits with lockable gel minis and sprays.",
+        "Next": "Fresh points at parking lots and ride clubs co‑designed with youth brands."
+      },
+      "signals": [
+        "Helmet hangers and mirror stations at cafés",
+        "Co‑branded rider kits appearing in convenience chains",
+        "Fuel stops testing hygiene sample dispensers",
+        "Unboxing videos stress one‑hand open features"
+      ]
     }
-  ],
-  "influencers": {
-    "narratives": [
-      {
-        "title": "Oral Confidence Movement",
-        "color": "#FF6B6B",
-        "story": "Influencers link oral care to self-confidence and professional success, amplifying its importance in youth culture. This narrative focuses on transforming social lives through dental aesthetics.",
-        "evidence": ["[Influencer Impact](https://www.remedo.io/blog/how-dentists-can-become-influencers-on-tiktok-instagram)"],
-        "takeaway": "Partnerships with lifestyle influencers can expand category relevance beyond health."
-      },
-      {
-        "title": "Digital-First Shopping",
-        "color": "#4ECDC4",
-        "story": "Livestream and AR-driven commerce narratives dominate digital platforms, where influencers showcase live product demos and encourage instant purchases.",
-        "evidence": ["[Livestream Trends](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)"],
-        "takeaway": "Investing in livestream partnerships builds trust and conversion."
-      },
-      {
-        "title": "Herbal Wellness Advocacy",
-        "color": "#2ECC71",
-        "story": "Health influencers promote herbal and eco-friendly products, framing them as better for wellness and sustainability. This appeals to health-conscious and environmentally aware audiences.",
-        "evidence": ["[Herbal Market](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"],
-        "takeaway": "Aligning with eco-wellness advocates enhances brand authenticity."
-      }
-    ],
-    "pathways": [
-      {
-        "name": "Social Confidence Influence",
-        "color": "#FF6B6B",
-        "nodes": [
-          {"id": "1", "label": "Confidence Influencers", "tooltip": "Focus on self-esteem"},
-          {"id": "2", "label": "Dating Apps", "tooltip": "Highlight appearance focus"},
-          {"id": "3", "label": "Product Trials", "tooltip": "Showcase whitening"},
-          {"id": "4", "label": "Peer Sharing", "tooltip": "Drive viral content"}
-        ]
-      },
-      {
-        "name": "Digital Commerce Ecosystem",
-        "color": "#4ECDC4",
-        "nodes": [
-          {"id": "1", "label": "Livestream Hosts", "tooltip": "Real-time demos"},
-          {"id": "2", "label": "AR Platforms", "tooltip": "Virtual try-on"},
-          {"id": "3", "label": "E-commerce Apps", "tooltip": "Easy checkout"},
-          {"id": "4", "label": "Social Media Ads", "tooltip": "Target Gen Z"}
-        ]
-      },
-      {
-        "name": "Herbal Product Advocacy",
-        "color": "#2ECC71",
-        "nodes": [
-          {"id": "1", "label": "Health Bloggers", "tooltip": "Wellness focus"},
-          {"id": "2", "label": "Eco-Influencers", "tooltip": "Sustainable living"},
-          {"id": "3", "label": "Ingredient Specialists", "tooltip": "Education"},
-          {"id": "4", "label": "Retail Partners", "tooltip": "Herbal displays"}
-        ]
-      }
-    ],
-    "brokers": [
-      {
-        "market": "Vietnam",
-        "color": "#FF6B6B",
-        "description": "Key brokers shape oral care adoption and brand narratives in Vietnam.",
-        "brokers": [
-          {"name": "Nha Khoa Viet Phap", "role": "Dental Clinic Network", "impact": "High local credibility", "followers": "250k", "engagement": "4%", "specialty": "Cosmetic dentistry", "brands": "Colgate, Sensodyne"},
-          {"name": "TikTok Dental Influencers", "role": "Content Creators", "impact": "Youth culture reach", "followers": "1M+", "engagement": "8%", "specialty": "Whitening products", "brands": "P/S, Closeup"}
-        ]
-      },
-      {
-        "market": "Thailand",
-        "color": "#4ECDC4",
-        "description": "Thailand brokers influence regional oral care trends.",
-        "brokers": [
-          {"name": "Smile Bright Co.", "role": "Brand Ambassador", "impact": "Cross-border influence", "followers": "180k", "engagement": "5%", "specialty": "Premium toothpaste", "brands": "Oral-B"},
-          {"name": "DentalTok Asia", "role": "Social Media Channel", "impact": "Regional audience", "followers": "750k", "engagement": "7%", "specialty": "Oral health education", "brands": "Listerine"}
-        ]
-      },
-      {
-        "market": "Korea",
-        "color": "#2ECC71",
-        "description": "Korean brokers shape whitening and beauty-driven oral care preferences.",
-        "brokers": [
-          {"name": "K-Beauty Smile", "role": "Influencer Collective", "impact": "Trend driver", "followers": "500k", "engagement": "6%", "specialty": "Whitening solutions", "brands": "Mediheal"},
-          {"name": "Dental Care Expo Korea", "role": "Trade Show", "impact": "Industry showcase", "followers": "80k", "engagement": "3%", "specialty": "Innovations", "brands": "LG Household & Health Care"}
-        ]
-      }
-    ]
-  },
-  "ideas": {
-    "hypotheses": [
-      {"statement": "Oral care product adoption is increasingly driven by social confidence motivations rather than purely health-related concerns.", "source": "[PubMed](https://pubmed.ncbi.nlm.nih.gov/26684998/)"},
-      {"statement": "Digital commerce formats like livestream shopping outperform static e-commerce for oral care conversion.", "source": "[Business Perspectives](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)"},
-      {"statement": "Herbal and natural oral care products will capture a premium market position as wellness and eco-consciousness rise.", "source": "[Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"}
-    ],
-    "gaps": [
-      {"title": "Low Professional Oral Health Awareness", "body": "Despite consumer interest, professional dental education integration in marketing remains limited.", "source": "[Remedo](https://www.remedo.io/blog/how-dentists-can-become-influencers-on-tiktok-instagram)"},
-      {"title": "Weak AR Content Strategies", "body": "Few oral care brands leverage AR beyond trial phases, missing deeper consumer engagement.", "source": "[TGM Research](https://tgmresearch.com/vietnam-online-consumer-segments.html)"},
-      {"title": "Sustainability Messaging Deficit", "body": "Although eco-friendly products are emerging, brand communication often lacks sustainability narratives.", "source": "[Global Market Surfer](https://www.global-market-surfer.com/pickup/detail/566/Generation+Z+in+Asian+Countries)"}
-    ],
-    "playbooks": [
-      {
-        "title": "Livestream Launch Strategy",
-        "goal": "Boost oral care sales via influencer-driven livestreams",
-        "steps": ["Identify relevant micro-influencers", "Develop engaging demo scripts", "Integrate real-time discount codes"],
-        "metrics": ["Conversion rate", "Average view time"],
-        "source": "[Business Perspectives](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)",
-        "border": "1px solid #FF6B6B",
-        "bg": "#FFEAEA"
-      },
-      {
-        "title": "Herbal Positioning Framework",
-        "goal": "Position herbal oral care as premium wellness",
-        "steps": ["Highlight natural ingredients", "Educate on traditional benefits", "Partner with eco-influencers"],
-        "metrics": ["Brand sentiment", "Repeat purchase rate"],
-        "source": "[Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)",
-        "border": "1px solid #2ECC71",
-        "bg": "#EAF9EA"
-      },
-      {
-        "title": "Phygital Experience Rollout",
-        "goal": "Integrate digital discovery and offline trial",
-        "steps": ["Enable AR try-on in stores", "Provide QR-based product education", "Offer online-exclusive loyalty rewards"],
-        "metrics": ["Foot traffic uplift", "App engagement"],
-        "source": "[Think With Google](https://www.thinkwithgoogle.com/intl/en-apac/marketing-strategies/data-and-measurement/reaching-digital-audiences-rural-vietnam/)",
-        "border": "1px solid #3498DB",
-        "bg": "#EAF4FB"
-      }
-    ],
-    "scenarios": [
-      {"title": "Social Confidence Economy", "body": "Oral care demand becomes a core driver of social confidence spending, impacting dating, job interviews, and social media self-presentation.", "source": "[Vietnamese Dating Culture](https://womenctr.net/asian-dating-culture/vietnamese-dating-culture/)"},
-      {"title": "Livestream-First Commerce", "body": "Livestream shopping surpasses traditional e-commerce for oral care by 2026, creating a more interactive consumer journey.", "source": "[Business Perspectives](https://www.businessperspectives.org/index.php/journals?controller=pdfview&task=download&item_id=19361)"},
-      {"title": "Herbal Premiumization", "body": "Herbal oral care products shift from niche to mainstream premium positioning, driven by wellness trends and ingredient trust.", "source": "[Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/herbal-toothpaste-market)"}
-    ],
-    "recommendations": [
-      {
-        "priority": 1,
-        "title": "Integrate Social Confidence Messaging",
-        "body": "Position oral care products as enablers of social success. Use influencer partnerships and storytelling to make oral health aspirational, not just functional."
-      },
-      {
-        "priority": 2,
-        "title": "Expand Livestream and AR Commerce",
-        "body": "Invest in livestream shopping capabilities and AR try-on experiences. These platforms drive consumer trust and create an interactive product validation loop."
-      },
-      {
-        "priority": 3,
-        "title": "Lead Herbal And Sustainable Innovation",
-        "body": "Focus on herbal formulations and sustainable packaging to capture eco-conscious consumers and establish premium market leadership."
-      }
-    ]
-  },
-    "ai_context": {
-        "system_context":"You are **Kultie**, an assistant for exploring market and cultural insights, providing clear, evidence-based recommendations aligned with a youthful, energetic, bold, confident, playful, fresh, socially connected, inclusive, intimate, approachable, locally relevant brand voice, focusing on increasing sales and cultural resonance in **Vietnam**; industry context: oral care (toothpaste, mouthwash, breath freshening, personal hygiene, beauty-adjacent self-care with rising focus on natural and herbal ingredients); product focus: gel-based toothpaste for fresh breath and whitening, herbal and fruit-flavored variants (lemongrass, mint-citrus blends), mouthwash for dating and social confidence, travel-sized convenience packs, limited festival editions (Tet-themed gifting packs, couples’ promotional bundles); audience: urban youth (16–30), university students, early-career professionals, socially active individuals, dating and nightlife participants, appearance-conscious consumers seeking affordable premium options, couples and young married individuals focused on personal grooming; personas: romance and social confidence seekers prioritizing fresh breath for dating/nightlife/social events, natural and herbal product adopters influenced by traditional wellness practices and sustainability trends, digital-first influenced consumers highly engaged with TikTok and Facebook who trust social media reviews and influencer recommendations; regional focus: Vietnam’s growing dating and youth culture shaped by K-pop and Asian pop culture aesthetics, popularity of local herbal remedies and rising demand for natural personal care products, urban retail growth with strong convenience store and pharmacy penetration plus booming e-commerce (Tiki, Shopee), social media trends driving product trials through micro-influencers and viral content challenges.",
-        "research_file": "closeup_vietnam.md"
-  }
+  ]
 }

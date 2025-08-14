@@ -40,7 +40,7 @@ if not st.session_state.global_configured:
     if is_dev_mode:
         default_brand = next(iter(all_data))
         st.session_state.brand_config = {"brand_name": default_brand}
-        st.session_state.selected_study = "Global Insights"
+        st.session_state.selected_study = next(iter(all_data[default_brand]))
         st.session_state.studies = [] 
         st.session_state.global_configured = True
     else:
@@ -294,7 +294,7 @@ if not st.session_state.global_configured:
                     
                     st.success("🎉 Observatory Built Successfully!")
             
-            st.session_state.selected_study = "Global Insights"
+            st.session_state.selected_study = next(iter(all_data[st.session_state.brand_config["brand_name"]]))
             st.session_state.studies = []
             st.session_state.global_configured = True
             st.rerun()
@@ -305,12 +305,7 @@ if not st.session_state.global_configured:
 with st.sidebar:
     brand = st.session_state.brand_config["brand_name"]
 
-    if is_dev_mode:
-        studies = list(all_data[brand].keys())
-    else:
-        studies = ["Global Insights"] + [s["name"] for s in st.session_state.studies]
-        if st.session_state.selected_study not in studies:
-            st.session_state.selected_study = "Global Insights"
+    studies = list(all_data[brand].keys())
     if st.session_state.selected_study not in studies:
         st.session_state.selected_study = studies[0]
     
@@ -333,7 +328,7 @@ with st.sidebar:
 
     if selected_brand.lower() != brand.lower():
         st.session_state.brand_config["brand_name"] = selected_brand.lower()
-        st.session_state.selected_study = "Global Insights"
+        st.session_state.selected_study = next(iter(all_data[selected_brand.lower()]))
         st.rerun()
 
     if st.button("➕ New Space", use_container_width=True):
